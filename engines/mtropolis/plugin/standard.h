@@ -344,6 +344,228 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class FadeModifier : public Modifier {
+public:
+	FadeModifier();
+	~FadeModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::FadeModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+	//bool isVariable() const override { return true; }
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Fade Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class RotatorModifier : public Modifier {
+public:
+	RotatorModifier();
+	~RotatorModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::RotatorModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Rotator Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class TrackerModifier : public Modifier {
+public:
+	TrackerModifier();
+	~TrackerModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::TrackerModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Tracker Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class BitmapVariableModifier : public Modifier {
+public:
+	BitmapVariableModifier();
+	~BitmapVariableModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::BitmapVariableModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "BitmapVariable Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class CaptureBitmapModifier : public Modifier {
+public:
+	CaptureBitmapModifier();
+	~CaptureBitmapModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::CaptureBitmapModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "CaptureBitmap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class ImportBitmapModifier : public Modifier {
+public:
+	ImportBitmapModifier();
+	~ImportBitmapModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::ImportBitmapModifer &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "ImportBitmap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class DisplayBitmapModifier : public Modifier {
+public:
+	DisplayBitmapModifier();
+	~DisplayBitmapModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::DisplayBitmapModifer &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "DisplayBitmap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class ScaleBitmapModifier : public Modifier {
+public:
+	ScaleBitmapModifier();
+	~ScaleBitmapModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::ScaleBitmapModifer &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "ScaleBitmap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class SaveBitmapModifier : public Modifier {
+public:
+	SaveBitmapModifier();
+	~SaveBitmapModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::SaveBitmapModifer &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "SaveBitmap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class PrintBitmapModifier : public Modifier {
+public:
+	PrintBitmapModifier();
+	~PrintBitmapModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::PrintBitmapModifer &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "PrintBitmap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class StandardPlugIn : public MTropolis::PlugIn {
 public:
 	StandardPlugIn();
@@ -362,6 +584,16 @@ private:
 	PlugInModifierFactory<ListVariableModifier, Data::Standard::ListVariableModifier> _listVarModifierFactory;
 	PlugInModifierFactory<SysInfoModifier, Data::Standard::SysInfoModifier> _sysInfoModifierFactory;
 	PlugInModifierFactory<PanningModifier, Data::Standard::PanningModifier> _panningModifierFactory;
+	PlugInModifierFactory<FadeModifier, Data::Standard::FadeModifier> _fadeModifierFactory;
+	PlugInModifierFactory<RotatorModifier, Data::Standard::RotatorModifier> _rotatorModifierFactory;
+	PlugInModifierFactory<TrackerModifier, Data::Standard::TrackerModifier> _trackerModifierFactory;
+	PlugInModifierFactory<BitmapVariableModifier, Data::Standard::BitmapVariableModifier> _bitmapVariableModifierFactory;
+	PlugInModifierFactory<CaptureBitmapModifier, Data::Standard::CaptureBitmapModifier> _captureBitmapModifierFactory;
+	PlugInModifierFactory<ImportBitmapModifier, Data::Standard::ImportBitmapModifer> _importBitmapModifierFactory;
+	PlugInModifierFactory<DisplayBitmapModifier, Data::Standard::DisplayBitmapModifer> _displayBitmapModifierFactory;
+	PlugInModifierFactory<ScaleBitmapModifier, Data::Standard::ScaleBitmapModifer> _scaleBitmapModifierFactory;
+	PlugInModifierFactory<SaveBitmapModifier, Data::Standard::SaveBitmapModifer> _saveBitmapModifierFactory;
+	PlugInModifierFactory<PrintBitmapModifier, Data::Standard::PrintBitmapModifer> _printBitmapModifierFactory;
 
 	StandardPlugInHacks _hacks;
 };

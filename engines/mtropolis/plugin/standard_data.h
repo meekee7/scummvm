@@ -141,6 +141,61 @@ protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
+struct FadeModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Int;
+	PlugInTypeTaggedValue unknown4Int;
+	PlugInTypeTaggedValue unknown5Int;
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct RotatorModifier : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct TrackerModifier : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct BitmapVariableModifier : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct CaptureBitmapModifier : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct ImportBitmapModifer : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct DisplayBitmapModifer : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct ScaleBitmapModifer : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct SaveBitmapModifer : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct PrintBitmapModifer : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
 } // End of namespace Standard
 
 } // End of namespace Data

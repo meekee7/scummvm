@@ -1417,6 +1417,356 @@ const char *PanningModifier::getDefaultName() const {
 	return "Panning Modifier"; // ???
 }
 
+FadeModifier::FadeModifier() {
+}
+
+FadeModifier::~FadeModifier() {
+}
+
+bool FadeModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::FadeModifier &data) {
+	return true;
+}
+
+bool FadeModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState FadeModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void FadeModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void FadeModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> FadeModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new FadeModifier(*this));
+}
+
+const char *FadeModifier::getDefaultName() const {
+	return "Fade Modifier"; // ???
+}
+
+RotatorModifier::RotatorModifier() {
+}
+
+RotatorModifier::~RotatorModifier() {
+}
+
+bool RotatorModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::RotatorModifier &data) {
+	return true;
+}
+
+bool RotatorModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState RotatorModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void RotatorModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void RotatorModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> RotatorModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new RotatorModifier(*this));
+}
+
+const char *RotatorModifier::getDefaultName() const {
+	return "Rotator Modifier"; // ???
+}
+
+TrackerModifier::TrackerModifier() {
+}
+
+TrackerModifier::~TrackerModifier() {
+}
+
+bool TrackerModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::TrackerModifier &data) {
+	return true;
+}
+
+bool TrackerModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState TrackerModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void TrackerModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void TrackerModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> TrackerModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new TrackerModifier(*this));
+}
+
+const char *TrackerModifier::getDefaultName() const {
+	return "Tracker Modifier"; // ???
+}
+
+BitmapVariableModifier::BitmapVariableModifier() {
+}
+
+BitmapVariableModifier::~BitmapVariableModifier() {
+}
+
+bool BitmapVariableModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::BitmapVariableModifier &data) {
+	return true;
+}
+
+bool BitmapVariableModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState BitmapVariableModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void BitmapVariableModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void BitmapVariableModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> BitmapVariableModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new BitmapVariableModifier(*this));
+}
+
+const char *BitmapVariableModifier::getDefaultName() const {
+	return "Bitmap Variable Modifier"; // ???
+}
+
+CaptureBitmapModifier::CaptureBitmapModifier() {
+}
+
+CaptureBitmapModifier::~CaptureBitmapModifier() {
+}
+
+bool CaptureBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::CaptureBitmapModifier &data) {
+	return true;
+}
+
+bool CaptureBitmapModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState CaptureBitmapModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void CaptureBitmapModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void CaptureBitmapModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> CaptureBitmapModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new CaptureBitmapModifier(*this));
+}
+
+const char *CaptureBitmapModifier::getDefaultName() const {
+	return "Capture Bitmap Modifier"; // ???
+}
+
+ImportBitmapModifier::ImportBitmapModifier() {
+}
+
+ImportBitmapModifier::~ImportBitmapModifier() {
+}
+
+bool ImportBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::ImportBitmapModifer &data) {
+	return true;
+}
+
+bool ImportBitmapModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState ImportBitmapModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void ImportBitmapModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void ImportBitmapModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> ImportBitmapModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new ImportBitmapModifier(*this));
+}
+
+const char *ImportBitmapModifier::getDefaultName() const {
+	return "Import Bitmap Modifier"; // ???
+}
+
+DisplayBitmapModifier::DisplayBitmapModifier() {
+}
+
+DisplayBitmapModifier::~DisplayBitmapModifier() {
+}
+
+bool DisplayBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::DisplayBitmapModifer &data) {
+	return true;
+}
+
+bool DisplayBitmapModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState DisplayBitmapModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void DisplayBitmapModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void DisplayBitmapModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> DisplayBitmapModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new DisplayBitmapModifier(*this));
+}
+
+const char *DisplayBitmapModifier::getDefaultName() const {
+	return "Display Bitmap Modifier"; // ???
+}
+
+ScaleBitmapModifier::ScaleBitmapModifier() {
+}
+
+ScaleBitmapModifier::~ScaleBitmapModifier() {
+}
+
+bool ScaleBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::ScaleBitmapModifer &data) {
+	return true;
+}
+
+bool ScaleBitmapModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState ScaleBitmapModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void ScaleBitmapModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void ScaleBitmapModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> ScaleBitmapModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new ScaleBitmapModifier(*this));
+}
+
+const char *ScaleBitmapModifier::getDefaultName() const {
+	return "Scale Bitmap Modifier"; // ???
+}
+
+SaveBitmapModifier::SaveBitmapModifier() {
+}
+
+SaveBitmapModifier::~SaveBitmapModifier() {
+}
+
+bool SaveBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::SaveBitmapModifer &data) {
+	return true;
+}
+
+bool SaveBitmapModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState SaveBitmapModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void SaveBitmapModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void SaveBitmapModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> SaveBitmapModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new SaveBitmapModifier(*this));
+}
+
+const char *SaveBitmapModifier::getDefaultName() const {
+	return "Save Bitmap Modifier"; // ???
+}
+
+PrintBitmapModifier::PrintBitmapModifier() {
+}
+
+PrintBitmapModifier::~PrintBitmapModifier() {
+}
+
+bool PrintBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::PrintBitmapModifer &data) {
+	return true;
+}
+
+bool PrintBitmapModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState PrintBitmapModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void PrintBitmapModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void PrintBitmapModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> PrintBitmapModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new PrintBitmapModifier(*this));
+}
+
+const char *PrintBitmapModifier::getDefaultName() const {
+	return "Print Bitmap Modifier"; // ???
+}
+
 StandardPlugInHacks::StandardPlugInHacks() : allowGarbledListModData(false) {
 }
 
@@ -1427,7 +1777,18 @@ StandardPlugIn::StandardPlugIn()
 	, _objRefVarModifierFactory(this)
 	, _listVarModifierFactory(this)
 	, _sysInfoModifierFactory(this)
-	, _panningModifierFactory(this) {
+	, _panningModifierFactory(this)
+	, _fadeModifierFactory(this)
+	, _rotatorModifierFactory(this)
+	, _trackerModifierFactory(this)
+	, _bitmapVariableModifierFactory(this)
+	, _captureBitmapModifierFactory(this)
+	, _importBitmapModifierFactory(this)
+	, _displayBitmapModifierFactory(this)
+	, _scaleBitmapModifierFactory(this)
+	, _saveBitmapModifierFactory(this)
+	, _printBitmapModifierFactory(this)
+{
 }
 
 StandardPlugIn::~StandardPlugIn() {
@@ -1441,7 +1802,24 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	registrar->registerPlugInModifier("ListMod", &_listVarModifierFactory);
 	registrar->registerPlugInModifier("SysInfo", &_sysInfoModifierFactory);
 
+	registrar->registerPlugInModifier("fade", &_fadeModifierFactory);
 	registrar->registerPlugInModifier("panning", &_panningModifierFactory);
+
+	//Rotator Kit by Thereware
+	//Lexis Numerique
+	registrar->registerPlugInModifier("Rotator", &_rotatorModifierFactory);
+	registrar->registerPlugInModifier("Tracker", &_trackerModifierFactory);
+
+	//Bitmap by ???
+
+	registrar->registerPlugInModifier("hlBitmapVariable", &_bitmapVariableModifierFactory);
+	registrar->registerPlugInModifier("hlCaptureBitmap", &_captureBitmapModifierFactory);
+	registrar->registerPlugInModifier("hlImportBitmap", &_importBitmapModifierFactory);
+	registrar->registerPlugInModifier("hlDisplayBitmap", &_displayBitmapModifierFactory);
+	registrar->registerPlugInModifier("hlScaleBitmap", &_scaleBitmapModifierFactory);
+	registrar->registerPlugInModifier("hlSaveBitmap", &_saveBitmapModifierFactory);
+	registrar->registerPlugInModifier("hlPrintBitmap", &_printBitmapModifierFactory);
+
 }
 
 const StandardPlugInHacks &StandardPlugIn::getHacks() const {
