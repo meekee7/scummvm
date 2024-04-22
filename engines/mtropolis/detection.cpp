@@ -36,6 +36,7 @@ static const PlainGameDescriptor mTropolisGames[] = {
 	{"spqr", "SPQR: The Empire's Darkest Hour"},
 	{"sttgs", "Star Trek: The Game Show"},
 	{"unit", "Unit: Re-Booted"},
+	{"mindgym", "Mind Gym"},
 	{"mtropolis", "mTropolis Title"},
 	{nullptr, nullptr}
 };

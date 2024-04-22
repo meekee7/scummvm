@@ -1755,6 +1755,11 @@ const Game games[] = {
 		MTBOOT_UNIT_REBOOTED_WIN,
 		&BootScriptContext::bootGeneric
 	},
+	// Mind Gym
+	{
+		MTBOOT_MINDGYM_WIN_EN,
+		&BootScriptContext::bootGeneric
+	},
 };
 
 } // End of namespace Games

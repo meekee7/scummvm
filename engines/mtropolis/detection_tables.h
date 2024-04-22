@@ -885,6 +885,26 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		MTBOOT_UNIT_REBOOTED_WIN,
 	},
 
+	{
+		// Mind Gym (English, Windows)
+		// Published by Emme, 2000
+		{
+			"mindgym",
+			"",
+			{
+				{"MTPLAY95.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			 {"MINDGYM1.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
+			 {"MINDGYM2.MPX", 0, "aa49de0c8337ec97045c6af57ead02a3", 277412342},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_MINDGYM,
+		0,
+		MTBOOT_MINDGYM_WIN_EN,
+	},
+
 	{ AD_TABLE_END_MARKER, 0, 0, MTBOOT_INVALID }
 };
 
