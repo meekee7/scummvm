@@ -2287,7 +2287,7 @@ void MessengerSendSpec::resolveDestination(Runtime *runtime, Modifier *sender, R
 
 void MessengerSendSpec::resolveVariableObjectType(RuntimeObject *obj, Common::WeakPtr<Structural> &outStructuralDest, Common::WeakPtr<Modifier> &outModifierDest) {
 	if (!obj) {
-		warning("Couldn't resolve mesenger destination");
+		warning("Couldn't resolve messenger destination");
 		return;
 	}
 
@@ -2428,10 +2428,16 @@ void VarReference::linkInternalReferences(ObjectLinkingScope *scope) {
 			warning("VarReference to '%s' failed to resolve a valid object", source.c_str());
 		} else {
 			Common::SharedPtr<RuntimeObject> objShr = obj.lock();
-			if (objShr->isModifier() && static_cast<Modifier *>(objShr.get())->isVariable()) {
-				this->resolution = obj.staticCast<Modifier>();
+			if (objShr->isModifier()) {
+				Modifier *m = static_cast<Modifier*>(objShr.get());
+				if (m->isVariable() || m->isAlias() || m->isCompoundVariable())
+				{
+					this->resolution = obj.staticCast<Modifier>();
+				} else {
+					error("VarReference referenced a non-variable");
+				}
 			} else {
-				error("VarReference referenced a non-variable");
+				error("VarReference referenced a non-modifier");
 			}
 		}
 	}
@@ -5911,7 +5917,7 @@ VThreadState Runtime::applyDefaultVisibility(const ApplyDefaultVisibilityTaskDat
 	}
 
 	// Visibility change events are sourced from the element
- 	Common::SharedPtr<MessageProperties> props(new MessageProperties(evt, DynamicValue(), data.element->getSelfReference()));
+	Common::SharedPtr<MessageProperties> props(new MessageProperties(evt, DynamicValue(), data.element->getSelfReference()));
 	Common::SharedPtr<MessageDispatch> dispatch(new MessageDispatch(props, data.element, false, false, true));
 
 	sendMessageOnVThread(dispatch);
@@ -5995,7 +6001,7 @@ void Runtime::instantiateIfAlias(Common::SharedPtr<Modifier> &modifier, const Co
 
 		// Aliased variables use the same variable storage, but are treated as distinct objects.
 		if (clonedModifier->isVariable()) {
- 			assert(templateModifier->isVariable());
+			assert(templateModifier->isVariable());
 			static_cast<VariableModifier *>(clonedModifier.get())->setStorage(static_cast<const VariableModifier *>(templateModifier.get())->getStorage());
 		}
 	}
