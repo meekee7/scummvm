@@ -905,6 +905,99 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		MTBOOT_MINDGYM_WIN_EN,
 	},
 
+		{
+		// Mind Gym (English, Windows)
+		// Published by Emme, 2000
+		{
+			"mindgym",
+			"",
+			{{"MTPLAY95.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			 {"MINDGYM1.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
+			 {"MINDGYM2.MPX", 0, "aa49de0c8337ec97045c6af57ead02a3", 277412342},
+			 AD_LISTEND},
+			Common::DE_DEU,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_MINDGYM,
+		0,
+		MTBOOT_MINDGYM_WIN_DE,
+	},
+
+	{
+		// Fun With Architecture (English, Windows)
+		// Published by Emme, 2000
+		{
+			"architecture",
+			"",
+			{{"MTPLAY95.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			 {"FWA1041.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_ARCHITECTURE,
+		0,
+		MTBOOT_ARCHITECTURE_EN,
+	},
+
+	{
+		// The Magic World of Beatrix Potter (English, Windows)
+		// Published by Emme, 2000
+		{
+			"beatrix",
+			"",
+			{{"POTTER95.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			 {"DATA.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_BEATRIX,
+		0,
+		MTBOOT_BEATRIX_EN,
+	},
+
+	{
+		// Whitetail Impact (English, Windows)
+		// Published by Emme, 2000
+		{
+			"wtimpact",
+			"",
+			{{"WTIMPACT.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			 {"DATA.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_WTIMPACT,
+		0,
+		MTBOOT_WT_IMPACT_EN,
+	},
+
+	{
+		// The Day The World Broke	(English, Windows)
+		// Published by Emme, 2000
+		{
+			"worldbroke",
+			"",
+			{{"TDTWB.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			 {"TDTWB1.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
+			 {"TDTWB2.MPX", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_WTIMPACT,
+		0,
+		MTBOOT_WT_IMPACT_EN,
+	},
+
+
 	{ AD_TABLE_END_MARKER, 0, 0, MTBOOT_INVALID }
 };
 

@@ -37,6 +37,10 @@ static const PlainGameDescriptor mTropolisGames[] = {
 	{"sttgs", "Star Trek: The Game Show"},
 	{"unit", "Unit: Re-Booted"},
 	{"mindgym", "Mind Gym"},
+	{"architecture", "Fun With Architecture"},
+	{"beatrix", "The Magic World of Beatrix Potter"},
+	{"wtimpact", "Whitetail Impact"},
+	{"worldbroke", "The Day The World Broke"},
 	{"mtropolis", "mTropolis Title"},
 	{nullptr, nullptr}
 };

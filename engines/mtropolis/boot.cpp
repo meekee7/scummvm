@@ -1760,6 +1760,27 @@ const Game games[] = {
 		MTBOOT_MINDGYM_WIN_EN,
 		&BootScriptContext::bootGeneric
 	},
+	// Mind Gym
+	{
+		MTBOOT_MINDGYM_WIN_DE,
+		&BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_ARCHITECTURE_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_BEATRIX_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_WT_IMPACT_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_WORLDBROKE_EN,
+	 &BootScriptContext::bootGeneric
+	},
 };
 
 } // End of namespace Games

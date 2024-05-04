@@ -40,8 +40,12 @@ enum MTropolisGameID {
 	GID_STTGS				= 7,
 	GID_UNIT				= 8,
 	GID_MINDGYM				= 9,
+	GID_ARCHITECTURE    	= 10,
+	GID_BEATRIX		    	= 11,
+	GID_WTIMPACT	    	= 12,
+	GID_WORLDBROKE	    	= 13,
 
-	GID_GENERIC				= 10,
+	GID_GENERIC				= 14,
 };
 
 // Boot IDs - These can be shared across different variants if the file list and other properties are identical.
@@ -90,6 +94,12 @@ enum MTropolisGameBootID {
 	MTBOOT_UNIT_REBOOTED_WIN,
 
 	MTBOOT_MINDGYM_WIN_EN,
+	MTBOOT_MINDGYM_WIN_DE,
+
+	MTBOOT_ARCHITECTURE_EN,
+	MTBOOT_BEATRIX_EN,
+	MTBOOT_WT_IMPACT_EN,
+	MTBOOT_WORLDBROKE_EN,
 };
 
 enum MTGameFlag {
