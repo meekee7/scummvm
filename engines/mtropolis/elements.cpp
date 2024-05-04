@@ -34,6 +34,9 @@
 #include "mtropolis/assets.h"
 #include "mtropolis/audio_player.h"
 #include "mtropolis/elements.h"
+
+#include "graphics/palette.h"
+#include "graphics/paletteman.h"
 #include "mtropolis/element_factory.h"
 #include "mtropolis/miniscript.h"
 #include "mtropolis/render.h"
@@ -770,7 +773,10 @@ void MovieElement::render(Window *window) {
 		Graphics::ManagedSurface *target = window->getSurface().get();
 		Common::Rect srcRect(0, 0, displaySurface->w, displaySurface->h);
 		Common::Rect destRect(_cachedAbsoluteOrigin.x, _cachedAbsoluteOrigin.y, _cachedAbsoluteOrigin.x + _rect.width(), _cachedAbsoluteOrigin.y + _rect.height());
-		target->blitFrom(*displaySurface, srcRect, destRect);
+
+		Palette mpalette;
+		Graphics::Palette defaultPalette(mpalette.getPalette(), mpalette.kNumColors * 3);
+		target->blitFrom(*displaySurface, srcRect, destRect, &defaultPalette);
 	}
 }
 
