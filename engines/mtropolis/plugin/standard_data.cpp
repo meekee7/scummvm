@@ -207,6 +207,19 @@ DataReadErrorCode FadeModifier::load(PlugIn &plugIn, const PlugInModifier &prefi
 	return kDataReadErrorNone;
 }
 
+DataReadErrorCode KeyStateModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 0; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
 DataReadErrorCode RotatorModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;

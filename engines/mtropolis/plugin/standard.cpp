@@ -1452,6 +1452,41 @@ const char *FadeModifier::getDefaultName() const {
 	return "Fade Modifier"; // ???
 }
 
+KeyStateModifier::KeyStateModifier() {
+}
+
+KeyStateModifier::~KeyStateModifier() {
+}
+
+bool KeyStateModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::KeyStateModifier &data) {
+	return true;
+}
+
+bool KeyStateModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState KeyStateModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void KeyStateModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void KeyStateModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> KeyStateModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new KeyStateModifier(*this));
+}
+
+const char *KeyStateModifier::getDefaultName() const {
+	return "KeyState Modifier"; // ???
+}
+
 RotatorModifier::RotatorModifier() {
 }
 
@@ -1778,6 +1813,7 @@ StandardPlugIn::StandardPlugIn()
 	, _listVarModifierFactory(this)
 	, _sysInfoModifierFactory(this)
 	, _panningModifierFactory(this)
+	, _keyStateModifierFactory(this)
 	, _fadeModifierFactory(this)
 	, _rotatorModifierFactory(this)
 	, _trackerModifierFactory(this)
@@ -1820,6 +1856,7 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	registrar->registerPlugInModifier("hlSaveBitmap", &_saveBitmapModifierFactory);
 	registrar->registerPlugInModifier("hlPrintBitmap", &_printBitmapModifierFactory);
 
+	registrar->registerPlugInModifier("hlKeyState", &_keyStateModifierFactory);
 }
 
 const StandardPlugInHacks &StandardPlugIn::getHacks() const {

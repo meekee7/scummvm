@@ -368,6 +368,30 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class KeyStateModifier : public Modifier {
+public:
+	KeyStateModifier();
+	~KeyStateModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::KeyStateModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+	// bool isVariable() const override { return true; }
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "KeyState Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class RotatorModifier : public Modifier {
 public:
 	RotatorModifier();
@@ -585,6 +609,7 @@ private:
 	PlugInModifierFactory<SysInfoModifier, Data::Standard::SysInfoModifier> _sysInfoModifierFactory;
 	PlugInModifierFactory<PanningModifier, Data::Standard::PanningModifier> _panningModifierFactory;
 	PlugInModifierFactory<FadeModifier, Data::Standard::FadeModifier> _fadeModifierFactory;
+	PlugInModifierFactory<KeyStateModifier, Data::Standard::KeyStateModifier> _keyStateModifierFactory;
 	PlugInModifierFactory<RotatorModifier, Data::Standard::RotatorModifier> _rotatorModifierFactory;
 	PlugInModifierFactory<TrackerModifier, Data::Standard::TrackerModifier> _trackerModifierFactory;
 	PlugInModifierFactory<BitmapVariableModifier, Data::Standard::BitmapVariableModifier> _bitmapVariableModifierFactory;
