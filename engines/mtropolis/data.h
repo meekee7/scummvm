@@ -396,6 +396,14 @@ struct Label {
 	uint32 labelID;
 };
 
+struct Timecode {
+	bool load(DataReader &reader);
+
+	uint16 a;
+	uint16 b;
+	uint16 c;
+};
+
 // mTropolis uses two separate type-tagged value formats.
 //
 // InternalTypeTaggedValue is used by internal modifiers for messenger payloads and set modifiers
@@ -452,6 +460,7 @@ struct PlugInTypeTaggedValue : public Common::NonCopyable {
 	enum TypeCode {
 		kNull = 0x00,
 		kInteger = 0x01,
+		kTimecode = 0x09,
 		kPoint = 0xa,
 		kIntegerRange = 0xb,
 		kFloat = 0xf,
@@ -469,6 +478,7 @@ struct PlugInTypeTaggedValue : public Common::NonCopyable {
 
 		int32 asInt;
 		Point asPoint;
+		Timecode asTimecode;
 		IntRange asIntRange;
 		XPFloatPOD asFloat;
 		uint16 asBoolean;

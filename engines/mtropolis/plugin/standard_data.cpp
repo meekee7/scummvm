@@ -337,6 +337,58 @@ DataReadErrorCode PrintBitmapModifer::load(PlugIn &plugIn, const PlugInModifier 
 	return kDataReadErrorNone;
 }
 
+DataReadErrorCode MouseTrapModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 9; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode WrapAroundModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 1)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 6; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode EasyScrollerModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 1)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 9; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode TimeLoopModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 11; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
 } // End of namespace Standard
 
 } // End of namespace Data

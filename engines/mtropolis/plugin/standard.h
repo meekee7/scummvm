@@ -436,6 +436,94 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class MouseTrapModifier : public Modifier {
+public:
+	MouseTrapModifier();
+	~MouseTrapModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::MouseTrapModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "MouseTrap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class WrapAroundModifier : public Modifier {
+public:
+	WrapAroundModifier();
+	~WrapAroundModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::WrapAroundModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "WrapAround Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class EasyScrollerModifier : public Modifier {
+public:
+	EasyScrollerModifier();
+	~EasyScrollerModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::EasyScrollerModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "EasyScroller Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class TimeLoopModifier : public Modifier {
+public:
+	TimeLoopModifier();
+	~TimeLoopModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::TimeLoopModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "TimeLoop Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class BitmapVariableModifier : public Modifier {
 public:
 	BitmapVariableModifier();
@@ -612,6 +700,10 @@ private:
 	PlugInModifierFactory<KeyStateModifier, Data::Standard::KeyStateModifier> _keyStateModifierFactory;
 	PlugInModifierFactory<RotatorModifier, Data::Standard::RotatorModifier> _rotatorModifierFactory;
 	PlugInModifierFactory<TrackerModifier, Data::Standard::TrackerModifier> _trackerModifierFactory;
+	PlugInModifierFactory<MouseTrapModifier, Data::Standard::MouseTrapModifier> _mouseTrapModifierFactory;
+	PlugInModifierFactory<WrapAroundModifier, Data::Standard::WrapAroundModifier> _wrapAroundModifierFactory;
+	PlugInModifierFactory<EasyScrollerModifier, Data::Standard::EasyScrollerModifier> _easyScrollerModifierFactory;
+	PlugInModifierFactory<TimeLoopModifier, Data::Standard::TimeLoopModifier> _timeLoopModifierFactory;
 	PlugInModifierFactory<BitmapVariableModifier, Data::Standard::BitmapVariableModifier> _bitmapVariableModifierFactory;
 	PlugInModifierFactory<CaptureBitmapModifier, Data::Standard::CaptureBitmapModifier> _captureBitmapModifierFactory;
 	PlugInModifierFactory<ImportBitmapModifier, Data::Standard::ImportBitmapModifer> _importBitmapModifierFactory;

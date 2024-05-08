@@ -1557,6 +1557,146 @@ const char *TrackerModifier::getDefaultName() const {
 	return "Tracker Modifier"; // ???
 }
 
+MouseTrapModifier::MouseTrapModifier() {
+}
+
+MouseTrapModifier::~MouseTrapModifier() {
+}
+
+bool MouseTrapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::MouseTrapModifier &data) {
+	return true;
+}
+
+bool MouseTrapModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState MouseTrapModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void MouseTrapModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void MouseTrapModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> MouseTrapModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new MouseTrapModifier(*this));
+}
+
+const char *MouseTrapModifier::getDefaultName() const {
+	return "MouseTrap Modifier"; // ???
+}
+
+WrapAroundModifier::WrapAroundModifier() {
+}
+
+WrapAroundModifier::~WrapAroundModifier() {
+}
+
+bool WrapAroundModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::WrapAroundModifier &data) {
+	return true;
+}
+
+bool WrapAroundModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState WrapAroundModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void WrapAroundModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void WrapAroundModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> WrapAroundModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new WrapAroundModifier(*this));
+}
+
+const char *WrapAroundModifier::getDefaultName() const {
+	return "WrapAround Modifier"; // ???
+}
+
+EasyScrollerModifier::EasyScrollerModifier() {
+}
+
+EasyScrollerModifier::~EasyScrollerModifier() {
+}
+
+bool EasyScrollerModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::EasyScrollerModifier &data) {
+	return true;
+}
+
+bool EasyScrollerModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState EasyScrollerModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void EasyScrollerModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void EasyScrollerModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> EasyScrollerModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new EasyScrollerModifier(*this));
+}
+
+const char *EasyScrollerModifier::getDefaultName() const {
+	return "EasyScroller Modifier"; // ???
+}
+
+TimeLoopModifier::TimeLoopModifier() {
+}
+
+TimeLoopModifier::~TimeLoopModifier() {
+}
+
+bool TimeLoopModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::TimeLoopModifier &data) {
+	return true;
+}
+
+bool TimeLoopModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState TimeLoopModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void TimeLoopModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void TimeLoopModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> TimeLoopModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new TimeLoopModifier(*this));
+}
+
+const char *TimeLoopModifier::getDefaultName() const {
+	return "TimeLoop Modifier"; // ???
+}
+
 BitmapVariableModifier::BitmapVariableModifier() {
 }
 
@@ -1813,10 +1953,14 @@ StandardPlugIn::StandardPlugIn()
 	, _listVarModifierFactory(this)
 	, _sysInfoModifierFactory(this)
 	, _panningModifierFactory(this)
-	, _keyStateModifierFactory(this)
 	, _fadeModifierFactory(this)
+	, _keyStateModifierFactory(this)
 	, _rotatorModifierFactory(this)
 	, _trackerModifierFactory(this)
+	, _mouseTrapModifierFactory(this)
+	, _wrapAroundModifierFactory(this)
+	, _easyScrollerModifierFactory(this)
+	, _timeLoopModifierFactory(this)
 	, _bitmapVariableModifierFactory(this)
 	, _captureBitmapModifierFactory(this)
 	, _importBitmapModifierFactory(this)
@@ -1842,12 +1986,18 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	registrar->registerPlugInModifier("panning", &_panningModifierFactory);
 
 	//Rotator Kit by Thereware
-	//Lexis Numerique
 	registrar->registerPlugInModifier("Rotator", &_rotatorModifierFactory);
 	registrar->registerPlugInModifier("Tracker", &_trackerModifierFactory);
 
-	//Bitmap by ???
+	//Mercury Kit by Thereware
+	registrar->registerPlugInModifier("MouseTrap", &_mouseTrapModifierFactory);
+	registrar->registerPlugInModifier("TimeLoop", &_timeLoopModifierFactory);
 
+	//WrapAround Kit by Thereware
+	registrar->registerPlugInModifier("WrapAround", &_wrapAroundModifierFactory);
+	registrar->registerPlugInModifier("EasyScroller", &_easyScrollerModifierFactory);
+
+	//Bitmap by Hoologic
 	registrar->registerPlugInModifier("hlBitmapVariable", &_bitmapVariableModifierFactory);
 	registrar->registerPlugInModifier("hlCaptureBitmap", &_captureBitmapModifierFactory);
 	registrar->registerPlugInModifier("hlImportBitmap", &_importBitmapModifierFactory);
@@ -1856,6 +2006,7 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	registrar->registerPlugInModifier("hlSaveBitmap", &_saveBitmapModifierFactory);
 	registrar->registerPlugInModifier("hlPrintBitmap", &_printBitmapModifierFactory);
 
+	//KeyState modifier, probably by Hoologic
 	registrar->registerPlugInModifier("hlKeyState", &_keyStateModifierFactory);
 }
 

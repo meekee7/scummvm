@@ -404,6 +404,12 @@ bool Label::load(DataReader &reader) {
 	return reader.readU32(superGroupID) && reader.readU32(labelID);
 }
 
+bool Timecode::load(DataReader &reader) {
+	uint8 data[4];
+	return reader.readBytes(data);
+	//TODO interpret this as some sort of float
+}
+
 InternalTypeTaggedValue::InternalTypeTaggedValue() : type(0) {
 }
 
@@ -509,6 +515,11 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 	case kInteger:
 		value.constructField(&ValueUnion::asInt);
 		if (!reader.readS32(value.asInt))
+			return false;
+		break;
+	case kTimecode:
+		value.constructField(&ValueUnion::asTimecode);
+		if (!value.asTimecode.load(reader))
 			return false;
 		break;
 	case kIntegerRange:
@@ -1990,8 +2001,7 @@ DataReadErrorCode PlugInModifier::load(DataReader &reader) {
 	modifierName[16] = 0;
 
 	subObjectSize = codedSize;
-	//TODO add flag/hack to disable this
-	if (false && reader.getDataFormat() == kDataFormatWindows) {
+	if (reader.getDataFormat() == kDataFormatWindows && subObjectSize >= lengthOfName * 256u) {
 		// This makes no sense but it's how it's stored...
 		if (subObjectSize < lengthOfName * 256u)
 			return kDataReadErrorReadFailed;
