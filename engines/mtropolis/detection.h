@@ -44,8 +44,13 @@ enum MTropolisGameID {
 	GID_BEATRIX		    	= 11,
 	GID_WTIMPACT	    	= 12,
 	GID_WORLDBROKE	    	= 13,
+	GID_DILBERT				= 14,
+	GID_FREEWILLY			= 15,
+	GID_HERCULES			= 16,
+	GID_IDINO				= 17,
+	GID_IDOCTOR				= 18,
 
-	GID_GENERIC				= 14,
+	GID_GENERIC				= 99,
 };
 
 // Boot IDs - These can be shared across different variants if the file list and other properties are identical.
@@ -89,6 +94,7 @@ enum MTropolisGameBootID {
 	MTBOOT_SPQR_RETAIL_WIN,
 	MTBOOT_SPQR_RETAIL_MAC,
 
+	MTBOOT_STTGS_RETAIL_WIN,
 	MTBOOT_STTGS_DEMO_WIN,
 
 	MTBOOT_UNIT_REBOOTED_WIN,
@@ -100,6 +106,15 @@ enum MTropolisGameBootID {
 	MTBOOT_BEATRIX_EN,
 	MTBOOT_WT_IMPACT_EN,
 	MTBOOT_WORLDBROKE_EN,
+
+	MTBOOT_IDINO_RETAIL_EN,
+	MTBOOT_IDINO_DEMO_EN,
+	MTBOOT_IDOCTOR_RETAIL_EN,
+	MTBOOT_IDOCTOR_DEMO_EN,
+
+	MTBOOT_DILBERT_WIN_EN,
+	MTBOOT_FREEWILLY_WIN_EN,
+	MTBOOT_HERCULES_WIN_EN,
 };
 
 enum MTGameFlag {

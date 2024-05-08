@@ -866,6 +866,25 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		MTBOOT_STTGS_DEMO_WIN,
 	},
 
+	{ // Star Trek: The Game Show
+		{
+			"sttgs",
+			"",
+			{
+				// { "MTPLAY95.EXE", 0, "3ce9559e8c8047243fb7393a90d8b8f5", 756736 },
+				{"Trektriv.mpl", 0, "1a3e920c9334f4ddb02a0fca0a55b8e2", 540573701},
+				AD_LISTEND
+			},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()
+		},
+		GID_STTGS,
+		0,
+		MTBOOT_STTGS_RETAIL_WIN,
+	},
+
 	{ // Unit: Rebooted (Music Videos)
 		{
 			"unit",
@@ -899,15 +918,16 @@ static const MTropolisGameDescription gameDescriptions[] = {
 			Common::EN_ANY,
 			Common::kPlatformWindows,
 			ADGF_UNSTABLE,
-			GUIO0()},
+			GUIO0()
+		},
 		GID_MINDGYM,
 		0,
 		MTBOOT_MINDGYM_WIN_EN,
 	},
 
 		{
-		// Mind Gym (English, Windows)
-		// Published by Emme, 2000
+		// Mind Gym (German, Windows)
+		// Published by Ravensburger, 2000
 		{
 			"mindgym",
 			"",
@@ -918,7 +938,8 @@ static const MTropolisGameDescription gameDescriptions[] = {
 			Common::DE_DEU,
 			Common::kPlatformWindows,
 			ADGF_UNSTABLE,
-			GUIO0()},
+			GUIO0()
+		},
 		GID_MINDGYM,
 		0,
 		MTBOOT_MINDGYM_WIN_DE,
@@ -984,7 +1005,26 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		{
 			"worldbroke",
 			"",
-			{{"TDTWB.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			{{"TDTWB.EXE", 0, "ead983d2002f2b7b18da7f2f173fd425", 757760},
+			 {"TDTWB1.MPL", 0, "18d48974dbaff13829addbd47a5c374b", 5883239},
+			 {"TDTWB2.MPX", 0, "05c607388c8abcd70b1209088729311f", 663745644},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_WORLDBROKE,
+		0,
+		MTBOOT_WORLDBROKE_EN,
+	},
+
+	{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"dilbert",
+			"",
+			{{"HIJINKS.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
 			 {"TDTWB1.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
 			 {"TDTWB2.MPX", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
 			 AD_LISTEND},
@@ -992,11 +1032,117 @@ static const MTropolisGameDescription gameDescriptions[] = {
 			Common::kPlatformWindows,
 			ADGF_UNSTABLE,
 			GUIO0()},
-		GID_WTIMPACT,
+		GID_DILBERT,
 		0,
-		MTBOOT_WT_IMPACT_EN,
+		MTBOOT_DILBERT_WIN_EN,
 	},
 
+		{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"freewilly",
+			"",
+			{
+				{"MTPLAY95.EXE", 0, "3ce9559e8c8047243fb7393a90d8b8f5", 756736},
+				{"FWAC.MPL", 0, "0b847e5ac895fcdc669ea40f8930b0c6", 77218688},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_FREEWILLY,
+		0,
+		MTBOOT_FREEWILLY_WIN_EN,
+	},
+
+			{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"hercules",
+			"",
+			{
+			{"MTPLAY95.EXE", 0, "3ce9559e8c8047243fb7393a90d8b8f5", 756736},
+		 {"HERCXENA.MPL", 0, "549f965bc589a86d149c24f2ebd15bdc", 169595018},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_HERCULES,
+		0,
+		MTBOOT_HERCULES_WIN_EN,
+	},
+
+	
+			{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"idino",
+			"",
+			{{"WBDFR1.C9A", 0, "e6ec553f1f5ff0a420a7aed8b0543123", 584374209},
+				AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_IDINO,
+		0,
+		MTBOOT_IDINO_RETAIL_EN,
+	},
+
+				{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"idino",
+			"",
+			{{"WBDFS.C9A", 0, "d28310a331ae07801e4e2fdc30a323b6", 172110125},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE | ADGF_DEMO,
+			GUIO0()},
+		GID_IDINO,
+		0,
+		MTBOOT_IDINO_DEMO_EN,
+	},
+
+
+				{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"idoctor",
+			"",
+			{{"VET.C9A", 0, "6409415e9879c9287d0f72f900cfb4c7", 537078248}, AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_IDOCTOR,
+		0,
+		MTBOOT_IDOCTOR_RETAIL_EN,
+	},
+
+	{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"idoctor",
+			"",
+			{
+				{"VETS.C9A", 0, "836765ba5202c146c5228933309e90cd", 149747132}, AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE | ADGF_DEMO,
+			GUIO0()},
+		GID_IDINO,
+		0,
+		MTBOOT_IDINO_DEMO_EN,
+	},
 
 	{ AD_TABLE_END_MARKER, 0, 0, MTBOOT_INVALID }
 };

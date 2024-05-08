@@ -41,6 +41,11 @@ static const PlainGameDescriptor mTropolisGames[] = {
 	{"beatrix", "The Magic World of Beatrix Potter"},
 	{"wtimpact", "Whitetail Impact"},
 	{"worldbroke", "The Day The World Broke"},
+	{"dilbert", "The Totally Techie World of Young Dilbert: Hi-Tech Hijinks"},
+	{"freewilly", "Free Willy Activity Center"},
+	{"hercules", "Hercules & Xena Learning Adventure: Quest for the Scrolls"},
+	{"idino", "I Can Be a Dinosaur Finder"},
+	{"idoctor", "I Can Be an Animal Doctor"},
 	{"mtropolis", "mTropolis Title"},
 	{nullptr, nullptr}
 };
@@ -52,6 +57,7 @@ static const char *const directoryGlobs[] = {
 	"RESOURCE",
 	"Saved Games",
 	"MTPLAY32",
+	"HIJINKS",
 	"Albert",
 	"DATA",
 	"GAME",

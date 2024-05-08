@@ -1781,6 +1781,34 @@ const Game games[] = {
 		MTBOOT_WORLDBROKE_EN,
 	 &BootScriptContext::bootGeneric
 	},
+	{
+		MTBOOT_DILBERT_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_FREEWILLY_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_HERCULES_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_IDINO_RETAIL_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_IDINO_DEMO_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_IDOCTOR_RETAIL_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_IDOCTOR_DEMO_EN,
+	 &BootScriptContext::bootGeneric
+	},
 };
 
 } // End of namespace Games
