@@ -1098,7 +1098,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		// Published by KnowWonder, 1997
 		{
 			"idino",
-			"",
+			"Demo",
 			{{"WBDFS.C9A", 0, "d28310a331ae07801e4e2fdc30a323b6", 172110125},
 			 AD_LISTEND},
 			Common::EN_ANY,
@@ -1132,7 +1132,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		// Published by KnowWonder, 1997
 		{
 			"idoctor",
-			"",
+			"Demo",
 			{
 				{"VETS.C9A", 0, "836765ba5202c146c5228933309e90cd", 149747132}, AD_LISTEND},
 			Common::EN_ANY,
