@@ -2053,7 +2053,7 @@ void findWindowsMainSegment(Common::Archive &fs, Common::Path &resolvedPath, boo
 
 	for (const Common::ArchiveMemberPtr &archiveMember : allFiles) {
 		Common::String fileName = archiveMember->getFileName();
-		if (fileName.hasSuffixIgnoreCase(".mpl") || fileName.hasSuffixIgnoreCase(".mfw") || fileName.hasSuffixIgnoreCase(".mfx")) {
+		if (fileName.hasSuffixIgnoreCase(".mpl") || fileName.hasSuffixIgnoreCase(".mfw") || fileName.hasSuffixIgnoreCase(".mfx") || fileName.hasSuffixIgnoreCase(".c9a")) {
 			filteredFiles.push_back(archiveMember);
 			debug(4, "Identified possible main segment file %s", fileName.c_str());
 		}
