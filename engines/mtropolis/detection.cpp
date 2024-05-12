@@ -46,6 +46,10 @@ static const PlainGameDescriptor mTropolisGames[] = {
 	{"hercules", "Hercules & Xena Learning Adventure: Quest for the Scrolls"},
 	{"idino", "I Can Be a Dinosaur Finder"},
 	{"idoctor", "I Can Be an Animal Doctor"},
+	{"marvel", "How to Draw the Marvel Way"},
+	{"fairy", "FairyTale: A True Story - Activity Center"},
+	{"purplemoon", "Purple Moon Sampler"},
+	{"chomp", "Chomp! The Video Game"},
 	{"mtropolis", "mTropolis Title"},
 	{nullptr, nullptr}
 };

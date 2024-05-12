@@ -1024,9 +1024,10 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		{
 			"dilbert",
 			"",
-			{{"HIJINKS.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
-			 {"TDTWB1.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
-			 {"TDTWB2.MPX", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
+			{
+				{"HIJINKS.EXE", 0, "418335f719bebcab41af9f23dd3ae27c", 30104},
+			 {"Hijinks1.MPL", 0, "9552749a9d6031c10125cea155dfee57", 36070890},
+			 {"Hijinks2.MPX", 0, "551d67b730f4fcd674e4166431038e8e", 52615395},
 			 AD_LISTEND},
 			Common::EN_ANY,
 			Common::kPlatformWindows,
@@ -1143,6 +1144,85 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		0,
 		MTBOOT_IDINO_DEMO_EN,
 	},
+
+		{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"marvel",
+			"",
+			{{"MDRAW.C9A", 0, "601539f3e9f9e169aa6b2fac5a4e82c7", 369901410}, AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_MARVEL,
+		0,
+		MTBOOT_MARVEL_WIN_EN,
+	},
+
+	{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"fairy",
+			"",
+			{
+				{"FAIRIES.EXE", 0, "b37ecc3aa2b1f24ddfbf27841f15442e", 758272},
+			 {"FT_1.MPL", 0, "76282d2f5a8f0eea5c73289e065d66d2", 800203},
+			 {"FT_2.MPX", 0, "08208838a8c5c4c95beae41e5208328b", 149851712},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_FAIRY,
+		0,
+		MTBOOT_FAIRY_WIN_EN,
+	},
+
+	{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"purplemoon",
+			"Demo",
+			{
+				{"MTPLAY95.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			 {"0SAMPLER.MPL", 0, "27899cf914b6d1b3099a3e5bb9108122", 311323},
+			 {"MAINMENU.MPL", 0, "476e9c774d30eda319cabec8e5b9e19c", 1517692},
+			 {"MSDAY1.MPL", 0, "0d5d7d0fc0c224b08eb183e2d498d23f", 73801500},
+			 {"MSDAY2.MPL", 0, "dbac1163593b11c13d9a496db96143c6", 8633775},
+			 {"SPATH.MPL", 0, "82ae96e0eac36bfd34e2f3e5fd1dfa6e", 57841860},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE | ADGF_DEMO,
+			GUIO0()},
+		GID_PURPLEMOON,
+		0,
+		MTBOOT_PURPLEMOON_WIN_EN,
+	},
+
+	{
+		// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+		// Published by KnowWonder, 1997
+		{
+			"chomp",
+			"",
+			{
+				{"MPLAY_95.EXE", 0, "369e485a92c4aaf1d7037214fc641848", 721920},
+			 {"MINIGAME.MPL", 0, "ad79f779eb6f87da5eecee7718fba483", 7768522},
+			 AD_LISTEND},
+			Common::EN_ANY,
+			Common::kPlatformWindows,
+			ADGF_UNSTABLE,
+			GUIO0()},
+		GID_CHOMP,
+		0,
+		MTBOOT_CHOMP_WIN_EN,
+	},
+
 
 	{ AD_TABLE_END_MARKER, 0, 0, MTBOOT_INVALID }
 };

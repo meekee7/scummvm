@@ -1809,6 +1809,22 @@ const Game games[] = {
 		MTBOOT_IDOCTOR_DEMO_EN,
 	 &BootScriptContext::bootGeneric
 	},
+	{
+		MTBOOT_MARVEL_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_FAIRY_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_PURPLEMOON_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_CHOMP_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
 };
 
 } // End of namespace Games
@@ -2067,6 +2083,8 @@ void findWindowsMainSegment(Common::Archive &fs, Common::Path &resolvedPath, boo
 	if (filteredFiles.size() != 1)
 		error("Found multiple main segment files");
 
+	
+
 	resolvedPath = filteredFiles.front()->getPathInArchive();
 	resolvedIsV2 = !filteredFiles.front()->getFileName().hasSuffixIgnoreCase(".mpl");
 }
@@ -2086,6 +2104,7 @@ enum SegmentSignatureType {
 
 	kSegmentSignatureMacV1,
 	kSegmentSignatureWinV1,
+	kSegmentSignatureCloud9V1,
 	kSegmentSignatureMacV2,
 	kSegmentSignatureWinV2,
 	kSegmentSignatureCrossV2,
@@ -2096,13 +2115,14 @@ const uint kSignatureHeaderSize = 10;
 SegmentSignatureType identifyStreamBySignature(byte (&header)[kSignatureHeaderSize]) {
 	const byte macV1Signature[kSignatureHeaderSize] = {0, 0, 0xaa, 0x55, 0xa5, 0xa5, 0, 0, 0, 0};
 	const byte winV1Signature[kSignatureHeaderSize] = {1, 0, 0xa5, 0xa5, 0x55, 0xaa, 0, 0, 0, 0};
+	const byte cloud9V1Signature[kSignatureHeaderSize] = {8, 0, 0xa5, 0xa5, 0x55, 0xaa, 0, 0, 0, 0};
 	const byte macV2Signature[kSignatureHeaderSize] = {0, 0, 0xaa, 0x55, 0xa5, 0xa5, 2, 0, 0, 0};
 	const byte winV2Signature[kSignatureHeaderSize] = {1, 0, 0xa5, 0xa5, 0x55, 0xaa, 0, 0, 0, 2};
 	const byte crossV2Signature[kSignatureHeaderSize] = {8, 0, 0xa5, 0xa5, 0x55, 0xaa, 0, 0, 0, 2};
 
-	const byte *signatures[5] = {macV1Signature, winV1Signature, macV2Signature, winV2Signature, crossV2Signature};
+	const byte *signatures[6] = {macV1Signature, winV1Signature, cloud9V1Signature, macV2Signature, winV2Signature, crossV2Signature};
 
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < ARRAYSIZE(signatures); i++) {
 		const byte *signature = signatures[i];
 
 		if (!memcmp(signature, header, kSignatureHeaderSize))
