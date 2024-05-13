@@ -392,6 +392,30 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class PrintModifier : public Modifier {
+public:
+	PrintModifier();
+	~PrintModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::PrintModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+	// bool isVariable() const override { return true; }
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Print Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class RotatorModifier : public Modifier {
 public:
 	RotatorModifier();
@@ -573,7 +597,7 @@ public:
 	ImportBitmapModifier();
 	~ImportBitmapModifier();
 
-	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::ImportBitmapModifer &data);
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::ImportBitmapModifier &data);
 
 	bool respondsToEvent(const Event &evt) const override;
 	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
@@ -595,7 +619,7 @@ public:
 	DisplayBitmapModifier();
 	~DisplayBitmapModifier();
 
-	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::DisplayBitmapModifer &data);
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::DisplayBitmapModifier &data);
 
 	bool respondsToEvent(const Event &evt) const override;
 	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
@@ -617,7 +641,7 @@ public:
 	ScaleBitmapModifier();
 	~ScaleBitmapModifier();
 
-	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::ScaleBitmapModifer &data);
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::ScaleBitmapModifier &data);
 
 	bool respondsToEvent(const Event &evt) const override;
 	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
@@ -639,7 +663,7 @@ public:
 	SaveBitmapModifier();
 	~SaveBitmapModifier();
 
-	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::SaveBitmapModifer &data);
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::SaveBitmapModifier &data);
 
 	bool respondsToEvent(const Event &evt) const override;
 	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
@@ -661,7 +685,7 @@ public:
 	PrintBitmapModifier();
 	~PrintBitmapModifier();
 
-	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::PrintBitmapModifer &data);
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::PrintBitmapModifier &data);
 
 	bool respondsToEvent(const Event &evt) const override;
 	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
@@ -670,6 +694,28 @@ public:
 
 #ifdef MTROPOLIS_DEBUG_ENABLE
 	const char *debugGetTypeName() const override { return "PrintBitmap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class PainterModifier : public Modifier {
+public:
+	PainterModifier();
+	~PainterModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::PainterModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Painter Modifier"; }
 	void debugInspect(IDebugInspectionReport *report) const override;
 #endif
 
@@ -695,6 +741,7 @@ private:
 	PlugInModifierFactory<ObjectReferenceVariableModifier, Data::Standard::ObjectReferenceVariableModifier> _objRefVarModifierFactory;
 	PlugInModifierFactory<ListVariableModifier, Data::Standard::ListVariableModifier> _listVarModifierFactory;
 	PlugInModifierFactory<SysInfoModifier, Data::Standard::SysInfoModifier> _sysInfoModifierFactory;
+	PlugInModifierFactory<PrintModifier, Data::Standard::PrintModifier> _printModifierFactory;
 	PlugInModifierFactory<PanningModifier, Data::Standard::PanningModifier> _panningModifierFactory;
 	PlugInModifierFactory<FadeModifier, Data::Standard::FadeModifier> _fadeModifierFactory;
 	PlugInModifierFactory<KeyStateModifier, Data::Standard::KeyStateModifier> _keyStateModifierFactory;
@@ -706,11 +753,12 @@ private:
 	PlugInModifierFactory<TimeLoopModifier, Data::Standard::TimeLoopModifier> _timeLoopModifierFactory;
 	PlugInModifierFactory<BitmapVariableModifier, Data::Standard::BitmapVariableModifier> _bitmapVariableModifierFactory;
 	PlugInModifierFactory<CaptureBitmapModifier, Data::Standard::CaptureBitmapModifier> _captureBitmapModifierFactory;
-	PlugInModifierFactory<ImportBitmapModifier, Data::Standard::ImportBitmapModifer> _importBitmapModifierFactory;
-	PlugInModifierFactory<DisplayBitmapModifier, Data::Standard::DisplayBitmapModifer> _displayBitmapModifierFactory;
-	PlugInModifierFactory<ScaleBitmapModifier, Data::Standard::ScaleBitmapModifer> _scaleBitmapModifierFactory;
-	PlugInModifierFactory<SaveBitmapModifier, Data::Standard::SaveBitmapModifer> _saveBitmapModifierFactory;
-	PlugInModifierFactory<PrintBitmapModifier, Data::Standard::PrintBitmapModifer> _printBitmapModifierFactory;
+	PlugInModifierFactory<ImportBitmapModifier, Data::Standard::ImportBitmapModifier> _importBitmapModifierFactory;
+	PlugInModifierFactory<DisplayBitmapModifier, Data::Standard::DisplayBitmapModifier> _displayBitmapModifierFactory;
+	PlugInModifierFactory<ScaleBitmapModifier, Data::Standard::ScaleBitmapModifier> _scaleBitmapModifierFactory;
+	PlugInModifierFactory<SaveBitmapModifier, Data::Standard::SaveBitmapModifier> _saveBitmapModifierFactory;
+	PlugInModifierFactory<PrintBitmapModifier, Data::Standard::PrintBitmapModifier> _printBitmapModifierFactory;
+	PlugInModifierFactory<PainterModifier, Data::Standard::PainterModifier> _painterModifierFactory;
 
 	StandardPlugInHacks _hacks;
 };

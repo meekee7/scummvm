@@ -410,6 +410,12 @@ bool Timecode::load(DataReader &reader) {
 	//TODO interpret this as some sort of float
 }
 
+bool Color::load(DataReader &reader) {
+	//TODO find correct number of bytes
+	uint8 data[6];
+	return reader.readBytes(data);
+}
+
 InternalTypeTaggedValue::InternalTypeTaggedValue() : type(0) {
 }
 
@@ -559,6 +565,11 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 			if (!reader.readTerminatedStr(value.asString, length2))
 				return false;
 		} break;
+	case kColor:
+		value.constructField(&ValueUnion::asColor);
+		if (!value.asColor.load(reader))
+			return false;
+		break;
 	case kVariableReference: {
 			value.constructField(&ValueUnion::asVarRefGUID);
 			uint32 extraDataSize;

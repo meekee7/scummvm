@@ -1452,6 +1452,41 @@ const char *FadeModifier::getDefaultName() const {
 	return "Fade Modifier"; // ???
 }
 
+PrintModifier::PrintModifier() {
+}
+
+PrintModifier::~PrintModifier() {
+}
+
+bool PrintModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::PrintModifier &data) {
+	return true;
+}
+
+bool PrintModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState PrintModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void PrintModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void PrintModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> PrintModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new PrintModifier(*this));
+}
+
+const char *PrintModifier::getDefaultName() const {
+	return "Print Modifier"; // ???
+}
+
 KeyStateModifier::KeyStateModifier() {
 }
 
@@ -1773,7 +1808,7 @@ ImportBitmapModifier::ImportBitmapModifier() {
 ImportBitmapModifier::~ImportBitmapModifier() {
 }
 
-bool ImportBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::ImportBitmapModifer &data) {
+bool ImportBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::ImportBitmapModifier &data) {
 	return true;
 }
 
@@ -1808,7 +1843,7 @@ DisplayBitmapModifier::DisplayBitmapModifier() {
 DisplayBitmapModifier::~DisplayBitmapModifier() {
 }
 
-bool DisplayBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::DisplayBitmapModifer &data) {
+bool DisplayBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::DisplayBitmapModifier &data) {
 	return true;
 }
 
@@ -1843,7 +1878,7 @@ ScaleBitmapModifier::ScaleBitmapModifier() {
 ScaleBitmapModifier::~ScaleBitmapModifier() {
 }
 
-bool ScaleBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::ScaleBitmapModifer &data) {
+bool ScaleBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::ScaleBitmapModifier &data) {
 	return true;
 }
 
@@ -1878,7 +1913,7 @@ SaveBitmapModifier::SaveBitmapModifier() {
 SaveBitmapModifier::~SaveBitmapModifier() {
 }
 
-bool SaveBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::SaveBitmapModifer &data) {
+bool SaveBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::SaveBitmapModifier &data) {
 	return true;
 }
 
@@ -1913,7 +1948,7 @@ PrintBitmapModifier::PrintBitmapModifier() {
 PrintBitmapModifier::~PrintBitmapModifier() {
 }
 
-bool PrintBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::PrintBitmapModifer &data) {
+bool PrintBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::PrintBitmapModifier &data) {
 	return true;
 }
 
@@ -1942,6 +1977,41 @@ const char *PrintBitmapModifier::getDefaultName() const {
 	return "Print Bitmap Modifier"; // ???
 }
 
+PainterModifier::PainterModifier() {
+}
+
+PainterModifier::~PainterModifier() {
+}
+
+bool PainterModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::PainterModifier &data) {
+	return true;
+}
+
+bool PainterModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState PainterModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void PainterModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void PainterModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> PainterModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new PainterModifier(*this));
+}
+
+const char *PainterModifier::getDefaultName() const {
+	return "Painter Modifier"; // ???
+}
+
 StandardPlugInHacks::StandardPlugInHacks() : allowGarbledListModData(false) {
 }
 
@@ -1952,6 +2022,7 @@ StandardPlugIn::StandardPlugIn()
 	, _objRefVarModifierFactory(this)
 	, _listVarModifierFactory(this)
 	, _sysInfoModifierFactory(this)
+	, _printModifierFactory(this)
 	, _panningModifierFactory(this)
 	, _fadeModifierFactory(this)
 	, _keyStateModifierFactory(this)
@@ -1968,6 +2039,7 @@ StandardPlugIn::StandardPlugIn()
 	, _scaleBitmapModifierFactory(this)
 	, _saveBitmapModifierFactory(this)
 	, _printBitmapModifierFactory(this)
+	, _painterModifierFactory(this)
 {
 }
 
@@ -1981,6 +2053,7 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	registrar->registerPlugInModifier("ObjRefP", &_objRefVarModifierFactory);
 	registrar->registerPlugInModifier("ListMod", &_listVarModifierFactory);
 	registrar->registerPlugInModifier("SysInfo", &_sysInfoModifierFactory);
+	registrar->registerPlugInModifier("Print", &_printModifierFactory);
 
 	registrar->registerPlugInModifier("fade", &_fadeModifierFactory);
 	registrar->registerPlugInModifier("panning", &_panningModifierFactory);
@@ -2005,6 +2078,9 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	registrar->registerPlugInModifier("hlScaleBitmap", &_scaleBitmapModifierFactory);
 	registrar->registerPlugInModifier("hlSaveBitmap", &_saveBitmapModifierFactory);
 	registrar->registerPlugInModifier("hlPrintBitmap", &_printBitmapModifierFactory);
+
+	//Painter by Hoologic
+	registrar->registerPlugInModifier("hlPainter", &_painterModifierFactory);
 
 	//KeyState modifier, probably by Hoologic
 	registrar->registerPlugInModifier("hlKeyState", &_keyStateModifierFactory);

@@ -272,7 +272,7 @@ DataReadErrorCode CaptureBitmapModifier::load(PlugIn &plugIn, const PlugInModifi
 	return kDataReadErrorNone;
 }
 
-DataReadErrorCode ImportBitmapModifer::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+DataReadErrorCode ImportBitmapModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
@@ -285,7 +285,7 @@ DataReadErrorCode ImportBitmapModifer::load(PlugIn &plugIn, const PlugInModifier
 	return kDataReadErrorNone;
 }
 
-DataReadErrorCode DisplayBitmapModifer::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+DataReadErrorCode DisplayBitmapModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
@@ -298,7 +298,7 @@ DataReadErrorCode DisplayBitmapModifer::load(PlugIn &plugIn, const PlugInModifie
 	return kDataReadErrorNone;
 }
 
-DataReadErrorCode ScaleBitmapModifer::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+DataReadErrorCode ScaleBitmapModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
@@ -311,7 +311,7 @@ DataReadErrorCode ScaleBitmapModifer::load(PlugIn &plugIn, const PlugInModifier 
 	return kDataReadErrorNone;
 }
 
-DataReadErrorCode SaveBitmapModifer::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+DataReadErrorCode SaveBitmapModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
@@ -324,7 +324,7 @@ DataReadErrorCode SaveBitmapModifer::load(PlugIn &plugIn, const PlugInModifier &
 	return kDataReadErrorNone;
 }
 
-DataReadErrorCode PrintBitmapModifer::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+DataReadErrorCode PrintBitmapModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
@@ -381,6 +381,33 @@ DataReadErrorCode TimeLoopModifier::load(PlugIn &plugIn, const PlugInModifier &p
 		return kDataReadErrorUnsupportedRevision;
 
 	for (int i = 0; i < 11; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode PrintModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 6; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode PainterModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	//TODO figure out number of properties
+	for (int i = 0; i < 12; ++i) {
 		PlugInTypeTaggedValue v;
 		if (!v.load(reader))
 			return kDataReadErrorReadFailed;
