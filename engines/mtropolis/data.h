@@ -215,6 +215,7 @@ enum DataObjectType : uint {
 	kColorTableModifier						= 0x4c4,
 	kSoundFadeModifier						= 0x4ce,
 	kSaveAndRestoreModifier					= 0x4d8,
+	kColorPaletteModifier					= 0x4e2,
 
 	kCompoundVariableModifier				= 0x2c7,
 	kBooleanVariableModifier				= 0x321,
@@ -396,7 +397,15 @@ struct Label {
 	uint32 labelID;
 };
 
-struct Timecode {
+struct UniversalTime {
+	bool load(DataReader &reader);
+
+	int32 value;
+	int32 scale;
+	int32 base;
+};
+
+struct AlienScript {
 	bool load(DataReader &reader);
 
 	uint16 a;
@@ -404,7 +413,7 @@ struct Timecode {
 	uint16 c;
 };
 
-struct Color {
+struct PainterMystery {
 	bool load(DataReader &reader);
 
 	uint16 a;
@@ -468,15 +477,17 @@ struct PlugInTypeTaggedValue : public Common::NonCopyable {
 	enum TypeCode {
 		kNull = 0x00,
 		kInteger = 0x01,
-		kTimecode = 0x09,
+		kAlienScript = 0x02,
+		kUniversalTime = 0x09,
 		kPoint = 0xa,
 		kIntegerRange = 0xb,
 		kFloat = 0xf,
+		kPainterMystery = 0x11,
 		kBoolean = 0x14,
 		kEvent = 0x17,
 		kLabel = 0x64,
 		kString = 0x66,
-		kColor = 0x6c,
+		kRGBColor = 0x6c,
 		kIncomingData = 0x6e,
 		kVariableReference = 0x73,	// Has extra data
 	};
@@ -487,8 +498,10 @@ struct PlugInTypeTaggedValue : public Common::NonCopyable {
 
 		int32 asInt;
 		Point asPoint;
-		Timecode asTimecode;
-		Color asColor;
+		UniversalTime asTimecode;
+		ColorRGB16 asColor;
+		AlienScript asAlienScript;
+		PainterMystery asPainterMystery;
 		IntRange asIntRange;
 		XPFloatPOD asFloat;
 		uint16 asBoolean;

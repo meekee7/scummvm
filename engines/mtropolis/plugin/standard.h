@@ -724,6 +724,95 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class MotionModifier : public Modifier {
+public:
+	MotionModifier();
+	~MotionModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::MotionModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Motion Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class SparkleModifier : public Modifier {
+public:
+	SparkleModifier();
+	~SparkleModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::SparkleModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Sparkle Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class StrUtilModifier : public Modifier {
+public:
+	StrUtilModifier();
+	~StrUtilModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::StrUtilModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "StrUtil Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class AlienWriterModifier : public Modifier {
+public:
+	AlienWriterModifier();
+	~AlienWriterModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::AlienWriterModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "AlienWriter Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+
 class StandardPlugIn : public MTropolis::PlugIn {
 public:
 	StandardPlugIn();
@@ -759,6 +848,10 @@ private:
 	PlugInModifierFactory<SaveBitmapModifier, Data::Standard::SaveBitmapModifier> _saveBitmapModifierFactory;
 	PlugInModifierFactory<PrintBitmapModifier, Data::Standard::PrintBitmapModifier> _printBitmapModifierFactory;
 	PlugInModifierFactory<PainterModifier, Data::Standard::PainterModifier> _painterModifierFactory;
+	PlugInModifierFactory<MotionModifier, Data::Standard::MotionModifier> _motionModifierFactory;
+	PlugInModifierFactory<SparkleModifier, Data::Standard::SparkleModifier> _sparkleModifierFactory;
+	PlugInModifierFactory<StrUtilModifier, Data::Standard::StrUtilModifier> _strUtilModifierFactory;
+	PlugInModifierFactory<AlienWriterModifier, Data::Standard::AlienWriterModifier> _alienWriterModifierFactory;
 
 	StandardPlugInHacks _hacks;
 };

@@ -2012,6 +2012,146 @@ const char *PainterModifier::getDefaultName() const {
 	return "Painter Modifier"; // ???
 }
 
+MotionModifier::MotionModifier() {
+}
+
+MotionModifier::~MotionModifier() {
+}
+
+bool MotionModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::MotionModifier &data) {
+	return true;
+}
+
+bool MotionModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState MotionModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void MotionModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void MotionModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> MotionModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new MotionModifier(*this));
+}
+
+const char *MotionModifier::getDefaultName() const {
+	return "Motion Modifier"; // ???
+}
+
+SparkleModifier::SparkleModifier() {
+}
+
+SparkleModifier::~SparkleModifier() {
+}
+
+bool SparkleModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::SparkleModifier &data) {
+	return true;
+}
+
+bool SparkleModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState SparkleModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void SparkleModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void SparkleModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> SparkleModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new SparkleModifier(*this));
+}
+
+const char *SparkleModifier::getDefaultName() const {
+	return "Sparkle Modifier"; // ???
+}
+
+StrUtilModifier::StrUtilModifier() {
+}
+
+StrUtilModifier::~StrUtilModifier() {
+}
+
+bool StrUtilModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::StrUtilModifier &data) {
+	return true;
+}
+
+bool StrUtilModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState StrUtilModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void StrUtilModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void StrUtilModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> StrUtilModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new StrUtilModifier(*this));
+}
+
+const char *StrUtilModifier::getDefaultName() const {
+	return "StrUtil Modifier"; // ???
+}
+
+AlienWriterModifier::AlienWriterModifier() {
+}
+
+AlienWriterModifier::~AlienWriterModifier() {
+}
+
+bool AlienWriterModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::AlienWriterModifier &data) {
+	return true;
+}
+
+bool AlienWriterModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState AlienWriterModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void AlienWriterModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void AlienWriterModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> AlienWriterModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new AlienWriterModifier(*this));
+}
+
+const char *AlienWriterModifier::getDefaultName() const {
+	return "AlienWriter Modifier"; // ???
+}
+
 StandardPlugInHacks::StandardPlugInHacks() : allowGarbledListModData(false) {
 }
 
@@ -2040,6 +2180,10 @@ StandardPlugIn::StandardPlugIn()
 	, _saveBitmapModifierFactory(this)
 	, _printBitmapModifierFactory(this)
 	, _painterModifierFactory(this)
+	, _motionModifierFactory(this)
+	, _sparkleModifierFactory(this)
+	, _strUtilModifierFactory(this)
+	, _alienWriterModifierFactory(this)
 {
 }
 
@@ -2084,6 +2228,18 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 
 	//KeyState modifier, probably by Hoologic
 	registrar->registerPlugInModifier("hlKeyState", &_keyStateModifierFactory);
+
+	//Motion modifier
+	registrar->registerPlugInModifier("Motion", &_motionModifierFactory);
+
+	//Sparkle modifier
+	registrar->registerPlugInModifier("Sparkle", &_sparkleModifierFactory);
+
+	//StrUtil modifier
+	registrar->registerPlugInModifier("StrUtil", &_strUtilModifierFactory);
+
+	//Alien modifier
+	registrar->registerPlugInModifier("AlienWriter", &_alienWriterModifierFactory);
 }
 
 const StandardPlugInHacks &StandardPlugIn::getHacks() const {

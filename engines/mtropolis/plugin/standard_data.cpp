@@ -341,7 +341,7 @@ DataReadErrorCode MouseTrapModifier::load(PlugIn &plugIn, const PlugInModifier &
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 9; ++i) {
+	for (int i = 0; i < 7; ++i) {
 		PlugInTypeTaggedValue v;
 		if (!v.load(reader))
 			return kDataReadErrorReadFailed;
@@ -380,7 +380,7 @@ DataReadErrorCode TimeLoopModifier::load(PlugIn &plugIn, const PlugInModifier &p
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 11; ++i) {
+	for (int i = 0; i < 8; ++i) {
 		PlugInTypeTaggedValue v;
 		if (!v.load(reader))
 			return kDataReadErrorReadFailed;
@@ -407,7 +407,59 @@ DataReadErrorCode PainterModifier::load(PlugIn &plugIn, const PlugInModifier &pr
 		return kDataReadErrorUnsupportedRevision;
 
 	//TODO figure out number of properties
+	for (int i = 0; i < 9; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode MotionModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
 	for (int i = 0; i < 12; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode SparkleModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 8; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode StrUtilModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 0; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode AlienWriterModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 1)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 8; ++i) {
 		PlugInTypeTaggedValue v;
 		if (!v.load(reader))
 			return kDataReadErrorReadFailed;

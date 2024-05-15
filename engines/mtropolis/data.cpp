@@ -123,6 +123,7 @@ bool isModifier(DataObjectType type) {
 	case kColorTableModifier:
 	case kSoundFadeModifier:
 	case kSaveAndRestoreModifier:
+	case kColorPaletteModifier:
 	case kCompoundVariableModifier:
 	case kBooleanVariableModifier:
 	case kIntegerVariableModifier:
@@ -404,15 +405,18 @@ bool Label::load(DataReader &reader) {
 	return reader.readU32(superGroupID) && reader.readU32(labelID);
 }
 
-bool Timecode::load(DataReader &reader) {
-	uint8 data[4];
-	return reader.readBytes(data);
-	//TODO interpret this as some sort of float
+bool UniversalTime::load(DataReader &reader) {
+	return reader.readS32(value) && reader.readS32(scale) && reader.readS32(base);
 }
 
-bool Color::load(DataReader &reader) {
-	//TODO find correct number of bytes
-	uint8 data[6];
+bool AlienScript::load(DataReader &reader) {
+	return true;
+	//uint8 data[128];
+	//return reader.readBytes(data);
+}
+
+bool PainterMystery::load(DataReader &reader) {
+	uint8 data[128];
 	return reader.readBytes(data);
 }
 
@@ -523,7 +527,7 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 		if (!reader.readS32(value.asInt))
 			return false;
 		break;
-	case kTimecode:
+	case kUniversalTime:
 		value.constructField(&ValueUnion::asTimecode);
 		if (!value.asTimecode.load(reader))
 			return false;
@@ -565,9 +569,19 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 			if (!reader.readTerminatedStr(value.asString, length2))
 				return false;
 		} break;
-	case kColor:
+	case kRGBColor:
 		value.constructField(&ValueUnion::asColor);
 		if (!value.asColor.load(reader))
+			return false;
+		break;
+	case kAlienScript:
+		value.constructField(&ValueUnion::asAlienScript);
+		if (!value.asAlienScript.load(reader))
+			return false;
+		break;
+	case kPainterMystery:
+		value.constructField(&ValueUnion::asPainterMystery);
+		if (!value.asPainterMystery.load(reader))
 			return false;
 		break;
 	case kVariableReference: {
@@ -2012,7 +2026,7 @@ DataReadErrorCode PlugInModifier::load(DataReader &reader) {
 	modifierName[16] = 0;
 
 	subObjectSize = codedSize;
-	if (reader.getDataFormat() == kDataFormatWindows && subObjectSize >= lengthOfName * 256u) {
+	if (false && reader.getDataFormat() == kDataFormatWindows && subObjectSize >= lengthOfName * 256u) {
 		// This makes no sense but it's how it's stored...
 		if (subObjectSize < lengthOfName * 256u)
 			return kDataReadErrorReadFailed;
