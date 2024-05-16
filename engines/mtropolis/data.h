@@ -1165,6 +1165,15 @@ protected:
 	DataReadErrorCode load(DataReader &reader) override;
 };
 
+struct ColorPaletteModifier : public DataObject {
+	ColorPaletteModifier();
+
+	TypicalModifierHeader modHeader;
+
+protected:
+	DataReadErrorCode load(DataReader &reader) override;
+};
+
 enum MessageFlags : uint {
 	kMessageFlagNoRelay = 0x20000000,
 	kMessageFlagNoCascade = 0x40000000,
@@ -1258,6 +1267,9 @@ struct ChangeSceneModifier : public DataObject {
 	uint32 targetSectionGUID;
 	uint32 targetSubsectionGUID;
 	uint32 targetSceneGUID;
+
+	//constexpr size_t foo = sizeof(modHeader) - sizeof(Common::String) + sizeof(changeSceneFlags) + sizeof(executeWhen) + sizeof(targetSceneGUID) * 3;
+
 
 protected:
 	DataReadErrorCode load(DataReader &reader) override;

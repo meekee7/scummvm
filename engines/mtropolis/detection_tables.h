@@ -51,6 +51,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_RETAIL_MAC_EN,
+		""
 	},
 	{ // Obsidian Macintosh, data forks only
 		{
@@ -73,6 +74,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_RETAIL_MAC_EN,
+		""
 	},
 	{ // Obsidian Japanese Macintosh, dumped
 		{
@@ -95,6 +97,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_RETAIL_MAC_JP,
+		""
 	},
 
 	{ // Obsidian Windows, installed
@@ -122,6 +125,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_RETAIL_WIN_EN,
+		""
 	},
 	{
 		// Obsidian, German Windows, installed
@@ -149,6 +153,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_RETAIL_WIN_DE_INSTALLED,
+		""
 	},
 	{
 		// Obsidian, German Windows, CD
@@ -174,6 +179,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_RETAIL_WIN_DE_DISC,
+		""
 	},
 	{
 		// Obsidian, Italian Windows, installed
@@ -200,6 +206,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_RETAIL_WIN_IT,
+		""
 	},
 
 	{ // Obsidian Macintosh demo from standalone CD titled "Demo v1.0 January 1997"
@@ -226,6 +233,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_DEMO_MAC_EN,
+		""
 	},
 
 	{ // Obsidian PC demo [1996-10-03], found on:
@@ -252,6 +260,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_DEMO_WIN_EN_1,
+		""
 	},
 
 	{ // Obsidian PC demo (same as above, with 8.3 file names), found on PC Gamer Disc 2.12 (1997-01)
@@ -275,6 +284,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_DEMO_WIN_EN_2,
+		""
 	},
 
 	{ // Obsidian PC demo [1996-10-11/22] found on:
@@ -300,6 +310,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_DEMO_WIN_EN_3,
+		""
 	},
 
 	{ // Obsidian PC cinematic demo found on:
@@ -325,6 +336,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_DEMO_WIN_EN_4,
+		""
 	},
 
 	{ // Obsidian PC cinematic demo found on Multimedia Live (PC World) (v2.11, May 1997) [1996-10-03]
@@ -348,6 +360,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_DEMO_WIN_EN_5,
+		""
 	},
 
 	{ // Obsidian PC cinematic demo (identical to the above except for EXE name)
@@ -371,6 +384,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_DEMO_WIN_EN_6,
+		""
 	},
 
 	{ // Obsidian PC cinematic demo (identical to above, but different player version and renamed extensions)
@@ -394,6 +408,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_OBSIDIAN,
 		0,
 		MTBOOT_OBSIDIAN_DEMO_WIN_EN_7,
+		""
 	},
 
 	{ // Muppet Treasure Island English Macintosh Retail
@@ -415,6 +430,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MTI,
 		0,
 		MTBOOT_MTI_RETAIL_MAC,
+		""
 	},
 
 	{ // Muppet Treasure Island English Windows Retail
@@ -439,6 +455,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MTI,
 		0,
 		MTBOOT_MTI_RETAIL_WIN,
+		""
 	},
 	{ // Muppet Treasure Island English Windows Retail DVD (OEM pack-in)
 		{
@@ -456,6 +473,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MTI,
 		0,
 		MTBOOT_MTI_RETAIL_WIN,
+		""
 	},
 
 	{ // Los Muppets en la Isla del Tesoro (Mexican) [identical to Los Teleñecos en la Isla del Tesoro?]
@@ -480,6 +498,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MTI,
 		0,
 		MTBOOT_MTI_RETAIL_WIN,
+		""
 	},
 
 	{ // I Muppet nell'Isola del Tesoro
@@ -504,6 +523,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MTI,
 		0,
 		MTBOOT_MTI_RETAIL_WIN,
+		""
 	},
 
 	{ // Muppet Treasure Island (Russian)
@@ -527,6 +547,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MTI,
 		0,
 		MTBOOT_MTI_RETAIL_WIN_RU_DISC,
+		""
 	},
 
 	{ // Muppet Treasure Island (Russian, installed)
@@ -551,6 +572,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MTI,
 		0,
 		MTBOOT_MTI_RETAIL_WIN_RU_INSTALLED,
+		""
 	},
 
 	{ // Muppet Treasure Island PC demo found on Score 38 (1997-02) [1996-07-17/19]
@@ -572,6 +594,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MTI,
 		0,
 		MTBOOT_MTI_DEMO_WIN,
+		""
 	},
 
 	{ // Uncle Albert's Magical Album (German, Windows)
@@ -599,6 +622,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT1,
 		0,
 		MTBOOT_ALBERT1_WIN_DE,
+		""
 	},
 
 	{ // Uncle Albert's Magical Album (English, Windows)
@@ -625,6 +649,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT1,
 		0,
 		MTBOOT_ALBERT1_WIN_EN,
+		""
 	},
 
 	{ // Uncle Albert's Magical Album (German, Windows)
@@ -650,6 +675,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT1,
 		0,
 		MTBOOT_ALBERT1_WIN_FR,
+		""
 	},
 
 	{ // Uncle Albert's Fabulous Voyage (German, Windows)
@@ -677,6 +703,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT2,
 		0,
 		MTBOOT_ALBERT2_WIN_DE,
+		""
 	},
 
 	{ // Uncle Albert's Fabulous Voyage (English, Windows)
@@ -703,6 +730,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT2,
 		0,
 		MTBOOT_ALBERT2_WIN_EN,
+		""
 	},
 
 	{ // Uncle Albert's Fabulous Voyage (French, Windows)
@@ -728,6 +756,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT2,
 		0,
 		MTBOOT_ALBERT2_WIN_FR,
+		""
 	},
 
 	{ // Uncle Albert's Mysterious Island (German, Windows)
@@ -755,6 +784,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT3,
 		0,
 		MTBOOT_ALBERT3_WIN_DE,
+		""
 	},
 
 	{ // Uncle Albert's Mysterious Island (English, Windows)
@@ -781,6 +811,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT3,
 		0,
 		MTBOOT_ALBERT3_WIN_EN,
+		""
 	},
 
 	{ // Uncle Albert's Mysterious Island (French, Windows)
@@ -806,6 +837,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ALBERT3,
 		0,
 		MTBOOT_ALBERT3_WIN_FR,
+		""
 	},
 
 	{ // SPQR: The Empire's Darkest Hour Windows CD-ROM
@@ -826,6 +858,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_SPQR,
 		0,
 		MTBOOT_SPQR_RETAIL_WIN,
+		""
 	},
 
 	{ // SPQR: The Empire's Darkest Hour Macintosh CD-ROM
@@ -845,6 +878,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_SPQR,
 		0,
 		MTBOOT_SPQR_RETAIL_MAC,
+		""
 	},
 
 	{ // Star Trek: The Game Show demo
@@ -864,6 +898,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_STTGS,
 		0,
 		MTBOOT_STTGS_DEMO_WIN,
+		""
 	},
 
 	{ // Star Trek: The Game Show
@@ -883,6 +918,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_STTGS,
 		0,
 		MTBOOT_STTGS_RETAIL_WIN,
+		""
 	},
 
 	{ // Unit: Rebooted (Music Videos)
@@ -902,6 +938,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_UNIT,
 		0,
 		MTBOOT_UNIT_REBOOTED_WIN,
+		""
 	},
 
 	{
@@ -923,6 +960,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MINDGYM,
 		0,
 		MTBOOT_MINDGYM_WIN_EN,
+		""
 	},
 
 		{
@@ -943,6 +981,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MINDGYM,
 		0,
 		MTBOOT_MINDGYM_WIN_DE,
+			""
 	},
 
 	{
@@ -961,6 +1000,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ARCHITECTURE,
 		0,
 		MTBOOT_ARCHITECTURE_EN,
+		""
 	},
 
 	{
@@ -979,6 +1019,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_BEATRIX,
 		0,
 		MTBOOT_BEATRIX_EN,
+		""
 	},
 
 	{
@@ -997,6 +1038,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_WTIMPACT,
 		0,
 		MTBOOT_WT_IMPACT_EN,
+		""
 	},
 
 	{
@@ -1016,6 +1058,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_WORLDBROKE,
 		0,
 		MTBOOT_WORLDBROKE_EN,
+		""
 	},
 
 	{
@@ -1036,6 +1079,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_DILBERT,
 		0,
 		MTBOOT_DILBERT_WIN_EN,
+		"Hijinks1.MPL"
 	},
 
 		{
@@ -1055,6 +1099,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_FREEWILLY,
 		0,
 		MTBOOT_FREEWILLY_WIN_EN,
+			""
 	},
 
 			{
@@ -1074,6 +1119,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_HERCULES,
 		0,
 		MTBOOT_HERCULES_WIN_EN,
+				""
 	},
 
 	
@@ -1092,6 +1138,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_IDINO,
 		0,
 		MTBOOT_IDINO_RETAIL_EN,
+				""
 	},
 
 				{
@@ -1109,6 +1156,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_IDINO,
 		0,
 		MTBOOT_IDINO_DEMO_EN,
+					"WBDFS.C9A"
 	},
 
 
@@ -1126,6 +1174,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_IDOCTOR,
 		0,
 		MTBOOT_IDOCTOR_RETAIL_EN,
+					""
 	},
 
 	{
@@ -1143,6 +1192,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_IDINO,
 		0,
 		MTBOOT_IDINO_DEMO_EN,
+		"VETS.C9A"
 	},
 
 		{
@@ -1159,6 +1209,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MARVEL,
 		0,
 		MTBOOT_MARVEL_WIN_EN,
+			""
 	},
 
 	{
@@ -1179,6 +1230,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_FAIRY,
 		0,
 		MTBOOT_FAIRY_WIN_EN,
+		""
 	},
 
 	{
@@ -1202,6 +1254,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_PURPLEMOON,
 		0,
 		MTBOOT_PURPLEMOON_WIN_EN,
+		"0SAMPLER.MPL"
 	},
 
 	{

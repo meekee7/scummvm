@@ -207,6 +207,25 @@ private:
 	Common::String _fileName;
 };
 
+class ColorPaletteModifier : public Modifier {
+public:
+	bool load(ModifierLoaderContext &context, const Data::ColorPaletteModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override {}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Color Palette Modifier"; }
+	SupportStatus debugGetSupportStatus() const override { return kSupportStatusDone; }
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class MessengerModifier : public Modifier {
 public:
 	bool load(ModifierLoaderContext &context, const Data::MessengerModifier &data);

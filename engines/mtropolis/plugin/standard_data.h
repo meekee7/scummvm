@@ -151,6 +151,11 @@ protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
+struct OpenTitleModifier : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
 struct KeyStateModifier : public PlugInModifierData {
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
@@ -197,6 +202,11 @@ protected:
 };
 
 struct PrintBitmapModifier : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct DoubleClickModifier : public PlugInModifierData {
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };

@@ -207,6 +207,19 @@ DataReadErrorCode FadeModifier::load(PlugIn &plugIn, const PlugInModifier &prefi
 	return kDataReadErrorNone;
 }
 
+DataReadErrorCode OpenTitleModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i=0; i<3; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
 DataReadErrorCode KeyStateModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
@@ -329,6 +342,19 @@ DataReadErrorCode PrintBitmapModifier::load(PlugIn &plugIn, const PlugInModifier
 		return kDataReadErrorUnsupportedRevision;
 
 	for (int i = 0; i < 8; ++i) {
+		PlugInTypeTaggedValue v;
+		if (!v.load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode DoubleClickModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	for (int i = 0; i < 7; ++i) {
 		PlugInTypeTaggedValue v;
 		if (!v.load(reader))
 			return kDataReadErrorReadFailed;

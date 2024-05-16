@@ -1452,6 +1452,41 @@ const char *FadeModifier::getDefaultName() const {
 	return "Fade Modifier"; // ???
 }
 
+OpenTitleModifier::OpenTitleModifier() {
+}
+
+OpenTitleModifier::~OpenTitleModifier() {
+}
+
+bool OpenTitleModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::OpenTitleModifier &data) {
+	return true;
+}
+
+bool OpenTitleModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState OpenTitleModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void OpenTitleModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void OpenTitleModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> OpenTitleModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new OpenTitleModifier(*this));
+}
+
+const char *OpenTitleModifier::getDefaultName() const {
+	return "Open Title Modifier"; // ???
+}
+
 PrintModifier::PrintModifier() {
 }
 
@@ -1590,6 +1625,41 @@ Common::SharedPtr<Modifier> TrackerModifier::shallowClone() const {
 
 const char *TrackerModifier::getDefaultName() const {
 	return "Tracker Modifier"; // ???
+}
+
+DoubleClickModifier::DoubleClickModifier() {
+}
+
+DoubleClickModifier::~DoubleClickModifier() {
+}
+
+bool DoubleClickModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::DoubleClickModifier &data) {
+	return true;
+}
+
+bool DoubleClickModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState DoubleClickModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void DoubleClickModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void DoubleClickModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> DoubleClickModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new DoubleClickModifier(*this));
+}
+
+const char *DoubleClickModifier::getDefaultName() const {
+	return "DoubleClick Modifier"; // ???
 }
 
 MouseTrapModifier::MouseTrapModifier() {
@@ -2165,9 +2235,11 @@ StandardPlugIn::StandardPlugIn()
 	, _printModifierFactory(this)
 	, _panningModifierFactory(this)
 	, _fadeModifierFactory(this)
+	, _openTitleModifierFactory(this)
 	, _keyStateModifierFactory(this)
 	, _rotatorModifierFactory(this)
 	, _trackerModifierFactory(this)
+	, _doubleClickModifierFactory(this)
 	, _mouseTrapModifierFactory(this)
 	, _wrapAroundModifierFactory(this)
 	, _easyScrollerModifierFactory(this)
@@ -2201,12 +2273,14 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 
 	registrar->registerPlugInModifier("fade", &_fadeModifierFactory);
 	registrar->registerPlugInModifier("panning", &_panningModifierFactory);
+	registrar->registerPlugInModifier("OpenTitle", &_openTitleModifierFactory);
 
 	//Rotator Kit by Thereware
 	registrar->registerPlugInModifier("Rotator", &_rotatorModifierFactory);
 	registrar->registerPlugInModifier("Tracker", &_trackerModifierFactory);
 
 	//Mercury Kit by Thereware
+	registrar->registerPlugInModifier("DoubleClick", &_doubleClickModifierFactory);
 	registrar->registerPlugInModifier("MouseTrap", &_mouseTrapModifierFactory);
 	registrar->registerPlugInModifier("TimeLoop", &_timeLoopModifierFactory);
 

@@ -1328,6 +1328,24 @@ DataReadErrorCode SaveAndRestoreModifier::load(DataReader &reader) {
 	return kDataReadErrorNone;
 }
 
+ColorPaletteModifier::ColorPaletteModifier()
+{
+}
+
+DataReadErrorCode ColorPaletteModifier::load(DataReader &reader) {
+	if (_revision != 1000)
+		return kDataReadErrorUnsupportedRevision;
+
+	if (!modHeader.load(reader, _revision >= 2000))
+		return kDataReadErrorReadFailed;
+
+	byte data[194];
+	if (!reader.readBytes(data))
+		return kDataReadErrorReadFailed;
+
+	return kDataReadErrorNone;
+}
+
 MessengerModifier::MessengerModifier()
 	: messageFlags(0), unknown14(0), destination(0),
 	  unknown11{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, withSourceLength(0), withStringLength(0) {
@@ -2575,6 +2593,9 @@ DataReadErrorCode loadDataObject(const PlugInModifierRegistry &registry, DataRea
 		break;
 	case DataObjectTypes::kSaveAndRestoreModifier:
 		dataObject = new SaveAndRestoreModifier();
+		break;
+	case DataObjectTypes::kColorPaletteModifier:
+		dataObject = new ColorPaletteModifier();
 		break;
 	case DataObjectTypes::kMessengerModifier:
 		dataObject = new MessengerModifier();

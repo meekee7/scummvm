@@ -136,6 +136,7 @@ struct MTropolisGameDescription {
 	int gameID;
 	int gameType;
 	MTropolisGameBootID bootID;
+	const char* mainFile;	//Allow games with multiple MPL files to specify the entry point
 };
 
 #define GAMEOPTION_WIDESCREEN_MOD				GUIO_GAMEOPTIONS1

@@ -368,6 +368,30 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class OpenTitleModifier : public Modifier {
+public:
+	OpenTitleModifier();
+	~OpenTitleModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::OpenTitleModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+	// bool isVariable() const override { return true; }
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Open Title Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class KeyStateModifier : public Modifier {
 public:
 	KeyStateModifier();
@@ -474,6 +498,28 @@ public:
 
 #ifdef MTROPOLIS_DEBUG_ENABLE
 	const char *debugGetTypeName() const override { return "MouseTrap Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class DoubleClickModifier : public Modifier {
+public:
+	DoubleClickModifier();
+	~DoubleClickModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::DoubleClickModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "DoubleClick Modifier"; }
 	void debugInspect(IDebugInspectionReport *report) const override;
 #endif
 
@@ -833,9 +879,11 @@ private:
 	PlugInModifierFactory<PrintModifier, Data::Standard::PrintModifier> _printModifierFactory;
 	PlugInModifierFactory<PanningModifier, Data::Standard::PanningModifier> _panningModifierFactory;
 	PlugInModifierFactory<FadeModifier, Data::Standard::FadeModifier> _fadeModifierFactory;
+	PlugInModifierFactory<OpenTitleModifier, Data::Standard::OpenTitleModifier> _openTitleModifierFactory;
 	PlugInModifierFactory<KeyStateModifier, Data::Standard::KeyStateModifier> _keyStateModifierFactory;
 	PlugInModifierFactory<RotatorModifier, Data::Standard::RotatorModifier> _rotatorModifierFactory;
 	PlugInModifierFactory<TrackerModifier, Data::Standard::TrackerModifier> _trackerModifierFactory;
+	PlugInModifierFactory<DoubleClickModifier, Data::Standard::DoubleClickModifier> _doubleClickModifierFactory;
 	PlugInModifierFactory<MouseTrapModifier, Data::Standard::MouseTrapModifier> _mouseTrapModifierFactory;
 	PlugInModifierFactory<WrapAroundModifier, Data::Standard::WrapAroundModifier> _wrapAroundModifierFactory;
 	PlugInModifierFactory<EasyScrollerModifier, Data::Standard::EasyScrollerModifier> _easyScrollerModifierFactory;

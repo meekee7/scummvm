@@ -459,6 +459,26 @@ const char *SaveAndRestoreModifier::getDefaultName() const {
 	return "Save And Restore Modifier";
 }
 
+bool ColorPaletteModifier::load(ModifierLoaderContext &context, const Data::ColorPaletteModifier &data) {
+	return true;
+}
+
+bool ColorPaletteModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState ColorPaletteModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+Common::SharedPtr<Modifier> ColorPaletteModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new ColorPaletteModifier(*this));
+}
+
+const char *ColorPaletteModifier::getDefaultName() const {
+	return "Color Palette Modifier";
+}
+
 bool MessengerModifier::load(ModifierLoaderContext &context, const Data::MessengerModifier &data) {
 	if (!loadTypicalHeader(data.modHeader))
 		return false;
