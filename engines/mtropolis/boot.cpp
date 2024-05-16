@@ -1745,6 +1745,11 @@ const Game games[] = {
 		MTBOOT_SPQR_RETAIL_MAC,
 		&BootScriptContext::bootSPQRMac
 	},
+	// Star Trek: The Game Show - Retail - Windows
+	{
+		MTBOOT_STTGS_RETAIL_WIN,
+		&BootScriptContext::bootGeneric
+	},
 	// Star Trek: The Game Show - Demo - Windows
 	{
 		MTBOOT_STTGS_DEMO_WIN,
