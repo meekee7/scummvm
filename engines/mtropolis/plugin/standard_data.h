@@ -152,6 +152,9 @@ protected:
 };
 
 struct OpenTitleModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2String;
+	PlugInTypeTaggedValue unknown3Integer;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
@@ -162,11 +165,38 @@ protected:
 };
 
 struct RotatorModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Bool;
+	PlugInTypeTaggedValue unknown4Int;
+	PlugInTypeTaggedValue unknown5Float;
+	PlugInTypeTaggedValue unknown6Bool;
+	PlugInTypeTaggedValue unknown7Point;
+	PlugInTypeTaggedValue unknown8Int;
+	PlugInTypeTaggedValue unknown9Bool;
+	PlugInTypeTaggedValue unknown10Int;
+	PlugInTypeTaggedValue unknown11Event;
+	PlugInTypeTaggedValue unknown12Label;
+	PlugInTypeTaggedValue unknown13Null;
+	PlugInTypeTaggedValue unknown14Int;
+	PlugInTypeTaggedValue unknown15Point;
+	PlugInTypeTaggedValue unknown16Point;
+	PlugInTypeTaggedValue unknown17Point;
+	PlugInTypeTaggedValue unknown18Bool;
+	PlugInTypeTaggedValue unknown19Point;
+	PlugInTypeTaggedValue unknown20Int;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct TrackerModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Label;
+	PlugInTypeTaggedValue unknown4Int;
+	PlugInTypeTaggedValue unknown5Int;
+	PlugInTypeTaggedValue unknown6Label;
+	PlugInTypeTaggedValue unknown7Bool;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
@@ -177,31 +207,58 @@ protected:
 };
 
 struct CaptureBitmapModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2VarRef;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct ImportBitmapModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Bool;
+	PlugInTypeTaggedValue unknown3Bool;
+	PlugInTypeTaggedValue unknown4VarRef;
+	PlugInTypeTaggedValue unknown5VarRef;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct DisplayBitmapModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2VarRef;
+	PlugInTypeTaggedValue unknown3VarRef;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct ScaleBitmapModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2VarRef;
+	PlugInTypeTaggedValue unknown3IncomingData;
+	PlugInTypeTaggedValue unknown4Int;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct SaveBitmapModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2VarRef;
+	PlugInTypeTaggedValue unknown3Bool;
+	PlugInTypeTaggedValue unknown4Bool;
+	PlugInTypeTaggedValue unknown5VarRef;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct PrintBitmapModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2VarRef;
+	PlugInTypeTaggedValue unknown3Bool;
+	PlugInTypeTaggedValue unknown4Bool;
+	PlugInTypeTaggedValue unknown5Int;
+	PlugInTypeTaggedValue unknown6Int;
+	PlugInTypeTaggedValue unknown7Null;
+	PlugInTypeTaggedValue unknown8Null;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
@@ -212,26 +269,63 @@ protected:
 };
 
 struct MouseTrapModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1UniversalTime;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Event;
+	PlugInTypeTaggedValue unknown4Event;
+	PlugInTypeTaggedValue unknown5Null;
+	PlugInTypeTaggedValue unknown6Label;
+	PlugInTypeTaggedValue unknown7Int;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct WrapAroundModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Point;
+	PlugInTypeTaggedValue unknown4Int;
+	PlugInTypeTaggedValue unknown5Bool;
+	PlugInTypeTaggedValue unknown6Int;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct EasyScrollerModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Int;
+	PlugInTypeTaggedValue unknown4Int;
+	PlugInTypeTaggedValue unknown5Label;
+	PlugInTypeTaggedValue unknown6Int;
+	PlugInTypeTaggedValue unknown7Int;
+	PlugInTypeTaggedValue unknown8Int;
+	PlugInTypeTaggedValue unknown9Int;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct TimeLoopModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Event;
+	PlugInTypeTaggedValue unknown4Null;
+	PlugInTypeTaggedValue unknown5Label;
+	PlugInTypeTaggedValue unknown6Int;
+	PlugInTypeTaggedValue unknown7Int;
+	PlugInTypeTaggedValue unknown8UniversalTime;
+	PlugInTypeTaggedValue unknown9Bool;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct PrintModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Bool;
+	PlugInTypeTaggedValue unknown3Bool;
+	PlugInTypeTaggedValue unknown4Bool;
+	PlugInTypeTaggedValue unknown5String;
+	PlugInTypeTaggedValue unknown6Bool;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
@@ -242,11 +336,31 @@ protected:
 };
 
 struct MotionModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Point;
+	PlugInTypeTaggedValue unknown4Bool;
+	PlugInTypeTaggedValue unknown5Point;
+	PlugInTypeTaggedValue unknown6Int;
+	PlugInTypeTaggedValue unknown7Float;
+	PlugInTypeTaggedValue unknown8Int;
+	PlugInTypeTaggedValue unknown9Event;
+	PlugInTypeTaggedValue unknown10Label;
+	PlugInTypeTaggedValue unknown11Null;
+	PlugInTypeTaggedValue unknown12Int;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
 struct SparkleModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Int;
+	PlugInTypeTaggedValue unknown4Int;
+	PlugInTypeTaggedValue unknown5Int;
+	PlugInTypeTaggedValue unknown6Int;
+	PlugInTypeTaggedValue unknown7Int;
+	PlugInTypeTaggedValue unknown8Int;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };

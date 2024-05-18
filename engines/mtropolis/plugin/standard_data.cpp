@@ -192,17 +192,8 @@ DataReadErrorCode FadeModifier::load(PlugIn &plugIn, const PlugInModifier &prefi
 	if (prefix.plugInRevision != 1)
 		return kDataReadErrorUnsupportedRevision;
 
-	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Int.load(reader) || !unknown4Int.load(reader) || !unknown5Int.load(reader)) {
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Int.load(reader) || !unknown4Int.load(reader) || !unknown5Int.load(reader))
 		return kDataReadErrorReadFailed;
-	}
-	/*
-	for (int i=0; i<5; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
-	*/
-
 
 	return kDataReadErrorNone;
 }
@@ -211,11 +202,9 @@ DataReadErrorCode OpenTitleModifier::load(PlugIn &plugIn, const PlugInModifier &
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i=0; i<3; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	PlugInTypeTaggedValue values[3];
+	if (!unknown1Event.load(reader) || !unknown2String.load(reader) || !unknown3Integer.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -224,11 +213,7 @@ DataReadErrorCode KeyStateModifier::load(PlugIn &plugIn, const PlugInModifier &p
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 0; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	//Seemingly no data to load
 
 	return kDataReadErrorNone;
 }
@@ -237,11 +222,17 @@ DataReadErrorCode RotatorModifier::load(PlugIn &plugIn, const PlugInModifier &pr
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 20; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Bool.load(reader) || !unknown4Int.load(reader) || !unknown5Float.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Bool.load(reader) || !unknown7Point.load(reader) || !unknown8Int.load(reader) || !unknown9Bool.load(reader) || !unknown10Int.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown11Event.load(reader) || !unknown12Label.load(reader) || !unknown13Null.load(reader) || !unknown14Int.load(reader) || !unknown15Point.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown16Point.load(reader) || !unknown17Point.load(reader) || !unknown18Bool.load(reader) || !unknown19Point.load(reader) || !unknown20Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -250,11 +241,11 @@ DataReadErrorCode TrackerModifier::load(PlugIn &plugIn, const PlugInModifier &pr
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 7; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Label.load(reader) || !unknown4Int.load(reader) || !unknown5Int.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Label.load(reader) || !unknown7Bool.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -263,11 +254,7 @@ DataReadErrorCode BitmapVariableModifier::load(PlugIn &plugIn, const PlugInModif
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 0; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	//Seemingly no data to load
 
 	return kDataReadErrorNone;
 }
@@ -276,11 +263,8 @@ DataReadErrorCode CaptureBitmapModifier::load(PlugIn &plugIn, const PlugInModifi
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 2; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2VarRef.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -289,11 +273,8 @@ DataReadErrorCode ImportBitmapModifier::load(PlugIn &plugIn, const PlugInModifie
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 5; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Bool.load(reader) || !unknown3Bool.load(reader) || !unknown4VarRef.load(reader) || !unknown5VarRef.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -302,11 +283,8 @@ DataReadErrorCode DisplayBitmapModifier::load(PlugIn &plugIn, const PlugInModifi
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 3; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2VarRef.load(reader) || !unknown3VarRef.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -315,11 +293,8 @@ DataReadErrorCode ScaleBitmapModifier::load(PlugIn &plugIn, const PlugInModifier
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 4; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2VarRef.load(reader) || !unknown3IncomingData.load(reader) || !unknown4Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -328,11 +303,8 @@ DataReadErrorCode SaveBitmapModifier::load(PlugIn &plugIn, const PlugInModifier 
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 5; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2VarRef.load(reader) || !unknown3Bool.load(reader) || !unknown4Bool.load(reader) || !unknown5VarRef.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -341,11 +313,11 @@ DataReadErrorCode PrintBitmapModifier::load(PlugIn &plugIn, const PlugInModifier
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 8; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2VarRef.load(reader) || !unknown3Bool.load(reader) || !unknown4Bool.load(reader) || !unknown5Int.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Int.load(reader) || !unknown7Null.load(reader) || !unknown8Null.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -354,9 +326,9 @@ DataReadErrorCode DoubleClickModifier::load(PlugIn &plugIn, const PlugInModifier
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 7; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
+	PlugInTypeTaggedValue values[7];
+	for (int i = 0; i < ARRAYSIZE(values); ++i) {
+		if (!values[i].load(reader))
 			return kDataReadErrorReadFailed;
 	}
 
@@ -367,11 +339,11 @@ DataReadErrorCode MouseTrapModifier::load(PlugIn &plugIn, const PlugInModifier &
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 7; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1UniversalTime.load(reader) || !unknown2Event.load(reader) || !unknown3Event.load(reader) || !unknown4Event.load(reader) || !unknown5Null.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Label.load(reader) || !unknown7Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -380,11 +352,11 @@ DataReadErrorCode WrapAroundModifier::load(PlugIn &plugIn, const PlugInModifier 
 	if (prefix.plugInRevision != 1)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 6; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Point.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown4Int.load(reader) || !unknown5Bool.load(reader) || !unknown6Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -393,11 +365,11 @@ DataReadErrorCode EasyScrollerModifier::load(PlugIn &plugIn, const PlugInModifie
 	if (prefix.plugInRevision != 1)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 9; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Int.load(reader) || !unknown4Int.load(reader) || !unknown5Label.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Int.load(reader) || !unknown7Int.load(reader) || !unknown8Int.load(reader) || !unknown9Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -406,11 +378,11 @@ DataReadErrorCode TimeLoopModifier::load(PlugIn &plugIn, const PlugInModifier &p
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 8; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Event.load(reader) || !unknown4Null.load(reader) || !unknown5Label.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Int.load(reader) || !unknown7Int.load(reader) || !unknown8UniversalTime.load(reader) || !unknown9Bool.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -419,11 +391,11 @@ DataReadErrorCode PrintModifier::load(PlugIn &plugIn, const PlugInModifier &pref
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 6; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Bool.load(reader) || !unknown3Bool.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown4Bool.load(reader) || !unknown5String.load(reader) || !unknown6Bool.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -446,11 +418,14 @@ DataReadErrorCode MotionModifier::load(PlugIn &plugIn, const PlugInModifier &pre
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 12; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Point.load(reader) || !unknown4Bool.load(reader) || !unknown5Point.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Int.load(reader) || !unknown7Float.load(reader) || !unknown8Int.load(reader) || !unknown9Event.load(reader) || !unknown10Label.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown11Null.load(reader) || !unknown12Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -459,11 +434,11 @@ DataReadErrorCode SparkleModifier::load(PlugIn &plugIn, const PlugInModifier &pr
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 8; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Int.load(reader) || !unknown4Int.load(reader) || !unknown5Int.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Int.load(reader) || !unknown7Int.load(reader) || !unknown8Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }
@@ -472,11 +447,7 @@ DataReadErrorCode StrUtilModifier::load(PlugIn &plugIn, const PlugInModifier &pr
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 0; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	// Seemingly no data to load
 
 	return kDataReadErrorNone;
 }
