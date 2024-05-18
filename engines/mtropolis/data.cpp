@@ -528,8 +528,8 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 			return false;
 		break;
 	case kUniversalTime:
-		value.constructField(&ValueUnion::asTimecode);
-		if (!value.asTimecode.load(reader))
+		value.constructField(&ValueUnion::asUniversalTime);
+		if (!value.asUniversalTime.load(reader))
 			return false;
 		break;
 	case kIntegerRange:
@@ -2044,7 +2044,7 @@ DataReadErrorCode PlugInModifier::load(DataReader &reader) {
 	modifierName[16] = 0;
 
 	subObjectSize = codedSize;
-	if (false && reader.getDataFormat() == kDataFormatWindows && subObjectSize >= lengthOfName * 256u) {
+	if (reader.getDataFormat() == kDataFormatWindows && subObjectSize >= lengthOfName * 256u) {
 		// This makes no sense but it's how it's stored...
 		if (subObjectSize < lengthOfName * 256u)
 			return kDataReadErrorReadFailed;

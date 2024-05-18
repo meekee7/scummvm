@@ -498,7 +498,7 @@ struct PlugInTypeTaggedValue : public Common::NonCopyable {
 
 		int32 asInt;
 		Point asPoint;
-		UniversalTime asTimecode;
+		UniversalTime asUniversalTime;
 		ColorRGB16 asColor;
 		AlienScript asAlienScript;
 		PainterMystery asPainterMystery;
