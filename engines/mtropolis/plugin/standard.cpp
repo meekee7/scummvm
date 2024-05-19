@@ -2319,7 +2319,7 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	//StrUtil modifier
 	registrar->registerPlugInModifier("StrUtil", &_strUtilModifierFactory);
 
-	//Alien modifier
+	//Alien Logic modifier by AX Logic
 	registrar->registerPlugInModifier("AlienWriter", &_alienWriterModifierFactory);
 }
 
