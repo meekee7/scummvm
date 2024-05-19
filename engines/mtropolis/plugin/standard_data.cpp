@@ -533,6 +533,32 @@ DataReadErrorCode NavigateModifier::load(PlugIn &plugIn, const PlugInModifier &p
 	return kDataReadErrorNone;
 }
 
+DataReadErrorCode ConductorModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 1)
+		return kDataReadErrorUnsupportedRevision;
+
+	PlugInTypeTaggedValue values[9];
+	for (int i = 0; i < ARRAYSIZE(values); ++i) {
+		if (!values[i].load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode AlphaMaticModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 1)
+		return kDataReadErrorUnsupportedRevision;
+
+	PlugInTypeTaggedValue values[13];
+	for (int i = 0; i < ARRAYSIZE(values); ++i) {
+		if (!values[i].load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
 } // End of namespace Standard
 
 } // End of namespace Data

@@ -418,6 +418,50 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class ConductorModifier : public Modifier {
+public:
+	ConductorModifier();
+	~ConductorModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::ConductorModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Conductor Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class AlphaMaticModifier : public Modifier {
+public:
+	AlphaMaticModifier();
+	~AlphaMaticModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::AlphaMaticModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "AlphaMatic Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class KeyStateModifier : public Modifier {
 public:
 	KeyStateModifier();
@@ -995,6 +1039,8 @@ private:
 	PlugInModifierFactory<FadeModifier, Data::Standard::FadeModifier> _fadeModifierFactory;
 	PlugInModifierFactory<OpenTitleModifier, Data::Standard::OpenTitleModifier> _openTitleModifierFactory;
 	PlugInModifierFactory<NavigateModifier, Data::Standard::NavigateModifier> _navigateModifierFactory;
+	PlugInModifierFactory<ConductorModifier, Data::Standard::ConductorModifier> _conductorModifierFactory;
+	PlugInModifierFactory<AlphaMaticModifier, Data::Standard::AlphaMaticModifier> _alphaMaticModifierFactory;
 	PlugInModifierFactory<KeyStateModifier, Data::Standard::KeyStateModifier> _keyStateModifierFactory;
 	PlugInModifierFactory<RotatorModifier, Data::Standard::RotatorModifier> _rotatorModifierFactory;
 	PlugInModifierFactory<TrackerModifier, Data::Standard::TrackerModifier> _trackerModifierFactory;

@@ -1529,6 +1529,76 @@ const char *NavigateModifier::getDefaultName() const {
 	return "Navigate Modifier"; // ???
 }
 
+ConductorModifier::ConductorModifier() {
+}
+
+ConductorModifier::~ConductorModifier() {
+}
+
+bool ConductorModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::ConductorModifier &data) {
+	return true;
+}
+
+bool ConductorModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState ConductorModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void ConductorModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void ConductorModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> ConductorModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new ConductorModifier(*this));
+}
+
+const char *ConductorModifier::getDefaultName() const {
+	return "Conductor Modifier"; // ???
+}
+
+AlphaMaticModifier::AlphaMaticModifier() {
+}
+
+AlphaMaticModifier::~AlphaMaticModifier() {
+}
+
+bool AlphaMaticModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::AlphaMaticModifier &data) {
+	return true;
+}
+
+bool AlphaMaticModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState AlphaMaticModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void AlphaMaticModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void AlphaMaticModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> AlphaMaticModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new AlphaMaticModifier(*this));
+}
+
+const char *AlphaMaticModifier::getDefaultName() const {
+	return "AlphaMatic Modifier"; // ???
+}
+
 PrintModifier::PrintModifier() {
 }
 
@@ -2419,6 +2489,8 @@ StandardPlugIn::StandardPlugIn()
 	, _fadeModifierFactory(this)
 	, _openTitleModifierFactory(this)
 	, _navigateModifierFactory(this)
+	, _conductorModifierFactory(this)
+	, _alphaMaticModifierFactory(this)
 	, _keyStateModifierFactory(this)
 	, _rotatorModifierFactory(this)
 	, _trackerModifierFactory(this)
@@ -2463,6 +2535,9 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	registrar->registerPlugInModifier("OpenTitle", &_openTitleModifierFactory);
 	registrar->registerPlugInModifier("Navigate", &_navigateModifierFactory);
 
+	//Alpha Kit by Thereware
+	registrar->registerPlugInModifier("AlphaMatic", &_alphaMaticModifierFactory);
+
 	//Rotator Kit by Thereware
 	registrar->registerPlugInModifier("Rotator", &_rotatorModifierFactory);
 	registrar->registerPlugInModifier("Tracker", &_trackerModifierFactory);
@@ -2481,6 +2556,7 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 
 	//Quick Kit by Thereware
 	registrar->registerPlugInModifier("Randomizer", &_randomizerModifierFactory);
+	registrar->registerPlugInModifier("Conductor", &_conductorModifierFactory);
 
 	//Bitmap by Hoologic
 	registrar->registerPlugInModifier("hlBitmapVariable", &_bitmapVariableModifierFactory);
