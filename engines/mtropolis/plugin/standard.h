@@ -396,6 +396,28 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class NavigateModifier : public Modifier {
+public:
+	NavigateModifier();
+	~NavigateModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::NavigateModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Navigate Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class KeyStateModifier : public Modifier {
 public:
 	KeyStateModifier();
@@ -568,6 +590,50 @@ public:
 
 #ifdef MTROPOLIS_DEBUG_ENABLE
 	const char *debugGetTypeName() const override { return "EasyScroller Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class GoThereModifier : public Modifier {
+public:
+	GoThereModifier();
+	~GoThereModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::GoThereModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "GoThere Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class RandomizerModifier : public Modifier {
+public:
+	RandomizerModifier();
+	~RandomizerModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::RandomizerModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "Randomizer Modifier"; }
 	void debugInspect(IDebugInspectionReport *report) const override;
 #endif
 
@@ -840,6 +906,28 @@ private:
 	const char *getDefaultName() const override;
 };
 
+class ThighBlasterModifier : public Modifier {
+public:
+	ThighBlasterModifier();
+	~ThighBlasterModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::ThighBlasterModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "ThighBlaster Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
 class AlienWriterModifier : public Modifier {
 public:
 	AlienWriterModifier();
@@ -854,6 +942,28 @@ public:
 
 #ifdef MTROPOLIS_DEBUG_ENABLE
 	const char *debugGetTypeName() const override { return "AlienWriter Modifier"; }
+	void debugInspect(IDebugInspectionReport *report) const override;
+#endif
+
+private:
+	Common::SharedPtr<Modifier> shallowClone() const override;
+	const char *getDefaultName() const override;
+};
+
+class MlineLauncherModifier : public Modifier {
+public:
+	MlineLauncherModifier();
+	~MlineLauncherModifier();
+
+	bool load(const PlugInModifierLoaderContext &context, const Data::Standard::MlineLauncherModifier &data);
+
+	bool respondsToEvent(const Event &evt) const override;
+	VThreadState consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) override;
+
+	void disable(Runtime *runtime) override;
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+	const char *debugGetTypeName() const override { return "mLine Launcher Modifier"; }
 	void debugInspect(IDebugInspectionReport *report) const override;
 #endif
 
@@ -884,6 +994,7 @@ private:
 	PlugInModifierFactory<PanningModifier, Data::Standard::PanningModifier> _panningModifierFactory;
 	PlugInModifierFactory<FadeModifier, Data::Standard::FadeModifier> _fadeModifierFactory;
 	PlugInModifierFactory<OpenTitleModifier, Data::Standard::OpenTitleModifier> _openTitleModifierFactory;
+	PlugInModifierFactory<NavigateModifier, Data::Standard::NavigateModifier> _navigateModifierFactory;
 	PlugInModifierFactory<KeyStateModifier, Data::Standard::KeyStateModifier> _keyStateModifierFactory;
 	PlugInModifierFactory<RotatorModifier, Data::Standard::RotatorModifier> _rotatorModifierFactory;
 	PlugInModifierFactory<TrackerModifier, Data::Standard::TrackerModifier> _trackerModifierFactory;
@@ -891,6 +1002,8 @@ private:
 	PlugInModifierFactory<MouseTrapModifier, Data::Standard::MouseTrapModifier> _mouseTrapModifierFactory;
 	PlugInModifierFactory<WrapAroundModifier, Data::Standard::WrapAroundModifier> _wrapAroundModifierFactory;
 	PlugInModifierFactory<EasyScrollerModifier, Data::Standard::EasyScrollerModifier> _easyScrollerModifierFactory;
+	PlugInModifierFactory<GoThereModifier, Data::Standard::GoThereModifier> _goThereModifierFactory;
+	PlugInModifierFactory<RandomizerModifier, Data::Standard::RandomizerModifier> _randomizerModifierFactory;
 	PlugInModifierFactory<TimeLoopModifier, Data::Standard::TimeLoopModifier> _timeLoopModifierFactory;
 	PlugInModifierFactory<BitmapVariableModifier, Data::Standard::BitmapVariableModifier> _bitmapVariableModifierFactory;
 	PlugInModifierFactory<CaptureBitmapModifier, Data::Standard::CaptureBitmapModifier> _captureBitmapModifierFactory;
@@ -903,7 +1016,9 @@ private:
 	PlugInModifierFactory<MotionModifier, Data::Standard::MotionModifier> _motionModifierFactory;
 	PlugInModifierFactory<SparkleModifier, Data::Standard::SparkleModifier> _sparkleModifierFactory;
 	PlugInModifierFactory<StrUtilModifier, Data::Standard::StrUtilModifier> _strUtilModifierFactory;
+	PlugInModifierFactory<ThighBlasterModifier, Data::Standard::ThighBlasterModifier> _thighBlasterModifierFactory;
 	PlugInModifierFactory<AlienWriterModifier, Data::Standard::AlienWriterModifier> _alienWriterModifierFactory;
+	PlugInModifierFactory<MlineLauncherModifier, Data::Standard::MlineLauncherModifier> _mlineLauncherModifierFactory;
 
 	StandardPlugInHacks _hacks;
 };

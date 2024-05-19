@@ -159,6 +159,11 @@ protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
+struct NavigateModifier : public PlugInModifierData {
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
 struct KeyStateModifier : public PlugInModifierData {
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
@@ -375,6 +380,52 @@ protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
 
+struct MlineLauncherModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1String;
+	PlugInTypeTaggedValue unknown2String;
+	PlugInTypeTaggedValue unknown3String;
+	PlugInTypeTaggedValue unknown4Int;
+	PlugInTypeTaggedValue unknown5Int;
+	PlugInTypeTaggedValue unknown6Bool;
+	PlugInTypeTaggedValue unknown7Event;
+	PlugInTypeTaggedValue unknown8Bool;
+	PlugInTypeTaggedValue unknown9Bool;
+	PlugInTypeTaggedValue unknown10Bool;
+	PlugInTypeTaggedValue unknown11Bool;
+	PlugInTypeTaggedValue unknown12Bool;
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct GoThereModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Event;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Point;
+	PlugInTypeTaggedValue unknown4UniversalTime;
+	PlugInTypeTaggedValue unknown5Event;
+	PlugInTypeTaggedValue unknown6Label;
+	PlugInTypeTaggedValue unknown7Null;
+	PlugInTypeTaggedValue unknown8Int;
+	PlugInTypeTaggedValue unknown9Int;
+	PlugInTypeTaggedValue unknown10Bool;
+	PlugInTypeTaggedValue unknown11Bool;
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct RandomizerModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Int;
+	PlugInTypeTaggedValue unknown2Int;
+	PlugInTypeTaggedValue unknown3Int;
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
+
+struct ThighBlasterModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Int;
+protected:
+	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
+};
 
 } // End of namespace Standard
 

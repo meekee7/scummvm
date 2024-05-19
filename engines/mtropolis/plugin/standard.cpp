@@ -1494,6 +1494,41 @@ const char *OpenTitleModifier::getDefaultName() const {
 	return "Open Title Modifier"; // ???
 }
 
+NavigateModifier::NavigateModifier() {
+}
+
+NavigateModifier::~NavigateModifier() {
+}
+
+bool NavigateModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::NavigateModifier &data) {
+	return true;
+}
+
+bool NavigateModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState NavigateModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void NavigateModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void NavigateModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> NavigateModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new NavigateModifier(*this));
+}
+
+const char *NavigateModifier::getDefaultName() const {
+	return "Navigate Modifier"; // ???
+}
+
 PrintModifier::PrintModifier() {
 }
 
@@ -1772,6 +1807,76 @@ Common::SharedPtr<Modifier> EasyScrollerModifier::shallowClone() const {
 
 const char *EasyScrollerModifier::getDefaultName() const {
 	return "EasyScroller Modifier"; // ???
+}
+
+GoThereModifier::GoThereModifier() {
+}
+
+GoThereModifier::~GoThereModifier() {
+}
+
+bool GoThereModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::GoThereModifier &data) {
+	return true;
+}
+
+bool GoThereModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState GoThereModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void GoThereModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void GoThereModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> GoThereModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new GoThereModifier(*this));
+}
+
+const char *GoThereModifier::getDefaultName() const {
+	return "GoThere Modifier"; // ???
+}
+
+RandomizerModifier::RandomizerModifier() {
+}
+
+RandomizerModifier::~RandomizerModifier() {
+}
+
+bool RandomizerModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::RandomizerModifier &data) {
+	return true;
+}
+
+bool RandomizerModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState RandomizerModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void RandomizerModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void RandomizerModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> RandomizerModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new RandomizerModifier(*this));
+}
+
+const char *RandomizerModifier::getDefaultName() const {
+	return "Randomizer Modifier"; // ???
 }
 
 TimeLoopModifier::TimeLoopModifier() {
@@ -2194,6 +2299,41 @@ const char *StrUtilModifier::getDefaultName() const {
 	return "StrUtil Modifier"; // ???
 }
 
+ThighBlasterModifier::ThighBlasterModifier() {
+}
+
+ThighBlasterModifier::~ThighBlasterModifier() {
+}
+
+bool ThighBlasterModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::ThighBlasterModifier &data) {
+	return true;
+}
+
+bool ThighBlasterModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState ThighBlasterModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void ThighBlasterModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void ThighBlasterModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> ThighBlasterModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new ThighBlasterModifier(*this));
+}
+
+const char *ThighBlasterModifier::getDefaultName() const {
+	return "ThighBlaster Modifier"; // ???
+}
+
 AlienWriterModifier::AlienWriterModifier() {
 }
 
@@ -2229,6 +2369,41 @@ const char *AlienWriterModifier::getDefaultName() const {
 	return "AlienWriter Modifier"; // ???
 }
 
+MlineLauncherModifier::MlineLauncherModifier() {
+}
+
+MlineLauncherModifier::~MlineLauncherModifier() {
+}
+
+bool MlineLauncherModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::MlineLauncherModifier &data) {
+	return true;
+}
+
+bool MlineLauncherModifier::respondsToEvent(const Event &evt) const {
+	return false;
+}
+
+VThreadState MlineLauncherModifier::consumeMessage(Runtime *runtime, const Common::SharedPtr<MessageProperties> &msg) {
+	return kVThreadReturn;
+}
+
+void MlineLauncherModifier::disable(Runtime *runtime) {
+}
+
+#ifdef MTROPOLIS_DEBUG_ENABLE
+void MlineLauncherModifier::debugInspect(IDebugInspectionReport *report) const {
+	Modifier::debugInspect(report);
+}
+#endif
+
+Common::SharedPtr<Modifier> MlineLauncherModifier::shallowClone() const {
+	return Common::SharedPtr<Modifier>(new MlineLauncherModifier(*this));
+}
+
+const char *MlineLauncherModifier::getDefaultName() const {
+	return "mLine Launcher Modifier"; // ???
+}
+
 StandardPlugInHacks::StandardPlugInHacks() : allowGarbledListModData(false) {
 }
 
@@ -2243,6 +2418,7 @@ StandardPlugIn::StandardPlugIn()
 	, _panningModifierFactory(this)
 	, _fadeModifierFactory(this)
 	, _openTitleModifierFactory(this)
+	, _navigateModifierFactory(this)
 	, _keyStateModifierFactory(this)
 	, _rotatorModifierFactory(this)
 	, _trackerModifierFactory(this)
@@ -2250,6 +2426,8 @@ StandardPlugIn::StandardPlugIn()
 	, _mouseTrapModifierFactory(this)
 	, _wrapAroundModifierFactory(this)
 	, _easyScrollerModifierFactory(this)
+	, _goThereModifierFactory(this)
+	, _randomizerModifierFactory(this)
 	, _timeLoopModifierFactory(this)
 	, _bitmapVariableModifierFactory(this)
 	, _captureBitmapModifierFactory(this)
@@ -2262,7 +2440,9 @@ StandardPlugIn::StandardPlugIn()
 	, _motionModifierFactory(this)
 	, _sparkleModifierFactory(this)
 	, _strUtilModifierFactory(this)
+	, _thighBlasterModifierFactory(this)
 	, _alienWriterModifierFactory(this)
+	, _mlineLauncherModifierFactory(this)
 {
 }
 
@@ -2281,6 +2461,7 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	registrar->registerPlugInModifier("fade", &_fadeModifierFactory);
 	registrar->registerPlugInModifier("panning", &_panningModifierFactory);
 	registrar->registerPlugInModifier("OpenTitle", &_openTitleModifierFactory);
+	registrar->registerPlugInModifier("Navigate", &_navigateModifierFactory);
 
 	//Rotator Kit by Thereware
 	registrar->registerPlugInModifier("Rotator", &_rotatorModifierFactory);
@@ -2294,6 +2475,12 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	//WrapAround Kit by Thereware
 	registrar->registerPlugInModifier("WrapAround", &_wrapAroundModifierFactory);
 	registrar->registerPlugInModifier("EasyScroller", &_easyScrollerModifierFactory);
+
+	//FixIt Kit by Thereware
+	registrar->registerPlugInModifier("GoThere", &_goThereModifierFactory);
+
+	//Quick Kit by Thereware
+	registrar->registerPlugInModifier("Randomizer", &_randomizerModifierFactory);
 
 	//Bitmap by Hoologic
 	registrar->registerPlugInModifier("hlBitmapVariable", &_bitmapVariableModifierFactory);
@@ -2319,8 +2506,14 @@ void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) cons
 	//StrUtil modifier
 	registrar->registerPlugInModifier("StrUtil", &_strUtilModifierFactory);
 
+	//ThighBlaster modifier
+	registrar->registerPlugInModifier("ThighBlaster", &_thighBlasterModifierFactory);
+
 	//Alien Logic modifier by AX Logic
 	registrar->registerPlugInModifier("AlienWriter", &_alienWriterModifierFactory);
+
+	//URLaunch modifier by mLine
+	registrar->registerPlugInModifier("mLine_launcher", &_mlineLauncherModifierFactory);
 }
 
 const StandardPlugInHacks &StandardPlugIn::getHacks() const {

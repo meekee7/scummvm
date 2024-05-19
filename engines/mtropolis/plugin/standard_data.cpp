@@ -456,9 +456,77 @@ DataReadErrorCode AlienWriterModifier::load(PlugIn &plugIn, const PlugInModifier
 	if (prefix.plugInRevision != 1)
 		return kDataReadErrorUnsupportedRevision;
 
-	for (int i = 0; i < 8; ++i) {
-		PlugInTypeTaggedValue v;
-		if (!v.load(reader))
+	PlugInTypeTaggedValue values[1];
+	for (int i = 0; i < ARRAYSIZE(values); ++i) {
+		if (!values[i].load(reader))
+			return kDataReadErrorReadFailed;
+	}
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode MlineLauncherModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	if (!unknown1String.load(reader) || !unknown2String.load(reader) || !unknown3String.load(reader) || !unknown4Int.load(reader) || !unknown5Int.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Bool.load(reader) || !unknown7Event.load(reader) || !unknown8Bool.load(reader) || !unknown9Bool.load(reader) || !unknown10Bool.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown11Bool.load(reader) || !unknown12Bool.load(reader))
+		return kDataReadErrorReadFailed;
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode GoThereModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 1)
+		return kDataReadErrorUnsupportedRevision;
+
+	if (!unknown1Event.load(reader) || !unknown2Event.load(reader) || !unknown3Point.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown4UniversalTime.load(reader) || !unknown5Event.load(reader) || !unknown6Label.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown7Null.load(reader) || !unknown8Int.load(reader) || !unknown9Int.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown10Bool.load(reader) || !unknown11Bool.load(reader))
+		return kDataReadErrorReadFailed;
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode RandomizerModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	if (!unknown1Int.load(reader) || !unknown2Int.load(reader) || !unknown3Int.load(reader))
+		return kDataReadErrorReadFailed;
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode ThighBlasterModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 1)
+		return kDataReadErrorUnsupportedRevision;
+
+	if (!unknown1Int.load(reader))
+		return kDataReadErrorReadFailed;
+
+	return kDataReadErrorNone;
+}
+
+DataReadErrorCode NavigateModifier::load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) {
+	if (prefix.plugInRevision != 0)
+		return kDataReadErrorUnsupportedRevision;
+
+	PlugInTypeTaggedValue values[5];
+	for (int i = 0; i < ARRAYSIZE(values); ++i) {
+		if (!values[i].load(reader))
 			return kDataReadErrorReadFailed;
 	}
 
