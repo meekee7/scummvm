@@ -1383,7 +1383,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ANGELICA,
 		0,
 		MTBOOT_ANGELICA_WIN_EN,
-		"",
+		"Splash.mfx",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1457,7 +1457,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_EASYBAKE,
 		0,
 		MTBOOT_EASYBAKE_WIN_EN,
-		"",
+		"INTRO.MFX",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1654,7 +1654,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_ANIMAL,
 		0,
 		MTBOOT_MSB_ANIMAL_WIN_EN,
-		"",
+		"Startup.mfw",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1675,7 +1675,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 				{"EcoPost.mfx", 0, "ec441b4b965026ef2dd9e748a7a3ffe8", 8354730},
 				{"FireFly.mfx", 0, "210fef0df8888bda3b5b733f1d7993c4", 4547310},
 				{"Flight.mfx", 0, "fd1d071032c9cdf83cc6f0933fd0865e", 4465039},
-				{"Forest.mfx", 0, "b2067495ef209f547942af829a90c491", 24773402},
+				//{"Forest.mfx", 0, "b2067495ef209f547942af829a90c491", 24773402},
 				//{"GameShow.mfx", 0, "c73ec09cbf9def72e0bd2378292ad699", 23056010},
 				//{"GBE.mfx", 0, "2b77b64fd1a2f0302ced71eb15fd3951", 8302512},
 				//{"Jungle.mfx", 0, "d65aacf5c3e46027300c4f451da593d3", 30996636},
@@ -1692,7 +1692,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 				//{"RPL.mfx", 0, "ae617deabe3a654c513a85bab18d9fe6", 6331374},
 				//{"RWB.mfx", 0, "a3931939f91c64ab2cb38286c146d8ca", 6844343},
 				//{"school.mfx", 0, "d03459adf342651da0eee1fc9f4185e5", 23830537},
-				//{"SignIn.mfx", 0, "a33f52fb5cc96809b1e9eafac2f28045", 2246830},
+				{"SignIn.mfx", 0, "a33f52fb5cc96809b1e9eafac2f28045", 2246830},
 				AD_LISTEND
 			},
 			Common::EN_ANY,
@@ -1703,7 +1703,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_BUGS,
 		0,
 		MTBOOT_MSB_BUGS_WIN_EN,
-		"",
+		"SignIn.mfx",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1734,7 +1734,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_CONCERT,
 		0,
 		MTBOOT_MSB_CONCERT_WIN_EN,
-		"",
+		"SignInC.mfx",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1765,7 +1765,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_FLIGHT,
 		0,
 		MTBOOT_MSB_FLIGHT_WIN_EN,
-		"",
+		"SignInF.mfx",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1796,7 +1796,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_MARS,
 		0,
 		MTBOOT_MSB_MARS_WIN_EN,
-		"",
+		"SignInM.mfx",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1827,7 +1827,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_VOLCANO,
 		0,
 		MTBOOT_MSB_VOLCANO_WIN_EN,
-		"",
+		"SignInV.mfx",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1858,7 +1858,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_WHALES,
 		0,
 		MTBOOT_MSB_WHALES_WIN_EN,
-		"",
+		"SignInW.mfx",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1905,7 +1905,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_NOTEBOOK,
 		0,
 		MTBOOT_NOTEBOOK_WIN_EN,
-		"",
+		"Hallway.mfx",
 	},
 
 	{ // TODO long title (German, Windows)
@@ -2016,7 +2016,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 	{ // TODO long title (English, Windows)
 	  // Published by TODO, TODO
 		{
-			"whitetail_extreme",
+			"wtextreme",
 			_s("Missing game code"),
 			{
 				{"WTX.EXE", 0, "ed776bfe63d17a7d57d9625c3efe5a0a", 1085952},

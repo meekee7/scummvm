@@ -89,12 +89,20 @@ static const PlainGameDescriptor mTropolisGames[] = {
 static const char *const directoryGlobs[] = {
 	"Obsidian",
 	"RESOURCE",
+	"mPlugins",
 	"Saved Games",
 	"MTPLAY32",
 	"HIJINKS",
 	"Albert",
 	"DATA",
 	"GAME",
+	"Player",
+	"mfx",
+	"cdData",
+	"Opal",
+	"MSB",
+	"System",
+	"YN	",
 	nullptr
 };
 
