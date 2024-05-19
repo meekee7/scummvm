@@ -1156,7 +1156,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_IDINO,
 		0,
 		MTBOOT_IDINO_DEMO_EN,
-					"WBDFS.C9A"
+					"WBDFS.C9A" //Shares demo dir with idoctor
 	},
 
 
@@ -1192,7 +1192,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_IDINO,
 		0,
 		MTBOOT_IDINO_DEMO_EN,
-		"VETS.C9A"
+		"VETS.C9A" //Shares demo dir with idino
 	},
 
 		{
@@ -1274,8 +1274,79 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_CHOMP,
 		0,
 		MTBOOT_CHOMP_WIN_EN,
+		""
 	},
 
+		{// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+	 // Published by KnowWonder, 1997
+	 {
+		 "cyber24",
+		 "",
+		 {{"ABC32.EXE", 0, "b5efd541d37b23ab6a587e0929b05c2e", 1218048},
+		  {"DATA1.MPL", 0, "7fb0b50e9db45dd069a1ca96efdefa5a", 1227933},
+		  AD_LISTEND},
+		 Common::EN_ANY,
+		 Common::kPlatformWindows,
+		 ADGF_UNSTABLE,
+		 GUIO0()},
+	 GID_CYBER24,
+	 0,
+	 MTBOOT_CYBER24_WIN_EN,
+	 ""},
+
+			{// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+	 // Published by KnowWonder, 1997
+	 {
+		 "ivoclar",
+		 "",
+		 {
+		 	{"RUN95NT.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+			 {"DATA.MPL", 0, "d963537b9996b969492e095dca4c5b2a", 1717658},
+			 AD_LISTEND},
+		 Common::EN_ANY,
+		 Common::kPlatformWindows,
+		 ADGF_UNSTABLE,
+		 GUIO0()},
+	 GID_IVOCLAR,
+	 0,
+	 MTBOOT_IVOCLAR_WIN_EN,
+	 ""},
+
+				{// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+	 // Published by KnowWonder, 1997
+	 {
+		 "realwild",
+		 "",
+		 {
+		 	{"RWC.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+		  {"RWC_DATA.MPL", 0, "7c271bed9ef7ea012896860358590791", 90144089},
+		  AD_LISTEND},
+		 Common::EN_ANY,
+		 Common::kPlatformWindows,
+		 ADGF_UNSTABLE,
+		 GUIO0()},
+	 GID_IVOCLAR,
+	 0,
+	 MTBOOT_IVOCLAR_WIN_EN,
+	 ""},
+
+					{// The Totally Techie World of Young Dilbert: Hi-Tech Hijinks (English, Windows)
+	 // Published by KnowWonder, 1997
+	 {
+		 "telemed",
+		 "",
+		 {
+		 	{"TELEMED.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+		  {"TELEMED.MPL", 0, "cd73ec482fb21508a34daeff6773623c", 44022984},
+		  AD_LISTEND},
+		 Common::EN_ANY,
+		 Common::kPlatformWindows,
+		 ADGF_UNSTABLE,
+		 GUIO0()},
+	 GID_TELEMED,
+	 0,
+	 MTBOOT_TELEMED_WIN_EN,
+	 ""},
 
 	{ AD_TABLE_END_MARKER, 0, 0, MTBOOT_INVALID }
 };

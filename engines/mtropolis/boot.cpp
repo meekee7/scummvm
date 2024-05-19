@@ -1830,6 +1830,22 @@ const Game games[] = {
 		MTBOOT_CHOMP_WIN_EN,
 	 &BootScriptContext::bootGeneric
 	},
+	{
+		MTBOOT_CYBER24_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_IVOCLAR_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_REALWILD_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
+	{
+		MTBOOT_TELEMED_WIN_EN,
+	 &BootScriptContext::bootGeneric
+	},
 };
 
 } // End of namespace Games

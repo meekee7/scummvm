@@ -50,6 +50,11 @@ static const PlainGameDescriptor mTropolisGames[] = {
 	{"fairy", "FairyTale: A True Story - Activity Center"},
 	{"purplemoon", "Purple Moon Sampler"},
 	{"chomp", "Chomp! The Video Game"},
+	{"cyber24", "24 Hours in Cyberspace"},
+	{"ivoclar", "IVOCLAR"},
+	{"realwild", "Real Wild Child! Australian Rock Music 1950s-90s "},
+	{"telemed", "How to Build a Telemedicine Program"},
+
 	{"mtropolis", "mTropolis Title"},
 	{nullptr, nullptr}
 };
