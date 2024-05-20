@@ -102,7 +102,8 @@ static const char *const directoryGlobs[] = {
 	"Opal",
 	"MSB",
 	"System",
-	"YN	",
+	"YN",
+	"planutus",
 	nullptr
 };
 
