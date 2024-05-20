@@ -59,7 +59,7 @@ static const PlainGameDescriptor mTropolisGames[] = {
 	{"biocellevo", "Biologia Cellulare Evoluzione E Varietà Della Vita"},
 	{"easybake", "Easy-Bake Kitchen"},
 	{"forgotten", "The Forgotten: It Begins"},
-	{"greveholm2", "Mysteriet på Greveholm 2: Resan till Planutus"},
+	{"greveholm2", "The Mystery at Greveholm 2: The Journey to Planutus"},
 	{"itacante", "Itacante: La Cité des Robots"},
 	{"kingofdragonpass", "King of Dragon Pass"},
 	{"ks1eng", "The Times Key Stage 1 English"},

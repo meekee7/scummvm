@@ -1510,14 +1510,14 @@ static const MTropolisGameDescription gameDescriptions[] = {
 				//{"pData20.mxw", 0, "02aa4a3bfbfba7c21aa7cd388334d060", 15462415},
 				AD_LISTEND
 			},
-			Common::EN_ANY,
+			Common::SE_SWE,
 			Common::kPlatformWindows,
 			ADGF_UNSUPPORTED,
 			GUIO0()
 		},
 		GID_GREVEHOLM2,
 		0,
-		MTBOOT_GREVEHOLM2_WIN_EN,
+		MTBOOT_GREVEHOLM2_WIN_SE,
 		"",
 	},
 

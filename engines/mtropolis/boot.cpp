@@ -1867,7 +1867,7 @@ const Game games[] = {
 		&BootScriptContext::bootGeneric
 	},
 	{
-		MTBOOT_GREVEHOLM2_WIN_EN,
+		MTBOOT_GREVEHOLM2_WIN_SE,
 		&BootScriptContext::bootGeneric
 	},
 	{
