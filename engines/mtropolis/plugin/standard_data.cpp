@@ -537,11 +537,11 @@ DataReadErrorCode ConductorModifier::load(PlugIn &plugIn, const PlugInModifier &
 	if (prefix.plugInRevision != 1)
 		return kDataReadErrorUnsupportedRevision;
 
-	PlugInTypeTaggedValue values[9];
-	for (int i = 0; i < ARRAYSIZE(values); ++i) {
-		if (!values[i].load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1Null.load(reader) || !unknown2Null.load(reader) || !unknown3Int.load(reader) || !unknown4Null.load(reader) || !unknown5Null.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Null.load(reader) || !unknown7Event.load(reader) || !unknown8Null.load(reader) || !unknown9Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }

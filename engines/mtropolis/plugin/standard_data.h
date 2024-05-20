@@ -165,6 +165,15 @@ protected:
 };
 
 struct ConductorModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1Null;
+	PlugInTypeTaggedValue unknown2Null;
+	PlugInTypeTaggedValue unknown3Int;
+	PlugInTypeTaggedValue unknown4Null;
+	PlugInTypeTaggedValue unknown5Null;
+	PlugInTypeTaggedValue unknown6Null;
+	PlugInTypeTaggedValue unknown7Event;
+	PlugInTypeTaggedValue unknown8Null;
+	PlugInTypeTaggedValue unknown9Int;
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
