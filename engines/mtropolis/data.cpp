@@ -513,6 +513,8 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 	if (!reader.readU16(type))
 		return false;
 
+	typeCoded = static_cast<TypeCode>(type);
+
 	switch (type) {
 	case kNull:
 	case kIncomingData:
@@ -574,6 +576,7 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 		if (!value.asColor.load(reader))
 			return false;
 		break;
+		/*
 	case kAlienScript:
 		value.constructField(&ValueUnion::asAlienScript);
 		if (!value.asAlienScript.load(reader))
@@ -584,6 +587,7 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 		if (!value.asPainterMystery.load(reader))
 			return false;
 		break;
+		*/
 	case kVariableReference: {
 			value.constructField(&ValueUnion::asVarRefGUID);
 			uint32 extraDataSize;
@@ -2044,6 +2048,7 @@ DataReadErrorCode PlugInModifier::load(DataReader &reader) {
 	modifierName[16] = 0;
 
 	subObjectSize = codedSize;
+	//if (reader.getDataFormat() == kDataFormatWindows) {
 	if (reader.getDataFormat() == kDataFormatWindows && subObjectSize >= lengthOfName * 256u) {
 		// This makes no sense but it's how it's stored...
 		if (subObjectSize < lengthOfName * 256u)

@@ -421,6 +421,14 @@ struct PainterMystery {
 	uint16 c;
 };
 
+struct IDPath {
+	bool load(DataReader &reader);
+
+	int16 type;
+	int16 numItems;
+	int32 actualItems[128];
+};
+
 // mTropolis uses two separate type-tagged value formats.
 //
 // InternalTypeTaggedValue is used by internal modifiers for messenger payloads and set modifiers
@@ -521,6 +529,7 @@ struct PlugInTypeTaggedValue : public Common::NonCopyable {
 	~PlugInTypeTaggedValue();
 
 	uint16 type;
+	TypeCode typeCoded;
 	ValueUnion value;
 
 	Common::Array<uint8> extraData;
