@@ -404,6 +404,10 @@ bool Label::load(DataReader &reader) {
 	return reader.readU32(superGroupID) && reader.readU32(labelID);
 }
 
+bool UniversalTime::load(DataReader &reader) {
+	return reader.readS32(value) && reader.readS32(scale) && reader.readS32(base);
+}
+
 InternalTypeTaggedValue::InternalTypeTaggedValue() : type(0) {
 }
 
@@ -501,6 +505,11 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 	case kNull:
 	case kIncomingData:
 		break;
+	case kUniversalTime:
+		value.constructField(&ValueUnion::asTime);
+		if (!value.asTime.load(reader))
+			return false;
+		break;
 	case kPoint:
 		value.constructField(&ValueUnion::asPoint);
 		if (!value.asPoint.load(reader))
@@ -548,6 +557,11 @@ bool PlugInTypeTaggedValue::load(DataReader &reader) {
 			if (!reader.readTerminatedStr(value.asString, length2))
 				return false;
 		} break;
+	case kRGBColor:
+		value.constructField(&ValueUnion::asColor);
+		if (!value.asColor.load(reader))
+			return false;
+		break;
 	case kVariableReference: {
 			value.constructField(&ValueUnion::asVarRefGUID);
 			uint32 extraDataSize;
