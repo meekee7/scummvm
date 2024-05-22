@@ -2205,9 +2205,9 @@ void findWindowsMainSegment(Common::Archive &fs, Common::Path &resolvedPath, con
 
 	if (filteredFiles.size() != 1) {
 		if (gamedesc.mainFile && *gamedesc.mainFile) {
-			const auto match = Common::find_if(filteredFiles.begin(), filteredFiles.end(), [gamedesc](const auto &x) {
-				return x->getFileName().equalsIgnoreCase(gamedesc.mainFile);
-			});
+			const auto match = Common::find_if(filteredFiles.begin(), filteredFiles.end(),
+				[gamedesc](const Common::ArchiveMemberPtr &x) { return x->getFileName().hasPrefixIgnoreCase(gamedesc.mainFile); }
+			);
 			if (match == filteredFiles.end()) {
 				error("Designated main segment file not found. Expected file %s", gamedesc.mainFile);
 			} else {
@@ -2280,7 +2280,7 @@ SegmentSignatureType identifyMacFileBySignature(Common::Archive &fs, const Commo
 	return identifyStreamBySignature(header);
 }
 
-void findMacMainSegment(Common::Archive &fs, Common::Path &resolvedPath, bool &resolvedIsV2) {
+void findMacMainSegment(Common::Archive &fs, Common::Path &resolvedPath, const MTropolisGameDescription &gamedesc, bool &resolvedIsV2) {
 	Common::ArchiveMemberList allFiles;
 	Common::ArchiveMemberList mfmmFiles;
 	Common::ArchiveMemberList mfmxFiles;
@@ -2367,14 +2367,27 @@ void findMacMainSegment(Common::Archive &fs, Common::Path &resolvedPath, bool &r
 	if (filteredFiles.size() == 0)
 		error("Couldn't find any main segment files");
 
-	if (filteredFiles.size() != 1) {
-		for (const Common::ArchiveMemberPtr &archiveMember : filteredFiles)
-			warning("Possible main segment file: '%s'", archiveMember->getPathInArchive().toString(fs.getPathSeparator()).c_str());
+	auto &fileToUse = filteredFiles.front();
 
-		error("Found multiple main segment files");
+	if (filteredFiles.size() != 1) {
+		if (gamedesc.mainFile && *gamedesc.mainFile) {
+			const auto match = Common::find_if(filteredFiles.begin(), filteredFiles.end(),
+				[gamedesc](const Common::ArchiveMemberPtr &x) { return x->getFileName().hasPrefixIgnoreCase(gamedesc.mainFile); }
+			);
+			if (match == filteredFiles.end()) {
+				error("Designated main segment file not found. Expected file %s", gamedesc.mainFile);
+			} else {
+				fileToUse = *match;
+			}
+		} else {
+			for (const Common::ArchiveMemberPtr &archiveMember : filteredFiles)
+				warning("Possible main segment file: '%s'", archiveMember->getPathInArchive().toString(fs.getPathSeparator()).c_str());
+
+			error("Found multiple main segment files");
+		}
 	}
 
-	resolvedPath = filteredFiles.front()->getPathInArchive();
+	resolvedPath = fileToUse->getPathInArchive();
 	resolvedIsV2 = isV2;
 }
 
@@ -2611,7 +2624,7 @@ BootConfiguration bootProject(const MTropolisGameDescription &gameDesc) {
 
 	if (gameDesc.desc.platform == Common::kPlatformMacintosh) {
 		Boot::findMacPlayer(*vfs, playerLocation, playerType);
-		Boot::findMacMainSegment(*vfs, mainSegmentLocation, isV2Project);
+		Boot::findMacMainSegment(*vfs, mainSegmentLocation, gameDesc, isV2Project);
 	} else if (gameDesc.desc.platform == Common::kPlatformWindows) {
 		Boot::findWindowsPlayer(*vfs, playerLocation, playerType);
 		Boot::findWindowsMainSegment(*vfs, mainSegmentLocation, gameDesc, isV2Project);

@@ -1085,7 +1085,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_DILBERT,
 		0,
 		MTBOOT_DILBERT_WIN_EN,
-		"Hijinks1.MPL"
+		"Hijinks1"
 	},
 
 		{
@@ -1162,7 +1162,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_IDINO,
 		0,
 		MTBOOT_IDINO_DEMO_EN,
-					"WBDFS.C9A" //Shares demo dir with idoctor
+					"WBDFS" //Shares demo dir with idoctor
 	},
 
 
@@ -1198,7 +1198,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_IDINO,
 		0,
 		MTBOOT_IDINO_DEMO_EN,
-		"VETS.C9A" //Shares demo dir with idino
+		"VETS" //Shares demo dir with idino
 	},
 
 		{
@@ -1260,7 +1260,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_PURPLEMOON,
 		0,
 		MTBOOT_PURPLEMOON_WIN_EN,
-		"0SAMPLER.MPL"
+		"0SAMPLER"
 	},
 
 	{
@@ -1383,7 +1383,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_ANGELICA,
 		0,
 		MTBOOT_ANGELICA_WIN_EN,
-		"Splash.mfx",
+		"Splash",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1457,7 +1457,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_EASYBAKE,
 		0,
 		MTBOOT_EASYBAKE_WIN_EN,
-		"INTRO.MFX",
+		"INTRO",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1654,7 +1654,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_ANIMAL,
 		0,
 		MTBOOT_MSB_ANIMAL_WIN_EN,
-		"Startup.mfw",
+		"Startup",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1703,7 +1703,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_BUGS,
 		0,
 		MTBOOT_MSB_BUGS_WIN_EN,
-		"SignIn.mfx",
+		"SignIn",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1734,7 +1734,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_CONCERT,
 		0,
 		MTBOOT_MSB_CONCERT_WIN_EN,
-		"SignInC.mfx",
+		"SignInC",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1765,7 +1765,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_FLIGHT,
 		0,
 		MTBOOT_MSB_FLIGHT_WIN_EN,
-		"SignInF.mfx",
+		"SignInF",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1796,7 +1796,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_MARS,
 		0,
 		MTBOOT_MSB_MARS_WIN_EN,
-		"SignInM.mfx",
+		"SignInM",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1827,7 +1827,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_VOLCANO,
 		0,
 		MTBOOT_MSB_VOLCANO_WIN_EN,
-		"SignInV.mfx",
+		"SignInV",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1858,7 +1858,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_MSB_WHALES,
 		0,
 		MTBOOT_MSB_WHALES_WIN_EN,
-		"SignInW.mfx",
+		"SignInW",
 	},
 
 	{ // TODO long title (English, Windows)
@@ -1905,7 +1905,7 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		GID_NOTEBOOK,
 		0,
 		MTBOOT_NOTEBOOK_WIN_EN,
-		"Hallway.mfx",
+		"Hallway",
 	},
 
 	{ // TODO long title (German, Windows)
