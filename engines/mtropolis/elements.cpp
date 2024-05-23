@@ -985,7 +985,7 @@ void MovieElement::stopSubtitles() {
 void MovieElement::initFallbackPalette() {
 	//TODO: determine correct content of fallback movie palette
 	Palette palette;
-	_fallbackPalette = Graphics::Palette(palette.getPalette(), palette.kNumColors * 3);
+	_fallbackPalette = Graphics::Palette(palette.getPalette(), palette.kNumColors);
 }
 
 void MovieElement::onPauseStateChanged() {
