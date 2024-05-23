@@ -326,11 +326,11 @@ DataReadErrorCode DoubleClickModifier::load(PlugIn &plugIn, const PlugInModifier
 	if (prefix.plugInRevision != 0)
 		return kDataReadErrorUnsupportedRevision;
 
-	PlugInTypeTaggedValue values[7];
-	for (int i = 0; i < ARRAYSIZE(values); ++i) {
-		if (!values[i].load(reader))
-			return kDataReadErrorReadFailed;
-	}
+	if (!unknown1UniversalTime.load(reader) || !unknown2Event.load(reader) || !unknown3Event.load(reader) || !unknown4Null.load(reader) || !unknown5Label.load(reader))
+		return kDataReadErrorReadFailed;
+
+	if (!unknown6Int.load(reader) || !unknown7Int.load(reader))
+		return kDataReadErrorReadFailed;
 
 	return kDataReadErrorNone;
 }

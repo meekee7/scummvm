@@ -288,6 +288,14 @@ protected:
 };
 
 struct DoubleClickModifier : public PlugInModifierData {
+	PlugInTypeTaggedValue unknown1UniversalTime;
+	PlugInTypeTaggedValue unknown2Event;
+	PlugInTypeTaggedValue unknown3Event;
+	PlugInTypeTaggedValue unknown4Null;
+	PlugInTypeTaggedValue unknown5Label;
+	PlugInTypeTaggedValue unknown6Int;
+	PlugInTypeTaggedValue unknown7Int;
+
 protected:
 	DataReadErrorCode load(PlugIn &plugIn, const PlugInModifier &prefix, DataReader &reader) override;
 };
