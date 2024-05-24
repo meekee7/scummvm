@@ -668,8 +668,6 @@ void MovieElement::activate() {
 					break;
 			}
 
-			//file->open( Common::Path(  movieAsset->getExtFileName() ) );
-			//file->open( Common::Path( "C:\\Users\\micha\\Documents\\FreeTorrentDownload\\Downloads\\mtropo\\1.1\\Beatrix\\1.MOV", '\\' ) );
 			assert(file->isOpen());
 			if (!file->isOpen())
 				warning("Unable to open external video file %s", movieAsset->getExtFileName().c_str());
