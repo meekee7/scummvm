@@ -652,28 +652,15 @@ void MovieElement::activate() {
 			qtDecoder->setChunkBeginOffset(movieAsset->getMovieDataPos());
 			movieDataStream = new Common::SafeSeekableSubReadStream(stream, movieAsset->getMovieDataPos(), movieAsset->getMovieDataPos() + movieAsset->getMovieDataSize(), DisposeAfterUse::NO);
 		} else if (!movieAsset->getExtFileName().empty()) {
-			Common::File *file = nullptr;
+			Common::File *file = new Common::File();
 
-			for (const char *videoDirectory : {"", "Video", "video", "VIDEO"}) {
+			if (!file->open(Common::Path(Common::String("VIDEO/") + movieAsset->getExtFileName()))) {
+				warning("Movie asset could not be opened: %s", movieAsset->getExtFileName().c_str());
 				delete file;
-				file = new Common::File();
-
-				Common::String pathString = videoDirectory;
-				if (!pathString.empty())
-					pathString += Common::Path::kNativeSeparator;
-				pathString += movieAsset->getExtFileName();
-
-				file->open(Common::Path(pathString, Common::Path::kNativeSeparator));
-				if (file->isOpen())
-					break;
+				return;
 			}
 
-			assert(file->isOpen());
-			if (!file->isOpen())
-				warning("Unable to open external video file %s", movieAsset->getExtFileName().c_str());
 			movieDataStream = file;
-			
-			//TODO play from external file
 		} else {
 			// If no data size, the movie data is all over the file and the MOOV atom may be after it.
 			movieDataStream = new Common::SafeSeekableSubReadStream(stream, 0, stream->size(), DisposeAfterUse::NO);
@@ -697,7 +684,7 @@ void MovieElement::activate() {
 
 		Common::File *f = new Common::File();
 		if (!f->open(Common::Path(Common::String("VIDEO/") + aviAsset->getExtFileName()))) {
-			warning("Movie asset could not be opened");
+			warning("Movie asset could not be opened: %s", aviAsset->getExtFileName().c_str());
 			delete f;
 			return;
 		}
