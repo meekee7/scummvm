@@ -975,10 +975,11 @@ static const MTropolisGameDescription gameDescriptions[] = {
 		{
 			"mindgym",
 			"",
-			{{"MTPLAY95.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
-			 {"MINDGYM1.MPL", 0, "90a71952e2336bddd30d0bacd59aa510", 22167812},
-			 {"MINDGYM2.MPX", 0, "aa49de0c8337ec97045c6af57ead02a3", 277412342},
-			 AD_LISTEND},
+			{
+				{"MTPLAY95.EXE", 0, "0e513dac9d2a0d7cfcdc670cab2a9bda", 757760},
+				{"MINDGYM1.MPL", 0, "8fd1e5e8d269da5d442b77023a2854d0", 21632226},
+				{"MINDGYM2.MPX", 0, "7db9dc6b76bcca4d0629c37fb8c352c3", 621175049},
+		  AD_LISTEND},
 			Common::DE_DEU,
 			Common::kPlatformWindows,
 			ADGF_UNSTABLE,
