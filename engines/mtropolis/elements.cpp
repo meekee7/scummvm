@@ -657,6 +657,7 @@ void MovieElement::activate() {
 			if (!file->open(Common::Path(Common::String("VIDEO/") + movieAsset->getExtFileName()))) {
 				warning("Movie asset could not be opened: %s", movieAsset->getExtFileName().c_str());
 				delete file;
+				_videoDecoder.reset();
 				return;
 			}
 
