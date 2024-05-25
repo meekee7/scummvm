@@ -80,12 +80,13 @@ Score::Score(Movie *movie) {
 	_waitForClick = false;
 	_waitForClickCursor = false;
 	_activeFade = false;
+	_exitFrameCalled = false;
 	_playState = kPlayNotStarted;
 
 	_numChannelsDisplayed = 0;
 	_skipTransition = false;
 
-	_curFrameNumber = 0;
+	_curFrameNumber = 1;
 	_framesStream = nullptr;
 	_currentFrame = nullptr;
 }
@@ -99,6 +100,9 @@ Score::~Score() {
 			delete it;
 
 	delete _labels;
+
+	for (auto &it : _scoreCache)
+		delete it;
 
 	if (_framesStream)
 		delete _framesStream;
@@ -132,11 +136,16 @@ bool Score::processFrozenScripts() {
 	// to completion.
 	while (uint32 count = _window->frozenLingoStateCount()) {
 		_window->thawLingoState();
+		Symbol currentScript = _window->getLingoState()->callstack.front()->sp;
 		g_lingo->switchStateFromWindow();
-		g_lingo->execute();
-		if (_window->frozenLingoStateCount() >= count) {
+		bool completed = g_lingo->execute();
+		if (!completed || _window->frozenLingoStateCount() >= count) {
 			debugC(3, kDebugLingoExec, "Score::processFrozenScripts(): State froze again mid-thaw, interrupting");
 			return false;
+		} else if (currentScript == g_lingo->_currentInputEvent) {
+			// script that just completed was the current input event, clear the flag
+			debugC(3, kDebugEvents, "Score::processFrozenScripts(): Input event completed");
+			g_lingo->_currentInputEvent = Symbol();
 		}
 	}
 	return true;
@@ -271,7 +280,6 @@ int Score::getPreviousLabelNumber(int referenceFrame) {
 }
 
 void Score::startPlay() {
-	_curFrameNumber = 1;
 	_playState = kPlayStarted;
 	_nextFrameTime = 0;
 	_nextFrameDelay = 0;
@@ -283,6 +291,9 @@ void Score::startPlay() {
 		return;
 	}
 
+	// load first frame (either 1 or _nextFrame)
+	updateCurrentFrame();
+
 	// All frames in the same movie have the same number of channels
 	if (_playState != kPlayStopped)
 		for (uint i = 0; i < _currentFrame->_sprites.size(); i++)
@@ -293,12 +304,16 @@ void Score::startPlay() {
 }
 
 void Score::step() {
+	if (_playState == kPlayPaused)
+		return;
+
 	if (_playState == kPlayStopped)
 		return;
 
-	if (!_movie->_userEventQueue.empty()) {
-		_lingo->processEvents(_movie->_userEventQueue);
-	} else if (_vm->getVersion() >= 300 && !_window->_newMovieStarted && _playState != kPlayStopped) {
+	if (!_movie->_inputEventQueue.empty()) {
+		_lingo->processEvents(_movie->_inputEventQueue, true);
+	}
+	if (_vm->getVersion() >= 300 && !_window->_newMovieStarted && _playState != kPlayStopped) {
 		_movie->processEvent(kEventIdle);
 	}
 
@@ -335,10 +350,14 @@ void Score::setDelay(uint32 ticks) {
 	}
 }
 
+void Score::setCurrentFrame(uint16 frameId) {
+	_nextFrame = frameId;
+}
+
 bool Score::isWaitingForNextFrame() {
 	bool keepWaiting = false;
+	debugC(8, kDebugLoading, "Score::isWaitingForNextFrame(): nextFrameTime: %d, time: %d, sound: %d, click: %d, video: %d", _nextFrameTime, g_system->getMillis(false), _waitForChannel, _waitForClick, _waitForVideoChannel);
 
-	debugC(8, kDebugLoading, "Score::isWaitingForNextFrame(): nextFrameTime: %d, time: %d", _nextFrameTime, g_system->getMillis(false));
 	if (_waitForChannel) {
 		if (_soundManager->isChannelActive(_waitForChannel)) {
 			keepWaiting = true;
@@ -363,6 +382,9 @@ bool Score::isWaitingForNextFrame() {
 		keepWaiting = true;
 	}
 
+	if (!keepWaiting) {
+		debugC(8, kDebugLoading, "Score::isWaitingForNextFrame(): end of wait cycle");
+	}
 	return keepWaiting;
 }
 
@@ -515,9 +537,10 @@ void Score::update() {
 		// When Lingo::func_goto* is called, _nextFrame is set
 		// and _skipFrameAdvance is set to true.
 		// exitFrame is not called in this case.
-		if (!_vm->_skipFrameAdvance) {
+		if (!_vm->_skipFrameAdvance && !_exitFrameCalled) {
 			// Exit the current frame. This can include scopeless ScoreScripts.
 			_movie->processEvent(kEventExitFrame);
+			_exitFrameCalled = true;
 		}
 	}
 
@@ -608,8 +631,11 @@ void Score::update() {
 
 	// then call the enterFrame hook (if one exists)
 	count = _window->frozenLingoStateCount();
-	if (!_vm->_playbackPaused && _vm->getVersion() >= 400) {
-		_movie->processEvent(kEventEnterFrame);
+	if (!_vm->_playbackPaused) {
+		_exitFrameCalled = false;
+		if (_vm->getVersion() >= 400) {
+			_movie->processEvent(kEventEnterFrame);
+		}
 	}
 	if (_window->frozenLingoStateCount() > count)
 		return;
@@ -1430,6 +1456,29 @@ uint16 Score::getSpriteIdByMemberId(CastMemberID id) {
 	return 0;
 }
 
+bool Score::refreshPointersForCastMemberID(CastMemberID id) {
+	// FIXME: This can be removed once Sprite is refactored to not
+	// keep a pointer to a CastMember.
+	bool hit = false;
+	for (auto &it : _channels) {
+		if (it->_sprite->_castId == id) {
+			it->_sprite->_cast = nullptr;
+			it->setCast(id);
+			it->_dirty = true;
+			hit = true;
+		}
+	}
+
+	for (auto &it : _currentFrame->_sprites) {
+		if (it->_castId == id) {
+			it->_cast = nullptr;
+			it->setCast(id);
+			hit = true;
+		}
+	}
+	return hit;
+}
+
 Sprite *Score::getSpriteById(uint16 id) {
 	Channel *channel = getChannelById(id);
 
@@ -1554,14 +1603,17 @@ void Score::loadFrames(Common::SeekableReadStreamEndian &stream, uint16 version)
 
 	// Calculate number of frames and their positions
 	// numOfFrames in the header is often incorrect
-	for (_numFrames = 1; loadFrame(_numFrames, false); _numFrames++) { }
+	for (_numFrames = 1; loadFrame(_numFrames, false); _numFrames++) {
+		if (debugChannelSet(-1, kDebugImGui)) {
+			_scoreCache.push_back(new Frame(*_currentFrame));
+		}
+	}
 
 	debugC(1, kDebugLoading, "Score::loadFrames(): Calculated, total number of frames %d!", _numFrames);
 
 	_currentFrame->reset();
 
 	loadFrame(1, true);
-
 
 	debugC(1, kDebugLoading, "Score::loadFrames(): Number of frames: %d, framesStreamSize: %d", _numFrames, _framesStreamSize);
 }
@@ -1677,7 +1729,7 @@ Frame *Score::getFrameData(int frameNum){
 void Score::setSpriteCasts() {
 	// Update sprite cache of cast pointers/info
 	for (uint16 j = 0; j < _currentFrame->_sprites.size(); j++) {
-		_currentFrame->_sprites[j]->setCast(_currentFrame->_sprites[j]->_castId);
+		_currentFrame->_sprites[j]->setCast(_currentFrame->_sprites[j]->_castId, !_currentFrame->_sprites[j]->_stretch);
 
 		debugC(8, kDebugLoading, "Score::setSpriteCasts(): Frame: 0 Channel: %d castId: %s type: %d (%s)",
 			 j, _currentFrame->_sprites[j]->_castId.asString().c_str(), _currentFrame->_sprites[j]->_spriteType,
@@ -1784,7 +1836,7 @@ void Score::loadActions(Common::SeekableReadStreamEndian &stream) {
 			if (ConfMan.getBool("dump_scripts"))
 				_movie->getCast()->dumpScript(j._value.c_str(), kScoreScript, j._key);
 
-			_movie->getMainLingoArch()->addCode(j._value, kScoreScript, j._key);
+			_movie->getMainLingoArch()->addCode(j._value, kScoreScript, j._key, nullptr, kLPPTrimGarbage);
 
 			processImmediateFrameScript(j._value, j._key);
 		}
@@ -1814,14 +1866,15 @@ Common::String Score::formatChannelInfo() {
 	for (int i = 0; i < frame._numChannels; i++) {
 		Channel &channel = *_channels[i + 1];
 		Sprite &sprite = *channel._sprite;
+		Common::Point position = channel.getPosition();
 		if (sprite._castId.member) {
-			result += Common::String::format("CH: %-3d castId: %s, visible: %d, [inkData: 0x%02x [ink: %d, trails: %d, line: %d], %dx%d@%d,%d type: %d (%s) fg: %d bg: %d], script: %s, colorcode: 0x%x, blendAmount: 0x%x, unk3: 0x%x, constraint: %d, puppet: %d, stretch: %d, moveable: %d\n",
+			result += Common::String::format("CH: %-3d castId: %s, visible: %d, [inkData: 0x%02x [ink: %d, trails: %d, stretch: %d, line: %d], %dx%d@%d,%d type: %d (%s) fg: %d bg: %d], script: %s, colorcode: 0x%x, blendAmount: 0x%x, unk3: 0x%x, constraint: %d, puppet: %d, moveable: %d, movieRate: %f, movieTime: %d (%f)\n",
 				i + 1, sprite._castId.asString().c_str(), channel._visible, sprite._inkData,
-				sprite._ink, sprite._trails, sprite._thickness, channel._width, channel._height,
-				channel._currentPoint.x, channel._currentPoint.y,
+				sprite._ink, sprite._trails, sprite._stretch, sprite._thickness,
+				channel.getWidth(), channel.getHeight(), position.x, position.y,
 				sprite._spriteType, spriteType2str(sprite._spriteType), sprite._foreColor, sprite._backColor,
 				sprite._scriptId.asString().c_str(), sprite._colorcode, sprite._blendAmount, sprite._unk3,
-				channel._constraint, sprite._puppet, sprite._stretch, sprite._moveable);
+				channel._constraint, sprite._puppet, sprite._moveable, channel._movieRate, channel._movieTime, (float)(channel._movieTime/60.0f));
 		} else {
 			result += Common::String::format("CH: %-3d castId: 000\n", i + 1);
 		}

@@ -52,14 +52,10 @@
 #include "ultima/ultima8/world/item_factory.h"
 #include "ultima/ultima8/world/actors/quick_avatar_mover_process.h"
 #include "ultima/ultima8/world/actors/avatar_mover_process.h"
+#include "ultima/ultima8/world/actors/pathfinder.h"
 #include "ultima/ultima8/world/target_reticle_process.h"
 #include "ultima/ultima8/world/item_selection_process.h"
 #include "ultima/ultima8/world/actors/main_actor.h"
-
-#ifdef DEBUG
-#include "ultima/ultima8/world/actors/pathfinder.h"
-#endif
-
 
 namespace Ultima {
 namespace Ultima8 {
@@ -207,7 +203,7 @@ Debugger::Debugger() : GUI::Debugger() {
 	registerCmd("ShapeViewerGump::U8ShapeViewer", WRAP_METHOD(Debugger, cmdU8ShapeViewer));
 	registerCmd("RenderSurface::benchmark", WRAP_METHOD(Debugger, cmdBenchmarkRenderSurface));
 
-#ifdef DEBUG
+#ifdef DEBUG_PATHFINDER
 	registerCmd("Pathfinder::visualDebug", WRAP_METHOD(Debugger, cmdVisualDebugPathfinder));
 #endif
 }
@@ -748,8 +744,8 @@ void Debugger::dumpCurrentMap() {
 	CurrentMap *currentMap = World::get_instance()->getCurrentMap();
 	currentMap->setWholeMapFast();
 
-	RenderSurface *s = RenderSurface::CreateSecondaryRenderSurface(awidth,
-		aheight);
+	Graphics::Screen *screen = Ultima8Engine::get_instance()->getScreen();
+	RenderSurface *s = new RenderSurface(awidth, aheight, screen->format);
 
 	debugPrintf("Rendering map...\n");
 
@@ -1056,7 +1052,7 @@ bool Debugger::cmdUseBackpack(int argc, const char **argv) {
 		return false;
 	}
 	MainActor *av = getMainActor();
-	Item *backpack = getItem(av->getEquip(7));
+	Item *backpack = getItem(av->getEquip(ShapeInfo::SE_BACKPACK));
 	if (backpack)
 		backpack->callUsecodeEvent_use();
 	return false;
@@ -1830,7 +1826,8 @@ bool Debugger::cmdBenchmarkRenderSurface(int argc, const char **argv) {
 	GameData *gamedata = GameData::get_instance();
 	Shape *s = gamedata->getMainShapes()->getShape(shapenum);
 
-	RenderSurface *surface = RenderSurface::CreateSecondaryRenderSurface(320, 200);
+	Graphics::Screen *screen = Ultima8Engine::get_instance()->getScreen();
+	RenderSurface *surface = new RenderSurface(320, 200, screen->format);
 	surface->BeginPainting();
 
 	uint32 start, end;
@@ -1884,8 +1881,8 @@ bool Debugger::cmdBenchmarkRenderSurface(int argc, const char **argv) {
 	return true;
 }
 
-#ifdef DEBUG
 bool Debugger::cmdVisualDebugPathfinder(int argc, const char **argv) {
+#ifdef DEBUG_PATHFINDER
 	if (argc != 2) {
 		debugPrintf("Usage: Pathfinder::visualDebug objid\n");
 		debugPrintf("Specify objid -1 to stop tracing.\n");
@@ -1899,10 +1896,9 @@ bool Debugger::cmdVisualDebugPathfinder(int argc, const char **argv) {
 		Pathfinder::_visualDebugActor = (uint16)p;
 		debugPrintf("Pathfinder: visually tracing _actor %d\n", Pathfinder::_visualDebugActor);
 	}
-
+#endif
 	return true;
 }
-#endif
 
 } // End of namespace Ultima8
 } // End of namespace Ultima

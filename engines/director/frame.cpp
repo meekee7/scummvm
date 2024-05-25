@@ -267,12 +267,10 @@ void Frame::readSpriteD2(Common::MemoryReadStreamEndian &stream, uint16 offset, 
 
 	uint16 fieldPosition = offset - spriteStart;
 
-	if (debugChannelSet(8, kDebugLoading)) {
-		debugC(8, kDebugLoading, "Frame::readSpriteD2(): channel %d, 16 bytes", spritePosition);
-		stream.hexdump(kSprChannelSizeD2);
-	}
-
 	debugC(3, kDebugLoading, "Frame::readSpriteD2(): sprite: %d offset: %d size: %d, field: %d", spritePosition, offset, size, fieldPosition);
+	if (debugChannelSet(8, kDebugLoading)) {
+		stream.hexdump(size);
+	}
 
 	Sprite &sprite = *_sprites[spritePosition + 1];
 
@@ -331,10 +329,8 @@ void readSpriteDataD2(Common::SeekableReadStreamEndian &stream, Sprite &sprite, 
 				sprite._inkData = stream.readByte();
 
 				sprite._ink = static_cast<InkType>(sprite._inkData & 0x3f);
-				if (sprite._inkData & 0x40)
-					sprite._trails = 1;
-				else
-					sprite._trails = 0;
+				sprite._trails = sprite._inkData & 0x40 ? true : false;
+				sprite._stretch = sprite._inkData & 0x80 ? true : false;
 			}
 			break;
 		case 6:
@@ -579,12 +575,10 @@ void Frame::readSpriteD4(Common::MemoryReadStreamEndian &stream, uint16 offset, 
 
 	uint16 fieldPosition = offset - spriteStart;
 
-	if (debugChannelSet(8, kDebugLoading)) {
-		debugC(8, kDebugLoading, "Frame::readSpriteD4(): channel %d, 20 bytes", spritePosition);
-		stream.hexdump(kSprChannelSizeD4);
-	}
-
 	debugC(3, kDebugLoading, "Frame::readSpriteD4(): sprite: %d offset: %d size: %d, field: %d", spritePosition, offset, size, fieldPosition);
+	if (debugChannelSet(8, kDebugLoading)) {
+		stream.hexdump(size);
+	}
 
 	Sprite &sprite = *_sprites[spritePosition + 1];
 
@@ -641,10 +635,8 @@ void readSpriteDataD4(Common::SeekableReadStreamEndian &stream, Sprite &sprite, 
 				sprite._inkData = stream.readByte();
 
 				sprite._ink = static_cast<InkType>(sprite._inkData & 0x3f);
-				if (sprite._inkData & 0x40)
-					sprite._trails = 1;
-				else
-					sprite._trails = 0;
+				sprite._trails = sprite._inkData & 0x40 ? true : false;
+				sprite._stretch = sprite._inkData & 0x80 ? true : false;
 			}
 			break;
 		case 6:
@@ -885,12 +877,10 @@ void Frame::readSpriteD5(Common::MemoryReadStreamEndian &stream, uint16 offset, 
 
 	uint16 fieldPosition = offset - spriteStart;
 
-	if (debugChannelSet(8, kDebugLoading)) {
-		debugC(8, kDebugLoading, "Frame::readSpriteD5(): channel %d, 20 bytes", spritePosition);
-		stream.hexdump(kSprChannelSizeD4);
-	}
-
 	debugC(3, kDebugLoading, "Frame::readSpriteD5(): sprite: %d offset: %d size: %d, field: %d", spritePosition, offset, size, fieldPosition);
+	if (debugChannelSet(8, kDebugLoading)) {
+		stream.hexdump(size);
+	}
 
 	Sprite &sprite = *_sprites[spritePosition + 1];
 
@@ -927,10 +917,8 @@ void readSpriteDataD5(Common::SeekableReadStreamEndian &stream, Sprite &sprite, 
 				sprite._inkData = stream.readByte();
 
 				sprite._ink = static_cast<InkType>(sprite._inkData & 0x3f);
-				if (sprite._inkData & 0x40)
-					sprite._trails = 1;
-				else
-					sprite._trails = 0;
+				sprite._trails = sprite._inkData & 0x40 ? true : false;
+				sprite._stretch = sprite._inkData & 0x80 ? true : false;
 			}
 			break;
 		case 2:
@@ -1087,12 +1075,10 @@ void Frame::readSpriteD6(Common::MemoryReadStreamEndian &stream, uint16 offset, 
 
 	uint16 fieldPosition = offset - spriteStart;
 
-	if (debugChannelSet(8, kDebugLoading)) {
-		debugC(8, kDebugLoading, "Frame::readSpriteD6(): channel %d, 20 bytes", spritePosition);
-		stream.hexdump(kSprChannelSizeD6);
-	}
-
 	debugC(3, kDebugLoading, "Frame::readSpriteD6(): sprite: %d offset: %d size: %d, field: %d", spritePosition, offset, size, fieldPosition);
+	if (debugChannelSet(8, kDebugLoading)) {
+		stream.hexdump(size);
+	}
 
 	Sprite &sprite = *_sprites[spritePosition + 1];
 
@@ -1131,10 +1117,8 @@ void readSpriteDataD6(Common::SeekableReadStreamEndian &stream, Sprite &sprite, 
 			sprite._inkData = inkData;
 
 			sprite._ink = static_cast<InkType>(sprite._inkData & 0x3f);
-			if (sprite._inkData & 0x40)
-				sprite._trails = 1;
-			else
-				sprite._trails = 0;
+			sprite._trails = sprite._inkData & 0x40 ? true : false;
+			sprite._stretch = sprite._inkData & 0x80 ? true : false;
 			}
 			break;
 		case 2: {
@@ -1268,9 +1252,9 @@ Common::String Frame::formatChannelInfo() {
 	for (int i = 0; i < _numChannels; i++) {
 		Sprite &sprite = *_sprites[i + 1];
 		if (sprite._castId.member) {
-			result += Common::String::format("CH: %-3d castId: %s, [inkData: 0x%02x [ink: %d, trails: %d, line: %d], %dx%d@%d,%d type: %d (%s) fg: %d bg: %d], script: %s, colorcode: 0x%x, blendAmount: 0x%x, blend: 0x%x, unk3: 0x%x\n",
+			result += Common::String::format("CH: %-3d castId: %s, [inkData: 0x%02x [ink: %d, trails: %d, stretch: %d, line: %d], %dx%d@%d,%d type: %d (%s) fg: %d bg: %d], script: %s, colorcode: 0x%x, blendAmount: 0x%x, blend: 0x%x, unk3: 0x%x\n",
 				i + 1, sprite._castId.asString().c_str(), sprite._inkData,
-				sprite._ink, sprite._trails, sprite._thickness, sprite._width, sprite._height,
+				sprite._ink, sprite._trails, sprite._stretch, sprite._thickness, sprite._width, sprite._height,
 				sprite._startPoint.x, sprite._startPoint.y,
 				sprite._spriteType, spriteType2str(sprite._spriteType), sprite._foreColor,
 				sprite._backColor, sprite._scriptId.asString().c_str(), sprite._colorcode,

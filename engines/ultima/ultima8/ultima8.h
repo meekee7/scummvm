@@ -130,16 +130,10 @@ private:
 	bool _cruStasis; //!< A slightly different kind of stasis for Crusader that stops some keyboard events
 private:
 	/**
-	 * Does engine deinitialization
-	 */
-	void deinitialize();
-
-	/**
 	 * Shows the Pentagram splash screen
 	 */
 	void showSplashScreen();
 
-private:
 	//! write savegame info (time, ..., game-specifics)
 	void writeSaveInfo(Common::WriteStream *ws);
 
@@ -158,9 +152,6 @@ private:
 	//! Does a Full reset of the Engine (including shutting down Video)
 //	void fullReset();
 
-	// called depending upon command line arguments
-	void GraphicSysInit(); // starts/restarts the graphics subsystem
-
 	void handleDelayedEvents();
 
 	bool pollEvent(Common::Event &event);
@@ -168,7 +159,8 @@ protected:
 	// Engine APIs
 	Common::Error run() override;
 
-	bool initialize();
+	Common::Error initialize();
+	void deinitialize();
 
 	void pauseEngineIntern(bool pause) override;
 
@@ -185,9 +177,6 @@ public:
 	bool hasFeature(EngineFeature f) const override;
 
 	Common::Language getLanguage() const;
-
-	Common::Error startup();
-	void shutdown();
 
 	bool setupGame();
 	Common::Error startupGame();

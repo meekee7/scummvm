@@ -31,6 +31,8 @@
 #ifndef GOB_DETECTION_TABLES_ADI5_H
 #define GOB_DETECTION_TABLES_ADI5_H
 
+//#include "common/translation.h"  // Make release checker happy
+
 // -- French: Adi 5 --
 
 {
@@ -44,7 +46,7 @@
 		ADGF_UNSUPPORTED,
 		GUIO0()
 	},
-	kFeatures640x480,
+	kFeatures800x600,
 	0,0,0
 },
 
@@ -59,11 +61,26 @@
 		ADGF_UNSUPPORTED,
 		GUIO0()
 	},
-	kFeatures640x480,
+	kFeatures800x600,
 	0,0,0
 },
 
 // -- German: Addy 5 --
+
+{
+	{
+
+		"adi5",
+		_s("Missing game code"), // Addy 5 5.01 (Engine: DEV7 version unknown)
+		AD_ENTRY1s("adi5.stk", "ec2d6a05d13bec1b4dcfa18d88e317c6", 627942),
+		DE_DEU,
+		kPlatformWindows,
+		ADGF_UNSUPPORTED,
+		GUIO0()
+	},
+	kFeatures800x600,
+	0,0,0
+},
 
 {
 	{
@@ -76,7 +93,7 @@
 		ADGF_UNSUPPORTED,
 		GUIO0()
 	},
-	kFeatures640x480,
+	kFeatures800x600,
 	0,0,0
 },
 {
@@ -90,7 +107,7 @@
 		ADGF_UNSUPPORTED | ADGF_DEMO,
 		GUIO0()
 	},
-	kFeatures640x480,
+	kFeatures800x600,
 	0,0,0
 },
 

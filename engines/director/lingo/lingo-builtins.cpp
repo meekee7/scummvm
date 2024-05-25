@@ -260,16 +260,16 @@ void Lingo::initBuiltIns(BuiltinProto protos[]) {
 		case CBLTIN:
 			_builtinCmds[blt->name] = sym;
 			break;
-		case FBLTIN:
 		case FBLTIN_LIST:
+			_builtinListHandlers[blt->name] = sym; // fall-through
+		case FBLTIN:
 			_builtinFuncs[blt->name] = sym;
-			_builtinListHandlers[blt->name] = sym;
 			break;
-		case HBLTIN:
 		case HBLTIN_LIST:
+			_builtinListHandlers[blt->name] = sym; // fall-through
+		case HBLTIN:
 			_builtinCmds[blt->name] = sym;
 			_builtinFuncs[blt->name] = sym;
-			_builtinListHandlers[blt->name] = sym;
 			break;
 		case KBLTIN:
 			_builtinConsts[blt->name] = sym;
@@ -306,9 +306,12 @@ void Lingo::cleanupBuiltIns(BuiltinProto protos[]) {
 	}
 }
 
-void Lingo::printSTUBWithArglist(const char *funcname, int nargs, const char *prefix) {
-	Common::String s(funcname);
+void Lingo::printArgs(const char *funcname, int nargs, const char *prefix) {
+	Common::String s;
+	if (prefix)
+		s += Common::String(prefix);
 
+	s += Common::String(funcname);
 	s += '(';
 
 	for (int i = 0; i < nargs; i++) {
@@ -322,7 +325,7 @@ void Lingo::printSTUBWithArglist(const char *funcname, int nargs, const char *pr
 
 	s += ")";
 
-	debug(3, "%s %s", prefix, s.c_str());
+	debug(3, "%s", s.c_str());
 }
 
 void Lingo::convertVOIDtoString(int arg, int nargs) {
@@ -353,13 +356,14 @@ void Lingo::drop(uint num) {
 ///////////////////
 void LB::b_abs(int nargs) {
 	Datum d = g_lingo->pop();
+	Datum res(0);
 
 	if (d.type == INT)
-		d.u.i = ABS(d.u.i);
+		res = Datum(ABS(d.u.i));
 	else if (d.type == FLOAT)
-		d.u.f = ABS(d.u.f);
+		res = Datum(ABS(d.u.f));
 
-	g_lingo->push(d);
+	g_lingo->push(res);
 }
 
 void LB::b_atan(int nargs) {
@@ -445,8 +449,15 @@ void LB::b_power(int nargs) {
 }
 
 void LB::b_random(int nargs) {
-	Datum max = g_lingo->pop();
-	Datum res((int)(g_director->_rnd.getRandom(max.asInt()) + 1));
+	int max = g_lingo->pop().asInt();
+	Datum res;
+	// Output in D4/D5 seems to be bounded from 1-65535, regardless of input.
+	if (max <= 0) {
+		res = Datum((int)(g_director->_rnd.getRandom(65535) + 1));
+	} else {
+		max = MIN(max, 65535);
+		res = Datum((int)(g_director->_rnd.getRandom(max) + 1));
+	}
 	g_lingo->push(res);
 }
 
@@ -517,7 +528,7 @@ void LB::b_charToNum(int nargs) {
 
 void LB::b_length(int nargs) {
 	Datum d = g_lingo->pop();
-	if (d.type == INT || d.type == FLOAT) {
+	if (d.type == INT || d.type == FLOAT || d.type == VOID) {
 		g_lingo->push(0);
 		return;
 	}
@@ -671,13 +682,18 @@ void LB::b_count(int nargs) {
 
 	switch (list.type) {
 	case ARRAY:
+	case RECT:
+	case POINT:
 		result.u.i = list.u.farr->arr.size();
 		break;
 	case PARRAY:
 		result.u.i = list.u.parr->arr.size();
 		break;
+	case OBJECT:
+		result.u.i = list.u.obj->getPropCount();
+		break;
 	default:
-		TYPECHECK2(list, ARRAY, PARRAY);
+		TYPECHECK3(list, ARRAY, PARRAY, OBJECT);
 	}
 
 	g_lingo->push(result);
@@ -705,7 +721,6 @@ void LB::b_deleteAt(int nargs) {
 void LB::b_deleteOne(int nargs) {
 	Datum val = g_lingo->pop();
 	Datum list = g_lingo->pop();
-	TYPECHECK3(val, INT, FLOAT, SYMBOL);
 	TYPECHECK2(list, ARRAY, PARRAY);
 
 	switch (list.type) {
@@ -811,8 +826,21 @@ void LB::b_getaProp(int nargs) {
 		g_lingo->push(d);
 		break;
 	}
+	case OBJECT:
+		{
+			if (prop.type != SYMBOL) {
+				g_lingo->lingoError("b_getaProp(): symbol expected");
+				return;
+			}
+			Datum d;
+			if (list.u.obj->hasProp(*prop.u.s))
+				d = list.u.obj->getProp(*prop.u.s);
+			g_lingo->push(d);
+		}
+		break;
 	default:
-		TYPECHECK2(list, ARRAY, PARRAY);
+		TYPECHECK3(list, ARRAY, PARRAY, OBJECT);
+		break;
 	}
 }
 
@@ -892,7 +920,7 @@ void LB::b_getPos(int nargs) {
 	switch (list.type) {
 	case ARRAY: {
 		Datum d(0);
-		int index = LC::compareArrays(LC::eqData, list, val, true).u.i;
+		int index = LC::compareArrays(LC::eqDataStrict, list, val, true).u.i;
 		if (index > 0) {
 			d.u.i = index;
 		}
@@ -901,7 +929,7 @@ void LB::b_getPos(int nargs) {
 	}
 	case PARRAY: {
 		Datum d(0);
-		int index = LC::compareArrays(LC::eqData, list, val, true, true).u.i;
+		int index = LC::compareArrays(LC::eqDataStrict, list, val, true, true).u.i;
 		if (index > 0) {
 			d.u.i = index;
 		}
@@ -916,24 +944,41 @@ void LB::b_getPos(int nargs) {
 void LB::b_getProp(int nargs) {
 	Datum prop = g_lingo->pop();
 	Datum list = g_lingo->pop();
-	TYPECHECK2(list, ARRAY, PARRAY);
 
 	switch (list.type) {
 	case ARRAY:
-		g_lingo->push(list);
-		g_lingo->push(prop);
-		b_getPos(nargs);
+		if (g_director->getVersion() < 500) {
+			// D4 allows getProp to be called on ARRAYs
+			g_lingo->push(list);
+			g_lingo->push(prop);
+			b_getAt(nargs);
+		} else {
+			g_lingo->lingoError("BUILDBOT: b_getProp: Attempted to call on an ARRAY");
+		}
 		break;
 	case PARRAY: {
 		int index = LC::compareArrays(LC::eqData, list, prop, true).u.i;
 		if (index > 0) {
 			g_lingo->push(list.u.parr->arr[index - 1].v);
 		} else {
-			error("b_getProp: Property %s not found", prop.asString().c_str());
+			g_lingo->lingoError("BUILDBOT: b_getProp: Property %s not found", prop.asString().c_str());
 		}
 		break;
 	}
+	case OBJECT:
+		{
+			if (prop.type != SYMBOL) {
+				g_lingo->lingoError("BUILDBOT: b_getProp(): symbol expected, got %s", prop.type2str());
+				return;
+			}
+			Datum d;
+			if (list.u.obj->hasProp(*prop.u.s))
+				d = list.u.obj->getProp(*prop.u.s);
+			g_lingo->push(d);
+		}
+		break;
 	default:
+		TYPECHECK3(list, ARRAY, PARRAY, OBJECT);
 		break;
 	}
 }
@@ -942,10 +987,34 @@ void LB::b_getPropAt(int nargs) {
 	Datum indexD = g_lingo->pop();
 	Datum list = g_lingo->pop();
 	TYPECHECK2(indexD, INT, FLOAT);
-	TYPECHECK(list, PARRAY);
 	int index = indexD.asInt();
+	switch (list.type) {
+	case PARRAY:
+		{
+			if ((index <= 0) || (index > (int)list.u.parr->arr.size())) {
+				g_lingo->lingoError("b_getPropAt(): index out of range");
+				return;
+			}
+			g_lingo->push(list.u.parr->arr[index - 1].p);
+		}
+		break;
+	case OBJECT:
+		{
+			if ((index <= 0) || (index > (int)list.u.obj->getPropCount())) {
+				g_lingo->lingoError("b_getPropAt(): index out of range");
+				return;
+			}
+			Common::String key = list.u.obj->getPropAt(index);
+			Datum result(key);
+			result.type = SYMBOL;
+			g_lingo->push(result);
+		}
+		break;
+	default:
+		TYPECHECK2(list, PARRAY, OBJECT);
+		break;
+	}
 
-	g_lingo->push(list.u.parr->arr[index - 1].p);
 }
 
 void LB::b_list(int nargs) {
@@ -1056,6 +1125,15 @@ void LB::b_setaProp(int nargs) {
 		}
 		break;
 	}
+	case OBJECT:
+		{
+			if (prop.type != SYMBOL) {
+				g_lingo->lingoError("b_setaProp(): symbol expected");
+				return;
+			}
+			list.u.obj->setProp(*prop.u.s, value);
+		}
+		break;
 	default:
 		TYPECHECK2(list, ARRAY, PARRAY);
 	}
@@ -1097,13 +1175,32 @@ void LB::b_setProp(int nargs) {
 	Datum value = g_lingo->pop();
 	Datum prop = g_lingo->pop();
 	Datum list = g_lingo->pop();
-	TYPECHECK(list, PARRAY);
 
-	int index = LC::compareArrays(LC::eqData, list, prop, true).u.i;
-	if (index > 0) {
-		list.u.parr->arr[index - 1].v = value;
-	} else {
-		warning("b_setProp: Property not found");
+	switch (list.type) {
+	case PARRAY:
+		{
+			int index = LC::compareArrays(LC::eqData, list, prop, true).u.i;
+			if (index > 0) {
+				list.u.parr->arr[index - 1].v = value;
+			} else {
+				warning("b_setProp: Property not found");
+			}
+		}
+		break;
+	case OBJECT:
+		{
+			if (prop.type != SYMBOL) {
+				g_lingo->lingoError("BUILDBOT: b_setProp(): symbol expected, got %s", prop.type2str());
+				return;
+			}
+			// unlike the PARRAY case, OBJECT seems to create
+			// new properties without throwing an error
+			list.u.obj->setProp(*prop.u.s, value);
+		}
+		break;
+	default:
+		TYPECHECK2(list, PARRAY, OBJECT);
+		break;
 	}
 }
 
@@ -1416,7 +1513,6 @@ void LB::b_continue(int nargs) {
 
 void LB::b_dontPassEvent(int nargs) {
 	g_lingo->_passEvent = false;
-	warning("dontPassEvent raised");
 }
 
 void LB::b_nothing(int nargs) {
@@ -1521,7 +1617,6 @@ void LB::b_halt(int nargs) {
 
 void LB::b_pass(int nargs) {
 	g_lingo->_passEvent = true;
-	warning("pass raised");
 }
 
 void LB::b_pause(int nargs) {
@@ -2016,11 +2111,44 @@ void LB::b_copyToClipBoard(int nargs) {
 }
 
 void LB::b_duplicate(int nargs) {
-	// Removed previous implementation since it copied only the reference to the cast
-	// and didn't actually duplicate it.
-	// See commit: 76e56f5b1f51a51d073ecf3970134d87964a4ea4
-	g_lingo->printSTUBWithArglist("b_duplicate", nargs);
-	g_lingo->dropStack(nargs);
+	Datum to;
+	Datum from;
+	Movie *movie = g_director->getCurrentMovie();
+
+	if (nargs >= 2) {
+		nargs -= 2;
+		g_lingo->dropStack(nargs);
+		to = g_lingo->pop();
+		from = g_lingo->pop();
+		if (from.type != CASTREF)
+			error("b_duplicate(): expected CASTREF for from, got %s", from.type2str());
+		if (to.type == INT)
+			to = Datum(CastMemberID(to.asInt(), DEFAULT_CAST_LIB));
+		else if (to.type != CASTREF)
+			error("b_duplicate(): expected CASTREF or INT for to, got %s", to.type2str());
+	} else if (nargs == 1) {
+		// use next available slot in the same cast library
+		from = g_lingo->pop();
+		if (from.type != CASTREF)
+			error("b_duplicate(): expected CASTREF for from, got %s", from.type2str());
+		if (!movie->getCasts()->contains(from.u.cast->castLib))
+			error("b_duplicate(): couldn't find cast lib %d", from.u.cast->castLib);
+
+		Cast *cast = movie->getCasts()->getVal(from.u.cast->castLib);
+		to = Datum(CastMemberID(cast->getNextUnusedID(), from.u.cast->castLib));
+	} else {
+		error("b_duplicate(): expected at least 1 argument");
+	}
+
+	if (!movie->duplicateCastMember(*from.u.cast, *to.u.cast)) {
+		warning("b_duplicate(): failed to copy cast member %s to %s", from.u.cast->asString().c_str(), to.u.cast->asString().c_str());
+	}
+
+	Score *score = movie->getScore();
+	// force redraw any sprites
+	score->refreshPointersForCastMemberID(*to.u.cast);
+	b_updateStage(0);
+	g_lingo->push(Datum(to.u.cast->member));
 }
 
 void LB::b_editableText(int nargs) {
@@ -2140,23 +2268,17 @@ void LB::b_importFileInto(int nargs) {
 	in.close();
 
 	Movie *movie = g_director->getCurrentMovie();
+	Score *score = movie->getScore();
 	BitmapCastMember *bitmapCast = new BitmapCastMember(movie->getCast(), memberID.member, img);
 	movie->createOrReplaceCastMember(memberID, bitmapCast);
 	bitmapCast->setModified(true);
 	const Graphics::Surface *surf = img->getSurface();
 	bitmapCast->_size = surf->pitch * surf->h + img->getPaletteColorCount() * 3;
-	auto channels = movie->getScore()->_channels;
-
-	for (uint i = 0; i < channels.size(); i++) {
-		if (channels[i]->_sprite->_castId == dst.asMemberID()) {
-			channels[i]->setCast(memberID);
-			channels[i]->_dirty = true;
-		}
-	}
+	score->refreshPointersForCastMemberID(dst.asMemberID());
 }
 
 void menuCommandsCallback(int action, Common::String &text, void *data) {
-	g_director->getCurrentMovie()->queueUserEvent(kEventMenuCallback, action);
+	g_director->getCurrentMovie()->queueInputEvent(kEventMenuCallback, action);
 }
 
 void LB::b_installMenu(int nargs) {
@@ -2371,8 +2493,6 @@ void LB::b_move(int nargs) {
 	b_erase(1);
 	Score *score = movie->getScore();
 	uint16 frame = score->getCurrentFrameNum();
-	Frame *currentFrame = score->_currentFrame;
-	auto channels = score->_channels;
 
 	score->renderFrame(frame, kRenderForceUpdate);
 
@@ -2382,17 +2502,7 @@ void LB::b_move(int nargs) {
 	movie->createOrReplaceCastMember(dest.asMemberID(), toMove);
 	movie->createOrReplaceCastMember(src.asMemberID(), toReplace);
 
-	for (uint16 i = 0; i < currentFrame->_sprites.size(); i++) {
-		if (currentFrame->_sprites[i]->_castId == dest.asMemberID())
-			currentFrame->_sprites[i]->setCast(dest.asMemberID());
-	}
-
-	for (uint i = 0; i < channels.size(); i++) {
-		if (channels[i]->_sprite->_castId == dest.asMemberID()) {
-			channels[i]->_sprite->setCast(CastMemberID(1, DEFAULT_CAST_LIB));
-			channels[i]->_dirty = true;
-		}
-	}
+	score->refreshPointersForCastMemberID(dest.asMemberID());
 
 	score->renderFrame(frame, kRenderForceUpdate);
 }
@@ -2430,23 +2540,9 @@ void LB::b_pasteClipBoardInto(int nargs) {
 	}
 
 	Score *score = movie->getScore();
-	Frame *currentFrame = score->_currentFrame;
-	auto channels = score->_channels;
-
 	castMember->setModified(true);
 	movie->createOrReplaceCastMember(*to.u.cast, castMember);
-
-	for (uint16 i = 0; i < currentFrame->_sprites.size(); i++) {
-		if (currentFrame->_sprites[i]->_castId == to.asMemberID())
-			currentFrame->_sprites[i]->setCast(to.asMemberID());
-	}
-
-	for (uint i = 0; i < channels.size(); i++) {
-		if (channels[i]->_sprite->_castId == to.asMemberID()) {
-			channels[i]->_sprite->setCast(to.asMemberID());
-			channels[i]->_dirty = true;
-		}
-	}
+	score->refreshPointersForCastMemberID(to.asMemberID());
 }
 
 static const struct PaletteNames {
@@ -2877,8 +2973,8 @@ void LB::b_updateStage(int nargs) {
 // Point
 ///////////////////
 void LB::b_point(int nargs) {
-	Datum y(g_lingo->pop().asFloat());
-	Datum x(g_lingo->pop().asFloat());
+	Datum y(g_lingo->pop().asInt());
+	Datum x(g_lingo->pop().asInt());
 	Datum d;
 
 	d.u.farr = new FArray;
@@ -3278,7 +3374,7 @@ void LB::b_script(int nargs) {
 			if (!script)
 				script = g_director->getCurrentMovie()->getScriptContext(kParentScript, memberID);
 		} else {
-			g_director->getCurrentMovie()->getScriptContext(kCastScript, memberID);
+			script = g_director->getCurrentMovie()->getScriptContext(kCastScript, memberID);
 		}
 
 		if (script) {
