@@ -2068,7 +2068,7 @@ DataReadErrorCode PlugInModifier::load(DataReader &reader) {
 	modifierName[16] = 0;
 
 	subObjectSize = codedSize;
-	if (reader.getDataFormat() == kDataFormatWindows && reader.getRuntimeVersion() < kRuntimeVersion112) {
+	if (reader.getDataFormat() == kDataFormatWindows && subObjectSize >= lengthOfName * 256u) {
 		// This makes no sense but it's how it's stored...
 		if (subObjectSize < lengthOfName * 256u)
 			return kDataReadErrorReadFailed;
