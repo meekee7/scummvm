@@ -5127,8 +5127,16 @@ Common::SharedPtr<Structural> Runtime::findDefaultSharedSceneForScene(Structural
 	Structural *subsection = scene->getParent();
 
 	const Common::Array<Common::SharedPtr<Structural> > &children = subsection->getChildren();
-	if (children.size() == 0 || children[0].get() == scene)
+	if (children.size() == 0)
 		return Common::SharedPtr<Structural>();
+
+	if (children[0].get() == scene) {
+		// This case occurs in The Day The World Broke
+		if (children.size() > 1)
+			return children[1];
+		else
+			return Common::SharedPtr<Structural>();
+	}
 
 	return children[0];
 }
@@ -5574,6 +5582,9 @@ void Runtime::executeHighLevelSceneTransition(const HighLevelSceneTransition &tr
 
 					if (_activeMainScene == targetSharedScene)
 						error("Transitioned into scene currently being used as a target scene, this is not supported");
+
+					if (targetSharedScene == nullptr)
+						error("No ");
 
 					queueEventAsLowLevelSceneStateTransitionAction(Event(EventIDs::kSceneDeactivated, 0), _activeMainScene.get(), true, true);
 
@@ -6528,7 +6539,7 @@ VThreadState Runtime::applyDefaultVisibility(const ApplyDefaultVisibilityTaskDat
 	}
 
 	// Visibility change events are sourced from the element
- 	Common::SharedPtr<MessageProperties> props(new MessageProperties(evt, DynamicValue(), data.element->getSelfReference()));
+	Common::SharedPtr<MessageProperties> props(new MessageProperties(evt, DynamicValue(), data.element->getSelfReference()));
 	Common::SharedPtr<MessageDispatch> dispatch(new MessageDispatch(props, data.element, false, false, true));
 
 	sendMessageOnVThread(dispatch);
@@ -6612,7 +6623,7 @@ void Runtime::instantiateIfAlias(Common::SharedPtr<Modifier> &modifier, const Co
 
 		// Aliased variables use the same variable storage, but are treated as distinct objects.
 		if (clonedModifier->isVariable()) {
- 			assert(templateModifier->isVariable());
+			assert(templateModifier->isVariable());
 			static_cast<VariableModifier *>(clonedModifier.get())->setStorage(static_cast<const VariableModifier *>(templateModifier.get())->getStorage());
 		}
 	}
