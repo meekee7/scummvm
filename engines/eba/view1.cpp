@@ -1,0 +1,89 @@
+/* ScummVM - Graphic Adventure Engine
+ *
+ * ScummVM is the legal property of its developers, whose names
+ * are too numerous to list here. Please refer to the COPYRIGHT
+ * file distributed with this source distribution.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+#include "common/system.h"
+#include "graphics/paletteman.h"
+#include "eba/view1.h"
+
+#include "common/compression/unzip.h"
+#include "image/png.h"
+#include "common/stream.h"
+
+namespace Eba {
+
+bool View1::msgFocus(const FocusMessage &msg) {
+	return true;
+}
+
+bool View1::msgKeypress(const KeypressMessage &msg) {
+	// Any keypress to close the view
+	close();
+	return true;
+}
+
+void View1::draw() {
+	// Draw a bunch of squares on screen
+	Graphics::ManagedSurface s = getSurface();
+	//g_system->getPaletteManager()->setPalette(background.getPalette(), 0 , background.getPaletteColorCount());
+	//s.copyFrom(background.getSurface());
+	Graphics::ManagedSurface tmp(s);
+
+	s.fillRect(Common::Rect(800, 600), MS_RGB(255, 255, 255));
+
+	tmp.blitFrom(background.getSurface());
+	tmp.blendBlitTo(s, 0, 0, Graphics::FLIP_NONE, nullptr, MS_ARGB(255, 255, 255, 255), -1, -1, Graphics::BLEND_NORMAL, Graphics::ALPHA_OPAQUE);
+
+	/*
+	for (int i = 0; i < 100; ++i)
+		s.frameRect(Common::Rect(i, i, 320 - i, 200 - i), i);
+		*/
+}
+
+bool View1::tick() {
+	if (!this->isDelayActive()) {
+		this->delayFrames(9 * FRAME_RATE / 2); //4.5 seconds
+	}
+	// Cycle the palette
+	/*
+	++_offset;
+	for (int i = 0; i < 256; ++i)
+		_pal[i * 3 + 1] = (i + _offset) % 256;
+	g_system->getPaletteManager()->setPalette(_pal, 0, 256);
+	*/
+
+	// Below is redundant since we're only cycling the palette, but it demonstrates
+	// how to trigger the view to do further draws after the first time, since views
+	// don't automatically keep redrawing unless you tell it to
+
+
+	return true;
+}
+
+void View1::loadBackground() {
+	Common::Path visualsPath = "data/visual.jar";
+	auto visualsArchive = Common::ScopedPtr<Common::Archive>(makeZipArchive(visualsPath));
+	auto stream = Common::ScopedPtr<Common::SeekableReadStream>(visualsArchive->createReadStreamForMember("bildfolgen/intro/daedalic.png"));
+	//auto stream = Common::ScopedPtr<Common::SeekableReadStream>(visualsArchive->createReadStreamForMember("hintergrund/main_de.png"));
+
+	background.loadStream(*stream);
+}
+
+} // namespace Eba
