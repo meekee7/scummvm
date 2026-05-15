@@ -117,7 +117,7 @@ private:
 public:
 	UIElement(const Common::String &name, UIElement *uiParent);
 	UIElement(const Common::String &name);
-	virtual ~UIElement() {}
+	virtual ~UIElement() = default;
 
 	/**
 	 * Returns true if the elements needs to be redrawn
@@ -287,6 +287,10 @@ protected:
 public:
 	Events();
 	virtual ~Events();
+	Events(const Events &) = delete;
+	Events &operator=(const Events &) = delete;
+	Events(Events &&) = delete;
+	Events &operator=(Events &&) = delete;
 
 	/**
 	 * Main game loop

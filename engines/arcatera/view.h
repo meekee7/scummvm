@@ -58,8 +58,7 @@ public:
 	View(const Common::String &name) :
 		UIElement(name) {
 	}
-	virtual ~View() {
-	}
+	virtual ~View() = default;
 
 	bool msgFocus(const FocusMessage &msg) override;
 	bool msgUnfocus(const UnfocusMessage &msg) override;

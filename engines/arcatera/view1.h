@@ -35,7 +35,7 @@ private:
 
 public:
 	View1();
-	virtual ~View1() {}
+	virtual ~View1() = default;
 
 	bool msgFocus(const FocusMessage &msg) override;
 	bool msgKeypress(const KeypressMessage &msg) override;
