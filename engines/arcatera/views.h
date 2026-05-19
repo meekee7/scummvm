@@ -22,12 +22,12 @@
 #ifndef ARCATERA_VIEWS_H
 #define ARCATERA_VIEWS_H
 
-#include "arcatera/view1.h"
+#include "arcatera/fmvintroview.h"
 
 namespace Arcatera {
 
 struct Views {
-	View1 _view1;
+	FMVIntroView _introView;
 };
 
 } // namespace Arcatera

@@ -5,11 +5,11 @@ MODULE_OBJS = \
 	brgparser.o \
 	console.o \
 	events.o \
+	fmvintroview.o \
 	messages.o \
 	metaengine.o \
 	sceneparser.o \
-	view.o \
-	view1.o
+	view.o
 
 # This module can be built as a plugin
 ifeq ($(ENABLE_ARCATERA), DYNAMIC_PLUGIN)

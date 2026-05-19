@@ -27,18 +27,19 @@
 
 namespace Arcatera {
 
-class View1 : public View {
+class FMVIntroView : public View {
 private:
 	byte _pal[256 * 3] = {0};
 
 	Video::SmackerDecoder decoder;
 
 public:
-	View1();
-	virtual ~View1() = default;
+	FMVIntroView();
+	virtual ~FMVIntroView() = default;
 
 	bool msgFocus(const FocusMessage &msg) override;
 	bool msgKeypress(const KeypressMessage &msg) override;
+	bool msgMouseUp(const MouseUpMessage &e) override;
 	void draw() override;
 	bool tick() override;
 };

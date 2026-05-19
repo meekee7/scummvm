@@ -19,16 +19,16 @@
  *
  */
 
+#include "arcatera/brgparser.h"
+#include "arcatera/fmvintroview.h"
+#include "common/file.h"
 #include "common/system.h"
 #include "graphics/paletteman.h"
-#include "arcatera/view1.h"
 #include "video/smk_decoder.h"
-#include "common/file.h"
-#include "arcatera/brgparser.h"
 
 namespace Arcatera {
 
-View1::View1() : View("View1") {
+FMVIntroView::FMVIntroView() : View("IntroVideo") {
 	Common::File* file = new Common::File;
 	Common::Path path("res\\Locs\\common\\introd.smk", '\\');
 	bool open = file->open(path);
@@ -37,7 +37,7 @@ View1::View1() : View("View1") {
 	decoder.start();
 }
 
-bool View1::msgFocus(const FocusMessage &msg) {
+bool FMVIntroView::msgFocus(const FocusMessage &msg) {
 	Common::fill(&_pal[0], &_pal[256 * 3], 0);
 		
 	for (int j = 0; j < 256; j++) {
@@ -49,16 +49,22 @@ bool View1::msgFocus(const FocusMessage &msg) {
 	return true;
 }
 
-bool View1::msgKeypress(const KeypressMessage &msg) {
+bool FMVIntroView::msgKeypress(const KeypressMessage &msg) {
 	// Any keypress to close the view
+	if (msg.keycode == Common::KeyCode::KEYCODE_SPACE || msg.keycode == Common::KeyCode::KEYCODE_RETURN || msg.keycode == Common::KeyCode::KEYCODE_BACKSPACE || msg.keycode == Common::KeyCode::KEYCODE_ESCAPE) {
+		close();
+	}
+	return true;
+}
+bool FMVIntroView::msgMouseUp(const MouseUpMessage &e) {
 	close();
 	return true;
 }
 
-void View1::draw() {
+void FMVIntroView::draw() {
 	Graphics::ManagedSurface s = getSurface();
 
-	
+
 	if (true) {
 		auto *frame = decoder.decodeNextFrame();
 		Graphics::Palette palette;
@@ -69,6 +75,8 @@ void View1::draw() {
 
 		if (frame)
 			s.blitFrom(*frame, &palette);
+		else
+			close();
 	} else {
 		Common::File brg;
 		brg.open("res/Locs/common/char.brg");
@@ -78,7 +86,7 @@ void View1::draw() {
 	}
 }
 
-bool View1::tick() {
+bool FMVIntroView::tick() {
 	redraw();
 
 	return true;
