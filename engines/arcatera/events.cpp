@@ -145,7 +145,7 @@ void Events::popView() {
 	priorView->msgUnfocus(UnfocusMessage());
 	_views.pop();
 
-	for (int i = 0; i < (int)_views.size() - 1; ++i) {
+	for (int i = 0; i < static_cast<int>(_views.size()) - 1; ++i) {
 		_views[i]->redraw();
 		_views[i]->draw();
 	}
@@ -229,8 +229,8 @@ UIElement::UIElement(const Common::String &name, UIElement *uiParent) :
 void UIElement::redraw() {
 	_needsRedraw = true;
 
-	for (size_t i = 0; i < _children.size(); ++i)
-		_children[i]->redraw();
+	for (auto *i : _children)
+		i->redraw();
 }
 
 void UIElement::drawElements() {
@@ -239,8 +239,8 @@ void UIElement::drawElements() {
 		_needsRedraw = false;
 	}
 
-	for (size_t i = 0; i < _children.size(); ++i)
-		_children[i]->drawElements();
+	for (auto *i : _children)
+		i->drawElements();
 }
 
 UIElement *UIElement::findViewGlobally(const Common::String &name) {
@@ -266,8 +266,8 @@ void UIElement::clearSurface() {
 }
 
 void UIElement::draw() {
-	for (size_t i = 0; i < _children.size(); ++i) {
-		_children[i]->draw();
+	for (auto *i : _children) {
+		i->draw();
 	}
 }
 
@@ -276,25 +276,15 @@ bool UIElement::tick() {
 		timeout();
 	}
 
-	for (size_t i = 0; i < _children.size(); ++i) {
-		if (_children[i]->tick())
-			return true;
-	}
-
-	return false;
+	return Common::find_if(_children.begin(), _children.end(), [](UIElement *i) { return i->tick(); }) != _children.end();
 }
 
 UIElement *UIElement::findView(const Common::String &name) {
 	if (_name.equalsIgnoreCase(name))
 		return this;
 
-	UIElement *result;
-	for (size_t i = 0; i < _children.size(); ++i) {
-		if ((result = _children[i]->findView(name)) != nullptr)
-			return result;
-	}
-
-	return nullptr;
+	auto **find = Common::find_if(_children.begin(), _children.end(), [name](UIElement *i) { return i->findView(name) != nullptr; });
+	return find != _children.end() ? *find : nullptr;
 }
 
 void UIElement::replaceView(UIElement *ui, bool replaceAllViews) {
