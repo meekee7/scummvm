@@ -39,8 +39,7 @@ void SBarBibOddsWnd::initialize() {
 SBarBibOddsWnd::SBarBibOddsWnd() : CBagChatWnd() {
 }
 
-SBarBibOddsWnd::~SBarBibOddsWnd() {
-}
+SBarBibOddsWnd::~SBarBibOddsWnd() = default;
 
 ErrorCode SBarBibOddsWnd::detach() {
 	for (int i = 0; i < BIBBLE_NUM_BET_AREAS; i++) {

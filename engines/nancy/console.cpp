@@ -72,7 +72,7 @@ NancyConsole::NancyConsole() : GUI::Debugger() {
 	registerCmd("debug_hotspots", WRAP_METHOD(NancyConsole, Cmd_showHotspots));
 }
 
-NancyConsole::~NancyConsole() {}
+NancyConsole::~NancyConsole() = default;
 
 void NancyConsole::postEnter() {
 	GUI::Debugger::postEnter();

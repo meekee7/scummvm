@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-PuzzleCoffre::PuzzleCoffre() {
-}
+PuzzleCoffre::PuzzleCoffre() = default;
 
 void PuzzleCoffre::wakeUp() {
 	error("TODO: Implement PuzzleCoffre::wakeUp");

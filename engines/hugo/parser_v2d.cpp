@@ -46,8 +46,7 @@ namespace Hugo {
 Parser_v2d::Parser_v2d(HugoEngine *vm) : Parser_v1d(vm) {
 }
 
-Parser_v2d::~Parser_v2d() {
-}
+Parser_v2d::~Parser_v2d() = default;
 
 /**
  * Parse the user's line of text input.  Generate events as necessary

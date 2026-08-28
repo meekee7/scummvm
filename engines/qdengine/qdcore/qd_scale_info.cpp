@@ -27,9 +27,7 @@
 
 namespace QDEngine {
 
-qdScaleInfo::qdScaleInfo(const qdScaleInfo &sc) : qdNamedObject(sc),
-	_scale(sc._scale) {
-}
+qdScaleInfo::qdScaleInfo(const qdScaleInfo &sc) = default;
 
 void qdScaleInfo::load_script(const xml::tag *p) {
 	for (xml::tag::subtag_iterator it = p->subtags_begin(); it != p->subtags_end(); ++it) {

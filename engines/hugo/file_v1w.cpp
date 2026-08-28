@@ -38,8 +38,7 @@ namespace Hugo {
 FileManager_v1w::FileManager_v1w(HugoEngine *vm) : FileManager_v2w(vm) {
 }
 
-FileManager_v1w::~FileManager_v1w() {
-}
+FileManager_v1w::~FileManager_v1w() = default;
 
 /**
  * Open and read in an overlay file, close file

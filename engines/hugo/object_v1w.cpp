@@ -45,8 +45,7 @@ namespace Hugo {
 ObjectHandler_v1w::ObjectHandler_v1w(HugoEngine *vm) : ObjectHandler_v3d(vm) {
 }
 
-ObjectHandler_v1w::~ObjectHandler_v1w() {
-}
+ObjectHandler_v1w::~ObjectHandler_v1w() = default;
 
 /**
  * Draw all objects on screen as follows:

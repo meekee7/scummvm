@@ -59,8 +59,7 @@ MoviePlayer::MoviePlayer(AGOSEngine_Feeble *vm)
 	_bgSoundStream = nullptr;
 }
 
-MoviePlayer::~MoviePlayer() {
-}
+MoviePlayer::~MoviePlayer() = default;
 
 void MoviePlayer::play() {
 	if (_vm->getBitFlag(40)) {

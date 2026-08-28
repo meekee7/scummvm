@@ -33,12 +33,10 @@ namespace Ultima8 {
 
 DEFINE_RUNTIME_CLASSTYPE_CODE(MonsterEgg)
 
-MonsterEgg::MonsterEgg() {
-}
+MonsterEgg::MonsterEgg() = default;
 
 
-MonsterEgg::~MonsterEgg() {
-}
+MonsterEgg::~MonsterEgg() = default;
 
 uint16 MonsterEgg::hatch() {
 	//!! do we need to check probability here?

@@ -45,8 +45,7 @@
 namespace Stark {
 namespace Resources {
 
-Location::~Location() {
-}
+Location::~Location() = default;
 
 Location::Location(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

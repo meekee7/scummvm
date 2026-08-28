@@ -48,8 +48,7 @@ PuzzleLock::PuzzleLock(AsylumEngine *engine) : Puzzle(engine) {
 	memset(&_ticks, 0, sizeof(_ticks));
 }
 
-PuzzleLock::~PuzzleLock() {
-}
+PuzzleLock::~PuzzleLock() = default;
 
 void PuzzleLock::saveLoadWithSerializer(Common::Serializer &s) {
 	s.syncAsSint32LE(_frameIndexes[0]);

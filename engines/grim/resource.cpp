@@ -59,7 +59,7 @@ ResourceLoader *g_resourceloader = nullptr;
 class LabListComperator {
 	const Common::String _labName;
 public:
-	LabListComperator() {}
+	LabListComperator() = default;
 	LabListComperator(const Common::String &ln) : _labName(ln) {}
 
 	bool operator()(const Common::ArchiveMemberPtr &l) {

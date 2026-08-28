@@ -42,8 +42,7 @@ PathfindingGraphNode::PathfindingGraphNode(Vector2f pos, int i) : _position(pos)
 	_movementCost = -1.0f;
 }
 
-PathfindingGraphNode::~PathfindingGraphNode() {
-}
+PathfindingGraphNode::~PathfindingGraphNode() = default;
 
 void PathfindingGraphNode::addNeighbor(PathfindingGraphNode *node) {
 	addNeighbor(node, false);

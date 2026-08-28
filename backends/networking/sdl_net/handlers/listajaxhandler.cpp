@@ -28,9 +28,9 @@
 
 namespace Networking {
 
-ListAjaxHandler::ListAjaxHandler() {}
+ListAjaxHandler::ListAjaxHandler() = default;
 
-ListAjaxHandler::~ListAjaxHandler() {}
+ListAjaxHandler::~ListAjaxHandler() = default;
 
 Common::JSONObject ListAjaxHandler::listDirectory(const Common::String &path_) {
 	Common::JSONArray itemsList;

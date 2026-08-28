@@ -34,8 +34,7 @@ CStack::CStack(CRect cRect, int nID) {
 	m_cRect         = cRect;
 }
 
-CStack::~CStack() {
-}
+CStack::~CStack() = default;
 
 void CStack::Reset() {
 	m_pTopCard      = nullptr;

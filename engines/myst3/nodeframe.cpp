@@ -44,8 +44,7 @@ NodeFrame::NodeFrame(Myst3Engine *vm, uint16 id) :
 	_faces[0]->setTextureFromJPEG(&jpegDesc);
 }
 
-NodeFrame::~NodeFrame() {
-}
+NodeFrame::~NodeFrame() = default;
 
 void NodeFrame::draw() {
 	Common::Rect screenRect;

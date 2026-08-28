@@ -37,9 +37,7 @@ static const int SIGN_BG_H = (SCROLLWIDGETGUMP_H + 16);
 ScrollViewGump::ScrollViewGump(const Configuration *cfg) : DraggableView(cfg), scroll_widget(nullptr) {
 }
 
-ScrollViewGump::~ScrollViewGump() {
-
-}
+ScrollViewGump::~ScrollViewGump() = default;
 
 bool ScrollViewGump::init(Screen *tmp_screen, void *view_manager, Font *f, Party *p, TileManager *tm, ObjManager *om, Common::String text_string) {
 	uint16 x_off = Game::get_game()->get_game_x_offset();

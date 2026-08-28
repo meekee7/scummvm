@@ -876,7 +876,7 @@ public:
 		_loadState(kInitDrawSurface),
 		_x(0), _y(0),
 		_isDone(false) {}
-	virtual ~RaycastDeferredLoader() {}
+	virtual ~RaycastDeferredLoader() = default;
 
 	bool _isDone;
 

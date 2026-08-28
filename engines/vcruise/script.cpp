@@ -1531,11 +1531,9 @@ Common::SharedPtr<Script> ScriptCompilerGlobalState::getFunction(uint fnIndex) c
 	return _functions[fnIndex];
 }
 
-ScriptSet::ScriptSet() {
-}
+ScriptSet::ScriptSet() = default;
 
-IScriptCompilerGlobalState::~IScriptCompilerGlobalState() {
-}
+IScriptCompilerGlobalState::~IScriptCompilerGlobalState() = default;
 
 static void compileLogicFile(ScriptSet &scriptSet, Common::ReadStream &stream, uint streamSize, const Common::Path &blamePath, ScriptDialect dialect, uint loadAsRoom, uint fileRoom, IScriptCompilerGlobalState *gs) {
 	LogicUnscrambleStream unscrambleStream(&stream, streamSize);

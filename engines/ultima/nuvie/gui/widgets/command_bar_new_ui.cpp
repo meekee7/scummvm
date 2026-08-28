@@ -129,9 +129,7 @@ CommandBarNewUI::CommandBarNewUI(Game *g) : CommandBar() {
 	font = game->get_font_manager()->get_conv_font();
 }
 
-CommandBarNewUI::~CommandBarNewUI() {
-}
-
+CommandBarNewUI::~CommandBarNewUI() = default;
 
 
 GUI_status CommandBarNewUI::MouseDown(int x, int y, Events::MouseButton button) {

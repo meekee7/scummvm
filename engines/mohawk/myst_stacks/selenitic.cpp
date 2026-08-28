@@ -80,8 +80,7 @@ Selenitic::Selenitic(MohawkEngine_Myst *vm) :
 	_soundLockButton = nullptr;
 }
 
-Selenitic::~Selenitic() {
-}
+Selenitic::~Selenitic() = default;
 
 void Selenitic::setupOpcodes() {
 	// "Stack-Specific" Opcodes

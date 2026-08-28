@@ -28,8 +28,7 @@ CGEConsole::CGEConsole(CGEEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("Boundaries",    WRAP_METHOD(CGEConsole, Cmd_boundaries));
 }
 
-CGEConsole::~CGEConsole() {
-}
+CGEConsole::~CGEConsole() = default;
 
 /**
  * This command shows and hides boundaries

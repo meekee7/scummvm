@@ -2472,8 +2472,7 @@ void ScannerDialog::Slider::setup(int initial, int xStart, int yp, int width, in
 
 /*--------------------------------------------------------------------------*/
 
-ScannerDialog::ScannerDialog() {
-}
+ScannerDialog::ScannerDialog() = default;
 
 void ScannerDialog::remove() {
 	switch (R2_GLOBALS._sceneManager._sceneNumber) {

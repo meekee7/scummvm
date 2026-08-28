@@ -63,8 +63,7 @@ U8Game::U8Game() : Game() {
 	}
 }
 
-U8Game::~U8Game() {
-}
+U8Game::~U8Game() = default;
 
 bool U8Game::loadFiles() {
 	// Load palette

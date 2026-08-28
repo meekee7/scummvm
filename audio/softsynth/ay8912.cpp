@@ -70,8 +70,7 @@ AY8912Stream::AY8912Stream(int rate, int chipFreq) : _rate(rate), _chipFreq(chip
 	prepareGeneration();
 }
 
-AY8912Stream::~AY8912Stream() {
-}
+AY8912Stream::~AY8912Stream() = default;
 
 void AY8912Stream::genEnv() {
 	int env;

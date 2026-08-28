@@ -37,8 +37,7 @@
 namespace Stark {
 namespace Resources {
 
-LipSync::~LipSync() {
-}
+LipSync::~LipSync() = default;
 
 LipSync::LipSync(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

@@ -82,8 +82,7 @@ Actor::Actor() : _strength(0), _dexterity(0), _intelligence(0),
 	_defaultActivity[2] = 0;
 }
 
-Actor::~Actor() {
-}
+Actor::~Actor() = default;
 
 uint16 Actor::assignObjId() {
 	if (_objId == 0xFFFF)

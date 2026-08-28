@@ -282,8 +282,7 @@ Scene::Scene() : _sceneBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT),
 	_screenNumber = 0;
 }
 
-Scene::~Scene() {
-}
+Scene::~Scene() = default;
 
 void Scene::synchronize(Serializer &s) {
 	if (s.getVersion() >= 2)

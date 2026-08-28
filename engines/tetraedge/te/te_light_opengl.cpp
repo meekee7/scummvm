@@ -33,8 +33,7 @@ static inline uint _toGlLight(uint lightno) {
 	return GL_LIGHT0 + lightno;
 }
 
-TeLightOpenGL::TeLightOpenGL() {
-}
+TeLightOpenGL::TeLightOpenGL() = default;
 
 void TeLightOpenGL::disable(uint lightno) {
 	glDisable(_toGlLight(lightno));

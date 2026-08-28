@@ -32,8 +32,7 @@ Thread::Thread(IllusionsEngine *vm, uint32 threadId, uint32 callingThreadId, uin
 	_pauseCtr(0), _terminated(false) {
 }
 
-Thread::~Thread() {
-}
+Thread::~Thread() = default;
 
 int Thread::onUpdate() {
 	return kTSTerminate;

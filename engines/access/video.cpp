@@ -31,8 +31,7 @@ _videoFrame(0), _soundFrame(0), _videoEnd(false), _soundFlag(false),
 _vidSurface(nullptr) {
 }
 
-VideoPlayer::~VideoPlayer() {
-}
+VideoPlayer::~VideoPlayer() = default;
 
 void VideoPlayer::setVideo(BaseSurface *vidSurface, const Common::Point &pt, const Common::Path &filename, int rate) {
 	// Open up video stream

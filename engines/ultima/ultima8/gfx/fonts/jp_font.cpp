@@ -34,8 +34,7 @@ JPFont::JPFont(ShapeFont *jpfont, unsigned int fontnum)
 }
 
 
-JPFont::~JPFont() {
-}
+JPFont::~JPFont() = default;
 
 int JPFont::getWidth(int c) {
 	return _shapeFont->getFrame(c)->_width;

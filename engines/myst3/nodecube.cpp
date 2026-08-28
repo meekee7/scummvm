@@ -42,8 +42,7 @@ NodeCube::NodeCube(Myst3Engine *vm, uint16 id) :
 	}
 }
 
-NodeCube::~NodeCube() {
-}
+NodeCube::~NodeCube() = default;
 
 void NodeCube::draw() {
 	// Update the OpenGL textures if needed

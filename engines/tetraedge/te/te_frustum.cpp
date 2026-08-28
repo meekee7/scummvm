@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-TeFrustum::TeFrustum() {
-}
+TeFrustum::TeFrustum() = default;
 
 void TeFrustum::update(TeCamera &cam) {
 	const TeMatrix4x4 camProjMatrix = cam.projectionMatrix();

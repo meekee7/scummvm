@@ -26,8 +26,7 @@
 
 namespace Tetraedge {
 
-Notifier::Notifier() {
-}
+Notifier::Notifier() = default;
 
 static const char *notifyLayoutName() {
 	return g_engine->gameIsAmerzone() ? "notify" : "notifier";

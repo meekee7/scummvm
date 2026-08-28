@@ -23,7 +23,6 @@
 
 namespace MTropolis {
 
-IInterfaceBase::~IInterfaceBase() {
-}
+IInterfaceBase::~IInterfaceBase() = default;
 
 } // End of namespace MTropolis

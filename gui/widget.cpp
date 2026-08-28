@@ -634,8 +634,7 @@ PicButtonWidget::PicButtonWidget(GuiObject *boss, const Common::String &name, co
 	_type = kButtonWidget;
 }
 
-PicButtonWidget::~PicButtonWidget() {
-}
+PicButtonWidget::~PicButtonWidget() = default;
 
 void PicButtonWidget::setGfx(Common::SharedPtr<Graphics::ManagedSurface> &gfx, int statenum) {
 	_gfx[statenum].reset();
@@ -960,8 +959,7 @@ GraphicsWidget::GraphicsWidget(GuiObject *boss, const Common::String &name, cons
 	_type = kGraphicsWidget;
 }
 
-GraphicsWidget::~GraphicsWidget() {
-}
+GraphicsWidget::~GraphicsWidget() = default;
 
 void GraphicsWidget::setGfx(Common::SharedPtr<Graphics::ManagedSurface> &gfx) {
 	_gfx.reset();
@@ -1095,8 +1093,7 @@ OptionsContainerWidget::OptionsContainerWidget(GuiObject *boss, const Common::St
 		_parentDialog(nullptr) {
 }
 
-OptionsContainerWidget::~OptionsContainerWidget() {
-}
+OptionsContainerWidget::~OptionsContainerWidget() = default;
 
 void OptionsContainerWidget::reflowLayout() {
 	Widget::reflowLayout();

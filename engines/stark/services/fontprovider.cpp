@@ -34,11 +34,9 @@
 
 namespace Stark {
 
-FontProvider::FontProvider() {
-}
+FontProvider::FontProvider() = default;
 
-FontProvider::~FontProvider() {
-}
+FontProvider::~FontProvider() = default;
 
 void FontProvider::initFonts() {
 	// TODO: Use SystemFontMan instead when it gets merged

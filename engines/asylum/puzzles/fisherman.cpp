@@ -53,8 +53,7 @@ PuzzleFisherman::PuzzleFisherman(AsylumEngine *engine) : Puzzle(engine) {
 	_allowClick = false;
 }
 
-PuzzleFisherman::~PuzzleFisherman() {
-}
+PuzzleFisherman::~PuzzleFisherman() = default;
 
 void PuzzleFisherman::saveLoadWithSerializer(Common::Serializer &s) {
 	for (int i = 0; i < ARRAYSIZE(_state); i++)

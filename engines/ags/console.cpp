@@ -245,11 +245,9 @@ bool AGSConsole::Cmd_dumpSprite(int argc, const char **argv) {
 	return true;
 }
 
-LogOutputTarget::LogOutputTarget() {
-}
+LogOutputTarget::LogOutputTarget() = default;
 
-LogOutputTarget::~LogOutputTarget() {
-}
+LogOutputTarget::~LogOutputTarget() = default;
 
 void LogOutputTarget::PrintMessage(const AGS3::AGS::Shared::DebugMessage &msg) {
 	LogMessageType::Type msgType = LogMessageType::kInfo;

@@ -44,8 +44,7 @@ VisualEffectFireFlies::VisualEffectFireFlies(Gfx::Driver *gfx, const Common::Poi
 		_mainColorB(33) {
 }
 
-VisualEffectFireFlies::~VisualEffectFireFlies() {
-}
+VisualEffectFireFlies::~VisualEffectFireFlies() = default;
 
 void VisualEffectFireFlies::render(const Common::Point &position) {
 	// Stop rendering if special effect is off

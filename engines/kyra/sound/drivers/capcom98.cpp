@@ -44,7 +44,7 @@ public:
 	};
 
 	CapcomPC98Player(bool playerPrio, uint16 playFlags, uint16 chanReserveFlags, uint16 chanDisableFlags);
-	virtual ~CapcomPC98Player() {}
+	virtual ~CapcomPC98Player() = default;
 
 	virtual bool init() = 0;
 	virtual void deinit() = 0;

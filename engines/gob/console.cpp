@@ -48,8 +48,7 @@ GobConsole::GobConsole(GobEngine *vm) : GUI::Debugger(), _vm(vm), _cheater(nullp
 	registerCmd("gobStack",     WRAP_METHOD(GobConsole, cmd_gobStack));
 }
 
-GobConsole::~GobConsole() {
-}
+GobConsole::~GobConsole() = default;
 
 void GobConsole::registerCheater(Cheater *cheater) {
 	_cheater = cheater;

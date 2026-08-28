@@ -42,8 +42,7 @@ _avatarAngle(-1), _SGA1Loaded(false), _nextFireTick(0), _lastNPCAlertTick(0) {
 }
 
 
-CruAvatarMoverProcess::~CruAvatarMoverProcess() {
-}
+CruAvatarMoverProcess::~CruAvatarMoverProcess() = default;
 
 static bool _isAnimRunningWalking(Animation::Sequence anim) {
 	return (anim == Animation::run || anim == Animation::combatRunSmallWeapon ||

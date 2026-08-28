@@ -56,8 +56,7 @@ Console::Console() : GUI::Debugger() {
 	registerCmd("text", WRAP_METHOD(Console, Cmd_Text));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_Room(int argc, const char **argv) {
 	if (argc == 1) {

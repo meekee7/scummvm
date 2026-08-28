@@ -43,7 +43,6 @@ Face3D::Face3D() {
 }
 
 //////////////////////////////////////////////////////////////////////////
-Face3D::~Face3D() {
-}
+Face3D::~Face3D() = default;
 
 } // namespace Wintermute

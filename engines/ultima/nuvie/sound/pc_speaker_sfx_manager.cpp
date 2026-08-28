@@ -34,9 +34,7 @@ PCSpeakerSfxManager::PCSpeakerSfxManager(const Configuration *cfg, Audio::Mixer 
 
 }
 
-PCSpeakerSfxManager::~PCSpeakerSfxManager() {
-
-}
+PCSpeakerSfxManager::~PCSpeakerSfxManager() = default;
 
 bool PCSpeakerSfxManager::playSfx(SfxIdType sfx_id, uint8 volume) {
 	return playSfxLooping(sfx_id, nullptr, volume);

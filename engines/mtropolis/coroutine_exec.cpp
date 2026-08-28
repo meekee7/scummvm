@@ -40,8 +40,7 @@ CoroutineStackFrame2::CoroutineStackFrame2(const CompiledCoroutine *compiledCoro
 	: _compiledCoro(compiledCoro), _nextInstr(0) {
 }
 
-CoroutineStackFrame2::~CoroutineStackFrame2() {
-}
+CoroutineStackFrame2::~CoroutineStackFrame2() = default;
 
 VThreadState CoroutineStackFrame2::execute(VThread *thread) {
 	const CoroExecInstr *instrs = _compiledCoro->_instructions;

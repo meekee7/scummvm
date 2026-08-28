@@ -31,11 +31,9 @@
 
 namespace Chewy {
 
-McgaGraphics::McgaGraphics() {
-}
+McgaGraphics::McgaGraphics() = default;
 
-McgaGraphics::~McgaGraphics() {
-}
+McgaGraphics::~McgaGraphics() = default;
 
 void McgaGraphics::init() {
 	_G(currentScreen) = (byte *)g_screen->getPixels();

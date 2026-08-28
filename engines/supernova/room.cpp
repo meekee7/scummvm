@@ -40,8 +40,7 @@ Room::Room() {
 		_sentenceRemoved[i] = 0;
 }
 
-Room::~Room() {
-}
+Room::~Room() = default;
 
 bool Room::serialize(Common::WriteStream *out) {
 	if (out->err())

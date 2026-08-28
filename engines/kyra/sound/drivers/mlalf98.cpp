@@ -82,7 +82,8 @@ protected:
 			_msg = Common::String::format("%s Channel %d: %s() [ %s]", tpstr[chanType], chanId, dsc, args.c_str());
 			memset(_dt, 0, 7);
 		}
-		~SoundOpcode() override {}
+		~SoundOpcode() override = default;
+
 		void run(uint8 *&arg) {
 			assert(arg);
 			memcpy(_dt, arg, _dataLen);
@@ -1394,8 +1395,7 @@ MusicChannelRHY::MusicChannelRHY(PC98AudioCore *pc98a, int part, int regOffset) 
 	_instrLevel[0] = _instrLevel[1] = _instrLevel[2] = _instrLevel[3] = _instrLevel[4] = _instrLevel[5] = 0xC0;
 }
 
-MusicChannelRHY::~MusicChannelRHY() {
-}
+MusicChannelRHY::~MusicChannelRHY() = default;
 
 void MusicChannelRHY::keyOff() {
 	debugC(7, kDebugLevelSound, "RHY Channel 0: keyOff() [Ticks: 0x%02x]", _ticksLeft);
@@ -1444,8 +1444,7 @@ MusicChannelEXT::MusicChannelEXT(PC98AudioCore *pc98a, int part, int regOffset, 
 	_pc98a(pc98a), _extBuffer(data), _useVolPreset(0), _volume2(0), _instrument(0), _panPos(3), _smpStart(0), _smpEnd(0) {
 }
 
-MusicChannelEXT::~MusicChannelEXT() {
-}
+MusicChannelEXT::~MusicChannelEXT() = default;
 
 void MusicChannelEXT::keyOff() {
 	debugC(7, kDebugLevelSound, "EXT Channel 0: keyOff() [Ticks: 0x%02x]", _ticksLeft);
@@ -1560,9 +1559,7 @@ SoundEffectChannel::SoundEffectChannel(PC98AudioCore *pc98a, int part, int regOf
 	_specialModeModifier[0] = _specialModeModifier[1] = _specialModeModifier[2] = _specialModeModifier[3] = 0;
 }
 
-SoundEffectChannel::~SoundEffectChannel() {
-
-}
+SoundEffectChannel::~SoundEffectChannel() = default;
 
 void SoundEffectChannel::setData(uint8 *dataStart, uint8 *loopStart, const uint8 *dataEnd, uint8 *instrBuffer) {
 	_replaceChannel->toggleMute(dataStart);

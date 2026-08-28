@@ -62,8 +62,7 @@ bool RivenSaveMetadata::sync(Common::Serializer &s) {
 RivenSaveLoad::RivenSaveLoad(MohawkEngine_Riven *vm, Common::SaveFileManager *saveFileMan) : _vm(vm), _saveFileMan(saveFileMan) {
 }
 
-RivenSaveLoad::~RivenSaveLoad() {
-}
+RivenSaveLoad::~RivenSaveLoad() = default;
 
 Common::String RivenSaveLoad::buildSaveFilename(const int slot) {
 	return Common::String::format("riven-%03d.rvn", slot);

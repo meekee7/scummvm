@@ -98,8 +98,7 @@ RightClickDialog::RightClickDialog() : GfxDialog(),
 	_selectedAction = -1;
 }
 
-RightClickDialog::~RightClickDialog() {
-}
+RightClickDialog::~RightClickDialog() = default;
 
 RightClickButton *RightClickDialog::findButton(const Common::Point &pt) {
 	RightClickButton *btnList[] = {  &_walkButton, &_lookButton, &_useButton, &_talkButton, &_inventoryButton, &_optionsButton };

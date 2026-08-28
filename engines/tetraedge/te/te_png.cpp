@@ -36,8 +36,7 @@ TePng::TePng(const Common::String &extn) : _height(0) {
 	}
 }
 
-TePng::~TePng() {
-}
+TePng::~TePng() = default;
 
 /*static*/
 bool TePng::matchExtension(const Common::String &extn) {

@@ -26,9 +26,9 @@
 
 namespace Networking {
 
-FilesBaseHandler::FilesBaseHandler() {}
+FilesBaseHandler::FilesBaseHandler() = default;
 
-FilesBaseHandler::~FilesBaseHandler() {}
+FilesBaseHandler::~FilesBaseHandler() = default;
 
 Common::String FilesBaseHandler::parentPath(const Common::String &path) {
 	Common::String result = path;

@@ -46,7 +46,7 @@ RncDecoder::RncDecoder() {
 	_inputByteLeft = 0;
 }
 
-RncDecoder::~RncDecoder() { }
+RncDecoder::~RncDecoder() = default;
 
 void RncDecoder::initCrc() {
 	uint16 cnt = 0;

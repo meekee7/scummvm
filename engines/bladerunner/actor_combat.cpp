@@ -42,8 +42,7 @@ ActorCombat::ActorCombat(BladeRunnerEngine *vm) {
 	reset();
 }
 
-ActorCombat::~ActorCombat() {
-}
+ActorCombat::~ActorCombat() = default;
 
 void ActorCombat::setup() {
 	reset();

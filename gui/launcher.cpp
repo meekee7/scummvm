@@ -1973,8 +1973,7 @@ RemovalConfirmationDialog::RemovalConfirmationDialog(const Common::U32String &me
 	reflowLayout();
 }
 
-RemovalConfirmationDialog::~RemovalConfirmationDialog() {
-}
+RemovalConfirmationDialog::~RemovalConfirmationDialog() = default;
 
 void RemovalConfirmationDialog::reflowLayout() {
 	int16 screenW, screenH;

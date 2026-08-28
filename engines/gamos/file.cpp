@@ -23,11 +23,9 @@
 
 namespace Gamos {
 
-GameFile::GameFile() {
-}
+GameFile::GameFile() = default;
 
-GameFile::~GameFile() {
-}
+GameFile::~GameFile() = default;
 
 bool GameFile::open(const Common::Path &name) {
 	bool res = File::open(name);

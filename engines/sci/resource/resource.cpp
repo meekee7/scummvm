@@ -258,8 +258,7 @@ ResourceSource::ResourceSource(ResSourceType type, const Common::Path &name, int
 	_scanned = false;
 }
 
-ResourceSource::~ResourceSource() {
-}
+ResourceSource::~ResourceSource() = default;
 
 MacResourceForkResourceSource::MacResourceForkResourceSource(const Common::Path &name, int volNum)
  : ResourceSource(kSourceMacResourceFork, name, volNum) {

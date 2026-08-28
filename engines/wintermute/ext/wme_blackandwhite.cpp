@@ -42,8 +42,7 @@ SXBlackAndWhite::SXBlackAndWhite(BaseGame *inGame, ScStack *stack) : BaseScripta
 }
 
 //////////////////////////////////////////////////////////////////////////
-SXBlackAndWhite::~SXBlackAndWhite() {
-}
+SXBlackAndWhite::~SXBlackAndWhite() = default;
 
 //////////////////////////////////////////////////////////////////////////
 const char *SXBlackAndWhite::scToString() {

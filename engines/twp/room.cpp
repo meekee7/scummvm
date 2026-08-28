@@ -142,8 +142,7 @@ Room::Room(const Common::String &name, HSQOBJECT &table) : _table(table) {
 	_scene->addChild(&_overlayNode);
 }
 
-Room::~Room() {
-}
+Room::~Room() = default;
 
 Common::SharedPtr<Object> Room::createObject(const Common::String &sheet, const Common::Array<Common::String> &frames) {
 	Common::SharedPtr<Object> obj(new Object());

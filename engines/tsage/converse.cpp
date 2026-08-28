@@ -624,8 +624,7 @@ StripManager::StripManager() {
 	reset();
 }
 
-StripManager::~StripManager() {
-}
+StripManager::~StripManager() = default;
 
 void StripManager::start(int stripNum, EventHandler *owner, StripCallback *callback) {
 	if (_onBegin)

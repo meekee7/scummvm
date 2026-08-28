@@ -25,8 +25,7 @@
 
 namespace Tetraedge {
 
-TeInterpolation::TeInterpolation() {
-}
+TeInterpolation::TeInterpolation() = default;
 
 void TeInterpolation::load(Common::ReadStream &stream) {
 	uint32 len = stream.readUint32LE();

@@ -239,8 +239,7 @@ SampleLoopAudioStream::SampleLoopAudioStream(Audio::SeekableAudioStream *baseStr
 
 }
 
-SampleLoopAudioStream::~SampleLoopAudioStream() {
-}
+SampleLoopAudioStream::~SampleLoopAudioStream() = default;
 
 void SampleLoopAudioStream::stopLooping() {
 	_mutex.lock();

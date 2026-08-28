@@ -70,8 +70,7 @@ TitanicEngine::TitanicEngine(OSystem *syst, const TitanicGameDescription *gameDe
 	_loadSaveSlot = -1;
 }
 
-TitanicEngine::~TitanicEngine() {
-}
+TitanicEngine::~TitanicEngine() = default;
 
 void TitanicEngine::initializePath(const Common::FSNode &gamePath) {
 	Engine::initializePath(gamePath);

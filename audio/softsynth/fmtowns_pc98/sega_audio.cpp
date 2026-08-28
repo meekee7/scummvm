@@ -27,7 +27,7 @@
 class SegaPCMChannel final : public PCMChannel_Base {
 public:
 	SegaPCMChannel() : PCMChannel_Base(), _playing(false) {}
-	~SegaPCMChannel() override {}
+	~SegaPCMChannel() override = default;
 
 	void play(const int8 *data, uint16 dataSize, uint16 startAddress, uint16 loopStart, uint16 loopLen, uint16 pitch, uint8 pan, uint8 vol);
 	void stop();
@@ -41,7 +41,7 @@ private:
 class SegaPSG {
 public:
 	SegaPSG(int samplingRate, int deviceVolume);
-	~SegaPSG() {}
+	~SegaPSG() = default;
 
 	void write(uint8 val);
 

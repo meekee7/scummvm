@@ -224,8 +224,7 @@ Gdi::Gdi(ScummEngine *vm) : _vm(vm) {
 	_distaff = false;
 }
 
-Gdi::~Gdi() {
-}
+Gdi::~Gdi() = default;
 
 GdiHE::GdiHE(ScummEngine *vm) : Gdi(vm), _tmskPtr(nullptr) {
 }

@@ -54,8 +54,7 @@ PuzzleClock::PuzzleClock(AsylumEngine *engine) : Puzzle(engine) {
 	_currentFrameIndex = 0;
 }
 
-PuzzleClock::~PuzzleClock() {
-}
+PuzzleClock::~PuzzleClock() = default;
 
 void PuzzleClock::saveLoadWithSerializer(Common::Serializer &s) {
 	s.syncAsSint32LE(_frameIndexes[2]);

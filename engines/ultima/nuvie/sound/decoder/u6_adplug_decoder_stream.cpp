@@ -45,8 +45,7 @@ U6AdPlugDecoderStream::U6AdPlugDecoderStream(CEmuopl *o, const Common::Path &fil
 	interrupt_samples_left = interrupt_rate;
 }
 
-U6AdPlugDecoderStream::~U6AdPlugDecoderStream() {
-}
+U6AdPlugDecoderStream::~U6AdPlugDecoderStream() = default;
 
 int U6AdPlugDecoderStream::readBuffer(sint16 *buffer, const int numSamples) {
 	sint32 i, j;

@@ -38,8 +38,7 @@ namespace CGE2 {
 Keyboard::Keyboard(CGE2Engine *vm) : _client(nullptr), _vm(vm) {
 }
 
-Keyboard::~Keyboard() {
-}
+Keyboard::~Keyboard() = default;
 
 Sprite *Keyboard::setClient(Sprite *spr) {
 	SWAP(_client, spr);

@@ -49,8 +49,7 @@ qdInterfaceCounter::qdInterfaceCounter(const qdInterfaceCounter &counter) : qdIn
 	_textFormat.toggle_global_depend(false);
 }
 
-qdInterfaceCounter::~qdInterfaceCounter() {
-}
+qdInterfaceCounter::~qdInterfaceCounter() = default;
 
 qdInterfaceCounter &qdInterfaceCounter::operator = (const qdInterfaceCounter &counter) {
 	if (this == &counter) return *this;

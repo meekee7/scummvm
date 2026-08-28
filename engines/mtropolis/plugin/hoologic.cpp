@@ -26,11 +26,9 @@ namespace MTropolis {
 
 namespace Hoologic {
 
-BitmapVariableModifier::BitmapVariableModifier() {
-}
+BitmapVariableModifier::BitmapVariableModifier() = default;
 
-BitmapVariableModifier::~BitmapVariableModifier() {
-}
+BitmapVariableModifier::~BitmapVariableModifier() = default;
 
 bool BitmapVariableModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::BitmapVariableModifier &data) {
 	return true;
@@ -61,11 +59,9 @@ const char *BitmapVariableModifier::getDefaultName() const {
 	return "Bitmap Variable Modifier"; // ???
 }
 
-CaptureBitmapModifier::CaptureBitmapModifier() {
-}
+CaptureBitmapModifier::CaptureBitmapModifier() = default;
 
-CaptureBitmapModifier::~CaptureBitmapModifier() {
-}
+CaptureBitmapModifier::~CaptureBitmapModifier() = default;
 
 bool CaptureBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::CaptureBitmapModifier &data) {
 	return true;
@@ -96,11 +92,9 @@ const char *CaptureBitmapModifier::getDefaultName() const {
 	return "Capture Bitmap Modifier"; // ???
 }
 
-ImportBitmapModifier::ImportBitmapModifier() {
-}
+ImportBitmapModifier::ImportBitmapModifier() = default;
 
-ImportBitmapModifier::~ImportBitmapModifier() {
-}
+ImportBitmapModifier::~ImportBitmapModifier() = default;
 
 bool ImportBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::ImportBitmapModifier &data) {
 	return true;
@@ -131,11 +125,9 @@ const char *ImportBitmapModifier::getDefaultName() const {
 	return "Import Bitmap Modifier"; // ???
 }
 
-DisplayBitmapModifier::DisplayBitmapModifier() {
-}
+DisplayBitmapModifier::DisplayBitmapModifier() = default;
 
-DisplayBitmapModifier::~DisplayBitmapModifier() {
-}
+DisplayBitmapModifier::~DisplayBitmapModifier() = default;
 
 bool DisplayBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::DisplayBitmapModifier &data) {
 	return true;
@@ -166,11 +158,9 @@ const char *DisplayBitmapModifier::getDefaultName() const {
 	return "Display Bitmap Modifier"; // ???
 }
 
-ScaleBitmapModifier::ScaleBitmapModifier() {
-}
+ScaleBitmapModifier::ScaleBitmapModifier() = default;
 
-ScaleBitmapModifier::~ScaleBitmapModifier() {
-}
+ScaleBitmapModifier::~ScaleBitmapModifier() = default;
 
 bool ScaleBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::ScaleBitmapModifier &data) {
 	return true;
@@ -201,11 +191,9 @@ const char *ScaleBitmapModifier::getDefaultName() const {
 	return "Scale Bitmap Modifier"; // ???
 }
 
-SaveBitmapModifier::SaveBitmapModifier() {
-}
+SaveBitmapModifier::SaveBitmapModifier() = default;
 
-SaveBitmapModifier::~SaveBitmapModifier() {
-}
+SaveBitmapModifier::~SaveBitmapModifier() = default;
 
 bool SaveBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::SaveBitmapModifier &data) {
 	return true;
@@ -236,11 +224,9 @@ const char *SaveBitmapModifier::getDefaultName() const {
 	return "Save Bitmap Modifier"; // ???
 }
 
-PrintBitmapModifier::PrintBitmapModifier() {
-}
+PrintBitmapModifier::PrintBitmapModifier() = default;
 
-PrintBitmapModifier::~PrintBitmapModifier() {
-}
+PrintBitmapModifier::~PrintBitmapModifier() = default;
 
 bool PrintBitmapModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::PrintBitmapModifier &data) {
 	return true;
@@ -271,11 +257,9 @@ const char *PrintBitmapModifier::getDefaultName() const {
 	return "Print Bitmap Modifier"; // ???
 }
 
-PainterModifier::PainterModifier() {
-}
+PainterModifier::PainterModifier() = default;
 
-PainterModifier::~PainterModifier() {
-}
+PainterModifier::~PainterModifier() = default;
 
 bool PainterModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::PainterModifier &data) {
 	return true;
@@ -306,11 +290,9 @@ const char *PainterModifier::getDefaultName() const {
 	return "Painter Modifier"; // ???
 }
 
-KeyStateModifier::KeyStateModifier() {
-}
+KeyStateModifier::KeyStateModifier() = default;
 
-KeyStateModifier::~KeyStateModifier() {
-}
+KeyStateModifier::~KeyStateModifier() = default;
 
 bool KeyStateModifier::load(const PlugInModifierLoaderContext &context, const Data::Hoologic::KeyStateModifier &data) {
 	return true;
@@ -354,8 +336,7 @@ HoologicPlugIn::HoologicPlugIn()
 	{	
 }
 
-HoologicPlugIn::~HoologicPlugIn() {
-}
+HoologicPlugIn::~HoologicPlugIn() = default;
 
 void HoologicPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	//Bitmap plugin

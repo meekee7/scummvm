@@ -85,7 +85,7 @@ DialogManager::DialogManager(TrecisionEngine *vm) : _vm(vm) {
 		_dispChoice[i] = 0;
 }
 
-DialogManager::~DialogManager() {}
+DialogManager::~DialogManager() = default;
 
 void DialogManager::dialogPrint(int x, int y, int c, const Common::String &txt) {
 	SDText curChoice;

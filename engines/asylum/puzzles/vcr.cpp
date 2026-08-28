@@ -45,8 +45,7 @@ PuzzleVCR::PuzzleVCR(AsylumEngine *engine): Puzzle(engine) {
 	_isAccomplished  = false;
 }
 
-PuzzleVCR::~PuzzleVCR() {
-}
+PuzzleVCR::~PuzzleVCR() = default;
 
 void PuzzleVCR::saveLoadWithSerializer(Common::Serializer &s) {
 	s.syncAsUint32LE(_buttonsState[kPowerButton]);

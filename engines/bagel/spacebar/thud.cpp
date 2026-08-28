@@ -37,8 +37,7 @@ SBarThud::SBarThud(CBofWindow *pParent, const CBofRect &xRect) :
 	_currentObj = nullptr;
 }
 
-SBarThud::~SBarThud() {
-}
+SBarThud::~SBarThud() = default;
 
 ErrorCode SBarThud::loadFile(const CBofString &sFile) {
 	ErrorCode errorCode = CBagStorageDev::loadFile(sFile);

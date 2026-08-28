@@ -44,8 +44,7 @@ BookGump::BookGump(ObjId owner, const Common::String &msg) :
 	_textWidgetL(0), _textWidgetR(0) {
 }
 
-BookGump::~BookGump(void) {
-}
+BookGump::~BookGump(void) = default;
 
 void BookGump::InitGump(Gump *newparent, bool take_focus) {
 	ModalGump::InitGump(newparent, take_focus);

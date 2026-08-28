@@ -34,7 +34,7 @@ int Color::toInt() const {
 	return (r << 16) | (g << 8) | b | (a << 24);
 }
 
-Vertex::Vertex() {}
+Vertex::Vertex() = default;
 
 Vertex::Vertex(const Math::Vector2d &p, const Color &c, const Math::Vector2d &t)
 	: pos(p), color(c), texCoords(t) {
@@ -131,11 +131,9 @@ RenderTexture::~RenderTexture() {
 	glDeleteFramebuffers(1, &fbo);
 }
 
-Shader::Shader() {
-}
+Shader::Shader() = default;
 
-Shader::~Shader() {
-}
+Shader::~Shader() = default;
 
 void Shader::init(const char *name, const char *vertex, const char *fragment) {
 	const char *attributes[] = {"a_position", "a_color", "a_texCoords", nullptr};

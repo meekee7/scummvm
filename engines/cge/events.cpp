@@ -41,8 +41,7 @@ Keyboard::Keyboard(CGEEngine *vm) : _client(nullptr), _vm(vm) {
 	_keyAlt = false;
 }
 
-Keyboard::~Keyboard() {
-}
+Keyboard::~Keyboard() = default;
 
 Sprite *Keyboard::setClient(Sprite *spr) {
 	SWAP(_client, spr);

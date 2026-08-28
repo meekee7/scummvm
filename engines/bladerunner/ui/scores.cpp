@@ -42,8 +42,7 @@ Scores::Scores(BladeRunnerEngine *vm) {
 	reset();
 }
 
-Scores::~Scores() {
-}
+Scores::~Scores() = default;
 
 void Scores::open() {
 	if (!_vm->openArchive("MODE.MIX")) {

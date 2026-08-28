@@ -32,8 +32,7 @@ Scheduler::Scheduler(TrecisionEngine *vm) : _vm(vm) {
 	_idleMsg = _msg = msg;
 }
 
-Scheduler::~Scheduler() {
-}
+Scheduler::~Scheduler() = default;
 
 void Scheduler::process() {
 	bool retry = true;

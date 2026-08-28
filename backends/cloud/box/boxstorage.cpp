@@ -49,7 +49,7 @@ BoxStorage::BoxStorage(const Networking::JsonResponse &codeFlowJson, Networking:
 	codeFlowComplete(cb, codeFlowJson);
 }
 
-BoxStorage::~BoxStorage() {}
+BoxStorage::~BoxStorage() = default;
 
 Common::String BoxStorage::cloudProvider() { return "box"; }
 

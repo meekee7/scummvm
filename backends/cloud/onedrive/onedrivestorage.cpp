@@ -49,7 +49,7 @@ OneDriveStorage::OneDriveStorage(const Networking::JsonResponse &codeFlowJson, N
 	codeFlowComplete(cb, codeFlowJson);
 }
 
-OneDriveStorage::~OneDriveStorage() {}
+OneDriveStorage::~OneDriveStorage() = default;
 
 Common::String OneDriveStorage::cloudProvider() { return "onedrive"; }
 

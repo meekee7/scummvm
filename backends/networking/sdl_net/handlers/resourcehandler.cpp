@@ -25,9 +25,9 @@
 
 namespace Networking {
 
-ResourceHandler::ResourceHandler() {}
+ResourceHandler::ResourceHandler() = default;
 
-ResourceHandler::~ResourceHandler() {}
+ResourceHandler::~ResourceHandler() = default;
 
 const char *ResourceHandler::determineMimeType(const Common::String &filename) {
 	// text

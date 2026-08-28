@@ -23,8 +23,7 @@
 
 namespace Math {
 
-Line3d::Line3d() {
-}
+Line3d::Line3d() = default;
 
 Line3d::Line3d(const Vector3d &b, const Vector3d &e) :
 	_begin(b), _end(e) {
@@ -85,10 +84,6 @@ bool Line3d::intersectLine2d(const Line3d &other, Math::Vector3d *pos, bool useX
 	return true;
 }
 
-Line3d& Line3d::operator=(const Line3d &other) {
-	_begin = other._begin;
-	_end = other._end;
-	return *this;
-}
+Line3d& Line3d::operator=(const Line3d &other) = default;
 
 }

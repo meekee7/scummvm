@@ -23,8 +23,7 @@
 
 namespace Math {
 
-Frustum::Frustum() {
-}
+Frustum::Frustum() = default;
 
 void Frustum::setup(const Math::Matrix4 &matrix) {
 	// Based on "Fast Extraction of Viewing Frustum Planes from the

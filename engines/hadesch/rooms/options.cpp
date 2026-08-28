@@ -401,7 +401,7 @@ public:
 	void handleEvent(int eventId) override {
 	}
 
-	~OptionsHandler() override {}
+	~OptionsHandler() override = default;
 
 	void prepareRoom() override {
 		Persistent *persistent = g_vm->getPersistent();

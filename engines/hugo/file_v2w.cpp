@@ -36,8 +36,7 @@ namespace Hugo {
 FileManager_v2w::FileManager_v2w(HugoEngine *vm) : FileManager_v2d(vm) {
 }
 
-FileManager_v2w::~FileManager_v2w() {
-}
+FileManager_v2w::~FileManager_v2w() = default;
 
 /**
  * Display a Windows help file

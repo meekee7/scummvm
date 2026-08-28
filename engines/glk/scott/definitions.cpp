@@ -35,7 +35,7 @@
 namespace Glk {
 namespace Scott {
 
-GameInfo::GameInfo() {}
+GameInfo::GameInfo() = default;
 
 GameInfo::GameInfo(
 					const char *title,

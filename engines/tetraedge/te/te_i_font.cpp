@@ -32,8 +32,7 @@ TeIFont::TeIFont() {
 	_codePage = codePage();
 }
 
-TeIFont::~TeIFont() {
-}
+TeIFont::~TeIFont() = default;
 
 TeIFont::GlyphData TeIFont::glyph(uint pxSize, uint charcode) {
 	Graphics::Font *font = getAtSize(pxSize);

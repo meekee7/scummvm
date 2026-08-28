@@ -53,8 +53,7 @@ Movement::Movement(Resources::ItemVisual *item) :
 		_defaultTurnAngleSpeed(18.0f * 30.0f / 1000.0f) { // 18 degrees per gameloop at 30 fps
 }
 
-Movement::~Movement() {
-}
+Movement::~Movement() = default;
 
 void Movement::start() {
 	_ended = false;

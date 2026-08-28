@@ -45,8 +45,7 @@ Console::Console(Myst3Engine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("dumpMasks",			WRAP_METHOD(Console, Cmd_DumpMasks));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 void Console::describeScript(const Common::Array<Opcode> &script) {
 	for (uint j = 0; j < script.size(); j++) {

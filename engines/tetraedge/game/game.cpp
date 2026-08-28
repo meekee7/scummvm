@@ -56,8 +56,7 @@ _firstInventory(true), _dialogsTold(0) {
 	_question2.onAnswerSignal().add(this, &Game::onAnswered);
 }
 
-Game::~Game() {
-}
+Game::~Game() = default;
 
 /*static*/ const char *Game::OBJECTS_TAKEN_IDS[5] = {
 	"BCylindreBarr",

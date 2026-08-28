@@ -389,11 +389,10 @@ GameState::GameState(const Common::Platform platform, Database *database):
 	newGame();
 }
 
-GameState::~GameState() {
-}
+GameState::~GameState() = default;
 
 void GameState::syncFloat(Common::Serializer &s, float &val,
-	                  Common::Serializer::Version minVersion, Common::Serializer::Version maxVersion) {
+                          Common::Serializer::Version minVersion, Common::Serializer::Version maxVersion) {
 	static const float precision = 10000.0;
 
 	if (s.isLoading()) {

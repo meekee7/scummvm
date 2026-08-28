@@ -38,8 +38,7 @@ CDeck::CDeck() {
 	//srand((unsigned) time(nullptr));     // seed the random number generator
 }
 
-CDeck::~CDeck() {
-}
+CDeck::~CDeck() = default;
 
 void CDeck::Shuffle() {
 	int     nNewDeck[DECK];

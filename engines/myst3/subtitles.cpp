@@ -340,8 +340,7 @@ MovieSubtitles::MovieSubtitles(Myst3Engine *vm) :
 		Subtitles(vm) {
 }
 
-MovieSubtitles::~MovieSubtitles() {
-}
+MovieSubtitles::~MovieSubtitles() = default;
 
 void MovieSubtitles::readPhrases(const ResourceDescription *desc) {
 	Common::SeekableReadStream *frames = desc->getData();

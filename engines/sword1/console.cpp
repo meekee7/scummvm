@@ -33,8 +33,7 @@ SwordConsole::SwordConsole(SwordEngine *vm) : GUI::Debugger(), _vm(vm) {
 		registerCmd("speechEndianness",    WRAP_METHOD(SwordConsole, Cmd_SpeechEndianness));
 }
 
-SwordConsole::~SwordConsole() {
-}
+SwordConsole::~SwordConsole() = default;
 
 bool SwordConsole::Cmd_SpeechEndianness(int argc, const char **argv) {
 	if (argc == 1) {

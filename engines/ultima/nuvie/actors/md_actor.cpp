@@ -34,8 +34,7 @@ extern const uint8 walk_frame_tbl[4];
 MDActor::MDActor(Map *m, ObjManager *om, GameClock *c) : WOUActor(m, om, c) {
 }
 
-MDActor::~MDActor() {
-}
+MDActor::~MDActor() = default;
 
 bool MDActor::init(uint8) {
 	Actor::init();

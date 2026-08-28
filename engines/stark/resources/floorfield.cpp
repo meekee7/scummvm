@@ -26,8 +26,7 @@
 namespace Stark {
 namespace Resources {
 
-FloorField::~FloorField() {
-}
+FloorField::~FloorField() = default;
 
 FloorField::FloorField(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name) {

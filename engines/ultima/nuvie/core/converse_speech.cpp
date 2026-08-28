@@ -42,8 +42,7 @@ void ConverseSpeech::init(const Configuration *cfg) {
 }
 
 
-ConverseSpeech::~ConverseSpeech() {
-}
+ConverseSpeech::~ConverseSpeech() = default;
 
 void ConverseSpeech::update() {
 	TownsSound sound;

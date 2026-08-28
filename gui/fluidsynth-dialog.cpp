@@ -154,8 +154,7 @@ FluidSynthSettingsDialog::FluidSynthSettingsDialog()
 	new ButtonWidget(this, "FluidSynthSettings.Ok", _("OK"), Common::U32String(), kOKCmd);
 }
 
-FluidSynthSettingsDialog::~FluidSynthSettingsDialog() {
-}
+FluidSynthSettingsDialog::~FluidSynthSettingsDialog() = default;
 
 void FluidSynthSettingsDialog::open() {
 	Dialog::open();

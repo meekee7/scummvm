@@ -34,8 +34,7 @@ MartianDuct::MartianDuct(MartianEngine *vm) : _vm(vm), _stopMoveLoop(false), _pl
 	ARRAYCLEAR(_tempPoints);
 }
 
-MartianDuct::~MartianDuct() {
-}
+MartianDuct::~MartianDuct() = default;
 
 void MartianDuct::duct2() {
 	_playerX = 550;

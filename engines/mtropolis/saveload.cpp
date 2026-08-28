@@ -49,8 +49,7 @@ bool CompoundVarSaver::writeSave(Common::WriteStream *stream) {
 	return !stream->err();
 }
 
-SaveLoadHooks::~SaveLoadHooks() {
-}
+SaveLoadHooks::~SaveLoadHooks() = default;
 
 void SaveLoadHooks::onLoad(Runtime *runtime, Modifier *saveLoadModifier, Modifier *varModifier) {
 }
@@ -58,8 +57,7 @@ void SaveLoadHooks::onLoad(Runtime *runtime, Modifier *saveLoadModifier, Modifie
 void SaveLoadHooks::onSave(Runtime *runtime, Modifier *saveLoadModifier, Modifier *varModifier) {
 }
 
-SaveLoadMechanismHooks::~SaveLoadMechanismHooks() {
-}
+SaveLoadMechanismHooks::~SaveLoadMechanismHooks() = default;
 
 bool SaveLoadMechanismHooks::canSaveNow(Runtime *runtime) {
 	return false;

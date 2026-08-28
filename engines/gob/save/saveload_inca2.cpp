@@ -49,8 +49,7 @@ SaveLoad_Inca2::GameHandler::File::File(const File &file) :
 	SlotFileIndexed(file._vm, file._slotCount, file._base, file._ext) {
 }
 
-SaveLoad_Inca2::GameHandler::File::~File() {
-}
+SaveLoad_Inca2::GameHandler::File::~File() = default;
 
 int SaveLoad_Inca2::GameHandler::File::getSlot(int32 offset) const {
 	uint32 varSize = SaveHandler::getVarSize(_vm);
@@ -251,8 +250,7 @@ SaveLoad_Inca2::ScreenshotHandler::File::File(const SaveLoad_Inca2::GameHandler:
 
 }
 
-SaveLoad_Inca2::ScreenshotHandler::File::~File() {
-}
+SaveLoad_Inca2::ScreenshotHandler::File::~File() = default;
 
 int SaveLoad_Inca2::ScreenshotHandler::File::getSlot(int32 offset) const {
 	return (offset - 80) / 15168;
@@ -366,8 +364,7 @@ bool SaveLoad_Inca2::ScreenshotHandler::save(int16 dataVar, int32 size, int32 of
 SaveLoad_Inca2::VoiceHandler::VoiceHandler(GobEngine *vm) : SaveHandler(vm) {
 }
 
-SaveLoad_Inca2::VoiceHandler::~VoiceHandler() {
-}
+SaveLoad_Inca2::VoiceHandler::~VoiceHandler() = default;
 
 int32 SaveLoad_Inca2::VoiceHandler::getSize() {
 	return 1;

@@ -40,7 +40,7 @@ DialogPlayer::DialogPlayer() :
 		_optionsAvailable(false) {
 }
 
-DialogPlayer::~DialogPlayer() {}
+DialogPlayer::~DialogPlayer() = default;
 
 void DialogPlayer::run(Resources::Dialog *dialog) {
 	reset();

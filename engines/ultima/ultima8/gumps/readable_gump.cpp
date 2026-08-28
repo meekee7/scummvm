@@ -45,8 +45,7 @@ ReadableGump::ReadableGump(ObjId owner, uint16 shape, int font, const Common::St
 	ModalGump(0, 0, 100, 100, owner), _shapeNum(shape), _fontNum(font), _text(msg) {
 }
 
-ReadableGump::~ReadableGump(void) {
-}
+ReadableGump::~ReadableGump(void) = default;
 
 void ReadableGump::InitGump(Gump *newparent, bool take_focus) {
 	ModalGump::InitGump(newparent, take_focus);

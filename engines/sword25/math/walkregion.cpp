@@ -48,8 +48,7 @@ WalkRegion::WalkRegion(InputPersistenceBlock &reader, uint handle) :
 	unpersist(reader);
 }
 
-WalkRegion::~WalkRegion() {
-}
+WalkRegion::~WalkRegion() = default;
 
 bool WalkRegion::init(const Polygon &contour, const Common::Array<Polygon> *pHoles) {
 	// Default initialisation of the region

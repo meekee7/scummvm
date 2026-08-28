@@ -28,8 +28,7 @@ namespace Nuvie {
 NuvieIO::NuvieIO() : size(0), pos(0) {
 }
 
-NuvieIO::~NuvieIO() {
-}
+NuvieIO::~NuvieIO() = default;
 
 unsigned char *NuvieIO::readAll() {
 	uint32 bytes_read;

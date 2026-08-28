@@ -151,7 +151,6 @@ Graphics::ManagedSurface *RTE2::createSurface(uint32 foreColor, uint32 bgColor, 
 	return result;
 }
 
-RTE2::~RTE2() {
-}
+RTE2::~RTE2() = default;
 
 } // End of namespace Director

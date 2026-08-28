@@ -35,8 +35,7 @@ LogicManager::LogicManager(LastExpressEngine *engine) {
 	_engine = engine;
 }
 
-LogicManager::~LogicManager() {
-}
+LogicManager::~LogicManager() = default;
 
 void LogicManager::send(int sender, int receiver, int actionId, ConsCallParam param) {
 	_engine->getMessageManager()->addMessage(receiver, actionId, sender, param);

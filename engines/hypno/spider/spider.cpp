@@ -38,8 +38,7 @@ SpiderEngine::SpiderEngine(OSystem *syst, const ADGameDescription *gd)
 	_font = nullptr;
 }
 
-SpiderEngine::~SpiderEngine() {
-}
+SpiderEngine::~SpiderEngine() = default;
 
 void SpiderEngine::loadAssets() {
 	if (!isDemo())

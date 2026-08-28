@@ -35,8 +35,7 @@ GfxCoordAdjuster16::GfxCoordAdjuster16(GfxPorts *ports)
 	: _ports(ports) {
 }
 
-GfxCoordAdjuster16::~GfxCoordAdjuster16() {
-}
+GfxCoordAdjuster16::~GfxCoordAdjuster16() = default;
 
 void GfxCoordAdjuster16::kernelGlobalToLocal(int16 &x, int16 &y, reg_t planeObject) {
 	Port *curPort = _ports->getPort();

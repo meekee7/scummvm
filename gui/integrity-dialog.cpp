@@ -189,8 +189,7 @@ IntegrityDialog::IntegrityDialog(Common::String endpoint, Common::String domain)
 	}
 }
 
-IntegrityDialog::~IntegrityDialog() {
-}
+IntegrityDialog::~IntegrityDialog() = default;
 
 
 bool IntegrityDialog::progressUpdate(int bytesProcessed) {

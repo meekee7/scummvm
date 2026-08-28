@@ -69,8 +69,7 @@ CCard::CCard(suit enSuit, int nPip) {
 	m_cOrigin   = CPoint(0, 0);
 }
 
-CCard::~CCard() {
-}
+CCard::~CCard() = default;
 
 int CCard::GetValue() const {
 	if (m_enSuit == manicurist) {    // Is Joker suit?
@@ -80,19 +79,7 @@ int CCard::GetValue() const {
 	}
 }
 
-CCard &CCard::operator=(const CCard& cCard) {
-	m_enSuit    = cCard.m_enSuit;       // Private members
-	m_nPip      = cCard.m_nPip;
-
-	m_pPrevCard = cCard.m_pPrevCard;    // Public members
-	m_pNextCard = cCard.m_pNextCard;
-	m_pStack    = cCard.m_pStack;
-	m_bIsBack   = cCard.m_bIsBack;
-	m_pSprite   = cCard.m_pSprite;
-	m_cOrigin   = cCard.m_cOrigin;
-
-	return *this;
-}
+CCard &CCard::operator=(const CCard& cCard) = default;
 
 } // namespace Barbershop
 } // namespace HodjNPodj

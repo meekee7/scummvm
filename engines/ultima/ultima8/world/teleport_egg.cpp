@@ -29,12 +29,10 @@ namespace Ultima8 {
 
 DEFINE_RUNTIME_CLASSTYPE_CODE(TeleportEgg)
 
-TeleportEgg::TeleportEgg() {
-}
+TeleportEgg::TeleportEgg() = default;
 
 
-TeleportEgg::~TeleportEgg() {
-}
+TeleportEgg::~TeleportEgg() = default;
 
 uint16 TeleportEgg::hatch() {
 	if (!isTeleporter()) return 0; // teleport target

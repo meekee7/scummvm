@@ -31,9 +31,7 @@ ASTNode::ASTNode(ASTNode *parent) :
 
 }
 
-ASTNode::~ASTNode() {
-
-}
+ASTNode::~ASTNode() = default;
 
 void ASTNode::printWithDepth(uint depth, const Common::String &string) const {
 	Common::String prefix;

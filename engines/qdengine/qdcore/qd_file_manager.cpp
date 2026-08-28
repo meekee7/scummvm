@@ -80,8 +80,7 @@ qdFileManager::qdFileManager() {
 	debug(0, "qdFileManager(): Package count: %d", _packageCount);
 }
 
-qdFileManager::~qdFileManager() {
-}
+qdFileManager::~qdFileManager() = default;
 
 bool qdFileManager::init(int cd_count) {
 	return true;

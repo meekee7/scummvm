@@ -52,8 +52,7 @@ const char *PreGob::kLanguageSuffixLong [5] = {"fr", "al", "an", "it", "es"};
 PreGob::PreGob(GobEngine *vm) : _vm(vm), _fadedOut(false) {
 }
 
-PreGob::~PreGob() {
-}
+PreGob::~PreGob() = default;
 
 void PreGob::fadeOut() {
 	if (_fadedOut || _vm->shouldQuit())

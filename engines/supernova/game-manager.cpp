@@ -160,8 +160,7 @@ GameManager::GameManager(SupernovaEngine *vm, Sound *sound)
 	initGui();
 }
 
-GameManager::~GameManager() {
-}
+GameManager::~GameManager() = default;
 
 void GameManager::destroyRooms() {
 }

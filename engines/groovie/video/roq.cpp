@@ -1124,8 +1124,7 @@ ROQSoundPlayer::ROQSoundPlayer(GroovieEngine *vm) : ROQPlayer(vm) {
 	_overBuf->create(640, 480, _vm->_pixelFormat);
 }
 
-ROQSoundPlayer::~ROQSoundPlayer() {
-}
+ROQSoundPlayer::~ROQSoundPlayer() = default;
 
 void ROQSoundPlayer::createAudioStream(bool stereo) {
 	_audioStream = Audio::makeQueuingAudioStream(22050, stereo);

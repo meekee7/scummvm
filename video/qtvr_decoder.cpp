@@ -73,8 +73,7 @@ static float readAppleFloatField(Common::SeekableReadStream *stream) {
 QuickTimeDecoder::PanoSampleDesc::PanoSampleDesc(Common::QuickTimeParser::Track *parentTrack, uint32 codecTag) : Common::QuickTimeParser::SampleDesc(parentTrack, codecTag) {
 }
 
-QuickTimeDecoder::PanoSampleDesc::~PanoSampleDesc() {
-}
+QuickTimeDecoder::PanoSampleDesc::~PanoSampleDesc() = default;
 
 //
 // Panorama Track Sample Description

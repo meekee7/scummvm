@@ -26,8 +26,7 @@
 namespace Stark {
 namespace Resources {
 
-Level::~Level() {
-}
+Level::~Level() = default;
 
 Level::Level(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name) {

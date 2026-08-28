@@ -38,15 +38,9 @@ qdGameObject::qdGameObject() : _r(0, 0, 0),
 	_screen_depth(0.0f), _tempPosInList(0) {
 }
 
-qdGameObject::qdGameObject(const qdGameObject &obj) : qdNamedObject(obj),
-	_r(obj._r),
-	_parallax_offset(obj._parallax_offset),
-	_screen_r(obj._screen_r),
-	_screen_depth(obj._screen_depth), _tempPosInList(obj._tempPosInList) {
-}
+qdGameObject::qdGameObject(const qdGameObject &obj) = default;
 
-qdGameObject::~qdGameObject() {
-}
+qdGameObject::~qdGameObject() = default;
 
 qdGameObject &qdGameObject::operator = (const qdGameObject &obj) {
 	if (this == &obj) return *this;

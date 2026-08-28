@@ -1489,8 +1489,7 @@ VQADecoder::VQAAudioTrack::VQAAudioTrack(VQADecoder *vqaDecoder) {
 	_bigCompressedAudioFrame = false;
 }
 
-VQADecoder::VQAAudioTrack::~VQAAudioTrack() {
-}
+VQADecoder::VQAAudioTrack::~VQAAudioTrack() = default;
 
 Audio::SeekableAudioStream *VQADecoder::VQAAudioTrack::decodeAudioFrame() {
 	int16* audioFrame = nullptr;

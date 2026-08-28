@@ -43,7 +43,7 @@ struct DeviceChannel {
 	DeviceChannel(const uint32 *pitchtable) : pitchTable(pitchtable), frequency(0), phase(0), end(nullptr), pos(nullptr), smpBuffStart(nullptr),
 		smpBuffEnd(nullptr), loopStart(nullptr), loopEnd(nullptr), pitch(0), mute(true), release(false), instr(nullptr), rhtm(false),
 		prog(0), baseFreq(0), note(0), volumeL(0), volumeR(0), rate(0), totalLevelL(0), totalLevelR(0), node(nullptr), prev(nullptr), next(nullptr) {}
-	~DeviceChannel() {}
+	~DeviceChannel() = default;
 
 	void recalcFrequency();
 
@@ -146,7 +146,7 @@ private:
 class DJMSoundSystem final : public IMSMacSoundSystem {
 public:
 	DJMSoundSystem(Audio::Mixer *mixer);
-	~DJMSoundSystem() override {}
+	~DJMSoundSystem() override = default;
 
 	bool start() override;
 	void setQuality(int qual) override;
@@ -204,7 +204,7 @@ private:
 class IMuseChannel_Macintosh final : public MidiChannel {
 public:
 	IMuseChannel_Macintosh(IMuseDriver_Macintosh *drv, int number);
-	~IMuseChannel_Macintosh() override {}
+	~IMuseChannel_Macintosh() override = default;
 
 	MidiDriver *device() override { return _drv; }
 	byte getNumber() override {	return _number; }

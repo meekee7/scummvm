@@ -40,9 +40,7 @@ Console::Console(const Configuration *c, Screen *s, GUI *g, uint16 x, uint16 y, 
 	gui->AddWidget(this);
 }
 
-Console::~Console() {
-
-}
+Console::~Console() = default;
 
 void Console::AddLine(const Common::String &line) {
 	GUI_Console::AddLine(line);

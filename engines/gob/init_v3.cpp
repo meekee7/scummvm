@@ -37,8 +37,7 @@ namespace Gob {
 Init_v3::Init_v3(GobEngine *vm) : Init_v2(vm) {
 }
 
-Init_v3::~Init_v3() {
-}
+Init_v3::~Init_v3() = default;
 
 void Init_v3::updateConfig() {
 // In the CD and Windows version of Goblins3, some texts are flagged

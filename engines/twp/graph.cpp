@@ -70,7 +70,7 @@ bool IndexedPriorityQueue::isEmpty() {
 	return _data.empty();
 }
 
-Graph::Graph() {}
+Graph::Graph() = default;
 
 GraphEdge::GraphEdge(int s, int t, float c)
 	: start(s), to(t), cost(c) {

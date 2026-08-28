@@ -29,7 +29,7 @@ namespace Pink {
 ModuleProxy::ModuleProxy(const Common::String &name)
 		: NamedObject(name) {}
 
-ModuleProxy::ModuleProxy() {}
+ModuleProxy::ModuleProxy() = default;
 
 Module::Module(PinkEngine *game, const Common::String &name)
 		: NamedObject(name), _game(game), _page(nullptr) {}

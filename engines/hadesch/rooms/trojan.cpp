@@ -30,8 +30,7 @@ enum {
 
 class TrojanHandler : public Handler {
 public:
-	TrojanHandler() {
-	}
+	TrojanHandler() = default;
 
 	void handleClick(const Common::String &name) override {
 	}

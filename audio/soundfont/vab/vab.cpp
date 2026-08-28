@@ -33,7 +33,7 @@ using namespace std;
 
 Vab::Vab(RawFile *file, uint32 offset) : VGMInstrSet(file, offset) {}
 
-Vab::~Vab() {}
+Vab::~Vab() = default;
 
 bool Vab::GetHeaderInfo() {
 	uint32 nEndOffset = GetEndOffset();
@@ -190,7 +190,7 @@ VabInstr::VabInstr(VGMInstrSet *instrSet, uint32 offset, uint32 length, uint32 t
 				   uint32 theInstrNum, const Common::String &name)
 		: VGMInstr(instrSet, offset, length, theBank, theInstrNum, name), _tones(0), _masterVol(127) {}
 
-VabInstr::~VabInstr() {}
+VabInstr::~VabInstr() = default;
 
 bool VabInstr::LoadInstr() {
 	int8 numRgns = _tones;

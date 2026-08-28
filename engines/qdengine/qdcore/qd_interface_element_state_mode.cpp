@@ -36,16 +36,9 @@ qdInterfaceElementStateMode::qdInterfaceElementStateMode() : _sound(NULL),
 	_contour(qdContour::CONTOUR_POLYGON) {
 }
 
-qdInterfaceElementStateMode::qdInterfaceElementStateMode(const qdInterfaceElementStateMode &ev) : _sound_file(ev._sound_file),
-	_sound(ev._sound),
-	_animation_file(ev._animation_file),
-	_animation_flags(ev._animation_flags),
-	_animation(ev._animation),
-	_contour(ev._contour) {
-}
+qdInterfaceElementStateMode::qdInterfaceElementStateMode(const qdInterfaceElementStateMode &ev) = default;
 
-qdInterfaceElementStateMode::~qdInterfaceElementStateMode() {
-}
+qdInterfaceElementStateMode::~qdInterfaceElementStateMode() = default;
 
 qdInterfaceElementStateMode &qdInterfaceElementStateMode::operator = (const qdInterfaceElementStateMode &ev) {
 	if (this == &ev) return *this;

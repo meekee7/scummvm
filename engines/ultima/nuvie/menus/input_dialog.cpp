@@ -167,8 +167,7 @@ bool InputDialog::init() {
 	return true;
 }
 
-InputDialog::~InputDialog() {
-}
+InputDialog::~InputDialog() = default;
 
 GUI_status InputDialog::close_dialog() {
 	Delete(); // mark dialog as deleted. it will be freed by the GUI object

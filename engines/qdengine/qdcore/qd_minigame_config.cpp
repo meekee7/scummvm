@@ -35,8 +35,7 @@ qdMinigameConfigParameter::qdMinigameConfigParameter() : _data_type(PRM_DATA_STR
 	_is_data_valid = true;
 }
 
-qdMinigameConfigParameter::~qdMinigameConfigParameter() {
-}
+qdMinigameConfigParameter::~qdMinigameConfigParameter() = default;
 
 bool qdMinigameConfigParameter::load_script(const xml::tag *p) {
 	set_data_string(p->data());

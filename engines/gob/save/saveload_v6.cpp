@@ -229,8 +229,7 @@ SaveLoad_v6::SaveFile SaveLoad_v6::_saveFiles[] = {
 SaveLoad_v6::SpriteHandler::SpriteHandler(GobEngine *vm) : TempSpriteHandler(vm) {
 }
 
-SaveLoad_v6::SpriteHandler::~SpriteHandler() {
-}
+SaveLoad_v6::SpriteHandler::~SpriteHandler() = default;
 
 bool SaveLoad_v6::SpriteHandler::set(SaveReader *reader, uint32 part) {
 	if (!TempSpriteHandler::create(624, 272, true))
@@ -252,8 +251,7 @@ SaveLoad_v6::GameHandler::File::File(GobEngine *vm, const char *base) :
 	SlotFileIndexed(vm, SaveLoad_v6::kSlotCount, base, "s") {
 }
 
-SaveLoad_v6::GameHandler::File::~File() {
-}
+SaveLoad_v6::GameHandler::File::~File() = default;
 
 int SaveLoad_v6::GameHandler::File::getSlot(int32 offset) const {
 	uint32 varSize = SaveHandler::getVarSize(_vm);
@@ -610,16 +608,14 @@ SaveLoad_v6::AutoHandler::File::File(GobEngine *vm, const Common::String &base) 
 	SlotFileStatic(vm, base, "aut") {
 }
 
-SaveLoad_v6::AutoHandler::File::~File() {
-}
+SaveLoad_v6::AutoHandler::File::~File() = default;
 
 
 SaveLoad_v6::AutoHandler::AutoHandler(GobEngine *vm, const Common::String &target) :
 	SaveHandler(vm), _file(vm, target) {
 }
 
-SaveLoad_v6::AutoHandler::~AutoHandler() {
-}
+SaveLoad_v6::AutoHandler::~AutoHandler() = default;
 
 int32 SaveLoad_v6::AutoHandler::getSize() {
 	Common::String fileName = _file.build();
@@ -705,17 +701,15 @@ SaveLoad_v6::AutoSpriteHandler::File::File(GobEngine *vm, const Common::String &
 	SlotFileStatic(vm, base, "asp") {
 }
 
-SaveLoad_v6::AutoSpriteHandler::File::~File() {
-}
+SaveLoad_v6::AutoSpriteHandler::File::~File() = default;
 
 
 SaveLoad_v6::AutoSpriteHandler::AutoSpriteHandler(GobEngine *vm,
-		const Common::String &target) : TempSpriteHandler(vm), _file(vm, target) {
+                                                  const Common::String &target) : TempSpriteHandler(vm), _file(vm, target) {
 
 }
 
-SaveLoad_v6::AutoSpriteHandler::~AutoSpriteHandler() {
-}
+SaveLoad_v6::AutoSpriteHandler::~AutoSpriteHandler() = default;
 
 int32 SaveLoad_v6::AutoSpriteHandler::getSize() {
 	Common::InSaveFile *file = _file.openRead();
@@ -831,8 +825,7 @@ SaveLoad_v6::ExtraHandler::ExtraHandler(GobEngine *vm, GameHandler &game,
 
 }
 
-SaveLoad_v6::ExtraHandler::~ExtraHandler() {
-}
+SaveLoad_v6::ExtraHandler::~ExtraHandler() = default;
 
 int32 SaveLoad_v6::ExtraHandler::getSize() {
 	if (_game->getExtraID(_slot) != _id)

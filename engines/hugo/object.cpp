@@ -55,8 +55,7 @@ ObjectHandler::ObjectHandler(HugoEngine *vm) : _vm(vm) {
 	memset(_ovlBase,  '\0', sizeof(Overlay));
 }
 
-ObjectHandler::~ObjectHandler() {
-}
+ObjectHandler::~ObjectHandler() = default;
 
 byte ObjectHandler::getBoundaryOverlay(uint16 index) const {
 	return _boundary[index];

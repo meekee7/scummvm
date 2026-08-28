@@ -78,8 +78,7 @@ bool AssetViewerDialog::init() {
 	return true;
 }
 
-AssetViewerDialog::~AssetViewerDialog() {
-}
+AssetViewerDialog::~AssetViewerDialog() = default;
 
 GUI_status AssetViewerDialog::close_dialog() {
 	if (_curShape)

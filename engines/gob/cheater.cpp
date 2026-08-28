@@ -33,7 +33,6 @@ namespace Gob {
 Cheater::Cheater(GobEngine *vm) : _vm(vm) {
 }
 
-Cheater::~Cheater() {
-}
+Cheater::~Cheater() = default;
 
 } // End of namespace Gob

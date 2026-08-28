@@ -30,7 +30,7 @@ public:
 	// Includes terminator char.
 	typedef char SHA1Digest[41];
 
-	virtual ~File() {}
+	virtual ~File() = default;
 	virtual size_t getSize() = 0;
 	virtual const Bit8u *getData() = 0;
 	virtual const SHA1Digest &getSHA1() = 0;

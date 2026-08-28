@@ -34,8 +34,7 @@ RawAudioSample::RawAudioSample(const uint8 *buffer, uint32 size, uint32 rate,
 	_length = size;
 }
 
-RawAudioSample::~RawAudioSample() {
-}
+RawAudioSample::~RawAudioSample() = default;
 
 Audio::SeekableAudioStream *RawAudioSample::makeStream() const {
 	Common::MemoryReadStream *stream = new Common::MemoryReadStream(_buffer, _bufferSize, DisposeAfterUse::NO);

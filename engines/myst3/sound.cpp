@@ -410,8 +410,7 @@ SoundChannel::SoundChannel(Myst3Engine *vm) :
 		_type(kAny) {
 }
 
-SoundChannel::~SoundChannel() {
-}
+SoundChannel::~SoundChannel() = default;
 
 void SoundChannel::play(uint32 id, uint32 volume, uint16 heading, uint16 attenuation, bool loop, SoundType type) {
 	stop();

@@ -30,8 +30,7 @@ namespace Grim {
 EMILuaVarComponent::EMILuaVarComponent(Component *p, int parentID, const char *name, Component *prevComponent, tag32 t) : Component(p, parentID, name, t) {
 }
 
-EMILuaVarComponent::~EMILuaVarComponent() {
-}
+EMILuaVarComponent::~EMILuaVarComponent() = default;
 
 void EMILuaVarComponent::init() {
 }

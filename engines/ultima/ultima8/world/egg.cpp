@@ -34,8 +34,7 @@ Egg::Egg() : _hatched(false) {
 }
 
 
-Egg::~Egg() {
-}
+Egg::~Egg() = default;
 
 uint16 Egg::hatch() {
 	if (_hatched) return 0;

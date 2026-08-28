@@ -53,8 +53,7 @@ MovClass::MovClass() {
 	_vecTbl[3] = -1;
 }
 
-MovClass::~MovClass() {
-}
+MovClass::~MovClass() = default;
 
 void MovClass::goto_xy(GotoPkt *gp) {
 	const int16 width = _G(room)->_barriers->getWidth();

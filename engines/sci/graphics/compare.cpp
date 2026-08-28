@@ -40,8 +40,7 @@ GfxCompare::GfxCompare(SegManager *segMan, GfxCache *cache, GfxScreen *screen, G
 	: _segMan(segMan), _cache(cache), _screen(screen), _coordAdjuster(coordAdjuster) {
 }
 
-GfxCompare::~GfxCompare() {
-}
+GfxCompare::~GfxCompare() = default;
 
 uint16 GfxCompare::isOnControl(uint16 screenMask, const Common::Rect &rect) {
 	int16 x, y;

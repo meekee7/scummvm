@@ -39,8 +39,7 @@ enum {
 
 class VolcanoHandler : public Handler {
 public:
-	VolcanoHandler() {
-	}
+	VolcanoHandler() = default;
 
 	void handleClick(const Common::String &name) override {
 		Common::SharedPtr<VideoRoom> room = g_vm->getVideoRoom();

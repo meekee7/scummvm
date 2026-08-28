@@ -27,8 +27,7 @@ namespace Hadesch {
 
 class HadesThroneHandler : public Handler {
 public:
-	HadesThroneHandler() {
-	}
+	HadesThroneHandler() = default;
 
 	void handleClick(const Common::String &name) override {
 	}

@@ -40,8 +40,7 @@ MartianRoom::MartianRoom(AccessEngine *vm) : Room(vm) {
 		_vm->_flags[178 + i] = 0;
 }
 
-MartianRoom::~MartianRoom() {
-}
+MartianRoom::~MartianRoom() = default;
 
 void MartianRoom::reloadRoom() {
 //	_vm->_currentMan = _roomFlag;

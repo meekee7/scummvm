@@ -42,8 +42,7 @@ CruInventoryGump::CruInventoryGump(Shape *shape, int x)
 	_frameNum = 0;
 }
 
-CruInventoryGump::~CruInventoryGump() {
-}
+CruInventoryGump::~CruInventoryGump() = default;
 
 void CruInventoryGump::InitGump(Gump *newparent, bool take_focus) {
 	CruStatGump::InitGump(newparent, take_focus);

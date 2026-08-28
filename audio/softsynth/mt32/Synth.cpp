@@ -184,7 +184,7 @@ protected:
 public:
 	Renderer(Synth &useSynth) : synth(useSynth) {}
 
-	virtual ~Renderer() {}
+	virtual ~Renderer() = default;
 
 	virtual void render(IntSample *stereoStream, Bit32u len) = 0;
 	virtual void render(FloatSample *stereoStream, Bit32u len) = 0;
@@ -1972,7 +1972,7 @@ class MidiEventQueue::SysexDataStorage {
 public:
 	static MidiEventQueue::SysexDataStorage *create(Bit32u storageBufferSize);
 
-	virtual ~SysexDataStorage() {}
+	virtual ~SysexDataStorage() = default;
 	virtual Bit8u *allocate(Bit32u sysexLength) = 0;
 	virtual void reclaimUnused(const Bit8u *sysexData, Bit32u sysexLength) = 0;
 	virtual void dispose(const Bit8u *sysexData, Bit32u sysexLength) = 0;

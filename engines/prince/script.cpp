@@ -37,7 +37,7 @@ namespace Prince {
 
 static const uint16 kNumOpcodes = 144;
 
-Room::Room() {}
+Room::Room() = default;
 
 bool Room::loadRoom(byte *roomData) {
 	int roomSize = 64;

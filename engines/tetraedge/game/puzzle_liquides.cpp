@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-PuzzleLiquides::PuzzleLiquides() {
-}
+PuzzleLiquides::PuzzleLiquides() = default;
 
 void PuzzleLiquides::wakeUp() {
 	error("TODO: Implement PuzzleLiquides::wakeUp");

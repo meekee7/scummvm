@@ -38,8 +38,7 @@ FadeToModalProcess::FadeToModalProcess(ModalGump *modal)
 	setRunPaused();
 }
 
-FadeToModalProcess::~FadeToModalProcess(void) {
-}
+FadeToModalProcess::~FadeToModalProcess(void) = default;
 
 void FadeToModalProcess::onWakeUp() {
 	if (_nextState == FS_CloseFadeIn) {

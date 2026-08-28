@@ -255,8 +255,7 @@ Pipe::Pipe(Common::SeekableReadStream *stream, uint16 id) {
 	_pipeId = id;
 }
 
-Pipe::~Pipe() {
-}
+Pipe::~Pipe() = default;
 
 void Pipe::nextFrame() {
 	if (_offset == (uint)_stream->size())

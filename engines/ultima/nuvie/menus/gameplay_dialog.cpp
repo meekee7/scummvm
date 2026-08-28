@@ -182,8 +182,7 @@ bool GameplayDialog::init() {
 	return true;
 }
 
-GameplayDialog::~GameplayDialog() {
-}
+GameplayDialog::~GameplayDialog() = default;
 
 GUI_status GameplayDialog::close_dialog() {
 	Delete(); // mark dialog as deleted. it will be freed by the GUI object

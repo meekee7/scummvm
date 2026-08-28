@@ -40,11 +40,10 @@ SoundBlaster::SoundBlaster(Audio::Mixer &mixer) : SoundMixer(mixer, Audio::Mixer
 	_compositionRepCount = 0;
 }
 
-SoundBlaster::~SoundBlaster() {
-}
+SoundBlaster::~SoundBlaster() = default;
 
 void SoundBlaster::playSample(SoundDesc &sndDesc, int16 repCount,
-		int16 frequency, int16 fadeLength) {
+                              int16 frequency, int16 fadeLength) {
 	SoundMixer::play(sndDesc, repCount, frequency, fadeLength);
 }
 

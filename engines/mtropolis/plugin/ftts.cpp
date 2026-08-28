@@ -26,11 +26,9 @@ namespace MTropolis {
 
 namespace FTTS {
 
-MotionModifier::MotionModifier() {
-}
+MotionModifier::MotionModifier() = default;
 
-MotionModifier::~MotionModifier() {
-}
+MotionModifier::~MotionModifier() = default;
 
 bool MotionModifier::load(const PlugInModifierLoaderContext &context, const Data::FTTS::MotionModifier &data) {
 	return true;
@@ -61,11 +59,9 @@ const char *MotionModifier::getDefaultName() const {
 	return "Motion Modifier"; // ???
 }
 
-SparkleModifier::SparkleModifier() {
-}
+SparkleModifier::SparkleModifier() = default;
 
-SparkleModifier::~SparkleModifier() {
-}
+SparkleModifier::~SparkleModifier() = default;
 
 bool SparkleModifier::load(const PlugInModifierLoaderContext &context, const Data::FTTS::SparkleModifier &data) {
 	return true;
@@ -101,8 +97,7 @@ FTTSPlugIn::FTTSPlugIn()
 	, _sparkleModifierFactory(this) {
 }
 
-FTTSPlugIn::~FTTSPlugIn() {
-}
+FTTSPlugIn::~FTTSPlugIn() = default;
 
 void FTTSPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	registrar->registerPlugInModifier("Motion", &_motionModifierFactory);

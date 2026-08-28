@@ -108,8 +108,7 @@ const OnceUpon::StorkParam BabaYaga::kStorkParam = {
 BabaYaga::BabaYaga(GobEngine *vm) : OnceUpon(vm) {
 }
 
-BabaYaga::~BabaYaga() {
-}
+BabaYaga::~BabaYaga() = default;
 
 void BabaYaga::run() {
 	init();

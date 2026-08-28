@@ -130,8 +130,7 @@ qdGameObjectMoving::qdGameObjectMoving(const qdGameObjectMoving &obj) : qdGameOb
 	_circuit_objs = obj.const_ref_circuit_objs();
 }
 
-qdGameObjectMoving::~qdGameObjectMoving() {
-}
+qdGameObjectMoving::~qdGameObjectMoving() = default;
 
 qdGameObjectMoving &qdGameObjectMoving::operator = (const qdGameObjectMoving &obj) {
 	if (this == &obj) return *this;

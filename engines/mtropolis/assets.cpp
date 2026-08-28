@@ -34,8 +34,7 @@
 
 namespace MTropolis {
 
-AssetHooks::~AssetHooks() {
-}
+AssetHooks::~AssetHooks() = default;
 
 void AssetHooks::onLoaded(Asset *asset, const Common::String &name) {
 }
@@ -43,8 +42,7 @@ void AssetHooks::onLoaded(Asset *asset, const Common::String &name) {
 Asset::Asset() : _assetID(0) {
 }
 
-Asset::~Asset() {
-}
+Asset::~Asset() = default;
 
 uint32 Asset::getAssetID() const {
 	return _assetID;
@@ -68,8 +66,7 @@ const ColorRGB8 *ColorTableAsset::getColors() const {
 	return _colors;
 }
 
-CachedAudio::CachedAudio() {
-}
+CachedAudio::CachedAudio() = default;
 
 bool CachedAudio::loadFromStream(const AudioMetadata &metadata, Common::ReadStream *stream, size_t size) {
 	_data.resize(size);
@@ -916,8 +913,7 @@ const Common::SharedPtr<Graphics::ManagedSurface> &CachedImage::optimize(Runtime
 ImageAsset::ImageAsset() : _colorDepth(kColorDepthMode8Bit), _filePosition(0), _size(0), _streamIndex(0), _imageFormat(kImageFormatWindows) {
 }
 
-ImageAsset::~ImageAsset() {
-}
+ImageAsset::~ImageAsset() = default;
 
 bool ImageAsset::load(AssetLoaderContext &context, const Data::ImageAsset &data) {
 	_assetID = data.assetID;

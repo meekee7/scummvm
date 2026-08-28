@@ -87,10 +87,7 @@ qdInventoryCell::qdInventoryCell(const qdInventoryCellType &tp) : _type(tp.type(
 	_object(NULL) {
 }
 
-qdInventoryCell::qdInventoryCell(const qdInventoryCell &cl) : _type(cl._type),
-	_sprite(cl._sprite),
-	_object(cl._object) {
-}
+qdInventoryCell::qdInventoryCell(const qdInventoryCell &cl) = default;
 
 qdInventoryCell &qdInventoryCell::operator = (const qdInventoryCell &cl) {
 	if (this == &cl) return *this;

@@ -106,7 +106,7 @@ public:
 		}
 	}
 
-	~OlympusHandler() override {}
+	~OlympusHandler() override = default;
 
 	void prepareRoom() override {
 		Common::SharedPtr<VideoRoom> room = g_vm->getVideoRoom();

@@ -28,7 +28,6 @@ TuckerConsole::TuckerConsole(TuckerEngine *vm) :  _vm(vm) {
 	assert(_vm);
 }
 
-TuckerConsole::~TuckerConsole() {
-}
+TuckerConsole::~TuckerConsole() = default;
 
 } // End of namespace Tucker

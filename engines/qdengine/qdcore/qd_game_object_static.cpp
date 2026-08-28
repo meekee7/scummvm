@@ -30,11 +30,9 @@
 
 namespace QDEngine {
 
-qdGameObjectStatic::qdGameObjectStatic() {
-}
+qdGameObjectStatic::qdGameObjectStatic() = default;
 
-qdGameObjectStatic::~qdGameObjectStatic() {
-}
+qdGameObjectStatic::~qdGameObjectStatic() = default;
 
 void qdGameObjectStatic::redraw(int offs_x, int offs_y) const {
 	debugC(2, kDebugGraphics, "qdGameObjectStatic::redraw([%d, %d]), name: '%s'", offs_x, offs_y, transCyrillic(name()));

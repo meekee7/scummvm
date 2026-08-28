@@ -35,8 +35,7 @@ Puzzles::Puzzles(Myst3Engine *vm) :
 		_vm(vm) {
 }
 
-Puzzles::~Puzzles() {
-}
+Puzzles::~Puzzles() = default;
 
 void Puzzles::run(uint16 id, uint16 arg0, uint16 arg1, uint16 arg2) {
 	switch (id) {

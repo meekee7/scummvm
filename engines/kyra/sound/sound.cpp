@@ -39,8 +39,7 @@ Sound::Sound(KyraEngine_v1 *vm, Audio::Mixer *mixer)
 	  _sfxEnabled(true) {
 }
 
-Sound::~Sound() {
-}
+Sound::~Sound() = default;
 
 Sound::kType Sound::getSfxType() const {
 	return getMusicType();

@@ -25,8 +25,7 @@
 
 namespace Tot {
 
-TotEventManager::TotEventManager() {
-}
+TotEventManager::TotEventManager() = default;
 
 void TotEventManager::pollEvent(bool allowDrag) {
 

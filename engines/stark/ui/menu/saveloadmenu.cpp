@@ -48,8 +48,7 @@ SaveLoadMenuScreen::SaveLoadMenuScreen(Gfx::Driver *gfx, Cursor *cursor, Screen:
 		_maxPage(10) {
 }
 
-SaveLoadMenuScreen::~SaveLoadMenuScreen() {
-}
+SaveLoadMenuScreen::~SaveLoadMenuScreen() = default;
 
 void SaveLoadMenuScreen::open() {
 	StaticLocationScreen::open();

@@ -122,8 +122,7 @@ MSFileObject::MSFileObject(const MSFileObject &obj) : Object<MSFileObject>(obj) 
 	_lastError = msErrorNone;
 }
 
-MSFileObject::~MSFileObject() {
-}
+MSFileObject::~MSFileObject() = default;
 
 void MSFileObject::dispose() {
 	_disposed = true;

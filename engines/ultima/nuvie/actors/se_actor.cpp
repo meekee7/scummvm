@@ -27,8 +27,7 @@ namespace Nuvie {
 SEActor::SEActor(Map *m, ObjManager *om, GameClock *c): WOUActor(m, om, c) {
 }
 
-SEActor::~SEActor() {
-}
+SEActor::~SEActor() = default;
 
 bool SEActor::init(uint8) {
 	Actor::init();

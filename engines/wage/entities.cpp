@@ -238,8 +238,7 @@ Obj::Obj(Common::String name, Common::SeekableReadStream *data, int resourceId) 
 	delete data;
 }
 
-Obj::~Obj() {
-}
+Obj::~Obj() = default;
 
 Chr *Obj::removeFromChr() {
 	if (_currentOwner != NULL) {

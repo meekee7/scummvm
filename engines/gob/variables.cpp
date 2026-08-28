@@ -190,8 +190,7 @@ bool Variables::copyFrom(uint32 offset, const byte *variables, uint32 n) {
 VariablesLE::VariablesLE(uint32 size) : Variables(size) {
 }
 
-VariablesLE::~VariablesLE() {
-}
+VariablesLE::~VariablesLE() = default;
 
 void VariablesLE::write8(byte *buf, uint8 data) const {
 	*buf = (byte) data;
@@ -221,8 +220,7 @@ uint32 VariablesLE::read32(const byte *buf) const {
 VariablesBE::VariablesBE(uint32 size) : Variables(size) {
 }
 
-VariablesBE::~VariablesBE() {
-}
+VariablesBE::~VariablesBE() = default;
 
 void VariablesBE::write8(byte *buf, uint8 data) const {
 	*buf = (byte) data;
@@ -257,8 +255,7 @@ VariableReference::VariableReference(Variables &vars, uint32 offset, Variables::
 	set(vars, offset, type);
 }
 
-VariableReference::~VariableReference() {
-}
+VariableReference::~VariableReference() = default;
 
 void VariableReference::set(Variables &vars, uint32 offset, Variables::Type type) {
 	_vars = &vars;

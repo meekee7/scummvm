@@ -30,9 +30,9 @@ namespace Networking {
 #define INDEX_PAGE_NAME ".index.html"
 #define FILES_PAGE_NAME ".files.html"
 
-FilesPageHandler::FilesPageHandler() {}
+FilesPageHandler::FilesPageHandler() = default;
 
-FilesPageHandler::~FilesPageHandler() {}
+FilesPageHandler::~FilesPageHandler() = default;
 
 namespace {
 Common::String encodeDoubleQuotes(const Common::String &s) {

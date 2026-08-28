@@ -66,8 +66,7 @@ DemoPlayer::DemoPlayer(GobEngine *vm) : _vm(vm) {
 	_rebase0 = false;
 }
 
-DemoPlayer::~DemoPlayer() {
-}
+DemoPlayer::~DemoPlayer() = default;
 
 bool DemoPlayer::play(const char *fileName) {
 	if (!fileName)

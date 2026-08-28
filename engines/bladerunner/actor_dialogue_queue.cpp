@@ -47,8 +47,7 @@ ActorDialogueQueue::ActorDialogueQueue(BladeRunnerEngine *vm) {
 	clear();
 }
 
-ActorDialogueQueue::~ActorDialogueQueue() {
-}
+ActorDialogueQueue::~ActorDialogueQueue() = default;
 
 void ActorDialogueQueue::add(int actorId, int sentenceId, int animationMode) {
 	if (actorId == kActorMcCoy || actorId == kActorVoiceOver) {

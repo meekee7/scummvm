@@ -39,8 +39,7 @@ SlidingWidget::SlidingWidget(int x, int y, FrameID frame, const Common::Rect32 &
 		_dragBounds.setHeight(_dims.height());
 }
 
-SlidingWidget::~SlidingWidget() {
-}
+SlidingWidget::~SlidingWidget() = default;
 
 int SlidingWidget::getValueForRange(int min, int max) {
 	int val = min;

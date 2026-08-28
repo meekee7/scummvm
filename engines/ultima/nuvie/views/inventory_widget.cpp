@@ -56,9 +56,7 @@ InventoryWidget::InventoryWidget(const Configuration *cfg, GUI_CallBack *callbac
 	arrow_rects[1] = Common::Rect(0, 3 * 16 + 8, 0 + 8, 3 * 16 + 8 + 8);
 }
 
-InventoryWidget::~InventoryWidget() {
-
-}
+InventoryWidget::~InventoryWidget() = default;
 
 bool InventoryWidget::init(Actor *a, uint16 x, uint16 y, TileManager *tm, ObjManager *om, Font *f) {
 	tile_manager = tm;

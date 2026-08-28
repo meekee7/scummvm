@@ -246,8 +246,7 @@ DosDisk_ns::DosDisk_ns(Parallaction* vm) : Disk_ns(vm), _gfx(nullptr) {
 
 }
 
-DosDisk_ns::~DosDisk_ns() {
-}
+DosDisk_ns::~DosDisk_ns() = default;
 
 void DosDisk_ns::init() {
 	// setup permament archives
@@ -555,9 +554,7 @@ AmigaDisk_ns::AmigaDisk_ns(Parallaction *vm) : Disk_ns(vm) {
 }
 
 
-AmigaDisk_ns::~AmigaDisk_ns() {
-
-}
+AmigaDisk_ns::~AmigaDisk_ns() = default;
 
 void AmigaDisk_ns::init() {
 	// setup permament archives

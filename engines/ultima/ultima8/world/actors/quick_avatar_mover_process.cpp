@@ -43,8 +43,7 @@ QuickAvatarMoverProcess::QuickAvatarMoverProcess() : Process(1), _movementFlags(
 	_amp = getPid();
 }
 
-QuickAvatarMoverProcess::~QuickAvatarMoverProcess() {
-}
+QuickAvatarMoverProcess::~QuickAvatarMoverProcess() = default;
 
 void QuickAvatarMoverProcess::run() {
 	if (!isEnabled()) {

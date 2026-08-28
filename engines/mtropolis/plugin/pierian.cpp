@@ -26,11 +26,9 @@ namespace MTropolis {
 
 namespace Pierian {
 
-FlattenModifier::FlattenModifier() {
-}
+FlattenModifier::FlattenModifier() = default;
 
-FlattenModifier::~FlattenModifier() {
-}
+FlattenModifier::~FlattenModifier() = default;
 
 bool FlattenModifier::load(const PlugInModifierLoaderContext &context, const Data::Pierian::FlattenModifier &data) {
 	return true;
@@ -61,11 +59,9 @@ const char *FlattenModifier::getDefaultName() const {
 	return "Flatten Modifier"; // ???
 }
 
-SaveFileModifier::SaveFileModifier() {
-}
+SaveFileModifier::SaveFileModifier() = default;
 
-SaveFileModifier::~SaveFileModifier() {
-}
+SaveFileModifier::~SaveFileModifier() = default;
 
 bool SaveFileModifier::load(const PlugInModifierLoaderContext &context, const Data::Pierian::SaveFileModifier &data) {
 	return true;
@@ -96,11 +92,9 @@ const char *SaveFileModifier::getDefaultName() const {
 	return "mLine Launcher Modifier"; // ???
 }
 
-WasteModifier::WasteModifier() {
-}
+WasteModifier::WasteModifier() = default;
 
-WasteModifier::~WasteModifier() {
-}
+WasteModifier::~WasteModifier() = default;
 
 bool WasteModifier::load(const PlugInModifierLoaderContext &context, const Data::Pierian::WasteModifier &data) {
 	return true;
@@ -137,8 +131,7 @@ PierianPlugIn::PierianPlugIn()
 	, _wasteModifierFactory(this) {
 }
 
-PierianPlugIn::~PierianPlugIn() {
-}
+PierianPlugIn::~PierianPlugIn() = default;
 
 void PierianPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	registrar->registerPlugInModifier("FlattenMod", &_flattenModifierFactory);

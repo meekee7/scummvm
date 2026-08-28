@@ -60,8 +60,7 @@ Submarine::Submarine(const ANIFile &ani) : ANIObject(ani), _state(kStateMove), _
 	turn(kDirectionN);
 }
 
-Submarine::~Submarine() {
-}
+Submarine::~Submarine() = default;
 
 Submarine::Direction Submarine::getDirection() const {
 	return _direction;

@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-InventoryObject::InventoryObject() {
-}
+InventoryObject::InventoryObject() = default;
 
 void InventoryObject::load(const Common::String &newName) {
 	setSizeType(RELATIVE_TO_PARENT);

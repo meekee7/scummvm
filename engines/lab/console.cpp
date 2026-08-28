@@ -39,8 +39,7 @@ Console::Console(LabEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("find_action",      WRAP_METHOD(Console, Cmd_FindAction));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_Scene(int argc, const char **argv) {
 	if (argc != 2) {

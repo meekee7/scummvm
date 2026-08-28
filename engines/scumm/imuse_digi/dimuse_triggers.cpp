@@ -30,7 +30,7 @@ IMuseDigiTriggersHandler::IMuseDigiTriggersHandler(IMuseDigital *engine, Common:
 	_emptyMarker[0] = '\0';
 }
 
-IMuseDigiTriggersHandler::~IMuseDigiTriggersHandler() {}
+IMuseDigiTriggersHandler::~IMuseDigiTriggersHandler() = default;
 
 int IMuseDigiTriggersHandler::init() {
 	return clearAllTriggers();

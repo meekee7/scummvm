@@ -37,8 +37,7 @@ InventoryMgr::InventoryMgr(AgiEngine *agi, GfxMgr *gfx, TextMgr *text, SystemUI 
 	_activeItemNr = -1;
 }
 
-InventoryMgr::~InventoryMgr() {
-}
+InventoryMgr::~InventoryMgr() = default;
 
 void InventoryMgr::getPlayerInventory() {
 	AgiGame game = _vm->_game;

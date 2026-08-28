@@ -1119,7 +1119,7 @@ SID::SID(::SID::Config::SidType videoSystem) : _videoSystem(videoSystem), _cpuCy
 	bus_value_ttl = 0;
 }
 
-SID::~SID() {}
+SID::~SID() = default;
 
 bool SID::init() {
 	reset();

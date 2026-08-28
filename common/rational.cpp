@@ -65,12 +65,7 @@ void Rational::cancel() {
 	_denom /= gcd;
 }
 
-Rational &Rational::operator=(const Rational &right) {
-	_num   = right._num;
-	_denom = right._denom;
-
-	return *this;
-}
+Rational &Rational::operator=(const Rational &right) = default;
 
 Rational &Rational::operator=(int right) {
 	_num   = right;

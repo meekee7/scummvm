@@ -47,8 +47,7 @@ ScalpelInventory::ScalpelInventory(SherlockEngine *vm) : Inventory(vm) {
 	_actionsIndexed[7] = kActionScalpelInvPageRight;
 }
 
-ScalpelInventory::~ScalpelInventory() {
-}
+ScalpelInventory::~ScalpelInventory() = default;
 
 int ScalpelInventory::identifyUserButton(Common::CustomEventType action) {
 	for (uint16 actionNr = 0; actionNr < ARRAYSIZE(_actionsIndexed); actionNr++) {

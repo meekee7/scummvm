@@ -40,13 +40,9 @@ namespace QDEngine {
 qdAnimationInfo::qdAnimationInfo() : _speed(0.0f), _animation_speed(1.0f) {
 }
 
-qdAnimationInfo::qdAnimationInfo(const qdAnimationInfo &p) : qdNamedObject(p),
-	_speed(p._speed),
-	_animation_speed(p._animation_speed) {
-}
+qdAnimationInfo::qdAnimationInfo(const qdAnimationInfo &p) = default;
 
-qdAnimationInfo::~qdAnimationInfo() {
-}
+qdAnimationInfo::~qdAnimationInfo() = default;
 
 void qdAnimationInfo::load_script(const xml::tag *p) {
 	int fl;

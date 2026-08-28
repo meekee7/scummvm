@@ -47,8 +47,7 @@ enum ChunkTypes {
 MoviePlayer::MoviePlayer(ToltecsEngine *vm) : _vm(vm), _isPlaying(false), _lastPrefetchOfs(0), _framesPerSoundChunk(0), _endPos(0), _audioStream(0) {
 }
 
-MoviePlayer::~MoviePlayer() {
-}
+MoviePlayer::~MoviePlayer() = default;
 
 void MoviePlayer::playMovie(uint resIndex) {
 	const uint32 subtitleSlot = kMaxScriptSlots - 1;

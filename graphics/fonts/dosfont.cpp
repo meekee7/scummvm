@@ -24,7 +24,7 @@
 
 namespace Graphics {
 
-DosFont::DosFont() {}
+DosFont::DosFont() = default;
 
 int DosFont::getFontHeight() const {
 	return 8;

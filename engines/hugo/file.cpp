@@ -66,8 +66,7 @@ FileManager::FileManager(HugoEngine *vm) : _vm(vm) {
 	_soundHdr->_offset = 0;
 }
 
-FileManager::~FileManager() {
-}
+FileManager::~FileManager() = default;
 
 /**
  * Name scenery and objects picture databases

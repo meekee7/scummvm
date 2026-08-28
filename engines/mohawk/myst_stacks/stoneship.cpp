@@ -92,8 +92,7 @@ Stoneship::Stoneship(MohawkEngine_Myst *vm) :
 	_cloudOrbStopSound = 0;
 }
 
-Stoneship::~Stoneship() {
-}
+Stoneship::~Stoneship() = default;
 
 void Stoneship::setupOpcodes() {
 	// "Stack-Specific" Opcodes

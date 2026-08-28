@@ -34,9 +34,7 @@ Font::Font() : num_chars(0), offset(0), default_color(FONT_COLOR_U6_NORMAL),
 		default_highlight_color(FONT_COLOR_U6_HIGHLIGHT) {
 }
 
-Font::~Font() {
-
-}
+Font::~Font() = default;
 
 uint16 Font::drawString(Screen *screen, const char *str, uint16 x, uint16 y) {
 	return drawString(screen, str, strlen(str), x, y, default_color, default_highlight_color);

@@ -31,11 +31,9 @@ namespace Ultima8 {
 
 DEFINE_RUNTIME_CLASSTYPE_CODE(GlobEgg)
 
-GlobEgg::GlobEgg() {
-}
+GlobEgg::GlobEgg() = default;
 
-GlobEgg::~GlobEgg() {
-}
+GlobEgg::~GlobEgg() = default;
 
 
 // Called when an item has entered the fast area

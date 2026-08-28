@@ -205,11 +205,9 @@ bool RivenScriptManager::stoppingAllScripts() const {
 	return _stoppingAllScripts;
 }
 
-RivenScript::RivenScript() {
-}
+RivenScript::RivenScript() = default;
 
-RivenScript::~RivenScript() {
-}
+RivenScript::~RivenScript() = default;
 
 void RivenScript::dumpScript(byte tabs) {
 	for (uint16 i = 0; i < _commands.size(); i++) {
@@ -396,9 +394,7 @@ RivenCommand::RivenCommand(MohawkEngine_Riven *vm) :
 
 }
 
-RivenCommand::~RivenCommand() {
-
-}
+RivenCommand::~RivenCommand() = default;
 
 RivenSimpleCommand::RivenSimpleCommand(MohawkEngine_Riven *vm, RivenCommandType type, const ArgumentArray &arguments) :
 		RivenCommand(vm),
@@ -407,8 +403,7 @@ RivenSimpleCommand::RivenSimpleCommand(MohawkEngine_Riven *vm, RivenCommandType 
 	setupOpcodes();
 }
 
-RivenSimpleCommand::~RivenSimpleCommand() {
-}
+RivenSimpleCommand::~RivenSimpleCommand() = default;
 
 RivenSimpleCommand *RivenSimpleCommand::createFromStream(MohawkEngine_Riven *vm, RivenCommandType type, Common::ReadStream *stream) {
 	uint16 argc = stream->readUint16BE();
@@ -836,9 +831,7 @@ RivenSwitchCommand::RivenSwitchCommand(MohawkEngine_Riven *vm) :
 
 }
 
-RivenSwitchCommand::~RivenSwitchCommand() {
-
-}
+RivenSwitchCommand::~RivenSwitchCommand() = default;
 
 RivenSwitchCommand *RivenSwitchCommand::createFromStream(MohawkEngine_Riven *vm, Common::ReadStream *stream) {
 	RivenSwitchCommand *command = new RivenSwitchCommand(vm);
@@ -927,9 +920,7 @@ RivenStackChangeCommand::RivenStackChangeCommand(MohawkEngine_Riven *vm, uint16 
 
 }
 
-RivenStackChangeCommand::~RivenStackChangeCommand() {
-
-}
+RivenStackChangeCommand::~RivenStackChangeCommand() = default;
 
 RivenStackChangeCommand *RivenStackChangeCommand::createFromStream(MohawkEngine_Riven *vm, Common::ReadStream *stream) {
 	/* argumentsSize = */ stream->readUint16BE();

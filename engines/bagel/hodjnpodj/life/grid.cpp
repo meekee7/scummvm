@@ -43,8 +43,7 @@ colony::colony(int r, int c) {
 			grid[i][j] = NO_LIFE;
 }
 
-colony::~colony() {
-}
+colony::~colony() = default;
 
 colony &colony::operator=(const colony& c) {
 	int i, j;

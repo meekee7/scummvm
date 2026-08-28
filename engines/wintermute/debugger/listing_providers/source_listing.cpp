@@ -25,7 +25,7 @@ namespace Wintermute {
 
 SourceListing::SourceListing(const Common::Array<Common::String> &strings) : _strings(strings) {}
 
-SourceListing::~SourceListing() {}
+SourceListing::~SourceListing() = default;
 
 uint SourceListing::getLength() const {
 	return _strings.size();

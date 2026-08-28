@@ -36,8 +36,7 @@ ResizableGump::ResizableGump() : Gump(),
 	_dragPosition(Gump::CENTER), _mousePosition(Gump::CENTER), _minWidth(20), _minHeight(20) {
 }
 
-ResizableGump::~ResizableGump() {
-}
+ResizableGump::~ResizableGump() = default;
 
 
 Gump *ResizableGump::onMouseMotion(int32 mx, int32 my) {

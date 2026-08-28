@@ -43,8 +43,7 @@ qdScreenTextSet::qdScreenTextSet() : _ID(0),
 	_texts.reserve(16);
 }
 
-qdScreenTextSet::~qdScreenTextSet() {
-}
+qdScreenTextSet::~qdScreenTextSet() = default;
 
 void qdScreenTextSet::redraw() const {
 	for (auto &it : _texts) {

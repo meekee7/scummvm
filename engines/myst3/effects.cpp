@@ -163,8 +163,7 @@ WaterEffect::WaterEffect(Myst3Engine *vm) :
 		_step(0) {
 }
 
-WaterEffect::~WaterEffect() {
-}
+WaterEffect::~WaterEffect() = default;
 
 WaterEffect *WaterEffect::create(Myst3Engine *vm, uint32 id) {
 	WaterEffect *s = new WaterEffect(vm);
@@ -338,8 +337,7 @@ LavaEffect::LavaEffect(Myst3Engine *vm) :
 		_step(0) {
 }
 
-LavaEffect::~LavaEffect() {
-}
+LavaEffect::~LavaEffect() = default;
 
 LavaEffect *LavaEffect::create(Myst3Engine *vm, uint32 id) {
 	LavaEffect *s = new LavaEffect(vm);
@@ -553,8 +551,7 @@ ShakeEffect::ShakeEffect(Myst3Engine *vm) :
 		_headingOffset(0) {
 }
 
-ShakeEffect::~ShakeEffect() {
-}
+ShakeEffect::~ShakeEffect() = default;
 
 ShakeEffect *ShakeEffect::create(Myst3Engine *vm) {
 	if (vm->_state->getShakeEffectAmpl() == 0) {
@@ -623,8 +620,7 @@ RotationEffect::RotationEffect(Myst3Engine *vm) :
 		_headingOffset(0) {
 }
 
-RotationEffect::~RotationEffect() {
-}
+RotationEffect::~RotationEffect() = default;
 
 RotationEffect *RotationEffect::create(Myst3Engine *vm) {
 	if (vm->_state->getRotationEffectSpeed() == 0) {
@@ -679,8 +675,7 @@ ShieldEffect::ShieldEffect(Myst3Engine *vm):
 	_amplitudeIncrement(1.0 / 64.0) {
 }
 
-ShieldEffect::~ShieldEffect() {
-}
+ShieldEffect::~ShieldEffect() = default;
 
 ShieldEffect *ShieldEffect::create(Myst3Engine *vm, uint32 id) {
 	uint32 room = vm->_state->getLocationRoom();

@@ -154,8 +154,7 @@ bool SubtitleCSVLoader::readUnquotedCel(Common::String &str) {
 	return true;
 }
 
-SubtitleAssetMappingTable::SubtitleAssetMappingTable() {
-}
+SubtitleAssetMappingTable::SubtitleAssetMappingTable() = default;
 
 Common::ErrorCode SubtitleAssetMappingTable::load(const Common::String &filePath) {
 	Common::File f;
@@ -204,8 +203,7 @@ const Common::String *SubtitleAssetMappingTable::findSubtitleSetForAssetName(con
 }
 
 
-SubtitleModifierMappingTable::SubtitleModifierMappingTable() {
-}
+SubtitleModifierMappingTable::SubtitleModifierMappingTable() = default;
 
 Common::ErrorCode SubtitleModifierMappingTable::load(const Common::String &filePath) {
 	Common::File f;
@@ -255,8 +253,7 @@ const Common::String *SubtitleModifierMappingTable::findSubtitleSetForModifierGU
 	return &it->_value;
 }
 
-SubtitleSpeakerTable::SubtitleSpeakerTable() {
-}
+SubtitleSpeakerTable::SubtitleSpeakerTable() = default;
 
 Common::ErrorCode SubtitleSpeakerTable::load(const Common::String &filePath) {
 	Common::File f;
@@ -300,8 +297,7 @@ uint SubtitleSpeakerTable::getSpeakerID(const Common::String &speakerName) const
 }
 
 
-SubtitleLineTable::SubtitleLineTable() {
-}
+SubtitleLineTable::SubtitleLineTable() = default;
 
 Common::ErrorCode SubtitleLineTable::load(const Common::String &filePath, const SubtitleSpeakerTable &speakerTable) {
 	Common::File f;

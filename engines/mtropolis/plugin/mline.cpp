@@ -26,11 +26,9 @@ namespace MTropolis {
 
 namespace MLine {
 
-MLineLauncherModifier::MLineLauncherModifier() {
-}
+MLineLauncherModifier::MLineLauncherModifier() = default;
 
-MLineLauncherModifier::~MLineLauncherModifier() {
-}
+MLineLauncherModifier::~MLineLauncherModifier() = default;
 
 bool MLineLauncherModifier::load(const PlugInModifierLoaderContext &context, const Data::MLine::MLineLauncherModifier &data) {
 	return true;
@@ -65,8 +63,7 @@ MLinePlugIn::MLinePlugIn()
 	: _mlineLauncherModifierFactory(this) {
 }
 
-MLinePlugIn::~MLinePlugIn() {
-}
+MLinePlugIn::~MLinePlugIn() = default;
 
 void MLinePlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	//URLaunch plugin by mLine

@@ -40,8 +40,7 @@ namespace Gob {
 BATPlayer::BATPlayer(GobEngine *vm) : DemoPlayer(vm) {
 }
 
-BATPlayer::~BATPlayer() {
-}
+BATPlayer::~BATPlayer() = default;
 
 bool BATPlayer::playStream(Common::SeekableReadStream &bat) {
 	// Iterate over all lines

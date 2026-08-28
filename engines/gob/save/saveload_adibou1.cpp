@@ -79,15 +79,13 @@ SaveLoad_Adibou1::SpriteHandler::File::File(GobEngine *vm, const Common::String 
 	SlotFileStatic(vm, base, ext) {
 }
 
-SaveLoad_Adibou1::SpriteHandler::File::~File() {
-}
+SaveLoad_Adibou1::SpriteHandler::File::~File() = default;
 
 SaveLoad_Adibou1::SpriteHandler::SpriteHandler(GobEngine *vm, const Common::String &target, const Common::String &ext)
 	: TempSpriteHandler(vm), _file(vm, target, ext) {
 }
 
-SaveLoad_Adibou1::SpriteHandler::~SpriteHandler() {
-}
+SaveLoad_Adibou1::SpriteHandler::~SpriteHandler() = default;
 
 int32 SaveLoad_Adibou1::SpriteHandler::getSize() {
 	Common::String fileName = _file.build();
@@ -142,12 +140,11 @@ SaveLoad_Adibou1::DrawingWithThumbnailHandler::File::File(GobEngine *vm, const C
 	SlotFileStatic(vm, base, ext) {
 }
 
-SaveLoad_Adibou1::DrawingWithThumbnailHandler::File::~File() {
-}
+SaveLoad_Adibou1::DrawingWithThumbnailHandler::File::~File() = default;
 
 SaveLoad_Adibou1::DrawingWithThumbnailHandler::DrawingWithThumbnailHandler(GobEngine *vm,
-																		 const Common::String &target,
-																		 const Common::String &ext)
+                                                                           const Common::String &target,
+                                                                           const Common::String &ext)
 	: TempSpriteHandler(vm), _file(vm, target, ext) {
 
 	Common::String fileName = _file.build();
@@ -212,16 +209,14 @@ SaveLoad_Adibou1::GameFileHandler::File::File(GobEngine *vm, const Common::Strin
 	SlotFileStatic(vm, base, ext) {
 }
 
-SaveLoad_Adibou1::GameFileHandler::File::~File() {
-}
+SaveLoad_Adibou1::GameFileHandler::File::~File() = default;
 
 
 SaveLoad_Adibou1::GameFileHandler::GameFileHandler(GobEngine *vm, const Common::String &target, const Common::String &ext) :
 	SaveHandler(vm), _file(vm, target, ext) {
 }
 
-SaveLoad_Adibou1::GameFileHandler::~GameFileHandler() {
-}
+SaveLoad_Adibou1::GameFileHandler::~GameFileHandler() = default;
 
 int32 SaveLoad_Adibou1::GameFileHandler::getSize() {
 	Common::String fileName = _file.build();

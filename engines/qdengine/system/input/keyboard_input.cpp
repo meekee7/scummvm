@@ -271,8 +271,7 @@ keyboardDispatcher::keyboardDispatcher() : _handler(0) {
 		unmapped[unmappedTable[i]] = true;
 }
 
-keyboardDispatcher::~keyboardDispatcher() {
-}
+keyboardDispatcher::~keyboardDispatcher() = default;
 
 keyboardDispatcher *keyboardDispatcher::instance() {
 	static keyboardDispatcher dsp;

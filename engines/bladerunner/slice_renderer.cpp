@@ -79,8 +79,7 @@ SliceRenderer::SliceRenderer(BladeRunnerEngine *vm) {
 	}
 }
 
-SliceRenderer::~SliceRenderer() {
-}
+SliceRenderer::~SliceRenderer() = default;
 
 void SliceRenderer::setScreenEffects(ScreenEffects *screenEffects) {
 	_screenEffects = screenEffects;

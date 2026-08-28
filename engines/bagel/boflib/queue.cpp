@@ -24,8 +24,7 @@
 
 namespace Bagel {
 
-CQueue::CQueue() {
-}
+CQueue::CQueue() = default;
 
 CQueue::~CQueue() {
 	// Can't destruct if we don't exist

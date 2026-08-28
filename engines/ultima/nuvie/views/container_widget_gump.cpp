@@ -77,9 +77,7 @@ ContainerWidgetGump::ContainerWidgetGump(const Configuration *cfg, GUI_CallBack 
 	fill_bg = false;
 }
 
-ContainerWidgetGump::~ContainerWidgetGump() {
-
-}
+ContainerWidgetGump::~ContainerWidgetGump() = default;
 
 bool ContainerWidgetGump::init(Actor *a, uint16 x, uint16 y, uint8 Cols, uint8 Rows, TileManager *tm, ObjManager *om, Font *f, uint8 check_xoff, uint8 check_yoff) {
 	tile_manager = tm;

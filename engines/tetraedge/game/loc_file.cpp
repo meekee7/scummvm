@@ -28,8 +28,7 @@
 
 namespace Tetraedge {
 
-LocFile::LocFile() {
-}
+LocFile::LocFile() = default;
 
 void LocFile::load(const TetraedgeFSNode &fsnode) {
 	TeNameValXmlParser parser;

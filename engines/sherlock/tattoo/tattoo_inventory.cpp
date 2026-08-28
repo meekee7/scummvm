@@ -30,8 +30,7 @@ TattooInventory::TattooInventory(SherlockEngine *vm) : Inventory(vm) {
 	_invShapes.resize(8);
 }
 
-TattooInventory::~TattooInventory() {
-}
+TattooInventory::~TattooInventory() = default;
 
 void TattooInventory::loadInv() {
 	// Exit if the inventory names are already loaded

@@ -50,8 +50,7 @@ DefenseUnit::DefenseUnit(DefenseUnit *inUnit, AI *ai) : _ai(ai) {
 	_cost = inUnit->getCost();
 }
 
-DefenseUnit::~DefenseUnit() {
-}
+DefenseUnit::~DefenseUnit() = default;
 
 Common::Point *AntiAirUnit::createTargetPos(int index, int distance, int weaponType, int sourceX, int sourceY) {
 	float ratio;

@@ -31,7 +31,7 @@ uint BlankListing::getLength() const { return UINT_MAX_VALUE; }
 Common::String BlankListing::getLine(uint n) {
 	return "<no source for " + _filename + " ~~~ line: " + Common::String::format("%d", n) + ">";
 }
-BlankListing::~BlankListing() {}
+BlankListing::~BlankListing() = default;
 
 }
 

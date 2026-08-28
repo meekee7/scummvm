@@ -35,9 +35,7 @@ SchedPathFinder::SchedPathFinder(Actor *a, MapCoord g, Path *path_type)
 	assert(search && actor);
 }
 
-SchedPathFinder::~SchedPathFinder() {
-
-}
+SchedPathFinder::~SchedPathFinder() = default;
 
 bool SchedPathFinder::get_next_move(MapCoord &step) {
 	// jump to goal if both locations are off-screen

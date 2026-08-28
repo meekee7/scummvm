@@ -23,8 +23,7 @@
 
 namespace Neverhood {
 
-StaticData::StaticData() {
-}
+StaticData::StaticData() = default;
 
 StaticData::~StaticData() {
 	for (Common::HashMap<uint32, HitRectList*>::iterator i = _hitRectLists.begin(); i != _hitRectLists.end(); ++i)

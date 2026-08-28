@@ -33,13 +33,9 @@ qdMusicTrack::qdMusicTrack() : _volume(256) {
 	toggle_cycle(true);
 }
 
-qdMusicTrack::qdMusicTrack(const qdMusicTrack &trk) : qdConditionalObject(trk),
-	_file_name(trk._file_name),
-	_volume(trk._volume) {
-}
+qdMusicTrack::qdMusicTrack(const qdMusicTrack &trk) = default;
 
-qdMusicTrack::~qdMusicTrack() {
-}
+qdMusicTrack::~qdMusicTrack() = default;
 
 qdMusicTrack &qdMusicTrack::operator = (const qdMusicTrack &trk) {
 	if (this == &trk) return *this;

@@ -56,8 +56,7 @@ PartyMember::PartyMember(Party *p, SaveGamePlayerRecord *pr) :
 	setStatus(pr->_status);
 }
 
-PartyMember::~PartyMember() {
-}
+PartyMember::~PartyMember() = default;
 
 void PartyMember::notifyOfChange() {
 	if (_party) {

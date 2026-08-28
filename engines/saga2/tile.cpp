@@ -878,8 +878,7 @@ void cleanupActiveItemStates() {
 //-----------------------------------------------------------------------
 //	Constructor
 
-TileActivityTaskList::TileActivityTaskList() {
-}
+TileActivityTaskList::TileActivityTaskList() = default;
 
 //-----------------------------------------------------------------------
 //	Reconstruct the TileActivityTaskList from an archive buffer

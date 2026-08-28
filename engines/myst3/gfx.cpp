@@ -75,8 +75,7 @@ Renderer::Renderer(OSystem *system)
 	}
 }
 
-Renderer::~Renderer() {
-}
+Renderer::~Renderer() = default;
 
 void Renderer::initFont(const Graphics::Surface *surface) {
 	_font = createTexture2D(surface);

@@ -32,8 +32,7 @@
 
 namespace Wintermute {
 
-DXVector2::DXVector2() {
-}
+DXVector2::DXVector2() = default;
 
 DXVector2::DXVector2(const float *pf) {
 	if (!pf)

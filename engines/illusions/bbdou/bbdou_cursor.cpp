@@ -38,8 +38,7 @@ BbdouCursor::BbdouCursor(IllusionsEngine_BBDOU *vm, BbdouSpecialCode *bbdou)
 	: _vm(vm), _bbdou(bbdou) {
 }
 
-BbdouCursor::~BbdouCursor() {
-}
+BbdouCursor::~BbdouCursor() = default;
 
 void BbdouCursor::init(uint32 objectId, uint32 progResKeywordId) {
 

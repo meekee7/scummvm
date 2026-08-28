@@ -62,8 +62,7 @@ class Blacksmith : public ViewAnimation {
 public:
 	Blacksmith() : ViewAnimation("blck", 2, 13) {
 	}
-	~Blacksmith() override {
-	}
+	~Blacksmith() override = default;
 
 	void enter() override {
 		_sound.playVoice("whaddayo.voc");
@@ -74,7 +73,7 @@ public:
 class Market : public ViewAnimation {
 public:
 	Market() : ViewAnimation("gild", 4, 32) {}
-	~Market() override {}
+	~Market() override = default;
 
 	void enter() override {
 		_sound.playVoice("hello.voc");
@@ -85,7 +84,7 @@ public:
 class Tavern : public ViewAnimation {
 public:
 	Tavern() : ViewAnimation("tvrn", 2, 16) {}
-	~Tavern() override {}
+	~Tavern() override = default;
 
 	void enter() override {
 		_sound.playVoice("hello.voc");
@@ -102,8 +101,7 @@ class Temple : public ViewAnimation {
 public:
 	Temple() : ViewAnimation("tmpl", 4, 26) {
 	}
-	~Temple() override {
-	}
+	~Temple() override = default;
 
 	void enter() override {
 		_sound.playVoice("maywe2.voc");
@@ -115,8 +113,7 @@ class Training : public ViewAnimation {
 public:
 	Training() : ViewAnimation("trng", 2, 16) {
 	}
-	~Training() override {
-	}
+	~Training() override = default;
 
 	void enter() override {
 		_sound.playVoice("training.voc");

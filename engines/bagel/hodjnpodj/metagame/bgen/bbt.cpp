@@ -31,8 +31,7 @@ namespace Gtl {
 
 
 //* CBbtMgr::~CBbtMgr -- destructor
-CBbtMgr::~CBbtMgr() {
-}
+CBbtMgr::~CBbtMgr() = default;
 
 
 //* CBbtMgr::LinkButton -- link button into button manager

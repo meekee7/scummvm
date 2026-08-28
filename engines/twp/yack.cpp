@@ -65,9 +65,7 @@ YackTokenReader::Iterator::Iterator(YackTokenReader &reader, int64 pos)
 	operator++();
 }
 
-YackTokenReader::Iterator::Iterator(const Iterator &it)
-	: _reader(it._reader), _pos(it._pos), _token(it._token) {
-}
+YackTokenReader::Iterator::Iterator(const Iterator &it) = default;
 
 YackTokenReader::Iterator &YackTokenReader::Iterator::operator++() {
 	_reader->_stream->seek(_pos);
@@ -305,11 +303,9 @@ void YCompilationUnit::accept(YackVisitor &v) { v.visit(*this); }
 
 YLabel::YLabel(int line) { _line = line; }
 
-YLabel::~YLabel() {
-}
+YLabel::~YLabel() = default;
 
-YCompilationUnit::~YCompilationUnit() {
-}
+YCompilationUnit::~YCompilationUnit() = default;
 
 Common::SharedPtr<YLabel> YackParser::parseLabel() {
 	Common::SharedPtr<YLabel> pLabel;

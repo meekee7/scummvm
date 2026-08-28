@@ -29,8 +29,7 @@ RenderedText::RenderedText()
 }
 
 
-RenderedText::~RenderedText() {
-}
+RenderedText::~RenderedText() = default;
 
 } // End of namespace Ultima8
 } // End of namespace Ultima

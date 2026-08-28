@@ -45,7 +45,7 @@ class PCSoundDriver {
 public:
 	typedef void (*UpdateCallback)(void *);
 
-	virtual ~PCSoundDriver() {}
+	virtual ~PCSoundDriver() = default;
 
 	virtual MusicType musicType() const = 0;
 	virtual void setupChannel(int channel, const byte *data, int instrument, int volume) = 0;

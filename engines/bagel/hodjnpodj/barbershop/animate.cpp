@@ -48,8 +48,7 @@ CAnimate::CAnimate(CSound *pSound) {
 	//srand((unsigned) time(nullptr));     // seed the random number generator
 } // CAnimate
 
-CAnimate::~CAnimate() {
-} // ~CAnimate
+CAnimate::~CAnimate() = default; // ~CAnimate
 
 bool CAnimate::Clown(CDC *pDC, CPoint point) {
 	bool    bSuccess;

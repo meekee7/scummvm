@@ -37,8 +37,7 @@ HugoConsole::HugoConsole(HugoEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("Boundaries",    WRAP_METHOD(HugoConsole, Cmd_boundaries));
 }
 
-HugoConsole::~HugoConsole() {
-}
+HugoConsole::~HugoConsole() = default;
 
 static int strToInt(const char *s) {
 	if (!*s)

@@ -30,8 +30,7 @@ static uint32 READ_IEEE754(const uint8 *p) {
 	return (m >> exp);
 }
 
-AifcPlayer::AifcPlayer() {
-}
+AifcPlayer::AifcPlayer() = default;
 
 bool AifcPlayer::play(int mixRate, const char *path, uint32 startOffset) {
 	_ssndSize = 0;

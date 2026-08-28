@@ -41,8 +41,7 @@ DifficultyGump::DifficultyGump()
 	_buttonHeight(0) {
 }
 
-DifficultyGump::~DifficultyGump() {
-}
+DifficultyGump::~DifficultyGump() = default;
 
 static const int BUTTON_X = 158;
 static const int BUTTON_Y = 120;

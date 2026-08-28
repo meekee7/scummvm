@@ -34,8 +34,7 @@ PegasusConsole::PegasusConsole(PegasusEngine *vm) : GUI::Debugger(), _vm(vm) {
 		registerCmd("jump", WRAP_METHOD(PegasusConsole, Cmd_Jump));
 }
 
-PegasusConsole::~PegasusConsole() {
-}
+PegasusConsole::~PegasusConsole() = default;
 
 bool PegasusConsole::Cmd_Die(int argc, const char **argv) {
 	if (argc == 1) {

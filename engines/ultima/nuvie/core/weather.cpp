@@ -52,8 +52,7 @@ Weather::Weather(const Configuration *cfg, GameClock *c, nuvie_game_t type)
 		display_from_wind_dir = true;
 }
 
-Weather::~Weather() {
-}
+Weather::~Weather() = default;
 
 bool Weather::load(NuvieIO *objlist) {
 	clear_wind();

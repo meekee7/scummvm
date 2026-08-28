@@ -34,7 +34,7 @@ class MidiDriver_CMS;
 class CMSVoice {
 public:
 	CMSVoice(uint8 id, MidiDriver_CMS *driver, CMS::CMS *cms, SciSpan<const uint8>& patchData);
-	virtual ~CMSVoice() {}
+	virtual ~CMSVoice() = default;
 
 	virtual void noteOn(int note, int velocity) = 0;
 	virtual void noteOff() = 0;
@@ -76,7 +76,7 @@ private:
 class CMSVoice_V0 : public CMSVoice {
 public:
 	CMSVoice_V0(uint8 id, MidiDriver_CMS *driver, CMS::CMS *cms, SciSpan<const uint8>& patchData);
-	~CMSVoice_V0() override {}
+	~CMSVoice_V0() override = default;
 
 	void noteOn(int note, int) override;
 	void noteOff() override;
@@ -139,7 +139,7 @@ private:
 class CMSVoice_V1 : public CMSVoice {
 public:
 	CMSVoice_V1(uint8 id, MidiDriver_CMS *driver, CMS::CMS *cms, SciSpan<const uint8>& patchData);
-	~CMSVoice_V1() override {}
+	~CMSVoice_V1() override = default;
 
 	void noteOn(int note, int velocity) override;
 	void noteOff() override;

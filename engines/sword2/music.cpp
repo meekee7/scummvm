@@ -200,8 +200,7 @@ CLUInputStream::CLUInputStream(Common::File *file, int size)
 	refill();
 }
 
-CLUInputStream::~CLUInputStream() {
-}
+CLUInputStream::~CLUInputStream() = default;
 
 int CLUInputStream::readBuffer(int16 *buffer, const int numSamples) {
 	int samples = 0;

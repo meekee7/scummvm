@@ -72,8 +72,7 @@ SaveLoad_Playtoons::GameHandler::File::File(GobEngine *vm, const char *base) :
 	SlotFileIndexed(vm, SaveLoad_Playtoons::kSlotCount, base, "s") {
 }
 
-SaveLoad_Playtoons::GameHandler::File::~File() {
-}
+SaveLoad_Playtoons::GameHandler::File::~File() = default;
 
 int SaveLoad_Playtoons::GameHandler::File::getSlot(int32 offset) const {
 	uint32 varSize = SaveHandler::getVarSize(_vm);

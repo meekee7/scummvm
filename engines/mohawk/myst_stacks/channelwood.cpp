@@ -47,8 +47,7 @@ Channelwood::Channelwood(MohawkEngine_Myst *vm) :
 	setupOpcodes();
 }
 
-Channelwood::~Channelwood() {
-}
+Channelwood::~Channelwood() = default;
 
 void Channelwood::setupOpcodes() {
 	// "Stack-Specific" Opcodes

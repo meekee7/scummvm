@@ -55,7 +55,7 @@ public:
 		_flags = kADFlagMatchFullPaths;
 	}
 
-	~QDEngineMetaEngineDetection() override {}
+	~QDEngineMetaEngineDetection() override = default;
 
 	const char *getName() const override {
 		return "qdengine";

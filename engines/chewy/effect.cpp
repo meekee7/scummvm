@@ -25,10 +25,8 @@
 
 namespace Chewy {
 
-Effect::Effect() {
-}
-Effect::~Effect() {
-}
+Effect::Effect() = default;
+Effect::~Effect() = default;
 
 void Effect::rnd_blende(byte *rnd_speicher, byte *sram_speicher, byte *screen, byte *palette, int16 col) {
 	byte *sp = (byte *)MALLOC(8 * 8 + 4);

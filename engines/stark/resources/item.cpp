@@ -423,8 +423,7 @@ Common::Array<Common::Point> ItemVisual::listExitPositionsImpl() {
 	return positions;
 }
 
-ItemTemplate::~ItemTemplate() {
-}
+ItemTemplate::~ItemTemplate() = default;
 
 ItemTemplate::ItemTemplate(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Item(parent, subType, index, name),
@@ -512,8 +511,7 @@ void ItemTemplate::setAnimHierarchy(AnimHierarchy *animHierarchy) {
 	}
 }
 
-GlobalItemTemplate::~GlobalItemTemplate() {
-}
+GlobalItemTemplate::~GlobalItemTemplate() = default;
 
 GlobalItemTemplate::GlobalItemTemplate(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		ItemTemplate(parent, subType, index, name) {
@@ -561,8 +559,7 @@ AnimHierarchy *GlobalItemTemplate::findStockAnimHierarchy() {
 	}
 }
 
-InventoryItem::~InventoryItem() {
-}
+InventoryItem::~InventoryItem() = default;
 
 InventoryItem::InventoryItem(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		ItemVisual(parent, subType, index, name) {
@@ -625,8 +622,7 @@ Visual *InventoryItem::getCursorVisual() const {
 }
 
 
-LevelItemTemplate::~LevelItemTemplate() {
-}
+LevelItemTemplate::~LevelItemTemplate() = default;
 
 LevelItemTemplate::LevelItemTemplate(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		ItemTemplate(parent, subType, index, name) {
@@ -706,8 +702,7 @@ void LevelItemTemplate::printData() {
 	debug("reference: %s", _reference.describe().c_str());
 }
 
-FloorPositionedItem::~FloorPositionedItem() {
-}
+FloorPositionedItem::~FloorPositionedItem() = default;
 
 FloorPositionedItem::FloorPositionedItem(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		ItemVisual(parent, subType, index, name),
@@ -802,8 +797,7 @@ void FloorPositionedItem::saveLoad(ResourceSerializer *serializer) {
 	serializer->syncAsSint32LE(_floorFaceIndex);
 }
 
-FloorPositionedImageItem::~FloorPositionedImageItem() {
-}
+FloorPositionedImageItem::~FloorPositionedImageItem() = default;
 
 FloorPositionedImageItem::FloorPositionedImageItem(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		FloorPositionedItem(parent, subType, index, name) {
@@ -870,8 +864,7 @@ void FloorPositionedImageItem::printData() {
 	debug("position: x %d, y %d", _position.x, _position.y);
 }
 
-ImageItem::~ImageItem() {
-}
+ImageItem::~ImageItem() = default;
 
 ImageItem::ImageItem(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		ItemVisual(parent, subType, index, name) {

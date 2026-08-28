@@ -101,8 +101,7 @@ PathfinderProcess::PathfinderProcess(Actor *actor, const Point3 &target) :
 	actor->setActorFlag(Actor::ACT_PATHFINDING);
 }
 
-PathfinderProcess::~PathfinderProcess() {
-}
+PathfinderProcess::~PathfinderProcess() = default;
 
 void PathfinderProcess::terminate() {
 	Actor *actor = getActor(_itemNum);

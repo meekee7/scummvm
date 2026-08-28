@@ -23,7 +23,6 @@
 
 namespace Tetraedge {
 
-TePalette::TePalette() {
-}
+TePalette::TePalette() = default;
 
 } // end namespace Tetraedge

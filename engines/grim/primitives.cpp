@@ -31,8 +31,7 @@ PrimitiveObject::PrimitiveObject() :
 		_filled(false), _type(InvalidType) {
 }
 
-PrimitiveObject::~PrimitiveObject() {
-}
+PrimitiveObject::~PrimitiveObject() = default;
 
 void PrimitiveObject::saveState(SaveGame *savedState) const {
 	savedState->writeLESint32((int32)_type);

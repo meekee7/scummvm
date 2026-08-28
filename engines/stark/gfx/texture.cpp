@@ -26,8 +26,7 @@
 namespace Stark {
 namespace Gfx {
 
-TextureSet::TextureSet() {
-}
+TextureSet::TextureSet() = default;
 
 TextureSet::~TextureSet() {
 	for (TextureMap::iterator it = _texMap.begin(); it != _texMap.end(); ++it) {

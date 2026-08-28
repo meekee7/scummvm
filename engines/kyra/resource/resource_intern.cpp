@@ -499,7 +499,7 @@ Common::Archive *ResLoaderTlk::load(Common::ArchiveMemberPtr file, Common::Seeka
 class FileExpanderSource {
 public:
 	FileExpanderSource(const uint8 *data, int dataSize) : _dataPtr(data), _endofBuffer(data + dataSize), _bitsLeft(8), _key(0), _index(0) {}
-	~FileExpanderSource() {}
+	~FileExpanderSource() = default;
 
 	void advSrcRefresh();
 	void advSrcBitsBy1();

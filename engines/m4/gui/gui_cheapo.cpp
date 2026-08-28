@@ -34,8 +34,7 @@
 namespace M4 {
 namespace GUI {
 
-RectClass::RectClass() {
-}
+RectClass::RectClass() = default;
 
 RectClass::RectClass(const RectClass *r) {
 	if (!r) {
@@ -52,8 +51,7 @@ RectClass::RectClass(int16 x1, int16 y1, int16 x2, int16 y2) :
 	_x1(x1), _y1(y1), _x2(x2), _y2(y2) {
 }
 
-RectClass::~RectClass() {
-}
+RectClass::~RectClass() = default;
 
 void RectClass::copyInto(RectClass *r) const {
 	if (!r) {
@@ -426,8 +424,7 @@ InterfaceBox::InterfaceBox(const RectClass &r) {
 		_button[iter] = nullptr;
 }
 
-InterfaceBox::~InterfaceBox() {
-}
+InterfaceBox::~InterfaceBox() = default;
 
 int16 InterfaceBox::inside(int16 x, int16 y) const {
 	if (!_index)

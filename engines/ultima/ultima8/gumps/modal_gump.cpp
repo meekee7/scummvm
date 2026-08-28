@@ -41,8 +41,7 @@ ModalGump::ModalGump(int x, int y, int width, int height, uint16 owner,
 
 }
 
-ModalGump::~ModalGump() {
-}
+ModalGump::~ModalGump() = default;
 
 void ModalGump::InitGump(Gump *newparent, bool take_focus) {
 	Gump::InitGump(newparent, take_focus);

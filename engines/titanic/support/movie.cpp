@@ -94,8 +94,7 @@ OSMovie::OSMovie(const CResourceKey &name, CVideoSurface *surface) :
 	_aviSurface.setVideoSurface(surface);
 }
 
-OSMovie::~OSMovie() {
-}
+OSMovie::~OSMovie() = default;
 
 void OSMovie::play(uint flags, CGameObject *obj) {
 	_aviSurface.play(flags, obj);

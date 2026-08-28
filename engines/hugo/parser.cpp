@@ -60,8 +60,7 @@ Parser::Parser(HugoEngine *vm) : _vm(vm), _putIndex(0), _getIndex(0) {
 	_checkDoubleF1Fl = false;
 }
 
-Parser::~Parser() {
-}
+Parser::~Parser() = default;
 
 uint16 Parser::getCmdDefaultVerbIdx(const uint16 index) const {
 	return _cmdList[index][0]._verbIndex;

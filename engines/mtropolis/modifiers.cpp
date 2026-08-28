@@ -1774,8 +1774,7 @@ void ElementTransitionModifier::setTransitionProgress(uint32 step, uint32 maxSte
 SharedSceneModifier::SharedSceneModifier() : _targetSectionGUID(0), _targetSubsectionGUID(0), _targetSceneGUID(0) {
 }
 
-SharedSceneModifier::~SharedSceneModifier() {
-}
+SharedSceneModifier::~SharedSceneModifier() = default;
 
 bool SharedSceneModifier::load(ModifierLoaderContext &context, const Data::SharedSceneModifier &data) {
 	if (!loadTypicalHeader(data.modHeader))
@@ -2261,8 +2260,7 @@ void CollisionDetectionMessengerModifier::triggerCollision(Runtime *runtime, Str
 	_sendSpec.sendFromMessenger(runtime, this, _triggerSource.lock().get(), _incomingData, customDestination);
 }
 
-KeyboardMessengerModifier::~KeyboardMessengerModifier() {
-}
+KeyboardMessengerModifier::~KeyboardMessengerModifier() = default;
 
 KeyboardMessengerModifier::KeyboardMessengerModifier()
 	: _onDown(false), _onUp(false), _onRepeat(false), _keyModControl(false), _keyModCommand(false), _keyModOption(false),
@@ -2728,8 +2726,7 @@ VThreadState ImageEffectModifier::removeTask(const RemoveTaskData &taskData) {
 	return kVThreadReturn;
 }
 
-ReturnModifier::ReturnModifier() {
-}
+ReturnModifier::ReturnModifier() = default;
 
 bool ReturnModifier::load(ModifierLoaderContext &context, const Data::ReturnModifier &data) {
 	if (!loadTypicalHeader(data.modHeader) || !_executeWhen.load(data.executeWhen))
@@ -3250,8 +3247,7 @@ const char *IntegerRangeVariableModifier::getDefaultName() const {
 	return "Integer Range Variable";
 }
 
-IntegerRangeVariableStorage::IntegerRangeVariableStorage() {
-}
+IntegerRangeVariableStorage::IntegerRangeVariableStorage() = default;
 
 Common::SharedPtr<ModifierSaveLoad> IntegerRangeVariableStorage::getSaveLoad(Runtime *runtime) {
 	return Common::SharedPtr<ModifierSaveLoad>(new SaveLoad(this));
@@ -3363,8 +3359,7 @@ const char *VectorVariableModifier::getDefaultName() const {
 	return "Vector Variable";
 }
 
-VectorVariableStorage::VectorVariableStorage() {
-}
+VectorVariableStorage::VectorVariableStorage() = default;
 
 Common::SharedPtr<ModifierSaveLoad> VectorVariableStorage::getSaveLoad(Runtime *runtime) {
 	return Common::SharedPtr<ModifierSaveLoad>(new SaveLoad(this));
@@ -3478,8 +3473,7 @@ const char *PointVariableModifier::getDefaultName() const {
 	return "Point Variable";
 }
 
-PointVariableStorage::PointVariableStorage() {
-}
+PointVariableStorage::PointVariableStorage() = default;
 
 Common::SharedPtr<ModifierSaveLoad> PointVariableStorage::getSaveLoad(Runtime *runtime) {
 	return Common::SharedPtr<ModifierSaveLoad>(new SaveLoad(this));
@@ -3644,8 +3638,7 @@ const char *StringVariableModifier::getDefaultName() const {
 	return "String Variable";
 }
 
-StringVariableStorage::StringVariableStorage() {
-}
+StringVariableStorage::StringVariableStorage() = default;
 
 Common::SharedPtr<ModifierSaveLoad> StringVariableStorage::getSaveLoad(Runtime *runtime) {
 	return Common::SharedPtr<ModifierSaveLoad>(new SaveLoad(this));
@@ -3755,8 +3748,7 @@ const char *ObjectReferenceVariableModifierV1::getDefaultName() const {
 	return "Object Reference Variable";
 }
 
-ObjectReferenceVariableV1Storage::ObjectReferenceVariableV1Storage() {
-}
+ObjectReferenceVariableV1Storage::ObjectReferenceVariableV1Storage() = default;
 
 Common::SharedPtr<ModifierSaveLoad> ObjectReferenceVariableV1Storage::getSaveLoad(Runtime *runtime) {
 	return Common::SharedPtr<ModifierSaveLoad>(new SaveLoad(this));

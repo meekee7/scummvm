@@ -28,8 +28,7 @@
 namespace Ultima {
 namespace Nuvie {
 
-EffectManager::EffectManager() {
-}
+EffectManager::EffectManager() = default;
 
 EffectManager::~EffectManager() {
 	while (!effects.empty())

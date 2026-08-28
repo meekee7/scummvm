@@ -327,10 +327,7 @@ Palette::Palette(const Graphics::PixelFormat &format, const uint numColors) : _f
 	fillWithBlack();
 }
 
-Palette::Palette(const Palette& other) :
-	_format(other._format),
-	_colors(other._colors) {
-}
+Palette::Palette(const Palette &other) = default;
 
 Palette& Palette::operator=(const Palette& other) {
 	if (this != &other) {

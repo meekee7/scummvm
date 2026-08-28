@@ -83,8 +83,7 @@ Item::Item()
 }
 
 
-Item::~Item() {
-}
+Item::~Item() = default;
 
 Common::String Item::dumpInfo() const {
 	Common::String info = Common::String::format("Item %u (class %s, shape %u)", getObjId(), GetClassType()._className, getShape());

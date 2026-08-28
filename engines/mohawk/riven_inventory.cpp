@@ -44,9 +44,7 @@ RivenInventory::RivenInventory(MohawkEngine_Riven *vm) :
 	_demoExitRect = Common::Rect(291, 408, 317, 419);
 }
 
-RivenInventory::~RivenInventory() {
-
-}
+RivenInventory::~RivenInventory() = default;
 
 void RivenInventory::draw() {
 	// Clear the inventory area

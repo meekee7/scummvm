@@ -37,8 +37,7 @@ CPlayer::CPlayer(Copl *newopl)
 	: opl(newopl) {
 }
 
-CPlayer::~CPlayer() {
-}
+CPlayer::~CPlayer() = default;
 
 unsigned long CPlayer::songlength(int subsong) {
 	CSilentopl    tempopl;

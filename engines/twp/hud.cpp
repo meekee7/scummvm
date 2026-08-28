@@ -29,7 +29,7 @@ namespace Twp {
 
 class ShakeVerb : public Motor {
 public:
-	virtual ~ShakeVerb() {}
+	virtual ~ShakeVerb() = default;
 	ShakeVerb(VerbSlot *slot, float amount) : _slot(slot), _amount(amount) {}
 
 private:

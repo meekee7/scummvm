@@ -132,7 +132,7 @@ private:
 
 public:
 	RateConverter_Impl(st_rate_t inputRate, st_rate_t outputRate);
-	virtual ~RateConverter_Impl() {}
+	virtual ~RateConverter_Impl() = default;
 
 	int convert(AudioStream &input, byte *outBuffer, uint outBytesPerSample, st_size_t numSamples, st_volume_t vol_l, st_volume_t vol_r, MixMode mixMode) override;
 

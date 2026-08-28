@@ -76,11 +76,10 @@ public:
 		_internal = makeInternal(name, zVal, minInt, maxInt, name + " ambient");
 	}
 
-	StyxShade() {
-	}
+	StyxShade() = default;
 
 	static Common::SharedPtr<StyxShadeInternal> makeInternal(const Common::String &name, int zVal, int minInt, int maxInt,
-							     const Common::String &ambient) {
+	                                                         const Common::String &ambient) {
 		Common::SharedPtr<StyxShadeInternal> ret(new StyxShadeInternal(name));
 		ret->_ambient = AmbientAnim(ambient, ambient + " sound", zVal, minInt, maxInt,
 					    AmbientAnim::KEEP_LOOP, Common::Point(0, 0), AmbientAnim::PAN_ANY);

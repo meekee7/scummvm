@@ -34,9 +34,7 @@ StringManager::StringManager(ZVision *engine) {
 	_engine = engine;
 }
 
-StringManager::~StringManager() {
-
-}
+StringManager::~StringManager() = default;
 
 void StringManager::initialize(ZVisionGameId gameId) {
 	if (gameId == GID_NEMESIS)

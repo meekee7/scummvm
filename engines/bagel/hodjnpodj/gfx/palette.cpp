@@ -28,8 +28,7 @@
 namespace Bagel {
 namespace HodjNPodj {
 
-Palette::Palette() {
-}
+Palette::Palette() = default;
 
 void Palette::loadInitialPalette() {
 	Common::File f;

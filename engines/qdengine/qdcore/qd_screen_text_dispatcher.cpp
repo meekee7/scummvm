@@ -34,8 +34,7 @@ qdScreenTextDispatcher::qdScreenTextDispatcher() {
 	_text_sets.reserve(16);
 }
 
-qdScreenTextDispatcher::~qdScreenTextDispatcher() {
-}
+qdScreenTextDispatcher::~qdScreenTextDispatcher() = default;
 
 
 void qdScreenTextDispatcher::redraw() const {

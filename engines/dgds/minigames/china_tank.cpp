@@ -26,8 +26,7 @@
 
 namespace Dgds {
 
-ChinaTank::ChinaTank() {
-}
+ChinaTank::ChinaTank() = default;
 
 void ChinaTank::init() {
 }

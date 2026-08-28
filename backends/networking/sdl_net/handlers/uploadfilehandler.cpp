@@ -27,9 +27,9 @@
 
 namespace Networking {
 
-UploadFileHandler::UploadFileHandler() {}
+UploadFileHandler::UploadFileHandler() = default;
 
-UploadFileHandler::~UploadFileHandler() {}
+UploadFileHandler::~UploadFileHandler() = default;
 
 /// public
 

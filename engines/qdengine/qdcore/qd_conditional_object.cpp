@@ -35,14 +35,9 @@ namespace QDEngine {
 qdConditionalObject::qdConditionalObject() : _conditions_mode(CONDITIONS_OR) {
 }
 
-qdConditionalObject::qdConditionalObject(const qdConditionalObject &obj) : qdNamedObject(obj),
-	_conditions_mode(obj._conditions_mode),
-	_conditions(obj._conditions),
-	_condition_groups(obj._condition_groups) {
-}
+qdConditionalObject::qdConditionalObject(const qdConditionalObject &obj) = default;
 
-qdConditionalObject::~qdConditionalObject() {
-}
+qdConditionalObject::~qdConditionalObject() = default;
 
 qdConditionalObject &qdConditionalObject::operator = (const qdConditionalObject &obj) {
 	if (this == &obj) return *this;

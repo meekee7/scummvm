@@ -59,8 +59,7 @@ Inventory::Inventory(const RectClass &r, int32 sprite, int16 cells_h, int16 cell
 	_right_arrow_visible = false;
 }
 
-Inventory::~Inventory() {
-}
+Inventory::~Inventory() = default;
 
 bool Inventory::add(const Common::String &name, const Common::String &verb, int32 invSprite, int32 cursor) {
 	// Don't add something twice

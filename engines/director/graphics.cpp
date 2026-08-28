@@ -293,7 +293,7 @@ void DirectorEngine::draw() {
 template <typename T>
 class InkPrimitives final : public Graphics::Primitives {
 public:
-	constexpr InkPrimitives() {}
+	constexpr InkPrimitives() = default;
 	void drawPoint(int x, int y, uint32 src, void *data) override;
 private:
 	inline void decomposeColor(Graphics::MacWindowManager *wm, uint32 color, byte &r, byte &g, byte &b) {

@@ -30,8 +30,7 @@
 
 namespace Common {
 
-ArchiveMember::~ArchiveMember() {
-}
+ArchiveMember::~ArchiveMember() = default;
 
 U32String ArchiveMember::getDisplayName() const {
 	return getName();

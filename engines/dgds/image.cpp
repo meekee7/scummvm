@@ -38,8 +38,7 @@ namespace Dgds {
 Image::Image(ResourceManager *resourceMan, Decompressor *decompressor) : _resourceMan(resourceMan), _decompressor(decompressor), _matrixX(0), _matrixY(0) {
 }
 
-Image::~Image() {
-}
+Image::~Image() = default;
 
 void Image::drawScreen(const Common::String &filename, Graphics::ManagedSurface &surface) {
 	const char *dot;

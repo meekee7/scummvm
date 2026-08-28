@@ -38,7 +38,7 @@ public:
 	virtual void handleSystemRealtimeMessage(const Bit8u realtime) = 0;
 
 protected:
-	~MidiReceiver() {}
+	~MidiReceiver() = default;
 };
 
 // Interface for a user-supplied class to receive notifications of input MIDI stream parse errors.
@@ -48,7 +48,7 @@ public:
 	virtual void printDebug(const char *debugMessage) = 0;
 
 protected:
-	~MidiReporter() {}
+	~MidiReporter() = default;
 };
 
 // Provides a context for parsing a stream of MIDI events coming from a single source.

@@ -341,8 +341,7 @@ CharsetRenderer::CharsetRenderer(ScummEngine *vm) {
 	_curId = -1;
 }
 
-CharsetRenderer::~CharsetRenderer() {
-}
+CharsetRenderer::~CharsetRenderer() = default;
 
 CharsetRendererCommon::CharsetRendererCommon(ScummEngine *vm)
 	: CharsetRenderer(vm), _fontPtr(nullptr), _bitsPerPixel(0), _fontHeight(0), _numChars(0), _shadowType(kNoShadowType) {

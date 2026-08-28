@@ -407,8 +407,7 @@ AnimationFrame::AnimationFrame(Common::SeekableReadStream *stream, int startOffs
 	}
 }
 
-AnimationFrame::~AnimationFrame() {
-}
+AnimationFrame::~AnimationFrame() = default;
 
 /*------------------------------------------------------------------------*/
 

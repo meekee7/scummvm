@@ -40,8 +40,7 @@ View::View(const Configuration *cfg) : GUI_Widget(nullptr, 0, 0, 0, 0),
 		actor_button(nullptr), bg_color(0), cur_party_member(0) {
 }
 
-View::~View() {
-}
+View::~View() = default;
 
 bool View::init(uint16 x, uint16 y, Font *f, Party *p, TileManager *tm, ObjManager *om) {
 	if (Game::get_game()->get_game_type() == NUVIE_GAME_U6)

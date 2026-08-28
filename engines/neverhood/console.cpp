@@ -42,8 +42,7 @@ Console::Console(NeverhoodEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("surfaces",		WRAP_METHOD(Console, Cmd_Surfaces));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_Scene(int argc, const char **argv) {
 	if (argc != 3) {

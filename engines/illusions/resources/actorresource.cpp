@@ -97,11 +97,9 @@ void ActorType::load(byte *dataStart, Common::SeekableReadStream &stream) {
 
 // ActorResource
 
-ActorResource::ActorResource() {
-}
+ActorResource::ActorResource() = default;
 
-ActorResource::~ActorResource() {
-}
+ActorResource::~ActorResource() = default;
 
 void ActorResource::load(Resource *resource) {
 	byte *data = resource->_data;
@@ -257,8 +255,7 @@ ActorInstanceList::ActorInstanceList(IllusionsEngine *vm)
 	: _vm(vm) {
 }
 
-ActorInstanceList::~ActorInstanceList() {
-}
+ActorInstanceList::~ActorInstanceList() = default;
 
 ActorInstance *ActorInstanceList::createActorInstance(Resource *resource) {
 	ActorInstance *actorInstance = new ActorInstance(_vm);

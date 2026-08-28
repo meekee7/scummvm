@@ -81,7 +81,7 @@ class OpenQueue
 		sentinel->CheckList();
 #endif
 	}
-	~OpenQueue()	{}
+	~OpenQueue() = default;
 
 	void Push( PathNode* pNode );
 	PathNode* Pop();
@@ -189,7 +189,7 @@ class ClosedSet
 {
   public:
 	ClosedSet( Graph* _graph )		{ this->graph = _graph; }
-	~ClosedSet()	{}
+	~ClosedSet() = default;
 
 	void Add( PathNode* pNode )
 	{

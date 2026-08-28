@@ -30,8 +30,7 @@ enum {
 
 class MedusaHandler : public Handler {
 public:
-	MedusaHandler() {
-	}
+	MedusaHandler() = default;
 
 	void handleClick(const Common::String &name) override {
 	}

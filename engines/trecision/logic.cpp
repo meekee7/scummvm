@@ -59,7 +59,7 @@ LogicManager::LogicManager(TrecisionEngine *vm) : _vm(vm) {
 
 	initInventory();
 }
-LogicManager::~LogicManager() {}
+LogicManager::~LogicManager() = default;
 
 void LogicManager::syncGameStream(Common::Serializer &ser) {
 	for (int i = 0; i < 7; ++i)

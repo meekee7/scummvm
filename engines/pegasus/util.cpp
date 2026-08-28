@@ -34,8 +34,7 @@ IDObject::IDObject(const int32 id) {
 	_objectID = id;
 }
 
-IDObject::~IDObject() {
-}
+IDObject::~IDObject() = default;
 
 int32 IDObject::getObjectID() const {
 	return _objectID;

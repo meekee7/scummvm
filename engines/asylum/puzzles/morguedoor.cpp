@@ -53,8 +53,7 @@ PuzzleMorgueDoor::PuzzleMorgueDoor(AsylumEngine *engine) : Puzzle(engine) {
 	_flag7 = false;
 }
 
-PuzzleMorgueDoor::~PuzzleMorgueDoor() {
-}
+PuzzleMorgueDoor::~PuzzleMorgueDoor() = default;
 
 void PuzzleMorgueDoor::saveLoadWithSerializer(Common::Serializer &s) {
 	s.syncAsSint32LE(_frameIndexes[kTopLeverOpened]);

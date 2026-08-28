@@ -83,8 +83,7 @@ void DefaultCursorManager::setCursor(uint16 id) {
 MystCursorManager::MystCursorManager(MohawkEngine_Myst *vm) : _vm(vm) {
 }
 
-MystCursorManager::~MystCursorManager() {
-}
+MystCursorManager::~MystCursorManager() = default;
 
 void MystCursorManager::showCursor() {
 	CursorMan.showMouse(true);

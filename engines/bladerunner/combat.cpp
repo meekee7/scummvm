@@ -42,8 +42,7 @@ Combat::Combat(BladeRunnerEngine *vm) {
 	reset();
 }
 
-Combat::~Combat() {
-}
+Combat::~Combat() = default;
 
 void Combat::reset() {
 	_active = false;

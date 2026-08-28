@@ -343,8 +343,7 @@ Player_V2Base::Player_V2Base(ScummEngine *scumm, bool pcjr)
 	}
 }
 
-Player_V2Base::~Player_V2Base() {
-}
+Player_V2Base::~Player_V2Base() = default;
 
 void Player_V2Base::chainSound(int nr, byte *data) {
 	int offset = _header_len + (_pcjr ? 10 : 2);

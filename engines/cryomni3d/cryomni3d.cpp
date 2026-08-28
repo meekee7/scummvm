@@ -56,8 +56,7 @@ CryOmni3DEngine::CryOmni3DEngine(OSystem *syst,
 	unlockPalette();
 }
 
-CryOmni3DEngine::~CryOmni3DEngine() {
-}
+CryOmni3DEngine::~CryOmni3DEngine() = default;
 
 Common::Error CryOmni3DEngine::run() {
 	return Common::kNoError;

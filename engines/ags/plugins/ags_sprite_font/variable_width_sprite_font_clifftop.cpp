@@ -29,8 +29,7 @@ namespace AGSSpriteFont {
 VariableWidthSpriteFontRendererClifftop::VariableWidthSpriteFontRendererClifftop(IAGSEngine *engine) : VariableWidthSpriteFontRenderer(engine) {
 }
 
-VariableWidthSpriteFontRendererClifftop::~VariableWidthSpriteFontRendererClifftop(void) {
-}
+VariableWidthSpriteFontRendererClifftop::~VariableWidthSpriteFontRendererClifftop(void) = default;
 
 void VariableWidthSpriteFontRendererClifftop::RenderText(const char *text, int fontNumber, BITMAP *destination, int x, int y, int colour) {
 	VariableWidthFont *font = getFontFor(fontNumber);

@@ -52,8 +52,7 @@ PathfindingAgent::PathfindingAgent() : _nodeQueue(compareNodes) {
 	_clickedTile = nullptr;
 }
 
-PathfindingAgent::~PathfindingAgent() {
-}
+PathfindingAgent::~PathfindingAgent() = default;
 
 void PathfindingAgent::initialize(PathfindingGrid *g) {
 	_grid = g;

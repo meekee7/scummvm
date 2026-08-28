@@ -67,8 +67,7 @@ void MohawkSurface::convertToTrueColor() {
 	_surface = surface;
 }
 
-GraphicsManager::GraphicsManager() {
-}
+GraphicsManager::GraphicsManager() = default;
 
 GraphicsManager::~GraphicsManager() {
 	clearCache();

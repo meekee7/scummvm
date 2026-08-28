@@ -356,8 +356,7 @@ QuakeEffect::QuakeEffect(uint8 magnitude, uint32 duration, Actor *keep_on)
 }
 
 
-QuakeEffect::~QuakeEffect() {
-}
+QuakeEffect::~QuakeEffect() = default;
 
 
 /* On TIMED: Move map.
@@ -1218,8 +1217,7 @@ GameFadeInEffect::GameFadeInEffect(uint32 color)
 }
 
 
-GameFadeInEffect::~GameFadeInEffect() {
-}
+GameFadeInEffect::~GameFadeInEffect() = default;
 
 
 /* Identical to FadeEffect, but unpause game when finished.
@@ -1309,9 +1307,7 @@ TileFadeEffect::TileFadeEffect(Actor *a, uint16 speed)
 	actor->hide();
 }
 
-TileFadeEffect::~TileFadeEffect() {
-
-}
+TileFadeEffect::~TileFadeEffect() = default;
 
 void TileFadeEffect::add_actor_anim() {
 	MapCoord loc = actor->get_location();
@@ -1410,9 +1406,7 @@ void TileBlackFadeEffect::init(uint8 fade_color, uint16 speed) {
 
 	num_anim_running = 0;
 }
-TileBlackFadeEffect::~TileBlackFadeEffect() {
-
-}
+TileBlackFadeEffect::~TileBlackFadeEffect() = default;
 
 void TileBlackFadeEffect::add_actor_anim() {
 	MapCoord loc = actor->get_location();

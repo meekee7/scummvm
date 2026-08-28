@@ -134,8 +134,7 @@ private:
 	CoroutineGetFrameParametersFunction_t _funcFrameGetParams;
 };
 
-CoroutineManager::CoroutineManager() {
-}
+CoroutineManager::CoroutineManager() = default;
 
 CoroutineManager::~CoroutineManager() {
 	for (CompiledCoroutine **compiledCoroRef : _compiledCoroutineRefs) {
@@ -754,14 +753,12 @@ uint CoroutineCompiler::allocLabel() {
 	return _funcNumLabels++;
 }
 
-ICoroutineManager::~ICoroutineManager() {
-}
+ICoroutineManager::~ICoroutineManager() = default;
 
 ICoroutineManager *ICoroutineManager::create() {
 	return new CoroutineManager();
 }
 
-ICoroutineCompiler::~ICoroutineCompiler() {
-}
+ICoroutineCompiler::~ICoroutineCompiler() = default;
 
 } // End of namespace MTropolis

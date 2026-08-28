@@ -56,8 +56,7 @@ qdInterfaceElement::qdInterfaceElement(const qdInterfaceElement &el) : qdInterfa
 	_last_animation_frame(NULL) {
 }
 
-qdInterfaceElement::~qdInterfaceElement() {
-}
+qdInterfaceElement::~qdInterfaceElement() = default;
 
 qdInterfaceElement &qdInterfaceElement::operator = (const qdInterfaceElement &el) {
 	if (this == &el) return *this;

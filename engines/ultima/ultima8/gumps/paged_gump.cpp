@@ -38,8 +38,7 @@ PagedGump::PagedGump(int left, int right, int top, int shape):
 	_current(0), _buttonsEnabled(true) {
 }
 
-PagedGump::~PagedGump(void) {
-}
+PagedGump::~PagedGump(void) = default;
 
 void PagedGump::Close(bool no_del) {
 	Mouse::get_instance()->popMouseCursor();

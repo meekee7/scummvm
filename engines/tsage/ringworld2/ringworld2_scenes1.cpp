@@ -4111,8 +4111,7 @@ void Scene1575::dispatch() {
  *
  *--------------------------------------------------------------------------*/
 
-Scene1580::Scene1580() {
-}
+Scene1580::Scene1580() = default;
 
 void Scene1580::synchronize(Serializer &s) {
 	SceneExt::synchronize(s);
@@ -4475,8 +4474,7 @@ bool Scene1625::Wire::startAction(CursorType action, Event &event) {
 	return true;
 }
 
-Scene1625::Scene1625() {
-}
+Scene1625::Scene1625() = default;
 
 void Scene1625::synchronize(Serializer &s) {
 	SceneExt::synchronize(s);

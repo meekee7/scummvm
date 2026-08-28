@@ -76,8 +76,7 @@ Console::Console(SagaEngine *vm) : GUI::Debugger() {
 	registerCmd("clear_global_flag",	WRAP_METHOD(Console, cmdClearGlobalFlag));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::cmdActorWalkTo(int argc, const char **argv) {
 	if (argc != 4)

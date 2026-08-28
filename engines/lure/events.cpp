@@ -48,8 +48,7 @@ Mouse::Mouse() {
 	setCursorNum(CURSOR_ARROW);
 }
 
-Mouse::~Mouse() {
-}
+Mouse::~Mouse() = default;
 
 void Mouse::handleEvent(Common::Event event) {
 	_x = (int16) event.mouse.x;

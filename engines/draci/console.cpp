@@ -28,7 +28,6 @@ DraciConsole::DraciConsole(DraciEngine *vm) : GUI::Debugger(), _vm(vm) {
 	assert(_vm);
 }
 
-DraciConsole::~DraciConsole() {
-}
+DraciConsole::~DraciConsole() = default;
 
 } // End of namespace Draci

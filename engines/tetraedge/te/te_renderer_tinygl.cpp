@@ -35,8 +35,7 @@
 
 namespace Tetraedge {
 
-TeRendererTinyGL::TeRendererTinyGL() {
-}
+TeRendererTinyGL::TeRendererTinyGL() = default;
 
 void TeRendererTinyGL::clearBuffer(TeRenderer::Buffer buf) {
 	TGLenum glBuf = 0;

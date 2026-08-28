@@ -102,8 +102,7 @@ CruPathfinderProcess::CruPathfinderProcess(Actor *actor, const Point3 &target, i
 		actor->doAnim(Animation::unreadyWeapon, dir_current);
 }
 
-CruPathfinderProcess::~CruPathfinderProcess() {
-}
+CruPathfinderProcess::~CruPathfinderProcess() = default;
 
 void CruPathfinderProcess::terminate() {
 	Actor *actor = getActor(_itemNum);

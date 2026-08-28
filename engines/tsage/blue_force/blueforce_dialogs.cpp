@@ -77,8 +77,7 @@ RightClickDialog::RightClickDialog() : GfxDialog() {
 	_selectedAction = -1;
 }
 
-RightClickDialog::~RightClickDialog() {
-}
+RightClickDialog::~RightClickDialog() = default;
 
 void RightClickDialog::draw() {
 	// Save the covered background area

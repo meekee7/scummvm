@@ -28,11 +28,9 @@
 namespace Ultima {
 namespace Ultima8 {
 
-TreasureLoader::TreasureLoader() {
-}
+TreasureLoader::TreasureLoader() = default;
 
-TreasureLoader::~TreasureLoader() {
-}
+TreasureLoader::~TreasureLoader() = default;
 
 void TreasureLoader::loadDefaults() {
 	ConfigFileManager *config = ConfigFileManager::get_instance();

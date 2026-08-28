@@ -24,8 +24,7 @@
 
 namespace Tetraedge {
 
-GameAchievements::GameAchievements() {
-}
+GameAchievements::GameAchievements() = default;
 
 /*static*/ void GameAchievements::registerAchievements(TeLuaContext &context) {
 	context.setGlobal("PS3_Welcome", 0);

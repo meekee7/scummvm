@@ -82,7 +82,7 @@ enum kShortenCommands {
 class ShortenGolombReader {
 public:
 	ShortenGolombReader(Common::ReadStream *stream, int version);
-	~ShortenGolombReader() {}
+	~ShortenGolombReader() = default;
 	uint32 getUint32(uint32 numBits);    // UINT_GET
 	uint32 getURice(uint32 numBits);     // uvar_get
 	int32 getSRice(uint32 numBits);      // var_get

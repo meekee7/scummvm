@@ -48,8 +48,7 @@ GfxControls16::GfxControls16(SegManager *segMan, GfxPorts *ports, GfxPaint16 *pa
 	_texteditCursorVisible = false;
 }
 
-GfxControls16::~GfxControls16() {
-}
+GfxControls16::~GfxControls16() = default;
 
 const char controlListUpArrow[2]	= { 0x18, 0 };
 const char controlListDownArrow[2]	= { 0x19, 0 };

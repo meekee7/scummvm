@@ -67,8 +67,7 @@ MystArea::MystArea(MohawkEngine_Myst *vm, ResourceType type, Common::SeekableRea
 	debugC(kDebugResource, "\tdest: %d", _dest);
 }
 
-MystArea::~MystArea() {
-}
+MystArea::~MystArea() = default;
 
 void MystArea::handleMouseUp() {
 	if (_dest == 0) {
@@ -384,8 +383,7 @@ MystAreaImageSwitch::MystAreaImageSwitch(MohawkEngine_Myst *vm, ResourceType typ
 	}
 }
 
-MystAreaImageSwitch::~MystAreaImageSwitch() {
-}
+MystAreaImageSwitch::~MystAreaImageSwitch() = default;
 
 void MystAreaImageSwitch::drawDataToScreen() {
 	// Need to call overridden function to ensure
@@ -499,8 +497,7 @@ MystAreaSlider::MystAreaSlider(MohawkEngine_Myst *vm, ResourceType type, Common:
 	_sliderHeight = _rect.bottom - _rect.top;
 }
 
-MystAreaSlider::~MystAreaSlider() {
-}
+MystAreaSlider::~MystAreaSlider() = default;
 
 void MystAreaSlider::setStep(uint16 step) {
 	_rect.top = _minV + _stepV * step - _sliderHeight / 2;
@@ -705,8 +702,7 @@ MystAreaDrag::MystAreaDrag(MohawkEngine_Myst *vm, ResourceType type, Common::See
 		_stepV = (_maxV - _minV) / (_stepsV - 1);
 }
 
-MystAreaDrag::~MystAreaDrag() {
-}
+MystAreaDrag::~MystAreaDrag() = default;
 
 void MystAreaDrag::handleMouseDown() {
 	const Common::Point &mouse = _vm->_system->getEventManager()->getMousePos();
@@ -782,8 +778,7 @@ MystVideoInfo::MystVideoInfo(MohawkEngine_Myst *vm, ResourceType type, Common::S
 	debugC(kDebugResource, "\t_frameRect.bottom: %d", _frameRect.bottom);
 }
 
-MystVideoInfo::~MystVideoInfo() {
-}
+MystVideoInfo::~MystVideoInfo() = default;
 
 void MystVideoInfo::drawFrame(uint16 frame) {
 	uint16 currentFrame = _firstFrame + frame;

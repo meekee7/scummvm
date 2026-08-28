@@ -42,13 +42,7 @@ tag_buffer::tag_buffer(const char *dp, int len) : _data_size(len),
 	_data(dp) {
 }
 
-tag_buffer::tag_buffer(const tag_buffer &tb) : _data_size(tb._data_size),
-	_data_offset(tb._data_offset),
-#ifdef _DEBUG
-	data_format_(tb.data_format_),
-#endif
-	_data(tb._data) {
-}
+tag_buffer::tag_buffer(const tag_buffer &tb) = default;
 
 tag_buffer &tag_buffer::operator = (const tag_buffer &tb) {
 	if (this == &tb) return *this;
@@ -64,8 +58,7 @@ tag_buffer &tag_buffer::operator = (const tag_buffer &tb) {
 	return *this;
 }
 
-tag_buffer::~tag_buffer() {
-}
+tag_buffer::~tag_buffer() = default;
 
 tag_buffer &tag_buffer::operator >= (int16 &var) {
 	char *p;

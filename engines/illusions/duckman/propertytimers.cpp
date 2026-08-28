@@ -36,8 +36,7 @@ PropertyTimers::PropertyTimers(IllusionsEngine_Duckman *vm) {
 	_propertyTimersPaused = false;
 }
 
-PropertyTimers::~PropertyTimers() {
-}
+PropertyTimers::~PropertyTimers() = default;
 
 void PropertyTimers::addPropertyTimer(uint32 propertyId) {
 	PropertyTimer *propertyTimer;

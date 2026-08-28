@@ -845,7 +845,7 @@ Point Font::spaceSize() const {
 	return imageSize(_spaceImageI);
 }
 
-Graphic::Graphic() {}
+Graphic::Graphic() = default;
 
 Graphic::Graphic(SeekableReadStream &stream) {
 	if (g_engine->isV1()) {

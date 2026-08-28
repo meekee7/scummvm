@@ -45,8 +45,7 @@ GCTFile::GCTFile(Common::SeekableReadStream &gct, Common::RandomSource &rnd) : _
 	load(gct);
 }
 
-GCTFile::~GCTFile() {
-}
+GCTFile::~GCTFile() = default;
 
 void GCTFile::load(Common::SeekableReadStream &gct) {
 	gct.skip(4); // Required buffer size

@@ -173,8 +173,7 @@ bool AudioDialog::init() {
 	return true;
 }
 
-AudioDialog::~AudioDialog() {
-}
+AudioDialog::~AudioDialog() = default;
 
 GUI_status AudioDialog::close_dialog() {
 	Delete(); // mark dialog as deleted. it will be freed by the GUI object

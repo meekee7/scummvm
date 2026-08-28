@@ -62,8 +62,7 @@ Common::String TableLine::operator[](int idx) const {
 	return _cells[idx];
 }
 
-TextTable::TextTable() {
-}
+TextTable::TextTable() = default;
 
 TextTable::TextTable(
 	Common::SharedPtr<Common::SeekableReadStream> stream, int numcols) {

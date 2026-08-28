@@ -854,8 +854,7 @@ ObjectReferenceVariableStorage::SaveLoad::SaveLoad(ObjectReferenceVariableStorag
 
 
 
-ObjectReferenceVariableStorage::ObjectReferenceVariableStorage() {
-}
+ObjectReferenceVariableStorage::ObjectReferenceVariableStorage() = default;
 
 Common::SharedPtr<ModifierSaveLoad> ObjectReferenceVariableStorage::getSaveLoad(Runtime *runtime) {
 	return Common::SharedPtr<ModifierSaveLoad>(new SaveLoad(this));
@@ -1477,11 +1476,9 @@ const char *SysInfoModifier::getDefaultName() const {
 	return "SysInfo Modifier";
 }
 
-PanningModifier::PanningModifier() {
-}
+PanningModifier::PanningModifier() = default;
 
-PanningModifier::~PanningModifier() {
-}
+PanningModifier::~PanningModifier() = default;
 
 bool PanningModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::PanningModifier &data) {
 	return true;
@@ -1512,11 +1509,9 @@ const char *PanningModifier::getDefaultName() const {
 	return "Panning Modifier"; // ???
 }
 
-FadeModifier::FadeModifier() {
-}
+FadeModifier::FadeModifier() = default;
 
-FadeModifier::~FadeModifier() {
-}
+FadeModifier::~FadeModifier() = default;
 
 bool FadeModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::FadeModifier &data) {
 	return true;
@@ -1653,11 +1648,9 @@ Common::SeekableReadStream *PrintModifierImageSupplier::createReadStreamForSlot(
 	}
 }
 
-PrintModifier::PrintModifier() {
-}
+PrintModifier::PrintModifier() = default;
 
-PrintModifier::~PrintModifier() {
-}
+PrintModifier::~PrintModifier() = default;
 
 bool PrintModifier::respondsToEvent(const Event &evt) const {
 	return _executeWhen.respondsTo(evt);
@@ -1718,11 +1711,9 @@ const char *PrintModifier::getDefaultName() const {
 	return "Print Modifier";
 }
 
-NavigateModifier::NavigateModifier() {
-}
+NavigateModifier::NavigateModifier() = default;
 
-NavigateModifier::~NavigateModifier() {
-}
+NavigateModifier::~NavigateModifier() = default;
 
 bool NavigateModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::NavigateModifier &data) {
 	return true;
@@ -1754,11 +1745,9 @@ const char *NavigateModifier::getDefaultName() const {
 }
 
 OpenTitleModifier::OpenTitleModifier()
-	/*: _addToReturnList(false) */ {
-}
+	/*: _addToReturnList(false) */ = default;
 
-OpenTitleModifier::~OpenTitleModifier() {
-}
+OpenTitleModifier::~OpenTitleModifier() = default;
 
 bool OpenTitleModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::OpenTitleModifier &data) {
 	if (data.executeWhen.type != Data::PlugInTypeTaggedValue::kEvent || data.pathOrUrl.type != Data::PlugInTypeTaggedValue::kString || data.addToReturnList.type != Data::PlugInTypeTaggedValue::kInteger)
@@ -1803,11 +1792,9 @@ const char *OpenTitleModifier::getDefaultName() const {
 	return "Open Title Modifier"; // ???
 }
 
-OpenAppModifier::OpenAppModifier() {
-}
+OpenAppModifier::OpenAppModifier() = default;
 
-OpenAppModifier::~OpenAppModifier() {
-}
+OpenAppModifier::~OpenAppModifier() = default;
 
 bool OpenAppModifier::load(const PlugInModifierLoaderContext &context, const Data::Standard::OpenAppModifier &data) {
 	return true;
@@ -1856,8 +1843,7 @@ StandardPlugIn::StandardPlugIn()
 	, _openAppModifierFactory(this) {
 }
 
-StandardPlugIn::~StandardPlugIn() {
-}
+StandardPlugIn::~StandardPlugIn() = default;
 
 void StandardPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	registrar->registerPlugInModifier("CursorMod", &_cursorModifierFactory);

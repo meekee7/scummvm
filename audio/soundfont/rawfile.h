@@ -34,7 +34,7 @@ class VGMFile;
 
 class RawFile {
 public:
-	virtual ~RawFile() {};
+	virtual ~RawFile() = default;
 
 	virtual size_t size() const = 0;
 

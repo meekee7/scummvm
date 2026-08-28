@@ -31,11 +31,9 @@
 
 namespace Pegasus {
 
-ItemList::ItemList() {
-}
+ItemList::ItemList() = default;
 
-ItemList::~ItemList() {
-}
+ItemList::~ItemList() = default;
 
 void ItemList::writeToStream(Common::WriteStream *stream) {
 	stream->writeUint32BE(size());

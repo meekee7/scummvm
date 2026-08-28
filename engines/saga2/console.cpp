@@ -71,8 +71,7 @@ Console::Console(Saga2Engine *vm) : GUI::Debugger() {
 	registerCmd("map_cheat", WRAP_METHOD(Console, cmdMapCheat));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::cmdKillProtag(int argc, const char **argv) {
 	debugPrintf("Killing protagonist\n");

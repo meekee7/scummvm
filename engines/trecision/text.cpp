@@ -49,8 +49,7 @@ TextManager::TextManager(TrecisionEngine *vm) : _vm(vm) {
 	_talkingPersonId = 0;
 }
 
-TextManager::~TextManager() {
-}
+TextManager::~TextManager() = default;
 
 Common::Point TextManager::positionString(uint16 x, uint16 y, const char *string, bool characterFl) {
 	uint16 lenText = _vm->textLength(string);

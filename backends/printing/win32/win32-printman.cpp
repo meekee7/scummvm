@@ -54,7 +54,7 @@ private:
 };
 
 
-Win32PrintingManager::~Win32PrintingManager() {}
+Win32PrintingManager::~Win32PrintingManager() = default;
 
 void Win32PrintingManager::doPrint(const Graphics::ManagedSurface &surf, const Common::Rect &destRect) {
 	HDC hdcPrint = createPrinterContext();

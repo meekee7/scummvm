@@ -48,8 +48,7 @@ Object *Layer::construct(Object *parent, byte subType, uint16 index, const Commo
 	}
 }
 
-Layer::~Layer() {
-}
+Layer::~Layer() = default;
 
 Layer::Layer(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),
@@ -111,8 +110,7 @@ void Layer::saveLoadCurrent(ResourceSerializer *serializer) {
 	serializer->syncAsSint32LE(_scroll.y);
 }
 
-Layer2D::~Layer2D() {
-}
+Layer2D::~Layer2D() = default;
 
 Layer2D::Layer2D(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Layer(parent, subType, index, name) {
@@ -175,8 +173,7 @@ void Layer2D::printData() {
 	Layer::printData();
 }
 
-Layer3D::~Layer3D() {
-}
+Layer3D::~Layer3D() = default;
 
 Layer3D::Layer3D(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Layer(parent, subType, index, name),

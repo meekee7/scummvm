@@ -25,8 +25,7 @@
 
 namespace Math {
 
-Ray::Ray() {
-}
+Ray::Ray() = default;
 
 Ray::Ray(const Vector3d &origin, const Vector3d &direction) :
 		_origin(origin),

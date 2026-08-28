@@ -79,8 +79,7 @@ bool StaticBitmap::initBitmapResource(const Common::String &filename) {
 	return true;
 }
 
-StaticBitmap::~StaticBitmap() {
-}
+StaticBitmap::~StaticBitmap() = default;
 
 bool StaticBitmap::doRender(RectangleList *updateRects) {
 	// Bitmap holen

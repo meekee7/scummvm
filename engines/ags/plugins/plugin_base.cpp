@@ -199,9 +199,7 @@ const char *pluginError() {
 
 /*------------------------------------------------------------------*/
 
-ScriptMethodParams::ScriptMethodParams() {
-
-}
+ScriptMethodParams::ScriptMethodParams() = default;
 
 ScriptMethodParams::ScriptMethodParams(int val1) {
 	push_back(val1);

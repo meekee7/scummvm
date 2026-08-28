@@ -638,8 +638,7 @@ LBMovieItem::LBMovieItem(MohawkEngine_LivingBooks *vm, LBPage *page, Common::Rec
 	debug(3, "new LBMovieItem");
 }
 
-LBMovieItem::~LBMovieItem() {
-}
+LBMovieItem::~LBMovieItem() = default;
 
 void LBMovieItem::update() {
 	if (_playing) {
@@ -675,8 +674,7 @@ LBMiniGameItem::LBMiniGameItem(MohawkEngine_LivingBooks *vm, LBPage *page, Commo
 	debug(3, "new LBMiniGameItem");
 }
 
-LBMiniGameItem::~LBMiniGameItem() {
-}
+LBMiniGameItem::~LBMiniGameItem() = default;
 
 bool LBMiniGameItem::togglePlaying(bool playing, bool restart) {
 	// HACK: Since we don't support any of these hardcoded mini games yet,

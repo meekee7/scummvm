@@ -29,7 +29,7 @@ IMuseDigiGroupsHandler::IMuseDigiGroupsHandler(IMuseDigital *engine, Common::Mut
 	_mutex = mutex;
 }
 
-IMuseDigiGroupsHandler::~IMuseDigiGroupsHandler() {}
+IMuseDigiGroupsHandler::~IMuseDigiGroupsHandler() = default;
 
 int IMuseDigiGroupsHandler::init() {
 	for (int i = 0; i < DIMUSE_MAX_GROUPS; i++) {

@@ -87,8 +87,7 @@ MystScriptParser::MystScriptParser(MohawkEngine_Myst *vm, MystStack stackId) :
 	_startTime = 0;
 }
 
-MystScriptParser::~MystScriptParser() {
-}
+MystScriptParser::~MystScriptParser() = default;
 
 void MystScriptParser::setupCommonOpcodes() {
 	// These opcodes are common to each stack

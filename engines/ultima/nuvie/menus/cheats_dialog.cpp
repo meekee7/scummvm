@@ -126,8 +126,7 @@ bool CheatsDialog::init() {
 	return true;
 }
 
-CheatsDialog::~CheatsDialog() {
-}
+CheatsDialog::~CheatsDialog() = default;
 
 GUI_status CheatsDialog::close_dialog() {
 	Delete(); // mark dialog as deleted. it will be freed by the GUI object

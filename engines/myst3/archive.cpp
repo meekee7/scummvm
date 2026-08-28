@@ -296,7 +296,6 @@ Common::String ResourceDescription::getTextData(uint index) const {
 	return text;
 }
 
-ArchiveVisitor::~ArchiveVisitor() {
-}
+ArchiveVisitor::~ArchiveVisitor() = default;
 
 } // End of namespace Myst3

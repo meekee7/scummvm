@@ -36,8 +36,7 @@
 namespace Stark {
 namespace Resources {
 
-Sound::~Sound() {
-}
+Sound::~Sound() = default;
 
 Sound::Sound(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

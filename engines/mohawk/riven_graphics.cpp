@@ -51,7 +51,7 @@ public:
 			_rect(rect) {
 	}
 
-	virtual ~TransitionEffect() {}
+	virtual ~TransitionEffect() = default;
 
 	bool isTimeBased() const { return _timeBased; }
 
@@ -894,9 +894,7 @@ FliesEffect::FliesEffect(MohawkEngine_Riven *vm, uint16 count, bool fireflies) :
 	initFlies(count);
 }
 
-FliesEffect::~FliesEffect() {
-
-}
+FliesEffect::~FliesEffect() = default;
 
 void FliesEffect::initFlies(uint16 count) {
 	_fly.resize(count);

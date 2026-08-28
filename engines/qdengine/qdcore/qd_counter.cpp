@@ -37,13 +37,12 @@ qdCounterElement::qdCounterElement() : _state(NULL),
 	_increment_value(true) {
 }
 
-qdCounterElement::~qdCounterElement() {
-}
+qdCounterElement::~qdCounterElement() = default;
 
 qdCounterElement::qdCounterElement(const qdGameObjectState *p, bool inc_value) : _state(p),
-	_state_reference(p),
-	_last_state_status(false),
-	_increment_value(inc_value) {
+                                                                                 _state_reference(p),
+                                                                                 _last_state_status(false),
+                                                                                 _increment_value(inc_value) {
 }
 
 bool qdCounterElement::init() {
@@ -133,8 +132,7 @@ qdCounter::qdCounter() : _value(0),
 	_value_limit(0) {
 }
 
-qdCounter::~qdCounter() {
-}
+qdCounter::~qdCounter() = default;
 
 void qdCounter::set_value(int value) {
 	_value = value;

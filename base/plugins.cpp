@@ -71,11 +71,9 @@ void StaticPlugin::unloadPlugin()	{}
 
 class StaticPluginProvider : public PluginProvider {
 public:
-	StaticPluginProvider() {
-	}
+	StaticPluginProvider() = default;
 
-	~StaticPluginProvider() {
-	}
+	~StaticPluginProvider() = default;
 
 	PluginList getPlugins() override {
 		PluginList pl;

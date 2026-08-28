@@ -120,8 +120,7 @@ ComprehendGame::ComprehendGame() : _gameStrings(nullptr), _ended(false),
 	Common::fill(&_inputLine[0], &_inputLine[INPUT_LINE_SIZE], 0);
 }
 
-ComprehendGame::~ComprehendGame() {
-}
+ComprehendGame::~ComprehendGame() = default;
 
 void ComprehendGame::synchronizeSave(Common::Serializer &s) {
 	uint dir, i;

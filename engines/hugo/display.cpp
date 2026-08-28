@@ -107,8 +107,7 @@ Screen::Screen(HugoEngine *vm) : _vm(vm) {
 	_frontSurface.init(320, 200, 320, _frontBuffer, Graphics::PixelFormat::createFormatCLUT8());
 }
 
-Screen::~Screen() {
-}
+Screen::~Screen() = default;
 
 Icondib &Screen::getIconBuffer() {
 	return _iconBuffer;
@@ -907,8 +906,7 @@ void Screen::drawBoundaries() {
 Screen_v1d::Screen_v1d(HugoEngine *vm) : Screen(vm) {
 }
 
-Screen_v1d::~Screen_v1d() {
-}
+Screen_v1d::~Screen_v1d() = default;
 
 /**
  * Load font file. There is no font file in DOS, we use
@@ -1044,8 +1042,7 @@ Screen_v1w::Screen_v1w(HugoEngine *vm) : Screen(vm) {
 	_fnt = 0;
 }
 
-Screen_v1w::~Screen_v1w() {
-}
+Screen_v1w::~Screen_v1w() = default;
 
 /**
  * Load font file, construct font ptrs and reverse data bytes

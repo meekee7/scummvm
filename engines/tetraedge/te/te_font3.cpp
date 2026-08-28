@@ -28,8 +28,7 @@
 
 namespace Tetraedge {
 
-TeFont3::TeFont3() {
-}
+TeFont3::TeFont3() = default;
 
 TeFont3::~TeFont3() {
 	unload();

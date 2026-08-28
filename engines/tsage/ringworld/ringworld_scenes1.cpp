@@ -526,8 +526,7 @@ void Scene20::Action4::signal() {
 
 /*--------------------------------------------------------------------------*/
 
-Scene20::Scene20() {
-}
+Scene20::Scene20() = default;
 
 void Scene20::postInit(SceneObjectList *OwnerList) {
 	Scene::postInit();
@@ -2873,8 +2872,7 @@ void Scene95::Action1::signal() {
 
 /*--------------------------------------------------------------------------*/
 
-Scene95::Scene95() {
-}
+Scene95::Scene95() = default;
 
 void Scene95::postInit(SceneObjectList *OwnerList) {
 	loadScene(95);

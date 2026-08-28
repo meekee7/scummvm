@@ -45,8 +45,7 @@ ScrollGump::ScrollGump(ObjId owner, const Common::String &msg) :
 	ModalGump(0, 0, 100, 100, owner), _text(msg), _textWidget(0) {
 }
 
-ScrollGump::~ScrollGump(void) {
-}
+ScrollGump::~ScrollGump(void) = default;
 
 void ScrollGump::InitGump(Gump *newparent, bool take_focus) {
 	ModalGump::InitGump(newparent, take_focus);

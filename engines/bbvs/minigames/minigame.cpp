@@ -38,8 +38,7 @@ Minigame::Minigame(BbvsEngine *vm)
 	_numbersAnim = nullptr;
 }
 
-Minigame::~Minigame() {
-}
+Minigame::~Minigame() = default;
 
 int Minigame::drawNumber(DrawList &drawList, int number, int x, int y) {
 	int digits = 1, rightX = x;

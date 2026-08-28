@@ -30,8 +30,7 @@ SpriteFontRenderer::SpriteFontRenderer(IAGSEngine *engine) {
 	_engine = engine;
 }
 
-SpriteFontRenderer::~SpriteFontRenderer(void) {
-}
+SpriteFontRenderer::~SpriteFontRenderer(void) = default;
 
 void SpriteFontRenderer::FreeMemory(int fontNum) {
 	for(auto it = _fonts.begin(); it != _fonts.end() ; ++it) {

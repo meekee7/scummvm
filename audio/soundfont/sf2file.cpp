@@ -457,7 +457,7 @@ SF2File::SF2File(SynthFile *synthfile) : RiffFile(synthfile->_name, "sfbk") {
 	this->AddChildChunk(pdtaCk);
 }
 
-SF2File::~SF2File() {}
+SF2File::~SF2File() = default;
 
 const void *SF2File::SaveToMem() {
 	uint8 *buf = new uint8[this->GetSize()];

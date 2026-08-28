@@ -26,8 +26,7 @@
 namespace Graphics {
 namespace MFC {
 
-ifstream::ifstream() {
-}
+ifstream::ifstream() = default;
 
 ifstream::ifstream(const char *filename, ios::openmode mode) {
 	open(filename, mode);

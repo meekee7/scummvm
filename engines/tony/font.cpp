@@ -141,8 +141,7 @@ RMFontColor::RMFontColor() {
 	_fontR = _fontG = _fontB = 255;
 }
 
-RMFontColor::~RMFontColor() {
-}
+RMFontColor::~RMFontColor() = default;
 
 void RMFontColor::setBaseColor(byte r1, byte g1, byte b1) {
 	int r = (int)r1 << 16;
@@ -348,8 +347,7 @@ RMText::RMText() {
 	setPriority(150);
 }
 
-RMText::~RMText() {
-}
+RMText::~RMText() = default;
 
 void RMText::unload() {
 	if (_fonts[0] != NULL) {
@@ -774,8 +772,7 @@ RMTextDialogScrolling::RMTextDialogScrolling(RMLocation *loc) {
 	_startScroll = loc->scrollPosition();
 }
 
-RMTextDialogScrolling::~RMTextDialogScrolling() {
-}
+RMTextDialogScrolling::~RMTextDialogScrolling() = default;
 
 void RMTextDialogScrolling::draw(CORO_PARAM, RMGfxTargetBuffer &bigBuf, RMGfxPrimitive *prim) {
 	CORO_BEGIN_CONTEXT;
@@ -809,8 +806,7 @@ RMTextItemName::RMTextItemName() : RMText() {
 	setPriority(220);
 }
 
-RMTextItemName::~RMTextItemName() {
-}
+RMTextItemName::~RMTextItemName() = default;
 
 void RMTextItemName::doFrame(CORO_PARAM, RMGfxTargetBuffer &bigBuf, RMLocation &loc, RMPointer &ptr, RMInventory &inv) {
 	CORO_BEGIN_CONTEXT;

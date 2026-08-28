@@ -33,8 +33,7 @@ qdCoordsAnimationPoint::qdCoordsAnimationPoint() : _pos(0, 0, 0),
 	_path_length = _passed_path_length = 0.0f;
 }
 
-qdCoordsAnimationPoint::~qdCoordsAnimationPoint() {
-}
+qdCoordsAnimationPoint::~qdCoordsAnimationPoint() = default;
 
 void qdCoordsAnimationPoint::load_script(const xml::tag *p) {
 	for (xml::tag::subtag_iterator it = p->subtags_begin(); it != p->subtags_end(); ++it) {

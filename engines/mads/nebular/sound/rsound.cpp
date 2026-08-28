@@ -110,8 +110,7 @@ RSound::RSound(Audio::Mixer *mixer, MidiDriver_MT32GM *midiDriver, const Common:
 	sendSysExSequence();
 }
 
-RSound::~RSound() {
-}
+RSound::~RSound() = default;
 
 void RSound::validate(bool isDemo) {
 	Common::File f;

@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-PuzzleCadenas::PuzzleCadenas() {
-}
+PuzzleCadenas::PuzzleCadenas() = default;
 
 // TODO: Add more functions here.
 

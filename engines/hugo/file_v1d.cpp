@@ -40,8 +40,7 @@ namespace Hugo {
 FileManager_v1d::FileManager_v1d(HugoEngine *vm) : FileManager(vm) {
 }
 
-FileManager_v1d::~FileManager_v1d() {
-}
+FileManager_v1d::~FileManager_v1d() = default;
 
 void FileManager_v1d::openDatabaseFiles() {
 	debugC(1, kDebugFile, "openDatabaseFiles");

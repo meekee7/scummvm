@@ -26,8 +26,7 @@
 
 namespace Pelrock {
 
-PelrockEventManager::PelrockEventManager() {
-}
+PelrockEventManager::PelrockEventManager() = default;
 
 void PelrockEventManager::pollEvent() {
 

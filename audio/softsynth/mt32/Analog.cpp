@@ -106,7 +106,7 @@ class AbstractLowPassFilter {
 public:
 	static AbstractLowPassFilter<SampleEx> &createLowPassFilter(const AnalogOutputMode mode, const bool oldMT32AnalogLPF);
 
-	virtual ~AbstractLowPassFilter() {}
+	virtual ~AbstractLowPassFilter() = default;
 	virtual SampleEx process(const SampleEx sample) = 0;
 
 	virtual bool hasNextSample() const {

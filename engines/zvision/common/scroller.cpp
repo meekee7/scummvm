@@ -32,8 +32,7 @@ LinearScroller::LinearScroller(const int16 activePos, const int16 idlePos, const
 	_period(period) {
 }
 
-LinearScroller::~LinearScroller() {
-}
+LinearScroller::~LinearScroller() = default;
 
 bool LinearScroller::update(uint32 deltatime) {
 	_prevPos = _pos;
@@ -90,8 +89,7 @@ Scroller::Scroller(const Common::Point &activePos, const Common::Point &idlePos,
 	_pos.y = _yScroller._pos;
 }
 
-Scroller::~Scroller() {
-}
+Scroller::~Scroller() = default;
 
 void Scroller::reset() {
 	_xScroller.reset();

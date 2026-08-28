@@ -27,8 +27,7 @@ namespace Hadesch {
 
 class IntroHandler : public Handler {
 public:
-	IntroHandler() {
-	}
+	IntroHandler() = default;
 
 	void handleClick(const Common::String &name) override {
 	}

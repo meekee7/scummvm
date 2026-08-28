@@ -56,9 +56,7 @@ EggManager::EggManager(nuvie_game_t type)
 		  not_spawning_actors(false) {
 }
 
-EggManager::~EggManager() {
-
-}
+EggManager::~EggManager() = default;
 
 void EggManager::clean(bool keep_obj) {
 	Common::List<Egg *>::iterator egg_iter;

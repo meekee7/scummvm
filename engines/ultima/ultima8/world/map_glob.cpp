@@ -27,12 +27,10 @@
 namespace Ultima {
 namespace Ultima8 {
 
-MapGlob::MapGlob() {
-}
+MapGlob::MapGlob() = default;
 
 
-MapGlob::~MapGlob() {
-}
+MapGlob::~MapGlob() = default;
 
 void MapGlob::read(Common::SeekableReadStream *rs) {
 	unsigned int itemcount = rs->readUint16LE();

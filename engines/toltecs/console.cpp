@@ -34,8 +34,7 @@ Console::Console(ToltecsEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("dump",			WRAP_METHOD(Console, Cmd_Dump));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_Room(int argc, const char **argv) {
 	if (argc < 2) {

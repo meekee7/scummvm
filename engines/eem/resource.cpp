@@ -35,8 +35,7 @@
 
 namespace EEM {
 
-DBDArchive::DBDArchive() {
-}
+DBDArchive::DBDArchive() = default;
 
 DBDArchive::~DBDArchive() {
 	close();

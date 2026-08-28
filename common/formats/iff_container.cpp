@@ -79,8 +79,7 @@ void IFFParser::parse(IFFCallback &callback) {
 PackBitsReadStream::PackBitsReadStream(Common::ReadStream &input) : _input(&input) {
 }
 
-PackBitsReadStream::~PackBitsReadStream() {
-}
+PackBitsReadStream::~PackBitsReadStream() = default;
 
 bool PackBitsReadStream::eos() const {
 	return _input->eos();

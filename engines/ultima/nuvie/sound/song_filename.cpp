@@ -29,8 +29,7 @@
 namespace Ultima {
 namespace Nuvie {
 
-SongFilename::~SongFilename() {
-}
+SongFilename::~SongFilename() = default;
 
 bool SongFilename::Init(const Common::Path &path, const char *fileId) {
 	return Init(path, fileId, 0);

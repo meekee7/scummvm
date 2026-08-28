@@ -55,8 +55,7 @@ Init::Init(GobEngine *vm) : _vm(vm) {
 	_palDesc = nullptr;
 }
 
-Init::~Init() {
-}
+Init::~Init() = default;
 
 void Init::cleanup() {
 	_vm->_global->_primarySurfDesc.reset();

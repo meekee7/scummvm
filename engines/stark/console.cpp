@@ -72,8 +72,7 @@ Console::Console() :
 	registerCmd("extractAllTextures",   WRAP_METHOD(Console, Cmd_ExtractAllTextures));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_DumpArchive(int argc, const char **argv) {
 	if (argc != 2) {
@@ -365,7 +364,7 @@ bool Console::Cmd_DecompileScript(int argc, const char **argv) {
 
 class ArchiveVisitor {
 public:
-	virtual ~ArchiveVisitor() {}
+	virtual ~ArchiveVisitor() = default;
 	virtual void acceptLevelArchive(Resources::Level *level) = 0;
 	virtual void acceptLocationArchive(Resources::Location *location) = 0;
 };

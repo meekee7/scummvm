@@ -138,40 +138,40 @@ private:
 
 class HSEffectFilter {
 public:
-	HSEffectFilter() {}
-	virtual ~HSEffectFilter() {}
+	HSEffectFilter() = default;
+	virtual ~HSEffectFilter() = default;
 
 	virtual bool process(const ShStBuffer &src, uint8 *dst, uint16 para1, uint16 para2) = 0;
 };
 
 class HSVolumeScaler : public HSEffectFilter {
 public:
-	HSVolumeScaler() {}
-	~HSVolumeScaler() override {}
+	HSVolumeScaler() = default;
+	~HSVolumeScaler() override = default;
 
 	bool process(const ShStBuffer &src, uint8 *dst, uint16 para1, uint16 para2) override;
 };
 
 class HSLowPassFilter : public HSEffectFilter {
 public:
-	HSLowPassFilter() {}
-	~HSLowPassFilter() override {}
+	HSLowPassFilter() = default;
+	~HSLowPassFilter() override = default;
 
 	bool process(const ShStBuffer &src, uint8 *dst, uint16 para1, uint16 para2) override;
 };
 
 class HSSquareOMatic : public HSEffectFilter {
 public:
-	HSSquareOMatic() {}
-	~HSSquareOMatic() override {}
+	HSSquareOMatic() = default;
+	~HSSquareOMatic() override = default;
 
 	bool process(const ShStBuffer &src, uint8 *dst, uint16 para1, uint16) override;
 };
 
 class HSTriangulizer : public HSEffectFilter {
 public:
-	HSTriangulizer() {}
-	~HSTriangulizer() override {}
+	HSTriangulizer() = default;
+	~HSTriangulizer() override = default;
 
 	bool process(const ShStBuffer &src, uint8 *dst, uint16, uint16) override;
 };

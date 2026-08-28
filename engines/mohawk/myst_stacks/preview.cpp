@@ -48,8 +48,7 @@ Preview::Preview(MohawkEngine_Myst *vm) :
 	_speechNextTime = 0;
 }
 
-Preview::~Preview() {
-}
+Preview::~Preview() = default;
 
 void Preview::setupOpcodes() {
 	// "Stack-Specific" Opcodes

@@ -38,7 +38,7 @@ VGMItem::VGMItem(VGMFile *thevgmfile, uint32 theOffset, uint32 theLength, const 
 		  _dwOffset(theOffset),
 		  _unLength(theLength) {}
 
-VGMItem::~VGMItem() {}
+VGMItem::~VGMItem() = default;
 
 RawFile *VGMItem::GetRawFile() {
 	return _vgmfile->_rawfile;
@@ -96,7 +96,7 @@ VGMFile::VGMFile(RawFile *theRawFile, uint32 offset,
 		: VGMContainerItem(this, offset, length, theName),
 		  _rawfile(theRawFile) {}
 
-VGMFile::~VGMFile(void) {}
+VGMFile::~VGMFile(void) = default;
 
 bool VGMFile::LoadVGMFile() {
 	bool val = Load();
@@ -132,7 +132,7 @@ uint32 VGMFile::GetBytes(uint32 nIndex, uint32 nCount, void *pBuffer) {
 VGMHeader::VGMHeader(VGMItem *parItem, uint32 offset, uint32 length, const Common::String &name)
 		: VGMContainerItem(parItem->_vgmfile, offset, length, name) {}
 
-VGMHeader::~VGMHeader() {}
+VGMHeader::~VGMHeader() = default;
 
 // ******
 // VGMRgn

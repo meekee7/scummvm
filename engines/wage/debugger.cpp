@@ -34,8 +34,7 @@ Debugger::Debugger(WageEngine *engine) : GUI::Debugger(), _engine(engine) {
 	registerCmd("script", WRAP_METHOD(Debugger, Cmd_Script));
 }
 
-Debugger::~Debugger() {
-}
+Debugger::~Debugger() = default;
 
 static int strToInt(const char *s) {
 	if (!*s)

@@ -114,8 +114,7 @@ void NotificationReceiver::newNotification(Notification *notification) {
 
 typedef NotificationList::iterator NotificationIterator;
 
-NotificationManager::NotificationManager() {
-}
+NotificationManager::NotificationManager() = default;
 
 NotificationManager::~NotificationManager() {
 	detachNotifications();

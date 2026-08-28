@@ -146,7 +146,7 @@ class SynthSampInfo {
 public:
 	SynthSampInfo() : _usUnityNote(0), _sFineTune(0), _attenuation(0.0),
 		_cSampleLoops(0), _ulLoopStart(0), _ulLoopLength(0) {}
-	~SynthSampInfo() {}
+	~SynthSampInfo() = default;
 
 	void SetLoopInfo(Loop &loop, VGMSamp *samp);
 	void SetPitchInfo(uint16 unityNote, int16 fineTune, double attenuation);

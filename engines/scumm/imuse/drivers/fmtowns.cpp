@@ -172,7 +172,7 @@ private:
 class TownsMidiChanState {
 public:
 	TownsMidiChanState();
-	~TownsMidiChanState() {}
+	~TownsMidiChanState() = default;
 	uint8 get(uint8 type);
 
 	uint8 unk1;

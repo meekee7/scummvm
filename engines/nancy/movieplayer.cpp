@@ -45,9 +45,9 @@ private:
 	MoviePlayer &_owner;
 };
 
-MoviePlayer::MoviePlayer() {}
+MoviePlayer::MoviePlayer() = default;
 
-MoviePlayer::~MoviePlayer() {}
+MoviePlayer::~MoviePlayer() = default;
 
 byte MoviePlayer::resolvePlaytype(byte videoPlaytype) {
 	if (videoPlaytype != kVideoPlaytypeAuto) {

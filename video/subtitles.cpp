@@ -35,8 +35,7 @@
 
 namespace Video {
 
-SRTParser::SRTParser() {
-}
+SRTParser::SRTParser() = default;
 
 SRTParser::~SRTParser() {
 	cleanup();

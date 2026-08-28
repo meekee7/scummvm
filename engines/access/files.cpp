@@ -90,8 +90,7 @@ FileManager::FileManager(AccessEngine *vm) : _vm(vm) {
 	_setPaletteFlag = true;
 }
 
-FileManager::~FileManager() {
-}
+FileManager::~FileManager() = default;
 
 Resource *FileManager::loadFile(int fileNum, int subfile) {
 	Resource *res = nullptr;

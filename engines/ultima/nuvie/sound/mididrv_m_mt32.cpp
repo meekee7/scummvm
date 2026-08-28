@@ -35,7 +35,7 @@ MidiDriver_M_MT32::MidiDriver_M_MT32() : MidiDriver_MT32GM(MT_MT32) {
 	Common::fill(_mInstrumentMapping, _mInstrumentMapping + sizeof(_mInstrumentMapping), 0);
 }
 
-MidiDriver_M_MT32::~MidiDriver_M_MT32() { }
+MidiDriver_M_MT32::~MidiDriver_M_MT32() = default;
 
 int MidiDriver_M_MT32::open(MidiDriver *driver, bool nativeMT32) {
 	int result = MidiDriver_MT32GM::open(driver, nativeMT32);

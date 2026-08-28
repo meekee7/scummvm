@@ -47,8 +47,7 @@ CreateItemProcess::CreateItemProcess(uint32 shape, uint32 frame,
 
 }
 
-CreateItemProcess::~CreateItemProcess(void) {
-}
+CreateItemProcess::~CreateItemProcess(void) = default;
 
 void CreateItemProcess::run() {
 	Item *item = ItemFactory::createItem(_shape, _frame, _quality, _flags,

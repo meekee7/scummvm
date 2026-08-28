@@ -68,7 +68,7 @@ struct Node {
 	uint32 _endOffset;
 
 	Node(NodeType t, uint32 offset) : type(t), isExpression(false), isStatement(false), isLabel(false), isLoop(false), parent(nullptr), _startOffset(offset), _endOffset(offset) {}
-	virtual ~Node() {}
+	virtual ~Node() = default;
 	virtual void accept(NodeVisitor& visitor) const = 0;
 	virtual Common::SharedPtr<Datum> getValue();
 	Node *ancestorStatement();
@@ -791,7 +791,7 @@ struct NewObjNode : ExprNode {
 
 class NodeVisitor {
 public:
-	virtual ~NodeVisitor() {}
+	virtual ~NodeVisitor() = default;
 	virtual void visit(const HandlerNode &node) { defaultVisit(node); }
 	virtual void visit(const ErrorNode &node) { defaultVisit(node); }
 	virtual void visit(const CommentNode &node) { defaultVisit(node); }

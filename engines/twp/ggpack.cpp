@@ -622,8 +622,7 @@ bool XorStream::seek(int64 offset, int whence) {
 	return _s->seek(offset, whence);
 }
 
-GGPackDecoder::GGPackDecoder() {
-}
+GGPackDecoder::GGPackDecoder() = default;
 
 bool GGPackDecoder::open(Common::SeekableReadStream *s, const XorKey &key) {
 	_entries.clear();
@@ -662,7 +661,7 @@ bool GGPackDecoder::open(Common::SeekableReadStream *s, const XorKey &key) {
 	return true;
 }
 
-GGPackEntryReader::GGPackEntryReader() {}
+GGPackEntryReader::GGPackEntryReader() = default;
 
 bool GGPackEntryReader::open(GGPackDecoder &pack, const Common::String &entry) {
 	if (!pack._entries.contains(entry))
@@ -712,7 +711,7 @@ bool GGPackEntryReader::seek(int64 offset, int whence) {
 	return _ms.seek(offset, whence);
 }
 
-GGBnutReader::GGBnutReader() {}
+GGBnutReader::GGBnutReader() = default;
 
 bool GGBnutReader::open(Common::SeekableReadStream *s) {
 	_s = s;
@@ -773,8 +772,7 @@ bool GGPackSet::assetExists(const char *asset) {
 	return false;
 }
 
-GGHashMapEncoder::GGHashMapEncoder() {
-}
+GGHashMapEncoder::GGHashMapEncoder() = default;
 
 void GGHashMapEncoder::open(Common::SeekableWriteStream *stream) {
 	_s = stream;

@@ -35,8 +35,7 @@ namespace Gob {
 Init_v7::Init_v7(GobEngine *vm) : Init_v2(vm) {
 }
 
-Init_v7::~Init_v7() {
-}
+Init_v7::~Init_v7() = default;
 
 void Init_v7::initGame() {
 	const Common::FSNode gameDataDir(ConfMan.getPath("path"));

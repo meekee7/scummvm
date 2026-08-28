@@ -28,7 +28,6 @@ ToonConsole::ToonConsole(ToonEngine *vm) : GUI::Debugger(), _vm(vm) {
 	assert(_vm);
 }
 
-ToonConsole::~ToonConsole() {
-}
+ToonConsole::~ToonConsole() = default;
 
 } // End of namespace Toon

@@ -64,8 +64,7 @@ CMouseCursor::CMouseCursor(CScreenManager *screenManager) :
 	CursorMan.showMouse(true);
 }
 
-CMouseCursor::~CMouseCursor() {
-}
+CMouseCursor::~CMouseCursor() = default;
 
 void CMouseCursor::loadCursorImages() {
 	const CResourceKey key("ycursors.avi");

@@ -64,8 +64,7 @@ Common::Error TSageEngine::init() {
 	return Common::kNoError;
 }
 
-TSageEngine::~TSageEngine() {
-}
+TSageEngine::~TSageEngine() = default;
 
 bool TSageEngine::hasFeature(EngineFeature f) const {
 	return

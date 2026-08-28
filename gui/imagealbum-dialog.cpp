@@ -41,8 +41,7 @@
 
 namespace GUI {
 
-ImageAlbumImageSupplier::~ImageAlbumImageSupplier() {
-}
+ImageAlbumImageSupplier::~ImageAlbumImageSupplier() = default;
 
 class ImageAlbumDialog : public Dialog {
 public:
@@ -137,8 +136,7 @@ ImageAlbumDialog::ImageAlbumDialog(const Common::U32String &title, ImageAlbumIma
 	_imageGraphic = nullptr;
 }
 
-ImageAlbumDialog::~ImageAlbumDialog() {
-}
+ImageAlbumDialog::~ImageAlbumDialog() = default;
 
 void ImageAlbumDialog::open() {
 	Dialog::open();

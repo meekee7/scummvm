@@ -612,8 +612,7 @@ BoltGroup::BoltGroup(Common::SeekableReadStream *f): _file(f) {
 	_fileOffset = READ_LE_UINT32(&buffer[8]);
 }
 
-BoltGroup::~BoltGroup() {
-}
+BoltGroup::~BoltGroup() = default;
 
 void BoltGroup::load(uint16 groupId) {
 	_file->seek(_fileOffset);

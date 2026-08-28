@@ -32,8 +32,7 @@ namespace Titanic {
 
 #define ARRAY_COUNT 876
 
-CConstBoundaries::CConstBoundaries() {
-}
+CConstBoundaries::CConstBoundaries() = default;
 
 bool CConstBoundaries::initialize() {
 	double y, z, ra, dec, phi, theta;

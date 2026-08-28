@@ -33,11 +33,9 @@
 
 namespace Gob {
 
-TranslationDatabases::TranslationDatabases() {
-}
+TranslationDatabases::TranslationDatabases() = default;
 
-TranslationDatabases::~TranslationDatabases() {
-}
+TranslationDatabases::~TranslationDatabases() = default;
 
 void TranslationDatabases::setLanguage(Common::Language language) {
 	Common::String lang;

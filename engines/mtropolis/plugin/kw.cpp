@@ -26,11 +26,9 @@ namespace MTropolis {
 
 namespace KW {
 
-StrUtilModifier::StrUtilModifier() {
-}
+StrUtilModifier::StrUtilModifier() = default;
 
-StrUtilModifier::~StrUtilModifier() {
-}
+StrUtilModifier::~StrUtilModifier() = default;
 
 bool StrUtilModifier::load(const PlugInModifierLoaderContext &context, const Data::KW::StrUtilModifier &data) {
 	return true;
@@ -65,8 +63,7 @@ KnowWonderPlugIn::KnowWonderPlugIn()
 	: _strUtilModifierFactory(this) {
 }
 
-KnowWonderPlugIn::~KnowWonderPlugIn() {
-}
+KnowWonderPlugIn::~KnowWonderPlugIn() = default;
 
 void KnowWonderPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	registrar->registerPlugInModifier("StrUtil", &_strUtilModifierFactory);

@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-TeQuaternion::TeQuaternion() {
-}
+TeQuaternion::TeQuaternion() = default;
 
 Common::String TeQuaternion::dump() const {
 	return Common::String::format("TeQuat(%.02f %.02f %.02f %.02f)", x(), y(), z(), w());

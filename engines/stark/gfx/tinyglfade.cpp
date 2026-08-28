@@ -38,8 +38,7 @@ TinyGLFadeRenderer::TinyGLFadeRenderer(TinyGLDriver *gfx) :
 	_gfx(gfx) {
 }
 
-TinyGLFadeRenderer::~TinyGLFadeRenderer() {
-}
+TinyGLFadeRenderer::~TinyGLFadeRenderer() = default;
 
 void TinyGLFadeRenderer::render(float fadeLevel) {
 	_gfx->start2DMode();

@@ -35,7 +35,7 @@ namespace Networking {
 
 ConnectCloudHandler::ConnectCloudHandler() : _storageConnectionCallback(nullptr) {}
 
-ConnectCloudHandler::~ConnectCloudHandler() {}
+ConnectCloudHandler::~ConnectCloudHandler() = default;
 
 void ConnectCloudHandler::handle(Client &client) {
 	client.setHandler(new ConnectCloudClientHandler(this));
@@ -51,7 +51,7 @@ void ConnectCloudHandler::storageConnected(const Networking::ErrorResponse &resp
 ConnectCloudClientHandler::ConnectCloudClientHandler(const ConnectCloudHandler *cloudHandler):
 	_cloudHandler(cloudHandler), _clientContent(DisposeAfterUse::YES), _client(nullptr) {}
 
-ConnectCloudClientHandler::~ConnectCloudClientHandler() {}
+ConnectCloudClientHandler::~ConnectCloudClientHandler() = default;
 
 void ConnectCloudClientHandler::respond(Client &client, const Common::String &response, long responseCode) const {
 	Common::SeekableReadStream *responseStream = HandlerUtils::makeResponseStreamFromString(response);

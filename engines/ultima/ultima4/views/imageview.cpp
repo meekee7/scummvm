@@ -30,8 +30,7 @@ namespace Ultima4 {
 ImageView::ImageView(int x, int y, int width, int height) : View(x, y, width, height) {
 }
 
-ImageView::~ImageView() {
-}
+ImageView::~ImageView() = default;
 
 void ImageView::draw(const Common::String &imageName, int x, int y) {
 	ImageInfo *info = imageMgr->get(imageName);

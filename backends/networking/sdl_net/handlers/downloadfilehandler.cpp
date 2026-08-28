@@ -27,9 +27,9 @@
 
 namespace Networking {
 
-DownloadFileHandler::DownloadFileHandler() {}
+DownloadFileHandler::DownloadFileHandler() = default;
 
-DownloadFileHandler::~DownloadFileHandler() {}
+DownloadFileHandler::~DownloadFileHandler() = default;
 
 /// public
 

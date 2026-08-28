@@ -58,9 +58,7 @@ TranslationManager::TranslationManager(const Common::String &fileName) : _curren
 	setLanguage("");
 }
 
-TranslationManager::~TranslationManager() {
-
-}
+TranslationManager::~TranslationManager() = default;
 
 int32 TranslationManager::findMatchingLanguage(const String &lang) {
 	uint langLength = lang.size();

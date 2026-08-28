@@ -168,7 +168,7 @@ bool TokenReader::readToken(Token &token) {
 	return false;
 }
 
-GGFont::~GGFont() {}
+GGFont::~GGFont() = default;
 
 void GGFont::load(const Common::String &path) {
 	SpriteSheet *spritesheet = g_twp->_resManager->spriteSheet(path);
@@ -194,7 +194,7 @@ Glyph GGFont::getGlyph(CodePoint chr) {
 	return _glyphs['?'];
 }
 
-BmFont::~BmFont() {}
+BmFont::~BmFont() = default;
 
 void BmFont::load(const Common::String &name) {
 	Common::String path = name + ".fnt";
@@ -249,7 +249,7 @@ Text::Text(const Common::String &fontName, const Common::String &text, TextHAlig
 	update();
 }
 
-Text::Text() {}
+Text::Text() = default;
 
 void Text::setFont(const Common::String &fontName) {
 	_fontName = fontName;

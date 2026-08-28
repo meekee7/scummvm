@@ -17,7 +17,8 @@ struct SQString : public SQRefCounted
 	{
 		_val[0] = 0;
 	}
-    ~SQString(){}
+    ~SQString() = default;
+
 public:
     static SQString *Create(SQSharedState *ss, const SQChar *, SQInteger len = -1 );
     SQInteger Next(const SQObjectPtr &refpos, SQObjectPtr &outkey, SQObjectPtr &outval);

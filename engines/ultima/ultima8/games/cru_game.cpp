@@ -51,9 +51,7 @@ namespace Ultima8 {
 CruGame::CruGame() : Game(), _skipIntroMovie(false) {
 }
 
-CruGame::~CruGame() {
-
-}
+CruGame::~CruGame() = default;
 
 static bool loadPalette(const char *path, PaletteManager::PalIndex index) {
 	Common::File pf;

@@ -61,14 +61,12 @@ ConfigElement::ConfigElement(const Shared::XMLNode *xmlNode) :
 	_node(xmlNode), _name(xmlNode->id().c_str()) {
 }
 
-ConfigElement::ConfigElement(const ConfigElement &e) : _node(e._node), _name(e._name) {
-}
+ConfigElement::ConfigElement(const ConfigElement &e) = default;
 
 ConfigElement::ConfigElement() : _node(nullptr) {
 }
 
-ConfigElement::~ConfigElement() {
-}
+ConfigElement::~ConfigElement() = default;
 
 ConfigElement &ConfigElement::operator=(const ConfigElement &e) {
 	if (&e != this) {

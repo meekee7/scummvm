@@ -117,8 +117,7 @@ qdGameObjectState::qdGameObjectState(const qdGameObjectState &st) : qdConditiona
 	_sound_handle.set_owner(this);
 }
 
-qdGameObjectState::~qdGameObjectState() {
-}
+qdGameObjectState::~qdGameObjectState() = default;
 
 bool qdGameObjectState::is_state_empty() const {
 	return (!_sound_info.name() || !strlen(_sound_info.name()));
@@ -771,8 +770,7 @@ qdGameObjectStateStatic::qdGameObjectStateStatic(const qdGameObjectStateStatic &
 	_animation_info.set_owner(this);
 }
 
-qdGameObjectStateStatic::~qdGameObjectStateStatic() {
-}
+qdGameObjectStateStatic::~qdGameObjectStateStatic() = default;
 
 qdGameObjectStateStatic &qdGameObjectStateStatic::operator = (const qdGameObjectStateStatic &st) {
 	if (this == &st) return *this;
@@ -930,8 +928,7 @@ qdGameObjectStateWalk::qdGameObjectStateWalk(const qdGameObjectStateWalk &st) : 
 	_stop_center_offsets(st._stop_center_offsets) {
 }
 
-qdGameObjectStateWalk::~qdGameObjectStateWalk() {
-}
+qdGameObjectStateWalk::~qdGameObjectStateWalk() = default;
 
 qdGameObjectStateWalk &qdGameObjectStateWalk::operator = (const qdGameObjectStateWalk &st) {
 	if (this == &st) return *this;
@@ -1413,13 +1410,9 @@ qdGameObjectStateMask::qdGameObjectStateMask() : qdGameObjectState(qdGameObjectS
 
 }
 
-qdGameObjectStateMask::qdGameObjectStateMask(const qdGameObjectStateMask &st) : qdGameObjectState(st), qdContour(st),
-	_parent(st._parent),
-	_parent_name(st._parent_name) {
-}
+qdGameObjectStateMask::qdGameObjectStateMask(const qdGameObjectStateMask &st) = default;
 
-qdGameObjectStateMask::~qdGameObjectStateMask() {
-}
+qdGameObjectStateMask::~qdGameObjectStateMask() = default;
 
 qdGameObjectStateMask &qdGameObjectStateMask::operator = (const qdGameObjectStateMask &st) {
 	if (this == &st) return *this;

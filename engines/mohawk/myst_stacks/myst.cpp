@@ -157,8 +157,7 @@ Myst::Myst(MohawkEngine_Myst *vm, MystStack stackId) :
 	}
 }
 
-Myst::~Myst() {
-}
+Myst::~Myst() = default;
 
 void Myst::setupOpcodes() {
 	// "Stack-Specific" Opcodes

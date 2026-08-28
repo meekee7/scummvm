@@ -40,8 +40,7 @@ DuckmanCredits::DuckmanCredits(IllusionsEngine_Duckman *vm)
 
 }
 
-DuckmanCredits::~DuckmanCredits() {
-}
+DuckmanCredits::~DuckmanCredits() = default;
 
 void DuckmanCredits::start() {
 	static const struct { uint32 objectId; int scrollPosY; } kCreditsItems[] = {

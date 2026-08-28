@@ -50,8 +50,7 @@ VisualEffectBubbles::VisualEffectBubbles(Gfx::Driver *gfx, const Common::Point &
 		_darkColor(0) {
 }
 
-VisualEffectBubbles::~VisualEffectBubbles() {
-}
+VisualEffectBubbles::~VisualEffectBubbles() = default;
 
 void VisualEffectBubbles::render(const Common::Point &position) {
 	// Stop rendering if special effect is off

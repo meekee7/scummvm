@@ -36,8 +36,7 @@ EgaSpriteResource *ega_perso_res = nullptr;
 // EgaSpriteResource
 // ---------------------------------------------------------------------------
 
-EgaSpriteResource::EgaSpriteResource() {
-}
+EgaSpriteResource::EgaSpriteResource() = default;
 
 EgaSpriteResource::~EgaSpriteResource() {
 	for (uint i = 0; i < _sprites.size(); i++) {

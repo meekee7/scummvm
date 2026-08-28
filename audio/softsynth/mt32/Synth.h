@@ -88,7 +88,7 @@ struct DACOutputStreams {
 // Class for the client to supply callbacks for reporting various errors and information
 class MT32EMU_EXPORT ReportHandler {
 public:
-	virtual ~ReportHandler() {}
+	virtual ~ReportHandler() = default;
 
 	// Callback for debug messages, in vprintf() format
 	virtual void printDebug(const char *fmt, va_list list);
@@ -119,7 +119,7 @@ public:
 // Extends ReportHandler, so that the client may supply callbacks for reporting signals about updated display state.
 class MT32EMU_EXPORT_V(2.6) ReportHandler2 : public ReportHandler {
 public:
-	virtual ~ReportHandler2() {}
+	virtual ~ReportHandler2() = default;
 
 	// Invoked to signal about a change of the emulated LCD state. Use method Synth::getDisplayState to retrieve the actual data.
 	// This callback will not be invoked on further changes, until the client retrieves the LCD state.

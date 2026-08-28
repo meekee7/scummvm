@@ -73,8 +73,7 @@ PathFinding3D::PathFinding3D(TrecisionEngine *vm) : _vm(vm) {
 		_step[i].clear();
 }
 
-PathFinding3D::~PathFinding3D() {
-}
+PathFinding3D::~PathFinding3D() = default;
 
 void PathFinding3D::findPath() {
 	Actor *actor = _vm->_actor;

@@ -37,8 +37,7 @@ Demo::Demo(MohawkEngine_Myst *vm) :
 	setupOpcodes();
 }
 
-Demo::~Demo() {
-}
+Demo::~Demo() = default;
 
 void Demo::setupOpcodes() {
 	// "Stack-Specific" Opcodes

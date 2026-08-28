@@ -40,8 +40,7 @@ mpegPlayer::mpegPlayer() : _is_enabled(true),
 	_paused(false) {
 }
 
-mpegPlayer::~mpegPlayer() {
-}
+mpegPlayer::~mpegPlayer() = default;
 
 bool mpegPlayer::play(const Common::Path &file, bool loop, int vol) {
 	bool isOGG = file.baseName().hasSuffixIgnoreCase(".ogg");

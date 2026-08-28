@@ -66,8 +66,7 @@ XRCReadStream::XRCReadStream(const Common::Path &archiveName,
 		_archiveName(archiveName) {
 }
 
-XRCReadStream::~XRCReadStream() {
-}
+XRCReadStream::~XRCReadStream() = default;
 
 Common::String XRCReadStream::readString() {
 	// Read the string length

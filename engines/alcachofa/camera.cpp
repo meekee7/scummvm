@@ -45,7 +45,7 @@ Camera *Camera::create() {
 		error("Camera is not implemented for this engine version");
 }
 
-Camera::~Camera() {}
+Camera::~Camera() = default;
 
 static Matrix4 scale2DMatrix(float scale) {
 	Matrix4 m;

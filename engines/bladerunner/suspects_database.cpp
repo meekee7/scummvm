@@ -32,8 +32,7 @@ SuspectDatabaseEntry::SuspectDatabaseEntry(BladeRunnerEngine *vm) {
 	reset();
 }
 
-SuspectDatabaseEntry::~SuspectDatabaseEntry() {
-}
+SuspectDatabaseEntry::~SuspectDatabaseEntry() = default;
 
 void SuspectDatabaseEntry::setActor(int actorId) {
 	_actorId = actorId;

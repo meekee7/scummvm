@@ -51,8 +51,7 @@ CBagDossierObject::CBagDossierObject() {
 	_showIndexFl = true;
 }
 
-CBagDossierObject::~CBagDossierObject() {
-}
+CBagDossierObject::~CBagDossierObject() = default;
 
 ParseCodes CBagDossierObject::setInfo(CBagIfstream &istr) {
 	bool objectUpdatedFl = false;

@@ -39,8 +39,7 @@ TeVariant::TeVariant(const Common::String &val) : _type(TypeString), _data(0), _
 TeVariant::TeVariant(const char *val) : _type(TypeString), _data(0), _strVal(val) {
 }
 
-TeVariant::TeVariant(const TeVariant &other) : _type(other._type), _data(other._data), _strVal(other._strVal) {
-}
+TeVariant::TeVariant(const TeVariant &other) = default;
 
 bool TeVariant::toBoolean(bool *success) const {
 	if (_type == TypeBoolean) {

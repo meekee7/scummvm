@@ -41,8 +41,7 @@ CharacterDrew::CharacterDrew(ToonEngine *vm) : Character(vm) {
 	_currentScale = 1024;
 }
 
-CharacterDrew::~CharacterDrew() {
-}
+CharacterDrew::~CharacterDrew() = default;
 
 bool CharacterDrew::setupPalette() {
 	debugC(1, kDebugCharacter, "setupPalette()");

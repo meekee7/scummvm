@@ -191,8 +191,7 @@ void Animation::restoreState(SaveGame *state) {
  * @class AnimManager
  */
 
-AnimManager::AnimManager() {
-}
+AnimManager::AnimManager() = default;
 
 AnimManager::~AnimManager() {
 	for (const AnimationEntry &entry : _activeAnims) {

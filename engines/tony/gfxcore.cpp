@@ -150,8 +150,7 @@ void RMGfxSourceBuffer::init(Common::ReadStream &ds, int dimx, int dimy, bool bL
 	prepareImage();
 }
 
-RMGfxSourceBuffer::~RMGfxSourceBuffer() {
-}
+RMGfxSourceBuffer::~RMGfxSourceBuffer() = default;
 
 void RMGfxSourceBuffer::prepareImage() {
 	// Do nothing. Can be overloaded if necessary
@@ -219,8 +218,7 @@ void RMGfxSourceBuffer::offsetY(int nLines) {
 *       RMGfxWoodyBuffer Methods
 \****************************************************************************/
 
-RMGfxWoodyBuffer::~RMGfxWoodyBuffer() {
-}
+RMGfxWoodyBuffer::~RMGfxWoodyBuffer() = default;
 
 void RMGfxWoodyBuffer::draw(CORO_PARAM, RMGfxTargetBuffer &bigBuf, RMGfxPrimitive *prim) {
 	CORO_BEGIN_CONTEXT;
@@ -237,8 +235,7 @@ void RMGfxWoodyBuffer::draw(CORO_PARAM, RMGfxTargetBuffer &bigBuf, RMGfxPrimitiv
 	CORO_END_CODE;
 }
 
-RMGfxWoodyBuffer::RMGfxWoodyBuffer() {
-}
+RMGfxWoodyBuffer::RMGfxWoodyBuffer() = default;
 
 RMGfxWoodyBuffer::RMGfxWoodyBuffer(int dimx, int dimy)
 	: RMGfxBuffer(dimx, dimy, 16) {
@@ -481,8 +478,7 @@ bool RMGfxTargetBuffer::getTrackDirtyRects() const {
 *               RMGfxSourceBufferPal Methods
 \****************************************************************************/
 
-RMGfxSourceBufferPal::~RMGfxSourceBufferPal() {
-}
+RMGfxSourceBufferPal::~RMGfxSourceBufferPal() = default;
 
 int RMGfxSourceBufferPal::loadPaletteWA(const byte *buf, bool bSwapped) {
 	if (bSwapped) {
@@ -579,8 +575,7 @@ void RMGfxSourceBuffer4::create(int dimx, int dimy) {
 *               RMGfxSourceBuffer8 Methods
 \****************************************************************************/
 
-RMGfxSourceBuffer8::~RMGfxSourceBuffer8() {
-}
+RMGfxSourceBuffer8::~RMGfxSourceBuffer8() = default;
 
 void RMGfxSourceBuffer8::draw(CORO_PARAM, RMGfxTargetBuffer &bigBuf, RMGfxPrimitive *prim) {
 	int width = 0, height = 0, u = 0, v = 0;
@@ -673,8 +668,7 @@ void RMGfxSourceBuffer8::create(int dimx, int dimy) {
 *               RMGfxSourceBuffer8AB Methods
 \****************************************************************************/
 
-RMGfxSourceBuffer8AB::~RMGfxSourceBuffer8AB() {
-}
+RMGfxSourceBuffer8AB::~RMGfxSourceBuffer8AB() = default;
 
 int RMGfxSourceBuffer8AB::calcTrasp(int fore, int back) {
 	int r = (GETRED(fore) >> 2) + (GETRED(back) >> 1);
@@ -954,8 +948,7 @@ void RMGfxSourceBuffer8RLE::draw(CORO_PARAM, RMGfxTargetBuffer &bigBuf, RMGfxPri
 *               RMGfxSourceBuffer8RLEByte Methods
 \****************************************************************************/
 
-RMGfxSourceBuffer8RLEByte::~RMGfxSourceBuffer8RLEByte() {
-}
+RMGfxSourceBuffer8RLEByte::~RMGfxSourceBuffer8RLEByte() = default;
 
 void RMGfxSourceBuffer8RLEByte::rleWriteTrasp(byte *&cur, int rep) {
 	assert(rep < 255);
@@ -1196,8 +1189,7 @@ RLEByteFlippedDoCopy2:
 *               RMGfxSourceBuffer8RLEWord Methods
 \****************************************************************************/
 
-RMGfxSourceBuffer8RLEWord::~RMGfxSourceBuffer8RLEWord() {
-}
+RMGfxSourceBuffer8RLEWord::~RMGfxSourceBuffer8RLEWord() = default;
 
 void RMGfxSourceBuffer8RLEWord::rleWriteTrasp(byte *&cur, int rep) {
 	WRITE_LE_UINT16(cur, rep);
@@ -1457,8 +1449,7 @@ RLEWordFlippedDoCopy2:
 *               Methods for RMGfxSourceBuffer8RLEWord
 \****************************************************************************/
 
-RMGfxSourceBuffer8RLEWordAB::~RMGfxSourceBuffer8RLEWordAB() {
-}
+RMGfxSourceBuffer8RLEWordAB::~RMGfxSourceBuffer8RLEWordAB() = default;
 
 void RMGfxSourceBuffer8RLEWordAB::rleDecompressLine(uint16 *dst, byte *src,  int nStartSkip, int nLength) {
 	int n;
@@ -1791,8 +1782,7 @@ void RMGfxSourceBuffer8AA::draw(CORO_PARAM, RMGfxTargetBuffer &bigBuf, RMGfxPrim
 *               RMGfxSourceBuffer8RLEAA Methods
 \****************************************************************************/
 
-RMGfxSourceBuffer8RLEByteAA::~RMGfxSourceBuffer8RLEByteAA() {
-}
+RMGfxSourceBuffer8RLEByteAA::~RMGfxSourceBuffer8RLEByteAA() = default;
 
 void RMGfxSourceBuffer8RLEByteAA::prepareImage() {
 	RMGfxSourceBuffer::prepareImage();
@@ -1827,8 +1817,7 @@ void RMGfxSourceBuffer8RLEByteAA::init(Common::ReadStream &ds, int dimx, int dim
 	}
 }
 
-RMGfxSourceBuffer8RLEWordAA::~RMGfxSourceBuffer8RLEWordAA() {
-}
+RMGfxSourceBuffer8RLEWordAA::~RMGfxSourceBuffer8RLEWordAA() = default;
 
 void RMGfxSourceBuffer8RLEWordAA::prepareImage() {
 	RMGfxSourceBuffer::prepareImage();
@@ -1871,8 +1860,7 @@ RMGfxSourceBuffer16::RMGfxSourceBuffer16(bool bTrasp0) {
 	_bTrasp0 = bTrasp0;
 }
 
-RMGfxSourceBuffer16::~RMGfxSourceBuffer16() {
-}
+RMGfxSourceBuffer16::~RMGfxSourceBuffer16() = default;
 
 void RMGfxSourceBuffer16::draw(CORO_PARAM, RMGfxTargetBuffer &bigBuf, RMGfxPrimitive *prim) {
 	uint16 *buf = bigBuf;
@@ -2088,8 +2076,7 @@ RMGfxPrimitive::RMGfxPrimitive(RMGfxTask *task, const RMPoint &dst) {
 	_bStretch = false;
 }
 
-RMGfxPrimitive::~RMGfxPrimitive() {
-}
+RMGfxPrimitive::~RMGfxPrimitive() = default;
 
 void RMGfxPrimitive::setFlag(byte bFlag) {
 	_bFlag = bFlag;

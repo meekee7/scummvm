@@ -29,8 +29,7 @@ namespace GUI {
 MetadataParser::MetadataParser() : XMLParser() {
 }
 
-MetadataParser::~MetadataParser() {
-}
+MetadataParser::~MetadataParser() = default;
 
 void MetadataParser::cleanup() {
 }

@@ -43,8 +43,7 @@ BuriedConsole::BuriedConsole(BuriedEngine *vm) : _vm(vm) {
 	registerCmd("aicommentinfo", WRAP_METHOD(BuriedConsole, cmdAiCommentInfo));
 }
 
-BuriedConsole::~BuriedConsole() {
-}
+BuriedConsole::~BuriedConsole() = default;
 
 bool BuriedConsole::cmdGiveItem(int argc, const char **argv) {
 	if (argc < 2) {

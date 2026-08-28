@@ -44,8 +44,7 @@ Dni::Dni(MohawkEngine_Myst *vm) :
 	setupOpcodes();
 }
 
-Dni::~Dni() {
-}
+Dni::~Dni() = default;
 
 void Dni::setupOpcodes() {
 	// "Stack-Specific" Opcodes

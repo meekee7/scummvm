@@ -42,11 +42,10 @@ UCProcess::UCProcess(uint16 classid, uint16 offset, uint32 this_ptr,
 	load(classid, offset, this_ptr, thissize, args, argsize);
 }
 
-UCProcess::~UCProcess() {
-}
+UCProcess::~UCProcess() = default;
 
 void UCProcess::load(uint16 classid, uint16 offset, uint32 this_ptr,
-					 int thissize, const uint8 *args, int argsize) {
+                     int thissize, const uint8 *args, int argsize) {
 	if (_usecode->get_class_size(classid) == 0)
 		warning("Class is empty.");
 

@@ -27,14 +27,11 @@ ResourceHandle::ResourceHandle()
 	: _resourceFileEntry(nullptr), _data(nullptr) {
 }
 
-ResourceHandle::~ResourceHandle() {
-}
+ResourceHandle::~ResourceHandle() = default;
 
-ResourceMan::ResourceMan() {
-}
+ResourceMan::ResourceMan() = default;
 
-ResourceMan::~ResourceMan() {
-}
+ResourceMan::~ResourceMan() = default;
 
 void ResourceMan::addArchive(const Common::Path &filename, bool isOptional) {
 	BlbArchive *archive = new BlbArchive();

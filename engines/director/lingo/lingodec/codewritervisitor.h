@@ -15,7 +15,7 @@ class CodeWriterVisitor: public LingoDec::NodeVisitor {
 public:
 	CodeWriterVisitor(bool dotSyntax, bool sum, const Common::String &lineEnding = "\n", const Common::String &indentation = "  ")
 		: _dot(dotSyntax), _sum(sum), _lineEnding(lineEnding), _indentation(indentation) {}
-	virtual ~CodeWriterVisitor() {}
+	virtual ~CodeWriterVisitor() = default;
 	virtual void visit(const LingoDec::HandlerNode& node) override;
 	virtual void visit(const LingoDec::ErrorNode& node) override;
 	virtual void visit(const LingoDec::CommentNode& node) override;

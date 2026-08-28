@@ -66,8 +66,7 @@ SaveLoadCloudSyncProgressDialog::SaveLoadCloudSyncProgressDialog(bool canRunInBa
 	backgroundButton->setEnabled(canRunInBackground);
 }
 
-SaveLoadCloudSyncProgressDialog::~SaveLoadCloudSyncProgressDialog() {
-}
+SaveLoadCloudSyncProgressDialog::~SaveLoadCloudSyncProgressDialog() = default;
 
 void SaveLoadCloudSyncProgressDialog::handleCommand(CommandSender *sender, uint32 cmd, uint32 data) {
 	switch(cmd) {
@@ -203,8 +202,7 @@ SaveLoadChooserDialog::SaveLoadChooserDialog(int x, int y, int w, int h, const b
 #endif // !DISABLE_SAVELOADCHOOSER_GRID
 }
 
-SaveLoadChooserDialog::~SaveLoadChooserDialog() {
-}
+SaveLoadChooserDialog::~SaveLoadChooserDialog() = default;
 
 void SaveLoadChooserDialog::open() {
 	Dialog::open();

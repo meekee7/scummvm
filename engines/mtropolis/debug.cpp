@@ -1215,8 +1215,7 @@ void DebugToolsWindow::onMouseDown(int32 x, int32 y, int mouseButton) {
 	_debugger->openToolWindow(static_cast<DebuggerTool>(tool));
 }
 
-Debuggable::Debuggable() {
-}
+Debuggable::Debuggable() = default;
 
 Debuggable::Debuggable(const Debuggable &other) : _inspector(nullptr) {
 }
@@ -1242,8 +1241,7 @@ const Common::SharedPtr<DebugInspector> &Debuggable::debugGetInspector() {
 DebugInspector::DebugInspector(IDebuggable *debuggable) : _instance(debuggable) {
 }
 
-DebugInspector::~DebugInspector() {
-}
+DebugInspector::~DebugInspector() = default;
 
 void DebugInspector::onDestroyed(IDebuggable *debuggable) {
 	if (_instance == debuggable)

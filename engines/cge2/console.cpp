@@ -29,8 +29,7 @@ CGE2Console::CGE2Console(CGE2Engine *vm) : _vm(vm), GUI::Debugger() {
 	registerCmd("do_carpet_workaround", WRAP_METHOD(CGE2Console, doCarpetWorkaround));
 }
 
-CGE2Console::~CGE2Console() {
-}
+CGE2Console::~CGE2Console() = default;
 
 bool CGE2Console::doCarpetWorkaround(int argc, const char **argv) {
 	Sprite *spr = _vm->_vga->_showQ->locate(1537); // 1537 is Carpet

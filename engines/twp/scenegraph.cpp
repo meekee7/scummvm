@@ -279,7 +279,7 @@ ParallaxNode::ParallaxNode(const Math::Vector2d &parallax, const Common::String 
 	  _frames(frames) {
 }
 
-ParallaxNode::~ParallaxNode() {}
+ParallaxNode::~ParallaxNode() = default;
 
 Math::Matrix4 ParallaxNode::getTrsf(const Math::Matrix4 &parentTrsf) {
 	Gfx &gfx = g_twp->getGfx();
@@ -466,7 +466,7 @@ Math::Vector2d ActorNode::getScale() const {
 TextNode::TextNode() : Node("text") {
 }
 
-TextNode::~TextNode() {}
+TextNode::~TextNode() = default;
 
 void TextNode::setText(const Text &text) {
 	_text = text;
@@ -493,13 +493,13 @@ void TextNode::drawCore(const Math::Matrix4 &trsf) {
 Scene::Scene() : Node("Scene") {
 	_zOrder = -100;
 }
-Scene::~Scene() {}
+Scene::~Scene() = default;
 
 InputState::InputState() : Node("InputState") {
 	_zOrder = -100;
 }
 
-InputState::~InputState() {}
+InputState::~InputState() = default;
 
 Common::String InputState::getCursorName() const {
 	switch (_cursorShape) {
@@ -796,8 +796,7 @@ SentenceNode::SentenceNode() : Node("Sentence") {
 	_zOrder = -100;
 }
 
-SentenceNode::~SentenceNode() {
-}
+SentenceNode::~SentenceNode() = default;
 
 void SentenceNode::setText(const Common::String &text) {
 	_text = text;
@@ -822,7 +821,7 @@ void SentenceNode::drawCore(const Math::Matrix4 &trsf) {
 }
 
 SpriteNode::SpriteNode() : Node("Sprite") {}
-SpriteNode::~SpriteNode() {}
+SpriteNode::~SpriteNode() = default;
 
 void SpriteNode::setSprite(const Common::String &sheet, const Common::String &frame) {
 	_sheet = sheet;
@@ -854,8 +853,7 @@ NoOverrideNode::NoOverrideNode() : Node("NoOverride") {
 	addChild(&_icon);
 }
 
-NoOverrideNode::~NoOverrideNode() {
-}
+NoOverrideNode::~NoOverrideNode() = default;
 
 void NoOverrideNode::reset() {
 	_elapsed = 0.f;
@@ -878,7 +876,7 @@ HotspotMarkerNode::HotspotMarkerNode() : Node("HotspotMarker") {
 	_visible = false;
 }
 
-HotspotMarkerNode::~HotspotMarkerNode() {}
+HotspotMarkerNode::~HotspotMarkerNode() = default;
 
 void HotspotMarkerNode::drawSprite(const SpriteSheetFrame &sf, Texture *texture, const Color &color, const Math::Matrix4 &t) {
 	Math::Matrix4 trsf(t);

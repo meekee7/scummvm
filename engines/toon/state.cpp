@@ -127,8 +127,7 @@ State::State(void) {
 	_exitConversation = true;
 }
 
-State::~State(void) {
-}
+State::~State(void) = default;
 
 int32 State::getGameFlag(int32 flagId) {
 	return (_gameFlag[flagId >> 3] & (1 << (flagId & 7))) != 0;

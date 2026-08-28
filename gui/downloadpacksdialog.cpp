@@ -220,8 +220,7 @@ DownloadPacksDialog::DownloadPacksDialog(Common::U32String packname, const char 
 	}
 }
 
-DownloadPacksDialog::~DownloadPacksDialog() {
-}
+DownloadPacksDialog::~DownloadPacksDialog() = default;
 
 void DownloadPacksDialog::open() {
 	Dialog::open();

@@ -359,7 +359,7 @@ FadeShader::FadeShader() {
 	GL_CALL(_textureLoc[1] = getUniformLocation("u_texture2"));
 }
 
-FadeShader::~FadeShader() {}
+FadeShader::~FadeShader() = default;
 
 void FadeShader::applyUniforms() {
 	float movement = (sin(M_PI * _fade) * _movement);

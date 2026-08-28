@@ -48,9 +48,7 @@ SmackerScene::SmackerScene(NeverhoodEngine *vm, Module *parentModule, bool doubl
 
 }
 
-SmackerScene::~SmackerScene() {
-
-}
+SmackerScene::~SmackerScene() = default;
 
 void SmackerScene::setFileHash(uint32 fileHash) {
 	debug(0, "SmackerScene::setFileHash(%08X)", fileHash);

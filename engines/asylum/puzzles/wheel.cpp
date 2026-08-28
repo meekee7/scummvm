@@ -94,8 +94,7 @@ PuzzleWheel::PuzzleWheel(AsylumEngine *engine) : Puzzle(engine) {
 	_moveChain = false;
 }
 
-PuzzleWheel::~PuzzleWheel() {
-}
+PuzzleWheel::~PuzzleWheel() = default;
 
 void PuzzleWheel::saveLoadWithSerializer(Common::Serializer &s) {
 	s.syncAsSint32LE(_resourceIndex);

@@ -44,8 +44,7 @@ qdVideo::qdVideo(const qdVideo &v):
 	_background(v._background) {
 }
 
-qdVideo::~qdVideo() {
-}
+qdVideo::~qdVideo() = default;
 
 qdVideo &qdVideo::operator = (const qdVideo &v) {
 	if (this == &v) return *this;

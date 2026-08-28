@@ -67,8 +67,7 @@ Paula::Paula(bool stereo, int rate, uint interruptFreq, FilterMode filterMode, i
 	_end = true;
 }
 
-Paula::~Paula() {
-}
+Paula::~Paula() = default;
 
 void Paula::clearVoice(byte voice) {
 	assert(voice < NUM_VOICES);

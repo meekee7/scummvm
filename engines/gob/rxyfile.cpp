@@ -51,8 +51,7 @@ RXYFile::RXYFile(uint16 width, uint16 height) : _realCount(1), _width(width), _h
 	_coords[0].bottom = _height - 1;
 }
 
-RXYFile::~RXYFile() {
-}
+RXYFile::~RXYFile() = default;
 
 uint RXYFile::size() const {
 	return _coords.size();

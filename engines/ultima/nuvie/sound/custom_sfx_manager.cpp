@@ -41,9 +41,7 @@ CustomSfxManager::CustomSfxManager(const Configuration *cfg, Audio::Mixer *m) : 
 	loadSfxMapFile(cfg_filename);
 }
 
-CustomSfxManager::~CustomSfxManager() {
-
-}
+CustomSfxManager::~CustomSfxManager() = default;
 
 
 bool CustomSfxManager::loadSfxMapFile(const Common::Path &cfg_filename) {

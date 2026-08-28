@@ -118,8 +118,7 @@ PmvPlayer::PmvPlayer(MadeEngine *vm, Audio::Mixer *mixer) : _fd(nullptr), _vm(vm
 	_aborted = false;
 }
 
-PmvPlayer::~PmvPlayer() {
-}
+PmvPlayer::~PmvPlayer() = default;
 
 bool PmvPlayer::play(const char *filename) {
 	_aborted = false;

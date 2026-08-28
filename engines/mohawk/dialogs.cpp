@@ -169,8 +169,7 @@ MystOptionsWidget::MystOptionsWidget(GuiObject *boss, const Common::String &name
 	}
 }
 
-MystOptionsWidget::~MystOptionsWidget() {
-}
+MystOptionsWidget::~MystOptionsWidget() = default;
 
 void MystOptionsWidget::defineLayout(GUI::ThemeEval &layouts, const Common::String &layoutName, const Common::String &overlayedLayout) const {
 	layouts.addDialog(layoutName, overlayedLayout)
@@ -315,8 +314,7 @@ MystMenuDialog::MystMenuDialog(Engine *engine) :
 		MainMenuDialog(engine) {
 }
 
-MystMenuDialog::~MystMenuDialog() {
-}
+MystMenuDialog::~MystMenuDialog() = default;
 
 void MystMenuDialog::handleCommand(GUI::CommandSender *sender, uint32 cmd, uint32 data) {
 	MohawkEngine_Myst *vm = static_cast<MohawkEngine_Myst *>(_engine);
@@ -388,8 +386,7 @@ RivenOptionsWidget::RivenOptionsWidget(GuiObject *boss, const Common::String &na
 	}
 }
 
-RivenOptionsWidget::~RivenOptionsWidget() {
-}
+RivenOptionsWidget::~RivenOptionsWidget() = default;
 
 void RivenOptionsWidget::defineLayout(GUI::ThemeEval &layouts, const Common::String &layoutName, const Common::String &overlayedLayout) const {
 	layouts.addDialog(layoutName, overlayedLayout)
@@ -457,8 +454,7 @@ MohawkDefaultOptionsWidget::MohawkDefaultOptionsWidget(GuiObject *boss, const Co
 		_("Reduces audible pops at the end of some sound effects (Non Myst/Riven only)."));
 }
 
-MohawkDefaultOptionsWidget::~MohawkDefaultOptionsWidget() {
-}
+MohawkDefaultOptionsWidget::~MohawkDefaultOptionsWidget() = default;
 
 void MohawkDefaultOptionsWidget::defineLayout(GUI::ThemeEval &layouts, const Common::String &layoutName, const Common::String &overlayedLayout) const {
 	layouts.addDialog(layoutName, overlayedLayout)

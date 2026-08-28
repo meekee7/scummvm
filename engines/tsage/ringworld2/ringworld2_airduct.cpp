@@ -50,8 +50,7 @@ void Scene1200::synchronize(Serializer &s) {
 	s.syncAsSint16LE(_fixupMaze);
 }
 
-Scene1200::LaserPanel::LaserPanel() {
-}
+Scene1200::LaserPanel::LaserPanel() = default;
 
 void Scene1200::LaserPanel::Jumper::init(int state) {
 	_state = state;

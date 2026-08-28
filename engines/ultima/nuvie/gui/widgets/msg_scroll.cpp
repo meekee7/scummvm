@@ -47,8 +47,7 @@ MsgText::MsgText(const Common::String &new_string, Font *f) : font(f), color(0) 
 	}
 }
 
-MsgText::~MsgText() {
-}
+MsgText::~MsgText() = default;
 
 void MsgText::append(const Common::String &new_string) {
 	s.append(new_string);

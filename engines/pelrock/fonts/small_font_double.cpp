@@ -29,8 +29,7 @@ namespace Pelrock {
 DoubleSmallFont::DoubleSmallFont() : SmallFont() {
 }
 
-DoubleSmallFont::~DoubleSmallFont() {
-}
+DoubleSmallFont::~DoubleSmallFont() = default;
 
 void DoubleSmallFont::drawChar(Graphics::Surface *dst, uint32 chr, int x, int y, uint32 color) const {
 	if (!_fontData || chr > kNumChars - 1) {

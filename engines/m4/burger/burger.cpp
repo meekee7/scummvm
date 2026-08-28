@@ -157,8 +157,7 @@ BurgerEngine::BurgerEngine(OSystem *syst, const M4GameDescription *gameDesc) :
 	_sections.push_back(&_section9);
 }
 
-BurgerEngine::~BurgerEngine() {
-}
+BurgerEngine::~BurgerEngine() = default;
 
 M4::Vars *BurgerEngine::createVars() {
 	return new Burger::Vars();

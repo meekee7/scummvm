@@ -22,9 +22,9 @@
 #include "blank_listing_provider.h"
 #include "blank_listing.h"
 namespace Wintermute {
-BlankListingProvider::BlankListingProvider() {}
+BlankListingProvider::BlankListingProvider() = default;
 
-BlankListingProvider::~BlankListingProvider() {}
+BlankListingProvider::~BlankListingProvider() = default;
 
 Listing *BlankListingProvider::getListing(const Common::Path &filename, ErrorCode &error) {
 	Listing *l = new BlankListing(filename);

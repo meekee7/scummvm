@@ -41,8 +41,7 @@ OpenGLFadeRenderer::OpenGLFadeRenderer(OpenGLDriver *gfx) :
 	_gfx(gfx) {
 }
 
-OpenGLFadeRenderer::~OpenGLFadeRenderer() {
-}
+OpenGLFadeRenderer::~OpenGLFadeRenderer() = default;
 
 void OpenGLFadeRenderer::render(float fadeLevel) {
 	_gfx->start2DMode();

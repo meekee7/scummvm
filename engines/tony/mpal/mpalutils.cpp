@@ -91,8 +91,7 @@ bool RMRes::isValid() {
 RMResRaw::RMResRaw(uint32 resID) : RMRes(resID) {
 }
 
-RMResRaw::~RMResRaw() {
-}
+RMResRaw::~RMResRaw() = default;
 
 const byte *RMResRaw::dataPointer() {
 	return _buf + 8;

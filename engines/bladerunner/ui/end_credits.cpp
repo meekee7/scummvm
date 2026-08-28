@@ -42,8 +42,7 @@ EndCredits::EndCredits(BladeRunnerEngine *vm) {
 	_vm = vm;
 }
 
-EndCredits::~EndCredits() {
-}
+EndCredits::~EndCredits() = default;
 
 // Aux method with hardcoded fixes for the credits
 // in the official localizations

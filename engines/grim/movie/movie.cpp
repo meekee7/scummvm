@@ -269,7 +269,7 @@ public:
 		warning("%s-playback not compiled in, but needed", codecID);
 		_videoFinished = true; // Rigs all movies to be completed.
 	}
-	~NullPlayer() {}
+	~NullPlayer() = default;
 	bool play(const Common::String &filename, bool looping, int x, int y, bool start = true, bool showSubtitles = false) override { return true; }
 	bool loadFile(const Common::String &filename) override { return true; }
 	void stop() override {}

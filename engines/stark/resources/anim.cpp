@@ -66,8 +66,7 @@ Object *Anim::construct(Object *parent, byte subType, uint16 index, const Common
 	}
 }
 
-Anim::~Anim() {
-}
+Anim::~Anim() = default;
 
 Anim::Anim(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),
@@ -142,8 +141,7 @@ void Anim::printData() {
 	debug("numFrames: %d", _numFrames);
 }
 
-AnimImages::~AnimImages() {
-}
+AnimImages::~AnimImages() = default;
 
 AnimImages::AnimImages(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Anim(parent, subType, index, name),

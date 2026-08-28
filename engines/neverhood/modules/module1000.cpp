@@ -335,8 +335,7 @@ Scene1002::Scene1002(NeverhoodEngine *vm, Module *parentModule, int which)
 
 }
 
-Scene1002::~Scene1002() {
-}
+Scene1002::~Scene1002() = default;
 
 void Scene1002::update() {
 	Scene::update();

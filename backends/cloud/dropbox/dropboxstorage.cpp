@@ -47,7 +47,7 @@ DropboxStorage::DropboxStorage(const Networking::JsonResponse &codeFlowJson, Net
 	codeFlowComplete(cb, codeFlowJson);
 }
 
-DropboxStorage::~DropboxStorage() {}
+DropboxStorage::~DropboxStorage() = default;
 
 Common::String DropboxStorage::cloudProvider() { return "dropbox"; }
 

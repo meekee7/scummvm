@@ -38,8 +38,7 @@ ShapeRenderedText::ShapeRenderedText(const Common::List<PositionedText> &lines,
 	_vLead = vLead;
 }
 
-ShapeRenderedText::~ShapeRenderedText() {
-}
+ShapeRenderedText::~ShapeRenderedText() = default;
 
 void ShapeRenderedText::draw(RenderSurface *surface, int x, int y, bool /*destmasked*/) {
 	// TODO support masking here???

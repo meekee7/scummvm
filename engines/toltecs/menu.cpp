@@ -50,8 +50,7 @@ MenuSystem::MenuSystem(ToltecsEngine *vm) : _vm(vm) {
 	_returnToGame = false;
 }
 
-MenuSystem::~MenuSystem() {
-}
+MenuSystem::~MenuSystem() = default;
 
 int MenuSystem::run(MenuID menuId) {
 	_background = new Graphics::Surface();

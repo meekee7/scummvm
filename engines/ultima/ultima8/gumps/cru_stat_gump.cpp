@@ -36,8 +36,7 @@ CruStatGump::CruStatGump(Shape *shape, int x)
 	_shape = shape;
 }
 
-CruStatGump::~CruStatGump() {
-}
+CruStatGump::~CruStatGump() = default;
 
 void CruStatGump::InitGump(Gump *newparent, bool take_focus) {
 	TranslucentGump::InitGump(newparent, take_focus);

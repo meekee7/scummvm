@@ -27,8 +27,7 @@
 
 namespace Tetraedge {
 
-GameSound::GameSound() {
-}
+GameSound::GameSound() = default;
 
 bool GameSound::onSoundStopped() {
 	SyberiaGame *game = dynamic_cast<SyberiaGame *>(g_engine->getGame());

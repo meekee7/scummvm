@@ -65,8 +65,7 @@ Panel::Panel(InputPersistenceBlock &reader, RenderObjectPtr<RenderObject> parent
 	_initSuccess = unpersist(reader);
 }
 
-Panel::~Panel() {
-}
+Panel::~Panel() = default;
 
 bool Panel::doRender(RectangleList *updateRects) {
 	// Falls der Alphawert 0 ist, ist das Panel komplett durchsichtig und es muss nichts gezeichnet werden.

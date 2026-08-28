@@ -624,8 +624,7 @@ Common::Point Point16POD::toScummVMPoint() const {
 	return Common::Point(x, y);
 }
 
-DynamicListContainerBase::~DynamicListContainerBase() {
-}
+DynamicListContainerBase::~DynamicListContainerBase() = default;
 
 void DynamicListDefaultSetter::defaultSet(int32 &value) {
 	value = 0;
@@ -2615,11 +2614,9 @@ void IPlugInModifierRegistrar::registerPlugInModifier(const char *name, const IP
 	return this->registerPlugInModifier(name, loaderFactory, loaderFactory);
 }
 
-PlugIn::~PlugIn() {
-}
+PlugIn::~PlugIn() = default;
 
-ProjectPersistentResource::~ProjectPersistentResource() {
-}
+ProjectPersistentResource::~ProjectPersistentResource() = default;
 
 ProjectResources::~ProjectResources() {
 	// We need these destroyed in reverse order exactly, and unfortunately the ScummVM Common::Array destructor
@@ -2628,8 +2625,7 @@ ProjectResources::~ProjectResources() {
 		persistentResources.pop_back();
 }
 
-CursorGraphic::~CursorGraphic() {
-}
+CursorGraphic::~CursorGraphic() = default;
 
 MacCursorGraphic::MacCursorGraphic(const Common::SharedPtr<Graphics::MacCursor>& macCursor) : _macCursor(macCursor) {
 }
@@ -2645,11 +2641,9 @@ Graphics::Cursor *WinCursorGraphic::getCursor() const {
 	return _cursor;
 }
 
-CursorGraphicCollection::CursorGraphicCollection() {
-}
+CursorGraphicCollection::CursorGraphicCollection() = default;
 
-CursorGraphicCollection::~CursorGraphicCollection() {
-}
+CursorGraphicCollection::~CursorGraphicCollection() = default;
 
 void CursorGraphicCollection::addWinCursorGroup(uint32 cursorGroupID, const Common::SharedPtr<Graphics::WinCursorGroup> &cursorGroup) {
 	Graphics::Cursor *selectedCursor = nullptr;
@@ -2678,8 +2672,7 @@ ProjectDescription::ProjectDescription(ProjectPlatform platform, RuntimeVersion 
 	: _language(Common::EN_ANY), _platform(platform), _rootArchive(rootArchive), _projectRootDir(projectRootDir), _runtimeVersion(runtimeVersion), _isRuntimeVersionAuto(autoDetectVersion) {
 }
 
-ProjectDescription::~ProjectDescription() {
-}
+ProjectDescription::~ProjectDescription() = default;
 
 void ProjectDescription::addSegment(int volumeID, const char *filePath) {
 	SegmentDescription desc;
@@ -2788,8 +2781,7 @@ void SimpleModifierContainer::clear() {
 RuntimeObject::RuntimeObject() : _guid(0), _runtimeGUID(0) {
 }
 
-RuntimeObject::~RuntimeObject() {
-}
+RuntimeObject::~RuntimeObject() = default;
 
 uint32 RuntimeObject::getStaticGUID() const {
 	return _guid;
@@ -3252,11 +3244,9 @@ MiniscriptInstructionOutcome SystemInterface::setVolumeName(MiniscriptThread *th
 	return kMiniscriptInstructionOutcomeContinue;
 }
 
-StructuralHooks::~StructuralHooks() {
-}
+StructuralHooks::~StructuralHooks() = default;
 
-AssetManagerInterface::AssetManagerInterface() {
-}
+AssetManagerInterface::AssetManagerInterface() = default;
 
 bool AssetManagerInterface::readAttribute(MiniscriptThread *thread, DynamicValue &result, const Common::String &attrib) {
 	if (attrib == "volumeismounted") {
@@ -3318,8 +3308,7 @@ Structural::Structural(const Structural &other)
 	, _sceneLoadState(SceneLoadState::kNotAScene) {
 }
 
-Structural::~Structural() {
-}
+Structural::~Structural() = default;
 
 void Structural::setHooks(const Common::SharedPtr<StructuralHooks> &hooks) {
 	_hooks = hooks;
@@ -4036,8 +4025,7 @@ VolumeState::VolumeState() : volumeID(0), isMounted(false) {
 ObjectLinkingScope::ObjectLinkingScope() : _parent(nullptr) {
 }
 
-ObjectLinkingScope::~ObjectLinkingScope() {
-}
+ObjectLinkingScope::~ObjectLinkingScope() = default;
 
 void ObjectLinkingScope::setParent(ObjectLinkingScope *parent) {
 	_parent = parent;
@@ -4119,9 +4107,7 @@ LowLevelSceneStateTransitionAction::LowLevelSceneStateTransitionAction(ActionTyp
 	: _actionType(actionType) {
 }
 
-LowLevelSceneStateTransitionAction::LowLevelSceneStateTransitionAction(const LowLevelSceneStateTransitionAction &other)
-	: _actionType(other._actionType), _msg(other._msg), _scene(other._scene) {
-}
+LowLevelSceneStateTransitionAction::LowLevelSceneStateTransitionAction(const LowLevelSceneStateTransitionAction &other) = default;
 
 LowLevelSceneStateTransitionAction::LowLevelSceneStateTransitionAction(const Common::SharedPtr<Structural> &scene, ActionType actionType)
 	: _scene(scene), _actionType(actionType) {
@@ -4139,13 +4125,7 @@ const Common::SharedPtr<MessageDispatch>& LowLevelSceneStateTransitionAction::ge
 	return _msg;
 }
 
-LowLevelSceneStateTransitionAction &LowLevelSceneStateTransitionAction::operator=(const LowLevelSceneStateTransitionAction &other) {
-	_scene = other._scene;
-	_msg = other._msg;
-	_actionType = other._actionType;
-
-	return *this;
-}
+LowLevelSceneStateTransitionAction &LowLevelSceneStateTransitionAction::operator=(const LowLevelSceneStateTransitionAction &other) = default;
 
 
 HighLevelSceneTransition::HighLevelSceneTransition(const Common::SharedPtr<Structural> &hlst_scene, Type hlst_type, bool hlst_addToDestinationScene, bool hlst_addToReturnList)
@@ -4264,8 +4244,7 @@ ScheduledEvent::ScheduledEvent(void *obj, void (*activateFunc)(void *, Runtime *
 	: _obj(obj), _activateFunc(activateFunc), _scheduledTime(scheduledTime), _scheduler(scheduler) {
 }
 
-Scheduler::Scheduler() {
-}
+Scheduler::Scheduler() = default;
 
 Scheduler::~Scheduler() {
 	for (const Common::SharedPtr<ScheduledEvent> &evt : _events)
@@ -4367,8 +4346,7 @@ Graphics::Cursor *DefaultCursorGraphic::getCursor() const {
 OSEvent::OSEvent(OSEventType eventType) : _eventType(eventType) {
 }
 
-OSEvent::~OSEvent() {
-}
+OSEvent::~OSEvent() = default;
 
 OSEventType OSEvent::getEventType() const {
 	return _eventType;
@@ -4413,8 +4391,7 @@ Actions::Action ActionEvent::getAction() const {
 	return _action;
 }
 
-Runtime::SceneStackEntry::SceneStackEntry() {
-}
+Runtime::SceneStackEntry::SceneStackEntry() = default;
 
 Runtime::Teardown::Teardown() : onlyRemoveChildren(false) {
 }
@@ -4453,8 +4430,7 @@ Runtime::ColliderInfo::ColliderInfo() : sceneStackDepth(0), layer(0), element(nu
 DragMotionProperties::DragMotionProperties() : constraintDirection(kConstraintDirectionNone), constrainToParent(false) {
 }
 
-SceneTransitionHooks::~SceneTransitionHooks() {
-}
+SceneTransitionHooks::~SceneTransitionHooks() = default;
 
 void SceneTransitionHooks::onSceneTransitionSetup(Runtime *runtime, const Common::WeakPtr<Structural> &oldScene, const Common::WeakPtr<Structural> &newScene) {
 }
@@ -7537,8 +7513,7 @@ ChildLoaderContext::ChildLoaderContext() : remainingCount(0), type(kTypeUnknown)
 	memset(&this->containerUnion, 0, sizeof(this->containerUnion));
 }
 
-ProjectPlugInRegistry::ProjectPlugInRegistry() {
-}
+ProjectPlugInRegistry::ProjectPlugInRegistry() = default;
 
 void ProjectPlugInRegistry::registerPlugInModifier(const char *name, const Data::IPlugInModifierDataFactory *loader, const IPlugInModifierFactory *factory) {
 	_dataLoaderRegistry.registerLoader(name, loader);
@@ -7556,11 +7531,9 @@ const IPlugInModifierFactory *ProjectPlugInRegistry::findPlugInModifierFactory(c
 	return it->_value;
 }
 
-PlayMediaSignaller::PlayMediaSignaller() {
-}
+PlayMediaSignaller::PlayMediaSignaller() = default;
 
-PlayMediaSignaller::~PlayMediaSignaller() {
-}
+PlayMediaSignaller::~PlayMediaSignaller() = default;
 
 void PlayMediaSignaller::playMedia(Runtime *runtime, Project *project) {
 	const size_t numReceivers = _receivers.size();
@@ -7586,8 +7559,7 @@ void PlayMediaSignaller::removeReceiver(IPlayMediaSignalReceiver *receiver) {
 SegmentUnloadSignaller::SegmentUnloadSignaller(Project *project, int segmentIndex) : _project(project), _segmentIndex(segmentIndex) {
 }
 
-SegmentUnloadSignaller::~SegmentUnloadSignaller() {
-}
+SegmentUnloadSignaller::~SegmentUnloadSignaller() = default;
 
 void SegmentUnloadSignaller::onSegmentUnloaded() {
 	_project = nullptr;
@@ -7612,11 +7584,9 @@ void SegmentUnloadSignaller::removeReceiver(ISegmentUnloadSignalReceiver *receiv
 	}
 }
 
-KeyboardEventSignaller::KeyboardEventSignaller() {
-}
+KeyboardEventSignaller::KeyboardEventSignaller() = default;
 
-KeyboardEventSignaller::~KeyboardEventSignaller() {
-}
+KeyboardEventSignaller::~KeyboardEventSignaller() = default;
 
 void KeyboardEventSignaller::onKeyboardEvent(Runtime *runtime, const KeyboardInputEvent &keyEvt) {
 	const size_t numReceivers = _receivers.size();
@@ -10004,8 +9974,7 @@ bool ModifierFlags::load(const uint32 dataModifierFlags) {
 	return true;
 }
 
-ModifierSaveLoad::~ModifierSaveLoad() {
-}
+ModifierSaveLoad::~ModifierSaveLoad() = default;
 
 void ModifierSaveLoad::save(Modifier *modifier, Common::WriteStream *stream) {
 	const Common::String &name = modifier->getName();
@@ -10044,8 +10013,7 @@ bool ModifierSaveLoad::load(Modifier *modifier, Common::ReadStream *stream, uint
 	return loadInternal(stream, saveFileVersion);
 }
 
-ModifierHooks::~ModifierHooks() {
-}
+ModifierHooks::~ModifierHooks() = default;
 
 void ModifierHooks::onCreate(Modifier *modifier) {
 }
@@ -10053,8 +10021,7 @@ void ModifierHooks::onCreate(Modifier *modifier) {
 Modifier::Modifier() : _parent(nullptr) {
 }
 
-Modifier::~Modifier() {
-}
+Modifier::~Modifier() = default;
 
 bool Modifier::readAttribute(MiniscriptThread *thread, DynamicValue &result, const Common::String &attrib) {
 	if (attrib == "parent") {
@@ -10310,8 +10277,7 @@ void Modifier::debugInspect(IDebugInspectionReport *report) const {
 
 #endif /* MTROPOLIS_DEBUG_ENABLE */
 
-VariableStorage::~VariableStorage() {
-}
+VariableStorage::~VariableStorage() = default;
 
 VariableModifier::VariableModifier(const Common::SharedPtr<VariableStorage> &storage) : _storage(storage) {
 }

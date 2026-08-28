@@ -44,8 +44,7 @@ Console::Console() : GUI::Debugger() {
 	registerCmd("flag", WRAP_METHOD(Console, cmdFlag));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::cmdView(int argc, const char **argv) {
 	if (argc != 2) {

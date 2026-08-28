@@ -31,7 +31,7 @@ namespace Box {
 BoxTokenRefresher::BoxTokenRefresher(BoxStorage *parent, Networking::JsonCallback callback, Networking::ErrorCallback ecb, const char *url):
 	HttpJsonRequest(callback, ecb, url), _parentStorage(parent) {}
 
-BoxTokenRefresher::~BoxTokenRefresher() {}
+BoxTokenRefresher::~BoxTokenRefresher() = default;
 
 void BoxTokenRefresher::tokenRefreshed(const Storage::BoolResponse &response) {
 	if (!response.value) {

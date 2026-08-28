@@ -32,9 +32,7 @@ TMXMap::TMXMap(TileManager *tm, Map *m, ObjManager *om) : tile_manager(tm),
 		map(m), obj_manager(om), mapdata(nullptr) {
 }
 
-TMXMap::~TMXMap() {
-
-}
+TMXMap::~TMXMap() = default;
 
 bool TMXMap::exportTmxMapFiles(const Common::Path &dir, nuvie_game_t type) {
 	savedir = dir;

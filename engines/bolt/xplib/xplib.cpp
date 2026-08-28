@@ -36,9 +36,7 @@ XpLib::XpLib(BoltEngine *bolt) {
 	memset(_cycleTempPalette, 0, sizeof(_cycleTempPalette));
 }
 
-XpLib::~XpLib() {
-
-}
+XpLib::~XpLib() = default;
 
 bool XpLib::initialize() {
 	if (_xpInitialized)

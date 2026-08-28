@@ -40,8 +40,7 @@
 namespace Stark {
 namespace Resources {
 
-AnimScript::~AnimScript() {
-}
+AnimScript::~AnimScript() = default;
 
 AnimScript::AnimScript(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),
@@ -186,8 +185,7 @@ void AnimScript::saveLoad(ResourceSerializer *serializer) {
 	}
 }
 
-AnimScriptItem::~AnimScriptItem() {
-}
+AnimScriptItem::~AnimScriptItem() = default;
 
 AnimScriptItem::AnimScriptItem(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

@@ -64,8 +64,7 @@ TotFlicDecoder::TotVideoTrack::TotVideoTrack(Common::SeekableReadStream *stream,
 	FlicDecoder::FlicVideoTrack::readHeader();
 }
 
-TotFlicDecoder::TotVideoTrack::~TotVideoTrack() {
-}
+TotFlicDecoder::TotVideoTrack::~TotVideoTrack() = default;
 
 void TotFlicDecoder::TotVideoTrack::handleFrame() {
 	uint16 chunkCount = _fileStream->readUint16LE();

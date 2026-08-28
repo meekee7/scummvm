@@ -33,8 +33,7 @@ Ambient::Ambient(Myst3Engine *vm) :
 	_cueSheet.reset();
 }
 
-Ambient::~Ambient() {
-}
+Ambient::~Ambient() = default;
 
 void Ambient::playCurrentNode(uint32 volume, uint32 fadeOutDelay) {
 	if (!fadeOutDelay) fadeOutDelay = 1;

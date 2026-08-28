@@ -32,8 +32,7 @@ namespace QDEngine {
 qdHeuristic::qdHeuristic() : _camera_ptr(NULL), _object_ptr(NULL) {
 }
 
-qdHeuristic::~qdHeuristic() {
-}
+qdHeuristic::~qdHeuristic() = default;
 
 int qdHeuristic::getH(int x, int y) {
 	x -= _target.x;

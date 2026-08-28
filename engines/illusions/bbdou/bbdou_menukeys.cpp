@@ -33,9 +33,7 @@ BBDOUMenuKeys::BBDOUMenuKeys(IllusionsEngine_BBDOU *vm)
 	: _vm(vm) {
 }
 
-BBDOUMenuKeys::~BBDOUMenuKeys() {
-
-}
+BBDOUMenuKeys::~BBDOUMenuKeys() = default;
 
 void BBDOUMenuKeys::addMenuKey(uint bitMask, uint32 threadId) {
 	MenuKey menuKey;

@@ -27,9 +27,9 @@
 
 namespace Networking {
 
-CreateDirectoryHandler::CreateDirectoryHandler() {}
+CreateDirectoryHandler::CreateDirectoryHandler() = default;
 
-CreateDirectoryHandler::~CreateDirectoryHandler() {}
+CreateDirectoryHandler::~CreateDirectoryHandler() = default;
 
 void CreateDirectoryHandler::handleError(Client &client, const Common::String &message) const {
 	if (client.queryParameter("answer_json") == "true")

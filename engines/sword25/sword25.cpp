@@ -67,8 +67,7 @@ Sword25Engine::Sword25Engine(OSystem *syst, const ADGameDescription *gameDesc):
 	setDebugger(new Sword25Console(this));
 }
 
-Sword25Engine::~Sword25Engine() {
-}
+Sword25Engine::~Sword25Engine() = default;
 
 Common::Error Sword25Engine::run() {
 	// Engine initialisation

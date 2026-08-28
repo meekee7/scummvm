@@ -33,8 +33,7 @@ OpenGLSurfaceRenderer::OpenGLSurfaceRenderer(OpenGLDriver *gfx) :
 		_gfx(gfx) {
 }
 
-OpenGLSurfaceRenderer::~OpenGLSurfaceRenderer() {
-}
+OpenGLSurfaceRenderer::~OpenGLSurfaceRenderer() = default;
 
 void OpenGLSurfaceRenderer::render(const Bitmap *bitmap, const Common::Point &dest) {
 	render(bitmap, dest, bitmap->width(), bitmap->height());

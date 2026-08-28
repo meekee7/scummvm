@@ -34,8 +34,7 @@ bool operator==(const KernChars &l, const KernChars &r) {
 TeFont2::TeFont2() : _numChars(0), _hasKernData(false), _maxHeight(0) {
 }
 
-TeFont2::~TeFont2() {
-}
+TeFont2::~TeFont2() = default;
 
 bool TeFont2::load(const Common::Path &path) {
 	if (_loadedPath == path)

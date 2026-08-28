@@ -32,8 +32,7 @@ namespace Nuvie {
 NuvieFileList::NuvieFileList() : sort_mode(NUVIE_SORT_NAME_ASC) {
 }
 
-NuvieFileList::~NuvieFileList() {
-}
+NuvieFileList::~NuvieFileList() = default;
 
 bool NuvieFileList::open(const Common::Path &directory, const char *search, uint8 s_mode) {
 	Common::ArchiveMemberPtr arcMember = SearchMan.getMember(directory);

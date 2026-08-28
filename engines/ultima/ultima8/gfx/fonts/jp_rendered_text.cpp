@@ -39,8 +39,7 @@ JPRenderedText::JPRenderedText(Common::List<PositionedText> &lines, int width, i
 	_vLead = vLead;
 }
 
-JPRenderedText::~JPRenderedText() {
-}
+JPRenderedText::~JPRenderedText() = default;
 
 void JPRenderedText::draw(RenderSurface *surface, int x, int y, bool /*destmasked*/) {
 	// TODO support masking here??

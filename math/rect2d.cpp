@@ -26,8 +26,7 @@
 
 namespace Math {
 
-Rect2d::Rect2d() {
-}
+Rect2d::Rect2d() = default;
 
 Rect2d::Rect2d(const Vector2d &topLeft, const Vector2d &bottomRight) {
 	float left = (topLeft.getX() <= bottomRight.getX() ? topLeft.getX() : bottomRight.getX());

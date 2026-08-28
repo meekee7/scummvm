@@ -121,7 +121,7 @@ float Renderer::getStereoFrustumOffset(float nearClipPlane, bool mirroredProject
 	return mirroredProjection ? -offset : offset;
 }
 
-Renderer::~Renderer() {}
+Renderer::~Renderer() = default;
 
 byte getCPCStipple(byte cpc_byte, int back, int fore) {
 	int c0 = getCPCPixel(cpc_byte, 0, true);

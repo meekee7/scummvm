@@ -42,8 +42,7 @@ Object *Path::construct(Object *parent, byte subType, uint16 index, const Common
 	}
 }
 
-Path::~Path() {
-}
+Path::~Path() = default;
 
 Path::Path(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),
@@ -127,8 +126,7 @@ void Path2D::printData() {
 	}
 }
 
-Path2D::~Path2D() {
-}
+Path2D::~Path2D() = default;
 
 uint Path2D::getEdgeCount() const {
 	return _vertices.size() - 1;
@@ -174,8 +172,7 @@ void Path3D::printData() {
 	debug("sortKey: %f", _sortKey);
 }
 
-Path3D::~Path3D() {
-}
+Path3D::~Path3D() = default;
 
 uint Path3D::getEdgeCount() const {
 	return _vertices.size() - 1;

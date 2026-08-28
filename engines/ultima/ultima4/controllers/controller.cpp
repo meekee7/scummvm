@@ -30,8 +30,7 @@ Controller::Controller(int timerInterval) {
 	this->_timerInterval = timerInterval;
 }
 
-Controller::~Controller() {
-}
+Controller::~Controller() = default;
 
 bool Controller::notifyKeyPressed(int key) {
 	bool processed = KeyHandler::globalHandler(key);

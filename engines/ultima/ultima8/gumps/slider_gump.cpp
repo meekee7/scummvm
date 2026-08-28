@@ -47,8 +47,7 @@ SliderGump::SliderGump(int x, int y, int16 min, int16 max,
 	  _usecodeNotifyPID(0), _renderedText(nullptr), _renderedValue(-1) {
 }
 
-SliderGump::~SliderGump() {
-}
+SliderGump::~SliderGump() = default;
 
 /*
   41:0 = slider gump

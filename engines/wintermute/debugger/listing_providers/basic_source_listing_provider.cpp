@@ -26,8 +26,7 @@ namespace Wintermute {
 BasicSourceListingProvider::BasicSourceListingProvider() : _fsDirectory(nullptr) {
 }
 
-BasicSourceListingProvider::~BasicSourceListingProvider() {
-}
+BasicSourceListingProvider::~BasicSourceListingProvider() = default;
 
 SourceListing *BasicSourceListingProvider::getListing(const Common::Path &filename, ErrorCode &_err) {
 	_err = OK;

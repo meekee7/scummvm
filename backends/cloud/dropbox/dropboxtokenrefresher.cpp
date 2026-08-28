@@ -31,7 +31,7 @@ namespace Dropbox {
 DropboxTokenRefresher::DropboxTokenRefresher(DropboxStorage *parent, Networking::JsonCallback callback, Networking::ErrorCallback ecb, const char *url):
 	HttpJsonRequest(callback, ecb, url), _parentStorage(parent) {}
 
-DropboxTokenRefresher::~DropboxTokenRefresher() {}
+DropboxTokenRefresher::~DropboxTokenRefresher() = default;
 
 void DropboxTokenRefresher::tokenRefreshed(const Storage::BoolResponse &response) {
 	if (!response.value) {

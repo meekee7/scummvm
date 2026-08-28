@@ -33,8 +33,7 @@ namespace LastExpress {
 GoldArchiveManager::GoldArchiveManager(LastExpressEngine *engine) : ArchiveManager(engine) {
 }
 
-GoldArchiveManager::~GoldArchiveManager() {
-}
+GoldArchiveManager::~GoldArchiveManager() = default;
 
 bool GoldArchiveManager::lockCD(int32 index) {
 	return true;

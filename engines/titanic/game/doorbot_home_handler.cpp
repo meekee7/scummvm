@@ -27,8 +27,7 @@ BEGIN_MESSAGE_MAP(CDoorbotHomeHandler, CGameObject)
 	ON_MESSAGE(EnterViewMsg)
 END_MESSAGE_MAP()
 
-CDoorbotHomeHandler::CDoorbotHomeHandler() {
-}
+CDoorbotHomeHandler::CDoorbotHomeHandler() = default;
 
 void CDoorbotHomeHandler::save(SimpleFile *file, int indent) {
 	file->writeNumberLine(1, indent);

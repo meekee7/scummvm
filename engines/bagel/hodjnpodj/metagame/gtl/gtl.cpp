@@ -64,8 +64,7 @@ CGtlApp::CGtlApp() {
 	bExitMetaDLL = st_bExitDll = false;
 }
 
-CGtlApp::~CGtlApp() {
-}
+CGtlApp::~CGtlApp() = default;
 
 bool CGtlApp::InitApplication() {
 	bool result = CWinApp::InitApplication();

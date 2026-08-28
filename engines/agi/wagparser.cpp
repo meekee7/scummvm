@@ -107,8 +107,7 @@ WagFileParser::WagFileParser() :
 	_parsedOk(false) {
 }
 
-WagFileParser::~WagFileParser() {
-}
+WagFileParser::~WagFileParser() = default;
 
 bool WagFileParser::checkAgiVersionProperty(const WagProperty &version) const {
 	if (version.getCode() == WagProperty::PC_INTVERSION && // Must be AGI interpreter version property

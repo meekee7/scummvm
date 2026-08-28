@@ -48,8 +48,7 @@ GraphicElement::GraphicElement(const GraphicElement &other)
 	: VisualElement(other), _cacheBitmap(other._cacheBitmap), _mask(nullptr) {
 }
 
-GraphicElement::~GraphicElement() {
-}
+GraphicElement::~GraphicElement() = default;
 
 bool GraphicElement::load(ElementLoaderContext &context, const Data::GraphicElement &data) {
 	if (!loadCommon(data.name, data.guid, data.rect1, data.elementFlags, data.layer, data.streamLocator, data.sectionID))
@@ -507,8 +506,7 @@ void GraphicElement::visitInternalReferences(IStructuralReferenceVisitor *visito
 
 }
 
-MovieResizeFilter::~MovieResizeFilter() {
-}
+MovieResizeFilter::~MovieResizeFilter() = default;
 
 MovieElement::MovieElement()
 	: _cacheBitmap(false), _alternate(false), _playEveryFrame(false), _reversed(false), /* _haveFiredAtLastCel(false), */
@@ -1192,8 +1190,7 @@ CORO_END_DEFINITION
 ImageElement::ImageElement() : _cacheBitmap(false), _assetID(0) {
 }
 
-ImageElement::~ImageElement() {
-}
+ImageElement::~ImageElement() = default;
 
 bool ImageElement::load(ElementLoaderContext &context, const Data::ImageElement &data) {
 	if (!VisualElement::loadCommon(data.name, data.guid, data.rect1, data.elementFlags, data.layer, data.streamLocator, data.sectionID))
@@ -2003,8 +2000,7 @@ TextLabelElement::TextLabelElement(const TextLabelElement &other)
 		_renderedText = other._renderedText;
 }
 
-TextLabelElement::~TextLabelElement() {
-}
+TextLabelElement::~TextLabelElement() = default;
 
 bool TextLabelElement::isTextLabel() const {
 	return true;

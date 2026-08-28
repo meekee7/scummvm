@@ -35,8 +35,7 @@ namespace Ultima8 {
 
 DEFINE_RUNTIME_CLASSTYPE_CODE(Container)
 
-Container::Container() {
-}
+Container::Container() = default;
 
 
 Container::~Container() {

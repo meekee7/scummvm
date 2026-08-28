@@ -14,8 +14,8 @@ struct ScriptNames;
 
 class ChunkResolver {
 public:
-	ChunkResolver() {}
-	virtual ~ChunkResolver() {}
+	ChunkResolver() = default;
+	virtual ~ChunkResolver() = default;
 	virtual Script *getScript(int32 id) = 0;
 	virtual ScriptNames *getScriptNames(int32 id) = 0;
 };

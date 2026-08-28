@@ -87,8 +87,7 @@ ConfigurationManager::ConfigurationManager() {
 	keySwitchToOlmec = 'o';
 }
 
-ConfigurationManager::~ConfigurationManager() {
-}
+ConfigurationManager::~ConfigurationManager() = default;
 
 void ConfigurationManager::read() {
 	// Default options

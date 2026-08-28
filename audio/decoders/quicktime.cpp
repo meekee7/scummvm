@@ -654,8 +654,8 @@ void QuickTimeAudioDecoder::AudioSampleDesc::initCodec() {
  */
 class QuickTimeAudioStream : public SeekableAudioStream, public QuickTimeAudioDecoder {
 public:
-	QuickTimeAudioStream() {}
-	~QuickTimeAudioStream() {}
+	QuickTimeAudioStream() = default;
+	~QuickTimeAudioStream() = default;
 
 	bool openFromFile(const Common::Path &filename) {
 		return QuickTimeAudioDecoder::loadAudioFile(filename) && !_audioTracks.empty();

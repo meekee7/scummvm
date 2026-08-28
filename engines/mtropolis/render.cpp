@@ -111,8 +111,7 @@ Window::Window(const WindowParameters &windowParams)
 	_surface.reset(new Graphics::ManagedSurface(windowParams.width, windowParams.height, windowParams.format));
 }
 
-Window::~Window() {
-}
+Window::~Window() = default;
 
 int32 Window::getX() const {
 	return _x;

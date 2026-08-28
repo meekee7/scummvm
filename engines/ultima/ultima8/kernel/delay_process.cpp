@@ -33,8 +33,7 @@ DEFINE_RUNTIME_CLASSTYPE_CODE(DelayProcess)
 DelayProcess::DelayProcess(int count) : Process(), _count(count) {
 }
 
-DelayProcess::~DelayProcess() {
-}
+DelayProcess::~DelayProcess() = default;
 
 void DelayProcess::run() {
 	if (--_count == 0)

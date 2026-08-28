@@ -38,8 +38,7 @@ GumpNotifyProcess::GumpNotifyProcess(uint16 it) : Process(it), _gump(0) {
 	_type = 0x200; // CONSTANT!
 }
 
-GumpNotifyProcess::~GumpNotifyProcess(void) {
-}
+GumpNotifyProcess::~GumpNotifyProcess(void) = default;
 
 void GumpNotifyProcess::setGump(Gump *g) {
 	_gump = g->getObjId();

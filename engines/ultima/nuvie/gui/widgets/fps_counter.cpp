@@ -43,8 +43,7 @@ FpsCounter::FpsCounter(Game *g) : GUI_Widget(nullptr) {
 	Common::strcpy_s(fps_string, "000.00");
 }
 
-FpsCounter::~FpsCounter() {
-}
+FpsCounter::~FpsCounter() = default;
 
 void FpsCounter::setFps(float fps) {
 	snprintf(fps_string, sizeof(fps_string), "%3.02f", fps);

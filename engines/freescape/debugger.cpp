@@ -49,7 +49,7 @@ Debugger::Debugger(FreescapeEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("ankh", WRAP_METHOD(Debugger, cmdAnkh)); // set ankh count (Total Eclipse only)
 }
 
-Debugger::~Debugger() {}
+Debugger::~Debugger() = default;
 
 bool Debugger::cmdShowBBox(int argc, const char **argv) {
 	if (argc < 2) {

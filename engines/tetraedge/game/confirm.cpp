@@ -29,8 +29,7 @@
 
 namespace Tetraedge {
 
-Confirm::Confirm() {
-}
+Confirm::Confirm() = default;
 
 void Confirm::enter(const Common::Path &guiPath, const Common::String &y) {
 	_gui.load(guiPath);

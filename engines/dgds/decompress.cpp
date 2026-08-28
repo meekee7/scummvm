@@ -194,11 +194,9 @@ uint32 LzwDecompressor::getCode(uint32 totalBits, Common::SeekableReadStream &in
 	return result;
 }
 
-Decompressor::Decompressor() {
-}
+Decompressor::Decompressor() = default;
 
-Decompressor::~Decompressor() {
-}
+Decompressor::~Decompressor() = default;
 
 byte *Decompressor::decompress(Common::SeekableReadStream *input, int size, uint32 &uncompressedSize) {
 	byte compression = input->readByte();

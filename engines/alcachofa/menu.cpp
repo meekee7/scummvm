@@ -78,7 +78,7 @@ Menu::Menu()
 	: _interactionSemaphore("menu")
 	, _saveFileMgr(g_system->getSavefileManager()) {}
 
-Menu::~Menu() {}
+Menu::~Menu() = default;
 
 void Menu::resetAfterLoad() {
 	_isOpen = false;

@@ -82,8 +82,7 @@ MainMenu::MainMenu(BbvsEngine *vm) : Dialog(0, 0, 1, 1), _vm(vm) {
 	init();
 }
 
-MainMenu::~MainMenu() {
-}
+MainMenu::~MainMenu() = default;
 
 void MainMenu::init() {
 	_buttons[0] = new GUI::ButtonWidget(this, 0, 0, 1, 1, Common::U32String());

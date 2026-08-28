@@ -29,8 +29,7 @@
 
 namespace Video {
 
-FlicDecoder::FlicDecoder() {
-}
+FlicDecoder::FlicDecoder() = default;
 
 FlicDecoder::~FlicDecoder() {
 	close();

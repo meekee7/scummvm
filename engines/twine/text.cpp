@@ -57,8 +57,7 @@ Text::Text(TwinEEngine *engine) : _engine(engine) {
 	_isVisualRTL = _engine->getGameLang() == Common::Language::HE_ISR;
 }
 
-Text::~Text() {
-}
+Text::~Text() = default;
 
 void Text::initVoxBank(TextBankId bankIdx) {
 	static const char *ListFileText[] = {

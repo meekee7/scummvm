@@ -60,8 +60,7 @@ Mouse::Mouse(BladeRunnerEngine *vm) {
 	_drawModeBitFlags = 0;
 }
 
-Mouse::~Mouse() {
-}
+Mouse::~Mouse() = default;
 
 void Mouse::setCursor(int cursor) {
 	assert(cursor >= 0 && cursor <= 17);

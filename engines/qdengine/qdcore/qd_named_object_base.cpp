@@ -24,14 +24,11 @@
 
 namespace QDEngine {
 
-qdNamedObjectBase::qdNamedObjectBase() {
-}
+qdNamedObjectBase::qdNamedObjectBase() = default;
 
-qdNamedObjectBase::qdNamedObjectBase(const qdNamedObjectBase &obj) : _name(obj._name) {
-}
+qdNamedObjectBase::qdNamedObjectBase(const qdNamedObjectBase &obj) = default;
 
-qdNamedObjectBase::~qdNamedObjectBase() {
-}
+qdNamedObjectBase::~qdNamedObjectBase() = default;
 
 qdNamedObjectBase &qdNamedObjectBase::operator = (const qdNamedObjectBase &obj) {
 	if (this == &obj) return *this;

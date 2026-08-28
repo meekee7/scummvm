@@ -70,8 +70,7 @@ TwinEConsole::TwinEConsole(TwinEEngine *engine) : _engine(engine), GUI::Debugger
 	registerCmd("show_holomap_flag", WRAP_METHOD(TwinEConsole, doPrintHolomapFlag));
 }
 
-TwinEConsole::~TwinEConsole() {
-}
+TwinEConsole::~TwinEConsole() = default;
 
 void TwinEConsole::preEnter() {
 	_engine->_input->resetActionStates();

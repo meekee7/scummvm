@@ -41,8 +41,7 @@ FollowPath::FollowPath(Resources::ItemVisual *item) :
 		_anim(nullptr) {
 }
 
-FollowPath::~FollowPath() {
-}
+FollowPath::~FollowPath() = default;
 
 void FollowPath::start() {
 	Movement::start();

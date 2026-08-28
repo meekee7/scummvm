@@ -32,9 +32,7 @@ ActorPathFinder::ActorPathFinder(Actor *a, MapCoord g)
 
 }
 
-ActorPathFinder::~ActorPathFinder() {
-
-}
+ActorPathFinder::~ActorPathFinder() = default;
 
 bool ActorPathFinder::get_next_move(MapCoord &step) {
 	MapCoord rel_step;

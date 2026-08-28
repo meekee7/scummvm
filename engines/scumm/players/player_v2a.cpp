@@ -54,7 +54,7 @@ static uint32 GetCRC(byte *data, int len) {
 class V2A_Sound {
 public:
 	V2A_Sound() : _id(0), _mod(nullptr) { }
-	virtual ~V2A_Sound() {}
+	virtual ~V2A_Sound() = default;
 	virtual void start(Player_MOD *mod, int id, const byte *data) = 0;
 	virtual bool update() = 0;
 	virtual void stop() = 0;
@@ -66,7 +66,8 @@ protected:
 // unsupported sound effect, print warning message to console
 class V2A_Sound_Unsupported : public V2A_Sound {
 public:
-	V2A_Sound_Unsupported() { }
+	V2A_Sound_Unsupported() = default;
+
 	void start(Player_MOD *mod, int id, const byte *data) override {
 		warning("player_v2a - sound %i not supported", id);
 	}

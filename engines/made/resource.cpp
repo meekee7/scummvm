@@ -35,8 +35,7 @@ namespace Made {
 
 /* Resource */
 
-Resource::~Resource() {
-}
+Resource::~Resource() = default;
 
 /* PictureResource */
 
@@ -283,11 +282,9 @@ void SoundResourceV1::load(byte *source, int size) {
 
 /* MenuResource */
 
-MenuResource::MenuResource() {
-}
+MenuResource::MenuResource() = default;
 
-MenuResource::~MenuResource() {
-}
+MenuResource::~MenuResource() = default;
 
 void MenuResource::load(byte *source, int size) {
 	_strings.clear();

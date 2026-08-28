@@ -39,8 +39,7 @@ qdNamedObject::qdNamedObject(const qdNamedObject &obj) : qdNamedObjectBase(obj),
 	_trigger_reference_count(0) {
 }
 
-qdNamedObject::~qdNamedObject() {
-}
+qdNamedObject::~qdNamedObject() = default;
 
 qdNamedObject &qdNamedObject::operator = (const qdNamedObject &obj) {
 	if (this == &obj) return *this;

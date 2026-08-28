@@ -68,8 +68,7 @@ YM2149Emu::YM2149Emu()
 	memset(_YMBuffer250, 0, sizeof(_YMBuffer250));
 }
 
-YM2149Emu::~YM2149Emu() {
-}
+YM2149Emu::~YM2149Emu() = default;
 
 bool YM2149Emu::init() {
 	initOnce();

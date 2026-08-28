@@ -249,8 +249,7 @@ struct SharedPtrProgramDeleter {
 Shader *Shader::_previousShader = nullptr;
 uint32 Shader::previousNumAttributes = 0;
 
-Shader::Shader() {
-}
+Shader::Shader() = default;
 
 bool Shader::loadShader(const Common::String &name, GLuint vertexShader, GLuint fragmentShader, const char *const *attributes) {
 	assert(attributes);

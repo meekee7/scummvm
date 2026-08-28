@@ -29,8 +29,7 @@ namespace HodjNPodj {
 namespace Metagame {
 namespace Demo {
 
-CTheApp::CTheApp() {
-}
+CTheApp::CTheApp() = default;
 
 bool CTheApp::InitApplication() {
 	addResources("hnpdemo.exe");

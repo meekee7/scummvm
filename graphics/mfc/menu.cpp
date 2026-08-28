@@ -25,8 +25,7 @@
 namespace Graphics {
 namespace MFC {
 
-CMenu::CMenu() {
-}
+CMenu::CMenu() = default;
 
 bool CMenu::CreateMenu() {
 	error("TODO: CMenu::CreateMenu");

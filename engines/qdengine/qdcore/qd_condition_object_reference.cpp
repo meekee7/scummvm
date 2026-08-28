@@ -32,12 +32,9 @@ namespace QDEngine {
 qdConditionObjectReference::qdConditionObjectReference() : _object(NULL) {
 }
 
-qdConditionObjectReference::qdConditionObjectReference(const qdConditionObjectReference &ref) :
-	_object(ref._object) {
-}
+qdConditionObjectReference::qdConditionObjectReference(const qdConditionObjectReference &ref) = default;
 
-qdConditionObjectReference::~qdConditionObjectReference() {
-}
+qdConditionObjectReference::~qdConditionObjectReference() = default;
 
 qdConditionObjectReference &qdConditionObjectReference::operator = (const qdConditionObjectReference &ref) {
 	if (this == &ref) return *this;

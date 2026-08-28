@@ -37,8 +37,7 @@ namespace Gob {
 Init_Fascination::Init_Fascination(GobEngine *vm) : Init_v2(vm) {
 }
 
-Init_Fascination::~Init_Fascination() {
-}
+Init_Fascination::~Init_Fascination() = default;
 
 void Init_Fascination::updateConfig() {
 // In Fascination, some empty texts are present and used to clean up the text area.

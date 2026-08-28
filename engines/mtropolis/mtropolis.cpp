@@ -60,8 +60,7 @@ MTropolisEngine::MTropolisEngine(OSystem *syst, const MTropolisGameDescription *
 	bootAddSearchPaths(gameDataDir, *gameDesc);
 }
 
-MTropolisEngine::~MTropolisEngine() {
-}
+MTropolisEngine::~MTropolisEngine() = default;
 
 void MTropolisEngine::handleEvents() {
 	Common::Event evt;

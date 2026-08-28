@@ -41,11 +41,10 @@ Scene::Scene(Gfx::Driver *gfx) :
 		_maxShadowLength(0.075f) {
 }
 
-Scene::~Scene() {
-}
+Scene::~Scene() = default;
 
 void Scene::initCamera(const Math::Vector3d &position, const Math::Vector3d &lookDirection,
-		float fov, Common::Rect viewSize, float nearClipPlane, float farClipPlane) {
+                       float fov, Common::Rect viewSize, float nearClipPlane, float farClipPlane) {
 	_cameraPosition = position;
 	_cameraLookDirection = lookDirection;
 	_fov = fov;

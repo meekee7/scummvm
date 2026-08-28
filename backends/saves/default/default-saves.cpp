@@ -44,8 +44,7 @@
 const char *const DefaultSaveFileManager::TIMESTAMPS_FILENAME = "timestamps";
 #endif
 
-DefaultSaveFileManager::DefaultSaveFileManager() {
-}
+DefaultSaveFileManager::DefaultSaveFileManager() = default;
 
 DefaultSaveFileManager::DefaultSaveFileManager(const Common::Path &defaultSavepath) {
 	ConfMan.registerDefault("savepath", defaultSavepath);

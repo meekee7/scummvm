@@ -55,8 +55,7 @@ VisualEffectFish::VisualEffectFish(Gfx::Driver *gfx, const Common::Point &size) 
 		_otherColor(0) {
 }
 
-VisualEffectFish::~VisualEffectFish() {
-}
+VisualEffectFish::~VisualEffectFish() = default;
 
 void VisualEffectFish::render(const Common::Point &position) {
 	// Stop rendering if special effect is off

@@ -176,8 +176,7 @@ Common::Point Image::getHotspotPosition(uint index) const {
 	return Common::Point(right, top);
 }
 
-ImageStill::~ImageStill() {
-}
+ImageStill::~ImageStill() = default;
 
 ImageStill::ImageStill(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Image(parent, subType, index, name),
@@ -268,8 +267,7 @@ ImageText::ImageText(Object *parent, byte subType, uint16 index, const Common::S
 		_font(0) {
 }
 
-ImageText::~ImageText() {
-}
+ImageText::~ImageText() = default;
 
 void ImageText::readData(Formats::XRCReadStream *stream) {
 	Image::readData(stream);

@@ -42,8 +42,7 @@ void ResourceInstance::pause() {
 void ResourceInstance::unpause() {
 }
 
-ResourceInstance::~ResourceInstance() {
-}
+ResourceInstance::~ResourceInstance() = default;
 
 // Resource
 

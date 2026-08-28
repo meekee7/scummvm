@@ -38,8 +38,8 @@ public:
 		const Common::Path &subfolder, const Common::Path &publicFolder) :
 			_member(member), _publicFolder(publicFolder), _innerfolder(subfolder) {
 	}
-	~DataArchiveMember() override {
-	}
+	~DataArchiveMember() override = default;
+
 	Common::SeekableReadStream *createReadStream() const override {
 		return _member->createReadStream();
 	}
@@ -131,7 +131,7 @@ private:
 public:
 	DataArchiveProxy(const Common::FSNode &folder, bool useDataPrefix) :
 		_folder(folder), _publicFolder(useDataPrefix ? "data/" : "") {}
-	~DataArchiveProxy() override {}
+	~DataArchiveProxy() override = default;
 
 	/**
 	 * Check if a member with the given name is present in the Archive.

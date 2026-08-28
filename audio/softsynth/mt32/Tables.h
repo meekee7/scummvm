@@ -27,7 +27,7 @@ class Tables {
 private:
 	Tables();
 	Tables(Tables &);
-	~Tables() {}
+	~Tables() = default;
 
 public:
 	static const Tables &getInstance();

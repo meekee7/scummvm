@@ -51,9 +51,7 @@ PartyView::PartyView(const Configuration *cfg) : View(cfg), player(nullptr),
 		sun_moon_widget(nullptr) {
 }
 
-PartyView::~PartyView() {
-
-}
+PartyView::~PartyView() = default;
 
 bool PartyView::init(void *vm, uint16 x, uint16 y, Font *f, Party *p, Player *pl, TileManager *tm, ObjManager *om) {
 	View::init(x, y, f, p, tm, om);

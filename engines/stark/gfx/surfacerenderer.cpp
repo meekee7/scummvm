@@ -30,8 +30,7 @@ SurfaceRenderer::SurfaceRenderer() :
 		_snapToGrid(false) {
 }
 
-SurfaceRenderer::~SurfaceRenderer() {
-}
+SurfaceRenderer::~SurfaceRenderer() = default;
 
 void SurfaceRenderer::setNoScalingOverride(bool noScalingOverride) {
 	_noScalingOverride = noScalingOverride;

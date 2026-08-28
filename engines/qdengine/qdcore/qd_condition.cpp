@@ -67,8 +67,7 @@ qdCondition &qdCondition::operator = (const qdCondition &cnd) {
 	return *this;
 }
 
-qdCondition::~qdCondition() {
-}
+qdCondition::~qdCondition() = default;
 
 void qdCondition::set_type(ConditionType tp) {
 	_type = tp;

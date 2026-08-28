@@ -61,7 +61,7 @@ namespace Common {
 * @access private
 *
 */
-JSON::JSON() {}
+JSON::JSON() = default;
 
 char *JSON::zeroTerminateContents(Common::MemoryWriteStreamDynamic &stream) {
 	// write one more byte in the end

@@ -41,8 +41,7 @@ namespace OnceUpon {
 Title::Title(GobEngine *vm) : SEQFile(vm, "ville.seq") {
 }
 
-Title::~Title() {
-}
+Title::~Title() = default;
 
 void Title::play() {
 	SEQFile::play(true, 0xFFFF, 15);

@@ -33,8 +33,7 @@ BbdouCredits::BbdouCredits(IllusionsEngine_BBDOU *vm)
 	: _vm(vm) {
 }
 
-BbdouCredits::~BbdouCredits() {
-}
+BbdouCredits::~BbdouCredits() = default;
 
 void BbdouCredits::start(uint32 endSignalPropertyId, float speedModifier) {
 	_endSignalPropertyId = endSignalPropertyId;

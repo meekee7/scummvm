@@ -26,8 +26,7 @@
 namespace Stark {
 namespace Resources {
 
-String::~String() {
-}
+String::~String() = default;
 
 String::String(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name) {

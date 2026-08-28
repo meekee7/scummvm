@@ -49,8 +49,7 @@ IntroHandler::IntroHandler(HugoEngine *vm) : _vm(vm) {
 	_introX = _introY = nullptr;
 }
 
-IntroHandler::~IntroHandler() {
-}
+IntroHandler::~IntroHandler() = default;
 
 byte IntroHandler::getIntroSize() const {
 	return _introXSize;
@@ -142,8 +141,7 @@ intro_v1d::intro_v1d(HugoEngine *vm) : IntroHandler(vm) {
 	_introState = 0;
 }
 
-intro_v1d::~intro_v1d() {
-}
+intro_v1d::~intro_v1d() = default;
 
 void intro_v1d::preNewGame() {
 }
@@ -357,8 +355,7 @@ void intro_v1d::drawLogo(int left, int top, int color) {
 intro_v2d::intro_v2d(HugoEngine *vm) : IntroHandler(vm) {
 }
 
-intro_v2d::~intro_v2d() {
-}
+intro_v2d::~intro_v2d() = default;
 
 void intro_v2d::preNewGame() {
 }
@@ -416,8 +413,7 @@ bool intro_v2d::introPlay() {
 intro_v3d::intro_v3d(HugoEngine *vm) : IntroHandler(vm) {
 }
 
-intro_v3d::~intro_v3d() {
-}
+intro_v3d::~intro_v3d() = default;
 
 void intro_v3d::preNewGame() {
 }
@@ -505,8 +501,7 @@ bool intro_v3d::introPlay() {
 intro_v1w::intro_v1w(HugoEngine *vm) : IntroHandler(vm) {
 }
 
-intro_v1w::~intro_v1w() {
-}
+intro_v1w::~intro_v1w() = default;
 
 void intro_v1w::preNewGame() {
 	_vm->getGameStatus()._viewState = kViewIntroInit;
@@ -522,8 +517,7 @@ bool intro_v1w::introPlay() {
 intro_v2w::intro_v2w(HugoEngine *vm) : IntroHandler(vm) {
 }
 
-intro_v2w::~intro_v2w() {
-}
+intro_v2w::~intro_v2w() = default;
 
 void intro_v2w::preNewGame() {
 }
@@ -542,8 +536,7 @@ bool intro_v2w::introPlay() {
 intro_v3w::intro_v3w(HugoEngine *vm) : IntroHandler(vm) {
 }
 
-intro_v3w::~intro_v3w() {
-}
+intro_v3w::~intro_v3w() = default;
 
 void intro_v3w::preNewGame() {
 }

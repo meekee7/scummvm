@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-TeILoc::TeILoc() {
-}
+TeILoc::TeILoc() = default;
 
 const Common::String *TeILoc::text(const Common::String &key) const {
 	if (!_map.contains(key)) {

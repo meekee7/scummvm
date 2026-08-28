@@ -73,8 +73,7 @@ MystConsole::MystConsole(MohawkEngine_Myst *vm) : GUI::Debugger(), _vm(vm) {
 	registerVar("show_resource_rects",  &_vm->_showResourceRects);
 }
 
-MystConsole::~MystConsole() {
-}
+MystConsole::~MystConsole() = default;
 
 bool MystConsole::Cmd_ChangeCard(int argc, const char **argv) {
 	if (argc < 2) {
@@ -395,8 +394,7 @@ RivenConsole::RivenConsole(MohawkEngine_Riven *vm) : GUI::Debugger(), _vm(vm) {
 	registerVar("show_hotspots",  &_vm->_showHotspots);
 }
 
-RivenConsole::~RivenConsole() {
-}
+RivenConsole::~RivenConsole() = default;
 
 
 bool RivenConsole::Cmd_ChangeCard(int argc, const char **argv) {
@@ -757,8 +755,7 @@ LivingBooksConsole::LivingBooksConsole(MohawkEngine_LivingBooks *vm) : GUI::Debu
 	registerCmd("changeCursor",			WRAP_METHOD(LivingBooksConsole, Cmd_ChangeCursor));
 }
 
-LivingBooksConsole::~LivingBooksConsole() {
-}
+LivingBooksConsole::~LivingBooksConsole() = default;
 
 bool LivingBooksConsole::Cmd_PlaySound(int argc, const char **argv) {
 	if (argc == 1) {

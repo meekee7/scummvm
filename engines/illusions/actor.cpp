@@ -204,8 +204,7 @@ Control::Control(IllusionsEngine *vm)
 	_sceneId = _vm->getCurrentScene();
 }
 
-Control::~Control() {
-}
+Control::~Control() = default;
 
 void Control::pause() {
 

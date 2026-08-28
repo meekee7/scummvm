@@ -39,8 +39,7 @@
 namespace Stark {
 namespace Resources {
 
-Speech::~Speech() {
-}
+Speech::~Speech() = default;
 
 Speech::Speech(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

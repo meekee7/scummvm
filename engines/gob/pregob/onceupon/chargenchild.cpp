@@ -49,8 +49,7 @@ CharGenChild::CharGenChild(const ANIFile &ani) : ANIObject(ani) {
 	setPause(false);
 }
 
-CharGenChild::~CharGenChild() {
-}
+CharGenChild::~CharGenChild() = default;
 
 void CharGenChild::advance() {
 	bool wasLastFrame = lastFrame();

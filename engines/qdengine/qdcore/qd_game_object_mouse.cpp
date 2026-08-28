@@ -54,8 +54,7 @@ qdGameObjectMouse::qdGameObjectMouse(const qdGameObjectMouse &obj) : qdGameObjec
 		_default_cursors[i] = 0;
 }
 
-qdGameObjectMouse::~qdGameObjectMouse() {
-}
+qdGameObjectMouse::~qdGameObjectMouse() = default;
 
 qdGameObjectMouse &qdGameObjectMouse::operator = (const qdGameObjectMouse &obj) {
 	if (this == &obj) return *this;

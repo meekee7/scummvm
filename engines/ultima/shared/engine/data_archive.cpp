@@ -40,7 +40,8 @@ public:
 		const Common::Path &subfolder) :
 		_member(member), _publicFolder("data/"), _innerfolder(subfolder) {
 	}
-	~UltimaDataArchiveMember() override {}
+	~UltimaDataArchiveMember() override = default;
+
 	Common::SeekableReadStream *createReadStream() const override {
 		return _member->createReadStream();
 	}

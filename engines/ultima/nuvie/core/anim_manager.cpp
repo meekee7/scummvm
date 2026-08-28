@@ -237,9 +237,7 @@ NuvieAnim::NuvieAnim() {
 }
 
 
-NuvieAnim::~NuvieAnim() {
-
-}
+NuvieAnim::~NuvieAnim() = default;
 
 
 /* Set velocity (x,y) for moving towards a target at distance (xdir,ydir).
@@ -454,9 +452,7 @@ TextAnim::TextAnim(Common::String t, MapCoord loc, uint32 dur) {
 	top_anim = true;
 }
 
-TextAnim::~TextAnim() {
-
-}
+TextAnim::~TextAnim() = default;
 
 void TextAnim::display() {
 	if (is_paused())
@@ -1134,9 +1130,7 @@ WingAnim::WingAnim(const MapCoord &t) {
 }
 
 
-WingAnim::~WingAnim() {
-
-}
+WingAnim::~WingAnim() = default;
 
 
 void WingAnim::start() {
@@ -1197,8 +1191,7 @@ HailstormAnim::HailstormAnim(const MapCoord &t) : target(t) {
 	unpause();
 }
 
-HailstormAnim::~HailstormAnim() {
-}
+HailstormAnim::~HailstormAnim() = default;
 
 void HailstormAnim::start() {
 	move(0, 0);

@@ -45,7 +45,7 @@ public:
 		_upRef(nullptr),
 		_musicVolume(0),
 		_sfxVolume(0) {}
-	virtual ~PCSoundDriver() {}
+	virtual ~PCSoundDriver() = default;
 
 	virtual void setupChannel(int channel, const byte *data, int instrument, int volume) = 0;
 	virtual void setChannelFrequency(int channel, int frequency) = 0;

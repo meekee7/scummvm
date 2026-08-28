@@ -44,8 +44,7 @@ Player_V1::Player_V1(ScummEngine *scumm, Audio::Mixer *mixer, bool pcjr)
 	_random_lsr = 0;
 }
 
-Player_V1::~Player_V1() {
-}
+Player_V1::~Player_V1() = default;
 
 void Player_V1::chainSound(int nr, byte *data) {
 	uint i;

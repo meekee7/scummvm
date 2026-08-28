@@ -29,8 +29,7 @@ namespace AGSSpriteFont {
 SpriteFontRendererClifftop::SpriteFontRendererClifftop(IAGSEngine *engine) : SpriteFontRenderer(engine) {
 }
 
-SpriteFontRendererClifftop::~SpriteFontRendererClifftop(void) {
-}
+SpriteFontRendererClifftop::~SpriteFontRendererClifftop(void) = default;
 
 bool SpriteFontRendererClifftop::SupportsExtendedCharacters(int fontNumber) {
 	return true;

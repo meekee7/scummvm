@@ -378,7 +378,7 @@ GlkOptionsWidget::GlkOptionsWidget(GuiObject *boss, const Common::String &name, 
 
 }
 
-GlkOptionsWidget::~GlkOptionsWidget() {}
+GlkOptionsWidget::~GlkOptionsWidget() = default;
 
 void GlkOptionsWidget::reflowLayout() {
 	GUI::OptionsContainerWidget::reflowLayout();

@@ -46,8 +46,7 @@ ANIObject::ANIObject(const CMPFile &cmp) : _ani(nullptr), _cmp(&cmp),
 	setPosition();
 }
 
-ANIObject::~ANIObject() {
-}
+ANIObject::~ANIObject() = default;
 
 void ANIObject::setVisible(bool visible) {
 	_visible = visible;

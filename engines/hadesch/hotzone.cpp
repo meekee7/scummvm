@@ -120,8 +120,7 @@ void HotZoneArray::readHotzones(Common::SharedPtr<Common::SeekableReadStream> hz
 	}
 }
 
-HotZoneArray::HotZoneArray() {
-}
+HotZoneArray::HotZoneArray() = default;
 
 HotZoneArray::HotZoneArray(Common::SharedPtr<Common::SeekableReadStream> hzFile, bool enable) {
 	readHotzones(hzFile, enable);

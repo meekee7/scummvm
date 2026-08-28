@@ -303,8 +303,7 @@ AnimationDef::AnimationDef() : animNum(0), firstFrame(0), lastFrame(0) {
 InteractionDef::InteractionDef() : objectType(0), interactionID(0) {
 }
 
-MapLoader::~MapLoader() {
-}
+MapLoader::~MapLoader() = default;
 
 Common::SharedPtr<MapScreenDirectionDef> MapLoader::loadScreenDirectionDef(Common::ReadStream &stream) {
 	byte screenDefHeader[16];
@@ -701,11 +700,9 @@ Runtime::SubtitleDef::SubtitleDef() : color{0, 0, 0}, unknownValue1(0), duration
 SfxPlaylistEntry::SfxPlaylistEntry() : frame(0), balance(0), volume(0), isUpdate(false) {
 }
 
-SfxPlaylist::SfxPlaylist() {
-}
+SfxPlaylist::SfxPlaylist() = default;
 
-SfxData::SfxData() {
-}
+SfxData::SfxData() = default;
 
 void SfxData::reset() {
 	playlists.clear();
@@ -931,8 +928,7 @@ SoundInstance::SoundInstance()
 	  x(0), y(0), startTime(0), endTime(0), duration(0) {
 }
 
-SoundInstance::~SoundInstance() {
-}
+SoundInstance::~SoundInstance() = default;
 
 RandomAmbientSound::RandomAmbientSound() : volume(0), balance(0), frequency(0), sceneChangesRemaining(0) {
 }
@@ -1506,8 +1502,7 @@ Runtime::Runtime(OSystem *system, Audio::Mixer *mixer, MidiDriver *midiDrv, cons
 		_dbToVolume[i] = decibelsToLinear(i - 49, Audio::Mixer::kMaxChannelVolume / 2, Audio::Mixer::kMaxChannelVolume / 2);
 }
 
-Runtime::~Runtime() {
-}
+Runtime::~Runtime() = default;
 
 void Runtime::initSections(const Common::Rect &gameRect, const Common::Rect &menuRect, const Common::Rect &trayRect, const Common::Rect &subtitleRect, const Common::Rect &fullscreenMenuRect, const Graphics::PixelFormat &pixFmt) {
 	_gameSection.init(gameRect, pixFmt);

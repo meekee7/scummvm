@@ -42,8 +42,7 @@ FollowPathLight::FollowPathLight(Resources::ItemVisual *item) :
 		_previouslyEnabled(true) {
 }
 
-FollowPathLight::~FollowPathLight() {
-}
+FollowPathLight::~FollowPathLight() = default;
 
 void FollowPathLight::start() {
 	Movement::start();

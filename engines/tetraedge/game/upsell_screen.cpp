@@ -25,8 +25,7 @@
 
 namespace Tetraedge {
 
-UpsellScreen::UpsellScreen() {
-}
+UpsellScreen::UpsellScreen() = default;
 
 void UpsellScreen::enter() {
 	if (!load("menus/upsell/UpsellScreen.lua")) {

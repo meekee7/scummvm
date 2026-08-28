@@ -24,8 +24,7 @@
 
 namespace Tetraedge {
 
-TeObject::TeObject() {
-}
+TeObject::TeObject() = default;
 
 void TeObject::deleteLater() {
 	pendingDeleteList()->push_back(this);

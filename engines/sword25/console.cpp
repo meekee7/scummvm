@@ -28,7 +28,6 @@ Sword25Console::Sword25Console(Sword25Engine *vm) : GUI::Debugger(), _vm(vm) {
 	assert(_vm);
 }
 
-Sword25Console::~Sword25Console() {
-}
+Sword25Console::~Sword25Console() = default;
 
 } // End of namespace Sword25

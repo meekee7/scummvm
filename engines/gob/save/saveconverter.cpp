@@ -367,8 +367,7 @@ SaveConverter_Notes::SaveConverter_Notes(GobEngine *vm, uint32 notesSize,
 	_size = notesSize;
 }
 
-SaveConverter_Notes::~SaveConverter_Notes() {
-}
+SaveConverter_Notes::~SaveConverter_Notes() = default;
 
 int SaveConverter_Notes::isOldSave(Common::InSaveFile **save) const {
 	if (_size == 0)

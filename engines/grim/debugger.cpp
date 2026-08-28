@@ -41,9 +41,7 @@ Debugger::Debugger() :
 	registerCmd("load", WRAP_METHOD(Debugger, cmd_load));
 }
 
-Debugger::~Debugger() {
-
-}
+Debugger::~Debugger() = default;
 
 bool Debugger::cmd_checkFiles(int argc, const char **argv) {
 	if (MD5Check::checkFiles()) {

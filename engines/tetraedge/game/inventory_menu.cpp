@@ -26,8 +26,7 @@
 
 namespace Tetraedge {
 
-InventoryMenu::InventoryMenu() {
-}
+InventoryMenu::InventoryMenu() = default;
 
 void InventoryMenu::enter() {
 	Application *app = g_engine->getApplication();

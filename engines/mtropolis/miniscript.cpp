@@ -75,11 +75,9 @@ bool miniscriptEvaluateTruth(const DynamicValue &value) {
 	}
 }
 
-IMiniscriptInstructionParserFeedback::~IMiniscriptInstructionParserFeedback() {
-}
+IMiniscriptInstructionParserFeedback::~IMiniscriptInstructionParserFeedback() = default;
 
-MiniscriptInstruction::~MiniscriptInstruction() {
-}
+MiniscriptInstruction::~MiniscriptInstruction() = default;
 
 MiniscriptReferences::LocalRef::LocalRef() : guid(0) {
 }

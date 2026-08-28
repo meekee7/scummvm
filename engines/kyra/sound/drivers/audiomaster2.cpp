@@ -133,7 +133,8 @@ private:
 class SoundResource {
 protected:
 	SoundResource(AudioMaster2ResourceManager *res, int type) : _res(res), _type(type), _playing(false), _next(0), _flags(0), _masterVolume(64), _refCnt(1) {}
-	virtual ~SoundResource() {}
+	virtual ~SoundResource() = default;
+
 public:
 	void loadName(Common::ReadStream *stream, uint32 size);
 

@@ -39,8 +39,7 @@ Intro::Intro(MohawkEngine_Myst *vm, MystStack stackId) :
 	setupOpcodes();
 }
 
-Intro::~Intro() {
-}
+Intro::~Intro() = default;
 
 void Intro::setupOpcodes() {
 	// "Stack-Specific" Opcodes

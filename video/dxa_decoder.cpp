@@ -35,8 +35,7 @@
 
 namespace Video {
 
-DXADecoder::DXADecoder() {
-}
+DXADecoder::DXADecoder() = default;
 
 DXADecoder::~DXADecoder() {
 	close();

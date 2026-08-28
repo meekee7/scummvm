@@ -109,8 +109,7 @@ enum {
 
 class QuizHandler : public Handler {
 public:
-	QuizHandler() {
-	}
+	QuizHandler() = default;
 
 	void handleClick(const Common::String &name) override {
 		Common::SharedPtr<VideoRoom> room = g_vm->getVideoRoom();

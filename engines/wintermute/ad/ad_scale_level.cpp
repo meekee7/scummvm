@@ -43,9 +43,7 @@ AdScaleLevel::AdScaleLevel(BaseGame *inGame) : BaseObject(inGame) {
 
 
 //////////////////////////////////////////////////////////////////////////
-AdScaleLevel::~AdScaleLevel() {
-
-}
+AdScaleLevel::~AdScaleLevel() = default;
 
 //////////////////////////////////////////////////////////////////////////
 bool AdScaleLevel::loadFile(const char *filename) {

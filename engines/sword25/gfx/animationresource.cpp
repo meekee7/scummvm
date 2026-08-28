@@ -199,8 +199,7 @@ bool AnimationResource::parserCallback_frame(ParserNode *node) {
 	return true;
 }
 
-AnimationResource::~AnimationResource() {
-}
+AnimationResource::~AnimationResource() = default;
 
 bool AnimationResource::precacheAllFrames() const {
 	Common::Array<Frame>::const_iterator iter = _frames.begin();

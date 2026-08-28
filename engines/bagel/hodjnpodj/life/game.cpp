@@ -1441,11 +1441,9 @@ bool CTheApp::InitInstance()
 /////////////////////////////////////////////////////////////////////////////
 // CWindowMain
 
-CWindowMain::CWindowMain() {
-}
+CWindowMain::CWindowMain() = default;
 
-CWindowMain::~CWindowMain() {
-}
+CWindowMain::~CWindowMain() = default;
 
 BEGIN_MESSAGE_MAP(CWindowMain, CFrameWnd)
 	//{{AFX_MSG_MAP(CWindowMain)

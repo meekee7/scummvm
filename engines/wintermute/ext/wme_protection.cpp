@@ -41,8 +41,7 @@ SXProtection::SXProtection(BaseGame *inGame, ScStack *stack) : BaseScriptable(in
 }
 
 //////////////////////////////////////////////////////////////////////////
-SXProtection::~SXProtection() {
-}
+SXProtection::~SXProtection() = default;
 
 //////////////////////////////////////////////////////////////////////////
 const char *SXProtection::scToString() {

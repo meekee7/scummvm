@@ -32,7 +32,7 @@ Diary::Diary() {
 	clear();
 }
 
-Diary::~Diary() {}
+Diary::~Diary() = default;
 
 void Diary::clear() {
 	_diaryEntries.clear();

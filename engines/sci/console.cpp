@@ -269,8 +269,7 @@ Console::Console(SciEngine *engine) : GUI::Debugger(),
 	_debugState._activeBreakpointTypes = 0;
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 void Console::attach(const char *entry) {
 	if (entry) {

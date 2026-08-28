@@ -30,8 +30,7 @@ VariableWidthSpriteFontRenderer::VariableWidthSpriteFontRenderer(IAGSEngine *eng
 	_engine = engine;
 }
 
-VariableWidthSpriteFontRenderer::~VariableWidthSpriteFontRenderer(void) {
-}
+VariableWidthSpriteFontRenderer::~VariableWidthSpriteFontRenderer(void) = default;
 
 void VariableWidthSpriteFontRenderer::FreeMemory(int fontNum) {
 	for(auto it = _fonts.begin(); it != _fonts.end() ; ++it) {

@@ -157,7 +157,7 @@ protected:
 			_id(id),
 			_driver(driver) {}
 
-		virtual ~Voice() {}
+		virtual ~Voice() = default;
 
 		void noteOn(int8 note, int8 velocity);
 		void noteOff();

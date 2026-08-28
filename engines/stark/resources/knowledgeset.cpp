@@ -28,8 +28,7 @@
 namespace Stark {
 namespace Resources {
 
-KnowledgeSet::~KnowledgeSet() {
-}
+KnowledgeSet::~KnowledgeSet() = default;
 
 KnowledgeSet::KnowledgeSet(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name) {

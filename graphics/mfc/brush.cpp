@@ -25,8 +25,7 @@
 namespace Graphics {
 namespace MFC {
 
-CBrush::CBrush() {
-}
+CBrush::CBrush() = default;
 
 CBrush::CBrush(CBitmap *pBitmap) {
 	m_hObject = new Impl(pBitmap);

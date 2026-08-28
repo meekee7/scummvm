@@ -29,8 +29,7 @@ Console::Console(DrasculaEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("room",			WRAP_METHOD(Console, Cmd_Room));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_Room(int argc, const char **argv) {
 	if (argc < 2) {

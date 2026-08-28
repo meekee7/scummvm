@@ -70,8 +70,7 @@ MenuGump::MenuGump(bool nameEntryMode)
 	palman->untransformPalette(PaletteManager::Pal_Game);
 }
 
-MenuGump::~MenuGump() {
-}
+MenuGump::~MenuGump() = default;
 
 
 void MenuGump::Close(bool no_del) {

@@ -65,8 +65,7 @@ Scheduler::Scheduler(HugoEngine *vm) : _vm(vm) {
 	_tailEvent = nullptr;
 }
 
-Scheduler::~Scheduler() {
-}
+Scheduler::~Scheduler() = default;
 
 void Scheduler::initCypher() {
 	_cypher = getCypher();
@@ -1521,8 +1520,7 @@ void Scheduler::restorePoints(Common::ReadStream *in) {
 Scheduler_v1d::Scheduler_v1d(HugoEngine *vm) : Scheduler(vm) {
 }
 
-Scheduler_v1d::~Scheduler_v1d() {
-}
+Scheduler_v1d::~Scheduler_v1d() = default;
 
 const char *Scheduler_v1d::getCypher() const {
 	return "Copyright (c) 1990, Gray Design Associates";
@@ -1587,8 +1585,7 @@ void Scheduler_v1d::decodeString(char *line) {
 Scheduler_v2d::Scheduler_v2d(HugoEngine *vm) : Scheduler_v1d(vm) {
 }
 
-Scheduler_v2d::~Scheduler_v2d() {
-}
+Scheduler_v2d::~Scheduler_v2d() = default;
 
 const char *Scheduler_v2d::getCypher() const {
 	return "Copyright 1991, Gray Design Associates";
@@ -1636,8 +1633,7 @@ void Scheduler_v2d::decodeString(char *line) {
 Scheduler_v3d::Scheduler_v3d(HugoEngine *vm) : Scheduler_v2d(vm) {
 }
 
-Scheduler_v3d::~Scheduler_v3d() {
-}
+Scheduler_v3d::~Scheduler_v3d() = default;
 
 const char *Scheduler_v3d::getCypher() const {
 	return "Copyright 1992, Gray Design Associates";
@@ -1646,8 +1642,7 @@ const char *Scheduler_v3d::getCypher() const {
 Scheduler_v1w::Scheduler_v1w(HugoEngine *vm) : Scheduler_v3d(vm) {
 }
 
-Scheduler_v1w::~Scheduler_v1w() {
-}
+Scheduler_v1w::~Scheduler_v1w() = default;
 
 uint32 Scheduler_v1w::getTicks() {
 	return getWinTicks();

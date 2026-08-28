@@ -28,11 +28,9 @@
 
 namespace Tetraedge {
 
-TeJpeg::TeJpeg() {
-}
+TeJpeg::TeJpeg() = default;
 
-TeJpeg::~TeJpeg() {
-}
+TeJpeg::~TeJpeg() = default;
 
 /*static*/
 bool TeJpeg::matchExtension(const Common::String &extn) {

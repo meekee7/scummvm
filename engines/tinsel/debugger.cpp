@@ -82,8 +82,7 @@ Console::Console() : GUI::Debugger() {
 	registerCmd("psxdump",		WRAP_METHOD(Console, cmd_psxdump));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::cmd_item(int argc, const char **argv) {
 	if (argc < 2) {

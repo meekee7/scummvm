@@ -31,7 +31,7 @@ class LuaFileProxy {
 public:
 	static LuaFileProxy *create(const Common::String &filename, const Common::String &mode);
 public:
-	virtual ~LuaFileProxy() {}
+	virtual ~LuaFileProxy() = default;
 	virtual bool eof() const = 0;
 	virtual size_t read(void *ptr, size_t size, size_t count) = 0;
 	virtual size_t write(const char *ptr, size_t count) = 0;
@@ -71,7 +71,7 @@ private:
 public:
 	LuaFileRead(const Common::Path &filename, const Common::String &mode);
 public:
-	virtual ~LuaFileRead() {}
+	virtual ~LuaFileRead() = default;
 
 	bool eof() const override;
 	size_t read(void *ptr, size_t size, size_t count) override;

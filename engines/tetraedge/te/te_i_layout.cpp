@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-TeILayout::TeILayout() {
-}
+TeILayout::TeILayout() = default;
 
 // TODO: Add more functions here.
 

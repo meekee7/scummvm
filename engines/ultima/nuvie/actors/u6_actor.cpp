@@ -51,8 +51,7 @@ U6Actor::U6Actor(Map *m, ObjManager *om, GameClock *c): Actor(m, om, c),
 		current_movetype(MOVETYPE_U6_NONE) {
 }
 
-U6Actor::~U6Actor() {
-}
+U6Actor::~U6Actor() = default;
 
 bool U6Actor::init(uint8 obj_status) {
 	Actor::init();

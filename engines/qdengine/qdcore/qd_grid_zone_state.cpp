@@ -35,12 +35,9 @@ qdGridZoneState::qdGridZoneState(bool st) : _state(st) {
 		set_name(ZONE_STATE_OFF_NAME);
 }
 
-qdGridZoneState::qdGridZoneState(const qdGridZoneState &st) : qdConditionalObject(st),
-	_state(st._state) {
-}
+qdGridZoneState::qdGridZoneState(const qdGridZoneState &st) = default;
 
-qdGridZoneState::~qdGridZoneState() {
-}
+qdGridZoneState::~qdGridZoneState() = default;
 
 qdGridZoneState &qdGridZoneState::operator = (const qdGridZoneState &st) {
 	if (this == &st) return *this;

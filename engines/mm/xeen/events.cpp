@@ -37,8 +37,7 @@ EventsManager::EventsManager(XeenEngine *vm) : _vm(vm), _playTime(0), _gameCount
 	Common::fill(&_gameCounters[0], &_gameCounters[6], 0);
 }
 
-EventsManager::~EventsManager() {
-}
+EventsManager::~EventsManager() = default;
 
 void EventsManager::setCursor(int cursorId) {
 	XSurface cursor;

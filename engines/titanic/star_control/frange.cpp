@@ -24,8 +24,7 @@
 
 namespace Titanic {
 
-FRange::FRange() {
-}
+FRange::FRange() = default;
 
 void FRange::reset() {
 	_min._x = _min._y = _min._z = 9.9999994e27F;

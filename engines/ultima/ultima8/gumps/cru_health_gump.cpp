@@ -43,8 +43,7 @@ CruHealthGump::CruHealthGump(Shape *shape, int x)
 	_frameNum = 2;
 }
 
-CruHealthGump::~CruHealthGump() {
-}
+CruHealthGump::~CruHealthGump() = default;
 
 void CruHealthGump::InitGump(Gump *newparent, bool take_focus) {
 	CruStatGump::InitGump(newparent, take_focus);

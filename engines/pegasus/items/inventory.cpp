@@ -34,8 +34,7 @@ Inventory::Inventory() {
 	_referenceCount = 0;
 }
 
-Inventory::~Inventory() {
-}
+Inventory::~Inventory() = default;
 
 void Inventory::setWeightLimit(WeightType limit) {
 	_weightLimit = limit;

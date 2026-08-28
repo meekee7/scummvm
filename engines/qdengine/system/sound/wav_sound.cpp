@@ -33,9 +33,9 @@
 
 namespace QDEngine {
 
-wavSound::wavSound() {}
+wavSound::wavSound() = default;
 
-wavSound::~wavSound() {}
+wavSound::~wavSound() = default;
 
 bool wavSound::wav_file_load(const Common::Path &fpath) {
 	debugC(3, kDebugSound, "[%d] Loading Wav: %s", g_system->getMillis(), transCyrillic(fpath.toString()));

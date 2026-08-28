@@ -51,9 +51,7 @@ ContainerWidget::ContainerWidget(const Configuration *cfg, GUI_CallBack *callbac
 	config->value("config/GameType", game_type);
 }
 
-ContainerWidget::~ContainerWidget() {
-
-}
+ContainerWidget::~ContainerWidget() = default;
 
 bool ContainerWidget::init(Actor *a, uint16 x, uint16 y, TileManager *tm, ObjManager *om, Font *f) {
 	tile_manager = tm;

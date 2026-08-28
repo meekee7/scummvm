@@ -26,11 +26,9 @@ namespace MTropolis {
 
 namespace AXLogic {
 
-AlienWriterModifier::AlienWriterModifier() {
-}
+AlienWriterModifier::AlienWriterModifier() = default;
 
-AlienWriterModifier::~AlienWriterModifier() {
-}
+AlienWriterModifier::~AlienWriterModifier() = default;
 
 bool AlienWriterModifier::load(const PlugInModifierLoaderContext &context, const Data::AXLogic::AlienWriterModifier &data) {
 	return true;
@@ -65,8 +63,7 @@ AXLogicPlugIn::AXLogicPlugIn()
 	: _alienWriterModifierFactory(this) {
 }
 
-AXLogicPlugIn::~AXLogicPlugIn() {
-}
+AXLogicPlugIn::~AXLogicPlugIn() = default;
 
 void AXLogicPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	registrar->registerPlugInModifier("AlienWriter", &_alienWriterModifierFactory);

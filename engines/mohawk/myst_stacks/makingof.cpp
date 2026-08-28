@@ -34,8 +34,7 @@ MakingOf::MakingOf(MohawkEngine_Myst *vm) :
 	setupOpcodes();
 }
 
-MakingOf::~MakingOf() {
-}
+MakingOf::~MakingOf() = default;
 
 void MakingOf::setupOpcodes() {
 	// "Stack-Specific" Opcodes

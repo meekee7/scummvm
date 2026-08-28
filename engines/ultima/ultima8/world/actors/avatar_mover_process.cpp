@@ -37,8 +37,7 @@ AvatarMoverProcess::AvatarMoverProcess() : Process(),
 }
 
 
-AvatarMoverProcess::~AvatarMoverProcess() {
-}
+AvatarMoverProcess::~AvatarMoverProcess() = default;
 
 void AvatarMoverProcess::run() {
 	Actor *avatar = getControlledActor();

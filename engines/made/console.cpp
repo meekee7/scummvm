@@ -28,7 +28,6 @@ MadeConsole::MadeConsole(MadeEngine *vm) : GUI::Debugger(), _vm(vm) {
 	assert(_vm);
 }
 
-MadeConsole::~MadeConsole() {
-}
+MadeConsole::~MadeConsole() = default;
 
 } // End of namespace Made

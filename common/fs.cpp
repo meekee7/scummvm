@@ -100,15 +100,13 @@ void FSDirectoryFile::listChildren(ArchiveMemberList &list, const char *pattern)
 }
 
 
-FSNode::FSNode() {
-}
+FSNode::FSNode() = default;
 
 FSNode::FSNode(AbstractFSNode *realNode)
 	: _realNode(realNode) {
 }
 
-FSNode::~FSNode() {
-}
+FSNode::~FSNode() = default;
 
 FSNode::FSNode(const Path &p) {
 	assert(g_system);
@@ -317,8 +315,7 @@ FSDirectory::FSDirectory(const Path &prefix, const Path &name, int depth, bool f
 	setPrefix(prefix);
 }
 
-FSDirectory::~FSDirectory() {
-}
+FSDirectory::~FSDirectory() = default;
 
 void FSDirectory::setPrefix(const Path &prefix) {
 	_prefix = prefix;

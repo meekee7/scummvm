@@ -55,7 +55,7 @@ public:
 
 	virtual bool findRecord(const MessageTuple &tuple, MessageRecord &record) = 0;
 
-	virtual ~MessageReader() { }
+	virtual ~MessageReader() = default;
 
 protected:
 	MessageReader(const SciSpan<const byte> &data, uint headerSize, uint recordSize)

@@ -30,9 +30,7 @@ namespace Nuvie {
 ConvFont::ConvFont() : data_offset(0), f_data(nullptr), f_w_data(nullptr) {
 }
 
-ConvFont::~ConvFont() {
-
-}
+ConvFont::~ConvFont() = default;
 
 bool ConvFont::init(unsigned char *data, uint8 *width_data, uint16 num_c, uint16 char_offset) {
 	assert(data && width_data);

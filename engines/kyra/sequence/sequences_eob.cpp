@@ -64,7 +64,7 @@ private:
 class EoBIntroPlayer : public EoBSeqPlayerCommon {
 public:
 	EoBIntroPlayer(EoBEngine *vm, Screen_EoB *screen);
-	~EoBIntroPlayer() override {}
+	~EoBIntroPlayer() override = default;
 
 	enum IntroPart {
 		kOnlyCredits = 0,

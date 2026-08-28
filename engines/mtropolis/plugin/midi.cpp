@@ -68,8 +68,7 @@ public:
 	virtual void detach() = 0;
 };
 
-MidiCombinerSource::~MidiCombinerSource() {
-}
+MidiCombinerSource::~MidiCombinerSource() = default;
 
 class MidiCombiner {
 public:
@@ -78,8 +77,7 @@ public:
 	virtual Common::SharedPtr<MidiCombinerSource> createSource() = 0;
 };
 
-MidiCombiner::~MidiCombiner() {
-}
+MidiCombiner::~MidiCombiner() = default;
 
 class MidiParser_MTropolis : public MidiParser_SMF {
 public:
@@ -224,11 +222,9 @@ private:
 	Common::SharedPtr<MidiCombiner> _combiner;
 };
 
-MidiFilePlayer::~MidiFilePlayer() {
-}
+MidiFilePlayer::~MidiFilePlayer() = default;
 
-MidiNotePlayer::~MidiNotePlayer() {
-}
+MidiNotePlayer::~MidiNotePlayer() = default;
 
 MidiFilePlayerImpl::MidiFilePlayerImpl(const Common::SharedPtr<MidiCombinerSource> &outputDriver, const Common::SharedPtr<Data::Midi::MidiModifier::EmbeddedFile> &file, uint32 baseTempo, bool hasTempoOverride, double tempo, uint8 volume, bool loop, uint16 mutedTracks)
 	: _file(file), _outputDriver(outputDriver), _parser(nullptr), _loop(loop), _mutedTracks(mutedTracks) {
@@ -304,8 +300,7 @@ MidiNotePlayerImpl::MidiNotePlayerImpl(const Common::SharedPtr<MidiCombinerSourc
 	: _timerRate(timerRate), _durationRemaining(0), _outputDriver(outputDriver), _channel(0), _note(0), /* _program(0), */ _initialized(false), _volume(100) {
 }
 
-MidiNotePlayerImpl::~MidiNotePlayerImpl() {
-}
+MidiNotePlayerImpl::~MidiNotePlayerImpl() = default;
 
 void MidiNotePlayerImpl::onTimer() {
 	if (_durationRemaining > 0) {
@@ -1948,8 +1943,7 @@ MidiPlugIn::MidiPlugIn(bool useDynamicMidi)
 	_midi.reset(new MultiMidiPlayer(useDynamicMidi));
 }
 
-MidiPlugIn::~MidiPlugIn() {
-}
+MidiPlugIn::~MidiPlugIn() = default;
 
 void MidiPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	registrar->registerPlugInModifier("MIDIModf", &_midiModifierFactory);

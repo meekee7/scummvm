@@ -35,8 +35,7 @@ DiaryPagesScreen::DiaryPagesScreen(Gfx::Driver *gfx, Cursor *cursor) :
 		_page(0) {
 }
 
-DiaryPagesScreen::~DiaryPagesScreen() {
-}
+DiaryPagesScreen::~DiaryPagesScreen() = default;
 
 void DiaryPagesScreen::open() {
 	StaticLocationScreen::open();

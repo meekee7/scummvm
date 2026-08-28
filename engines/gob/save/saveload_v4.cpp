@@ -56,8 +56,7 @@ SaveLoad_v4::GameHandler::File::File(const File &file) :
 	SlotFileIndexed(file._vm, file._slotCount, file._base, file._ext) {
 }
 
-SaveLoad_v4::GameHandler::File::~File() {
-}
+SaveLoad_v4::GameHandler::File::~File() = default;
 
 int SaveLoad_v4::GameHandler::File::getSlot(int32 offset) const {
 	uint32 varSize = SaveHandler::getVarSize(_vm);
@@ -435,8 +434,7 @@ SaveLoad_v4::ScreenPropsHandler::File::File(const SaveLoad_v4::GameHandler::File
 	_slot = slot;
 }
 
-SaveLoad_v4::ScreenPropsHandler::File::~File() {
-}
+SaveLoad_v4::ScreenPropsHandler::File::~File() = default;
 
 int SaveLoad_v4::ScreenPropsHandler::File::getSlot(int32 offset) const {
 	return _slot;

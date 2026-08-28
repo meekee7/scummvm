@@ -25,11 +25,9 @@
 
 namespace Tetraedge {
 
-TeZlibJpeg::TeZlibJpeg() {
-}
+TeZlibJpeg::TeZlibJpeg() = default;
 
-TeZlibJpeg::~TeZlibJpeg() {
-}
+TeZlibJpeg::~TeZlibJpeg() = default;
 
 bool TeZlibJpeg::load(Common::SeekableReadStream &stream) {
 	uint32 compressedSize = stream.readUint32LE();

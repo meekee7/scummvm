@@ -166,7 +166,7 @@ private:
 
 	// Make MachineConfiguration an identity class.
 	MachineConfiguration(const MachineConfiguration &);
-	~MachineConfiguration() {}
+	~MachineConfiguration() = default;
 	MachineConfiguration &operator=(const MachineConfiguration &);
 };
 

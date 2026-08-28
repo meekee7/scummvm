@@ -33,11 +33,10 @@ SpriteDecompressQueue::SpriteDecompressQueue(Screen *screen)
 	: _screen(screen) {
 }
 
-SpriteDecompressQueue::~SpriteDecompressQueue() {
-}
+SpriteDecompressQueue::~SpriteDecompressQueue() = default;
 
 void SpriteDecompressQueue::insert(byte *drawFlags, uint32 flags, uint32 field8, WidthHeight &dimensions,
-	byte *compressedPixels, Graphics::Surface *surface) {
+                                   byte *compressedPixels, Graphics::Surface *surface) {
 	SpriteDecompressQueueItem *item = new SpriteDecompressQueueItem();
 	item->_drawFlags = drawFlags;
 	*item->_drawFlags &= 1;
@@ -68,8 +67,7 @@ SpriteDrawQueue::SpriteDrawQueue(Screen *screen)
 	: _screen(screen) {
 }
 
-SpriteDrawQueue::~SpriteDrawQueue() {
-}
+SpriteDrawQueue::~SpriteDrawQueue() = default;
 
 bool SpriteDrawQueue::draw(SpriteDrawQueueItem *item) {
 

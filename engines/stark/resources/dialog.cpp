@@ -35,8 +35,7 @@
 namespace Stark {
 namespace Resources {
 
-Dialog::~Dialog() {
-}
+Dialog::~Dialog() = default;
 
 Dialog::Dialog(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

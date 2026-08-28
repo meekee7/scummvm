@@ -93,8 +93,7 @@ LzhDecompressor::LzhDecompressor() {
 	count_len_depth = 0;
 }
 
-LzhDecompressor::~LzhDecompressor() {
-}
+LzhDecompressor::~LzhDecompressor() = default;
 
 int LzhDecompressor::decompress(Common::SeekableReadStream &source, byte *dest, uint32 sourceLen, uint32 destLen) {
 

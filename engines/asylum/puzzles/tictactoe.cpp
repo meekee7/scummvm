@@ -87,8 +87,7 @@ PuzzleTicTacToe::PuzzleTicTacToe(AsylumEngine *engine) : Puzzle(engine) {
 	_brokenLines = 0;
 }
 
-PuzzleTicTacToe::~PuzzleTicTacToe() {
-}
+PuzzleTicTacToe::~PuzzleTicTacToe() = default;
 
 //////////////////////////////////////////////////////////////////////////
 // Event Handling

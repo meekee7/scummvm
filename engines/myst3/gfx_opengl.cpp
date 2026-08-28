@@ -41,8 +41,7 @@ OpenGLRenderer::OpenGLRenderer(OSystem *system) :
 		Renderer(system) {
 }
 
-OpenGLRenderer::~OpenGLRenderer() {
-}
+OpenGLRenderer::~OpenGLRenderer() = default;
 
 Texture *OpenGLRenderer::createTexture3D(const Graphics::Surface *surface) {
 	return new OpenGLTexture(surface);

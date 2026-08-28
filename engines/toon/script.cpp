@@ -69,8 +69,7 @@ EMCInterpreter::EMCInterpreter(ToonEngine *vm) : _vm(vm), _scriptData(0), _filen
 	_parameter = 0;
 }
 
-EMCInterpreter::~EMCInterpreter() {
-}
+EMCInterpreter::~EMCInterpreter() = default;
 
 bool EMCInterpreter::callback(Common::IFFChunk &chunk) {
 	switch (chunk._type) {

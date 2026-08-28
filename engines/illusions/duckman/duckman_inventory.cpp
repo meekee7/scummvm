@@ -36,8 +36,7 @@ DuckmanInventory::DuckmanInventory(IllusionsEngine_Duckman *vm)
 	initInventory();
 }
 
-DuckmanInventory::~DuckmanInventory() {
-}
+DuckmanInventory::~DuckmanInventory() = default;
 
 static const struct DMInventoryItem kInventoryItems[21] = {
 	{0x40011, 0xE005B},

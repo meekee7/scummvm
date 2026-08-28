@@ -34,8 +34,7 @@ Mesh3DSTinyGL::Mesh3DSTinyGL(BaseGame *inGame) : Mesh3DS(inGame) {
 	_vertexData = nullptr;
 }
 
-Mesh3DSTinyGL::~Mesh3DSTinyGL() {
-}
+Mesh3DSTinyGL::~Mesh3DSTinyGL() = default;
 
 void Mesh3DSTinyGL::fillVertexBuffer() {
 	_vertexCount = _numFaces * 3;

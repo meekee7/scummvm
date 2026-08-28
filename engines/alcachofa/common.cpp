@@ -74,7 +74,7 @@ void FakeSemaphore::sync(Serializer &s, FakeSemaphore &semaphore) {
 	// When the locks are loaded, they will increase the counter themselves
 }
 
-FakeLock::FakeLock() {}
+FakeLock::FakeLock() = default;
 
 FakeLock::FakeLock(const char *name, FakeSemaphore &semaphore)
 	: _name(name)

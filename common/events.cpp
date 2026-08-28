@@ -40,16 +40,15 @@ bool isMouseEvent(const Event &event) {
 	        || event.type == EVENT_MOUSEMOVE;
 }
 
-EventSource::~EventSource() {}
+EventSource::~EventSource() = default;
 
-EventObserver::~EventObserver() {}
+EventObserver::~EventObserver() = default;
 
-EventMapper::~EventMapper() {}
+EventMapper::~EventMapper() = default;
 
-EventManager::~EventManager() {}
+EventManager::~EventManager() = default;
 
-EventDispatcher::EventDispatcher() {
-}
+EventDispatcher::EventDispatcher() = default;
 
 EventDispatcher::~EventDispatcher() {
 	for (auto &mapper : _mappers) {

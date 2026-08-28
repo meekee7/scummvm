@@ -85,8 +85,7 @@ Mechanical::Mechanical(MohawkEngine_Myst *vm) :
 	_snakeBox = nullptr;
 }
 
-Mechanical::~Mechanical() {
-}
+Mechanical::~Mechanical() = default;
 
 void Mechanical::setupOpcodes() {
 	// "Stack-Specific" Opcodes

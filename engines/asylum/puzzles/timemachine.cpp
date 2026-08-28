@@ -60,8 +60,7 @@ PuzzleTimeMachine::PuzzleTimeMachine(AsylumEngine *engine) : Puzzle(engine) {
 	reset();
 }
 
-PuzzleTimeMachine::~PuzzleTimeMachine() {
-}
+PuzzleTimeMachine::~PuzzleTimeMachine() = default;
 
 void PuzzleTimeMachine::saveLoadWithSerializer(Common::Serializer &s) {
 	s.syncAsSint32LE(_frameIndexes[0]);

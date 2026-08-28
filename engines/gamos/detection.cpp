@@ -35,7 +35,7 @@ public:
 		    Gamos::gameDescriptions, Gamos::gamosGames) {
 			_flags = kADFlagMatchFullPaths;
 	}
-	~GamosMetaEngineDetection() override {}
+	~GamosMetaEngineDetection() override = default;
 
 	const char *getName() const override {
 		return "gamos";

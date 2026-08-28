@@ -65,8 +65,7 @@ Object::Object(GameState *sp) {
 	_rsi = sp->room_s_obj;
 	_roomExit = sp->room_e_obj;
 }
-Object::~Object() {
-}
+Object::~Object() = default;
 
 int16 Object::load(const char *filename, RoomMovObject *rmo) {
 	Common::File f;

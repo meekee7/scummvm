@@ -26,8 +26,7 @@
 namespace Stark {
 namespace Resources {
 
-Root::~Root() {
-}
+Root::~Root() = default;
 
 Root::Root(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name) {

@@ -34,8 +34,7 @@ TranslucentGump::TranslucentGump(int x, int y, int width, int height,
 	Gump(x, y, width, height, owner, flags, layer) {
 }
 
-TranslucentGump::~TranslucentGump() {
-}
+TranslucentGump::~TranslucentGump() = default;
 
 void TranslucentGump::PaintThis(RenderSurface *surf, int32 lerp_factor, bool scaled) {
 	if (_shape) {

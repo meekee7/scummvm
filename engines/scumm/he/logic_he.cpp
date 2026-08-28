@@ -29,8 +29,7 @@ namespace Scumm {
 LogicHE::LogicHE(ScummEngine_v90he *vm) : _vm(vm) {
 }
 
-LogicHE::~LogicHE() {
-}
+LogicHE::~LogicHE() = default;
 
 void LogicHE::writeScummVar(int var, int32 value) {
 	_vm->writeVar(var, value);

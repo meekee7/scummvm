@@ -56,8 +56,8 @@ struct PathBuffer;
 class Disk {
 
 public:
-	Disk() { }
-	virtual ~Disk() { }
+	Disk() = default;
+	virtual ~Disk() = default;
 
 	virtual void init() { }
 

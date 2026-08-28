@@ -62,8 +62,7 @@ CruMenuGump::CruMenuGump()
 	}
 }
 
-CruMenuGump::~CruMenuGump() {
-}
+CruMenuGump::~CruMenuGump() = default;
 
 void CruMenuGump::Close(bool no_del) {
 	// Restore old music state and palette.

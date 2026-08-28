@@ -35,8 +35,7 @@ DEFINE_RUNTIME_CLASSTYPE_CODE(FastAreaVisGump)
 FastAreaVisGump::FastAreaVisGump(void) : Gump(0, 0, MAP_NUM_CHUNKS + 2, MAP_NUM_CHUNKS + 2, 0, FLAG_DRAGGABLE | FLAG_DONT_SAVE, LAYER_NORMAL) {
 }
 
-FastAreaVisGump::~FastAreaVisGump(void) {
-}
+FastAreaVisGump::~FastAreaVisGump(void) = default;
 
 void FastAreaVisGump::PaintThis(RenderSurface *surf, int32 lerp_factor, bool scaled) {
 	World *world = World::get_instance();

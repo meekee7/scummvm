@@ -39,8 +39,7 @@ SaveConverter_v3::SaveConverter_v3(GobEngine *vm, const Common::String &fileName
 	SaveConverter(vm, fileName) {
 }
 
-SaveConverter_v3::~SaveConverter_v3() {
-}
+SaveConverter_v3::~SaveConverter_v3() = default;
 
 int SaveConverter_v3::isOldSave(Common::InSaveFile **save) const {
 	uint32 varSize = SaveHandler::getVarSize(_vm);

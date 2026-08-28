@@ -50,8 +50,7 @@ SaveLoad_v3::GameHandler::File::File(const File &file) :
 	SlotFileIndexed(file._vm, file._slotCount, file._base, file._ext) {
 }
 
-SaveLoad_v3::GameHandler::File::~File() {
-}
+SaveLoad_v3::GameHandler::File::~File() = default;
 
 int SaveLoad_v3::GameHandler::File::getSlot(int32 offset) const {
 	uint32 varSize = SaveHandler::getVarSize(_vm);
@@ -358,8 +357,7 @@ SaveLoad_v3::ScreenshotHandler::File::File(const SaveLoad_v3::GameHandler::File 
 	_shotIndexSize = shotIndexSize;
 }
 
-SaveLoad_v3::ScreenshotHandler::File::~File() {
-}
+SaveLoad_v3::ScreenshotHandler::File::~File() = default;
 
 int SaveLoad_v3::ScreenshotHandler::File::getSlot(int32 offset) const {
 	return ((offset - _shotIndexSize) / _shotSize);

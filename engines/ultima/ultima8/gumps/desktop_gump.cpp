@@ -41,8 +41,7 @@ DesktopGump::DesktopGump(int32 x, int32 y, int32 width, int32 height) :
 	     LAYER_DESKTOP) {
 }
 
-DesktopGump::~DesktopGump(void) {
-}
+DesktopGump::~DesktopGump(void) = default;
 
 void DesktopGump::PaintThis(RenderSurface *surf, int32 lerp_factor, bool scaled) {
 }

@@ -37,7 +37,7 @@ class MidiDriver_FMTowns;
 class TownsChannel {
 public:
 	TownsChannel(MidiDriver_FMTowns *driver, uint8 id);
-	~TownsChannel() {}
+	~TownsChannel() = default;
 
 	void noteOff();
 	void noteOn(uint8 note, uint8 velo);
@@ -62,9 +62,9 @@ class TownsMidiPart {
 friend class MidiDriver_FMTowns;
 public:
 	TownsMidiPart(MidiDriver_FMTowns *driver, uint8 id);
-	~TownsMidiPart() {}
+	~TownsMidiPart() = default;
 
-	void noteOff(uint8 note);
+void noteOff(uint8 note);
 	void noteOn(uint8 note, uint8 velo);
 	void controlChangeVolume(uint8 vol);
 	void controlChangeSustain(uint8 sus);

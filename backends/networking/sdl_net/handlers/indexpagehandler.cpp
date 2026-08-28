@@ -28,7 +28,7 @@ namespace Networking {
 
 IndexPageHandler::IndexPageHandler(): CommandSender(nullptr) {}
 
-IndexPageHandler::~IndexPageHandler() {}
+IndexPageHandler::~IndexPageHandler() = default;
 
 /// public
 

@@ -39,8 +39,7 @@ namespace Gob {
 Map_v1::Map_v1(GobEngine *vm) : Map(vm) {
 }
 
-Map_v1::~Map_v1() {
-}
+Map_v1::~Map_v1() = default;
 
 void Map_v1::init() {
 	if (_passMap || _itemsMap)

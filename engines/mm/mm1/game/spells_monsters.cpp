@@ -63,8 +63,7 @@ const SpellMonstersSpell SpellsMonsters::SPELLS[MONSTER_SPELLS_COUNT] = {
 	&SpellsMonsters::spell32_swarm
 };
 
-SpellsMonsters::SpellsMonsters() {
-}
+SpellsMonsters::SpellsMonsters() = default;
 
 void SpellsMonsters::castMonsterSpell(const Common::String &monsterName, int spellNum) {
 	g_globals->_spellsState._mmVal1 = 0;

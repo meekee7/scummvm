@@ -33,8 +33,7 @@ TotConsole::TotConsole(TotEngine *engine) : _engine(engine) {
 	registerCmd("clearLayers", WRAP_METHOD(TotConsole, cmdClearLayers));
 }
 
-TotConsole::~TotConsole() {
-}
+TotConsole::~TotConsole() = default;
 
 bool TotConsole::cmdShowMouseGrid(int argc, const char **argv) {
 	_engine->_showMouseGrid = true;

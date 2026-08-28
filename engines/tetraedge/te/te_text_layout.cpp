@@ -35,8 +35,7 @@ TeTextLayout::TeTextLayout(): _textSizeProportionalToWidth(0),
 _textSizeType(0), _baseFontSize(10) {
 }
 
-TeTextLayout::~TeTextLayout() {
-}
+TeTextLayout::~TeTextLayout() = default;
 
 void TeTextLayout::setInterLine(float val) {
 	_base.setInterLine(val);

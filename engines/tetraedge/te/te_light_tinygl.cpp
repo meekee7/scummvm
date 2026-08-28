@@ -33,8 +33,7 @@ static inline uint _toGlLight(uint lightno) {
 	return TGL_LIGHT0 + lightno;
 }
 
-TeLightTinyGL::TeLightTinyGL() {
-}
+TeLightTinyGL::TeLightTinyGL() = default;
 
 void TeLightTinyGL::disable(uint lightno) {
 	tglDisable(_toGlLight(lightno));

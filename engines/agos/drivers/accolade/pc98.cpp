@@ -37,7 +37,7 @@ public:
 	};
 public:
 	PC98CommonDriver();
-	~PC98CommonDriver() override {};
+	~PC98CommonDriver() override = default;
 
 	bool isOpen() const override { return _isOpen; }
 	void send(uint32 b) override;

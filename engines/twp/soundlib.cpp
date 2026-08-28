@@ -30,7 +30,7 @@ namespace Twp {
 class SoundTrigger : public Trigger {
 public:
 	SoundTrigger(const Common::Array<Common::SharedPtr<SoundDefinition> > sounds, int objId) : _sounds(sounds), _objId(objId) {}
-	virtual ~SoundTrigger() {}
+	virtual ~SoundTrigger() = default;
 
 	virtual void trig() override {
 		int i = g_twp->getRandomSource().getRandomNumber(_sounds.size() - 1);

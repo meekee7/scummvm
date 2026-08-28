@@ -38,8 +38,7 @@ ItemPickup::ItemPickup(BladeRunnerEngine *vm) {
 	reset();
 }
 
-ItemPickup::~ItemPickup() {
-}
+ItemPickup::~ItemPickup() = default;
 
 void ItemPickup::setup(int animationId, int screenX, int screenY) {
 	_animationId = animationId;

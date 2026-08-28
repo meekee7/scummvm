@@ -48,7 +48,7 @@ public:
 		_flags = kADFlagMatchFullPaths;
 	}
 
-	~WaynesWorldMetaEngineDetection() override {}
+	~WaynesWorldMetaEngineDetection() override = default;
 
 	const char *getName() const override {
 		return "waynesworld";

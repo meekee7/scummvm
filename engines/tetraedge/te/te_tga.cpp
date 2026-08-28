@@ -29,8 +29,7 @@
 
 namespace Tetraedge {
 
-TeTga::TeTga() {
-}
+TeTga::TeTga() = default;
 
 /*static*/
 bool TeTga::matchExtension(const Common::String &extn) {

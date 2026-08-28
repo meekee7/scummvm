@@ -41,8 +41,7 @@ EvilFish::EvilFish(const ANIFile &ani, uint16 screenWidth,
 
 }
 
-EvilFish::~EvilFish() {
-}
+EvilFish::~EvilFish() = default;
 
 void EvilFish::enter(Direction from, int16 y) {
 	_shouldLeave = false;

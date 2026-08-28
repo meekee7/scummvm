@@ -53,8 +53,7 @@ Text::Text() : Resource("atds.tap") {
 	_hotspotStrings[295] = ATS_ACTION_BIT;
 }
 
-Text::~Text() {
-}
+Text::~Text() = default;
 
 TextEntryList *Text::getDialog(uint chunk, uint entry) {
 	if (chunk >= kADSTextMax)

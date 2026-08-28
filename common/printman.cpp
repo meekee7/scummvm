@@ -33,7 +33,7 @@
 
 namespace Common {
 
-PrintingManager::~PrintingManager() {}
+PrintingManager::~PrintingManager() = default;
 
 StringArray PrintingManager::listPrinterNames() const {
 	return StringArray();

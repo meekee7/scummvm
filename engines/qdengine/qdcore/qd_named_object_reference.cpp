@@ -60,8 +60,7 @@ qdNamedObjectReference::qdNamedObjectReference(const qdNamedObject *p) {
 	_objects_counter++;
 }
 
-qdNamedObjectReference::~qdNamedObjectReference() {
-}
+qdNamedObjectReference::~qdNamedObjectReference() = default;
 
 qdNamedObjectReference &qdNamedObjectReference::operator = (const qdNamedObjectReference &ref) {
 	if (this == &ref) return *this;

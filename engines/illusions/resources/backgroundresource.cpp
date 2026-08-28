@@ -568,8 +568,7 @@ BackgroundInstanceList::BackgroundInstanceList(IllusionsEngine *vm)
 	: _vm(vm) {
 }
 
-BackgroundInstanceList::~BackgroundInstanceList() {
-}
+BackgroundInstanceList::~BackgroundInstanceList() = default;
 
 BackgroundInstance *BackgroundInstanceList::createBackgroundInstance(Resource *resource) {
 	BackgroundInstance *backgroundInstance = new BackgroundInstance(_vm);

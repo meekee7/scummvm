@@ -401,8 +401,7 @@ ConfigDialog::ConfigDialog() :
 	new GUI::ButtonWidget(this, "GlobalConfig.Cancel", _("~C~ancel"), Common::U32String(), GUI::kCloseCmd);
 }
 
-ConfigDialog::~ConfigDialog() {
-}
+ConfigDialog::~ConfigDialog() = default;
 
 void ConfigDialog::build() {
 	OptionsDialog::build();
@@ -433,8 +432,7 @@ ExtraGuiOptionsWidget::ExtraGuiOptionsWidget(GuiObject *containerBoss, const Com
 	}
 }
 
-ExtraGuiOptionsWidget::~ExtraGuiOptionsWidget() {
-}
+ExtraGuiOptionsWidget::~ExtraGuiOptionsWidget() = default;
 
 void ExtraGuiOptionsWidget::handleCommand(GUI::CommandSender *sender, uint32 cmd, uint32 data) {
 	switch (cmd) {

@@ -43,8 +43,7 @@ TargetGump::TargetGump(int x, int y)
 
 }
 
-TargetGump::~TargetGump() {
-}
+TargetGump::~TargetGump() = default;
 
 void TargetGump::PaintThis(RenderSurface *surf, int32 lerp_factor, bool scaled) {
 	// we're invisible

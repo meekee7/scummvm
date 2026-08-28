@@ -33,8 +33,7 @@ namespace Grim {
 EMITexiComponent::EMITexiComponent(Component *parent, int parentID, const char *filename, Component *prevComponent, tag32 tag) : Component(parent, parentID, filename, tag) {
 }
 
-EMITexiComponent::~EMITexiComponent() {
-}
+EMITexiComponent::~EMITexiComponent() = default;
 
 void EMITexiComponent::init() {
 	EMICostume *c = static_cast<EMICostume *>(_cost);

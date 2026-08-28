@@ -44,8 +44,7 @@ TattooEngine::TattooEngine(OSystem *syst, const SherlockGameDescription *gameDes
 	_textWindowsOn = true;
 }
 
-TattooEngine::~TattooEngine() {
-}
+TattooEngine::~TattooEngine() = default;
 
 void TattooEngine::showOpening() {
 	// No implementation - opening is done using in-game scenes

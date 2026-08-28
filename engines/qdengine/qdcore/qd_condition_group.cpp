@@ -32,11 +32,9 @@ namespace QDEngine {
 qdConditionGroup::qdConditionGroup(conditions_mode_t md) : _conditions_mode(md) {
 }
 
-qdConditionGroup::qdConditionGroup(const qdConditionGroup &cg) : _conditions_mode(cg._conditions_mode), _conditions(cg._conditions) {
-}
+qdConditionGroup::qdConditionGroup(const qdConditionGroup &cg) = default;
 
-qdConditionGroup::~qdConditionGroup() {
-}
+qdConditionGroup::~qdConditionGroup() = default;
 
 qdConditionGroup &qdConditionGroup::operator = (const qdConditionGroup &cg) {
 	if (this == &cg) return *this;

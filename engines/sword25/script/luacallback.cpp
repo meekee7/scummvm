@@ -46,8 +46,7 @@ LuaCallback::LuaCallback(lua_State *L) {
 	lua_setglobal(L, CALLBACKTABLE_NAME);
 }
 
-LuaCallback::~LuaCallback() {
-}
+LuaCallback::~LuaCallback() = default;
 
 void LuaCallback::registerCallbackFunction(lua_State *L, uint objectHandle) {
 	assert(lua_isfunction(L, -1));

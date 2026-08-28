@@ -98,8 +98,7 @@ MidiDriver_MPU401::MidiDriver_MPU401() :
 	}
 }
 
-MidiDriver_MPU401::~MidiDriver_MPU401() {
-}
+MidiDriver_MPU401::~MidiDriver_MPU401() = default;
 
 void MidiDriver_MPU401::close() {
 	if (_timer_proc) {

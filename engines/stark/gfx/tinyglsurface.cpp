@@ -33,8 +33,7 @@ TinyGLSurfaceRenderer::TinyGLSurfaceRenderer(TinyGLDriver *gfx) :
 		_gfx(gfx) {
 }
 
-TinyGLSurfaceRenderer::~TinyGLSurfaceRenderer() {
-}
+TinyGLSurfaceRenderer::~TinyGLSurfaceRenderer() = default;
 
 void TinyGLSurfaceRenderer::render(const Bitmap *bitmap, const Common::Point &dest) {
 	render(bitmap, dest, bitmap->width(), bitmap->height());

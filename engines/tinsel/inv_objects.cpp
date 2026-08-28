@@ -48,7 +48,7 @@ public:
 		assert((!stream->eos()) && stream->pos() == stream->size());
 		delete stream;
 	}
-	~InventoryObjectsImpl(){};
+	~InventoryObjectsImpl() = default;
 	const InventoryObject *GetInvObject(int id) override {
 		auto index = GetObjectIndexIfExists(id);
 		if (index != -1) {

@@ -41,8 +41,7 @@ Cheater_Geisha::Cheater_Geisha(GobEngine *vm, Geisha::Diving *diving, Geisha::Pe
 
 }
 
-Cheater_Geisha::~Cheater_Geisha() {
-}
+Cheater_Geisha::~Cheater_Geisha() = default;
 
 bool Cheater_Geisha::cheat(GUI::Debugger &console) {
 	// A cheat to get around the Diving minigame

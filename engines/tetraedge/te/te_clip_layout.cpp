@@ -26,8 +26,7 @@
 
 namespace Tetraedge {
 
-TeClipLayout::TeClipLayout() {
-}
+TeClipLayout::TeClipLayout() = default;
 
 void TeClipLayout::draw() {
 	if (!worldVisible())

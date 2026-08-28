@@ -34,9 +34,7 @@ MDSkyStripWidget::MDSkyStripWidget(const Configuration *cfg, GameClock *c, Playe
 	: GUI_Widget(nullptr, 0, 0, 0, 0), config(cfg), player(p), _clock(c) {
 }
 
-MDSkyStripWidget::~MDSkyStripWidget() {
-
-}
+MDSkyStripWidget::~MDSkyStripWidget() = default;
 
 
 void MDSkyStripWidget::init(sint16 x, sint16 y) {

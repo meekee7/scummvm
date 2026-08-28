@@ -62,8 +62,7 @@ DuckmanDialogSystem::DuckmanDialogSystem(IllusionsEngine_Duckman *vm)
 	: _vm(vm) {
 }
 
-DuckmanDialogSystem::~DuckmanDialogSystem() {
-}
+DuckmanDialogSystem::~DuckmanDialogSystem() = default;
 
 void DuckmanDialogSystem::addDialogItem(int16 choiceJumpOffs, uint32 sequenceId) {
 	DialogItem dialogItem;

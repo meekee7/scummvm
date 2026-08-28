@@ -50,9 +50,7 @@ RivenStack::RivenStack(MohawkEngine_Riven *vm, uint16 id) :
 	REGISTER_COMMAND(RivenStack, xflies);
 }
 
-RivenStack::~RivenStack() {
-
-}
+RivenStack::~RivenStack() = default;
 
 uint16 RivenStack::getId() const {
 	return _id;
@@ -429,17 +427,13 @@ void RivenStack::waitForPageTurnSound() {
 	}
 }
 
-RivenNameList::RivenNameList() {
-
-}
+RivenNameList::RivenNameList() = default;
 
 RivenNameList::RivenNameList(MohawkEngine_Riven *vm, uint16 id) {
 	loadResource(vm, id);
 }
 
-RivenNameList::~RivenNameList() {
-
-}
+RivenNameList::~RivenNameList() = default;
 
 void RivenNameList::loadResource(MohawkEngine_Riven *vm, uint16 id) {
 	Common::SeekableReadStream *nameStream = vm->getResource(ID_NAME, id);

@@ -239,8 +239,7 @@ CNote::CNote(int nID, int nClue, int nRepeat, int nPerson, int nPlace) {
  *
  ************************************************************************/
 
-CNote::~CNote() {
-}
+CNote::~CNote() = default;
 
 } // namespace Metagame
 } // namespace HodjNPodj

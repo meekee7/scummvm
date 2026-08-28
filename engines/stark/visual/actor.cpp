@@ -42,8 +42,7 @@ VisualActor::VisualActor() :
 		_castsShadow(false) {
 }
 
-VisualActor::~VisualActor() {
-}
+VisualActor::~VisualActor() = default;
 
 void VisualActor::setModel(Model *model) {
 	if (_model == model) {

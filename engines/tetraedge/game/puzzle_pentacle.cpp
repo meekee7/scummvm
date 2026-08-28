@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-PuzzlePentacle::PuzzlePentacle() {
-}
+PuzzlePentacle::PuzzlePentacle() = default;
 
 void PuzzlePentacle::wakeUp(int param1, int param2) {
 	error("TODO: Implement PuzzlePentacle::wakeUp");

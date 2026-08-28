@@ -59,8 +59,7 @@ CMnkOpt::CMnkOpt(CWnd* pParent /*=nullptr*/)
 	//}}AFX_DATA_INIT
 }
 
-CMnkOpt::~CMnkOpt() {
-}
+CMnkOpt::~CMnkOpt() = default;
 
 
 void CMnkOpt::DoDataExchange(CDataExchange* pDX) {

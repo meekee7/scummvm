@@ -31,11 +31,9 @@
 
 namespace Pelrock {
 
-GraphicsManager::GraphicsManager() {
-}
+GraphicsManager::GraphicsManager() = default;
 
-GraphicsManager::~GraphicsManager() {
-}
+GraphicsManager::~GraphicsManager() = default;
 
 Common::Point GraphicsManager::showOverlay(int height, Graphics::ManagedSurface &buf) {
 	int overlayY = 400 - height;

@@ -24,8 +24,7 @@
 
 namespace Tetraedge {
 
-TeResourceManager::TeResourceManager() {
-}
+TeResourceManager::TeResourceManager() = default;
 
 TeResourceManager::~TeResourceManager() {
 	// Remove resources one at a time as they may be inter-dependant,

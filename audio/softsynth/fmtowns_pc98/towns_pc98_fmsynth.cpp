@@ -28,7 +28,7 @@ class TownsPC98_FmSynthOperator {
 public:
 	TownsPC98_FmSynthOperator(const uint32 tickLength, const uint32 envduration, const uint8 *rateTable,	const uint8 *shiftTable,
 		const uint8 *attackDecayTable, const uint32 *frqTable, const uint32 *sineTable, const int32 *tlevelOut, const int32 *detuneTable);
-	~TownsPC98_FmSynthOperator() {}
+	~TownsPC98_FmSynthOperator() = default;
 
 	void keyOn();
 	void keyOff();

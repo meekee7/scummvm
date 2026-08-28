@@ -250,7 +250,7 @@ Color FloorColorPolygon::colorAt(Point query) const {
 	}
 }
 
-Shape::Shape() {}
+Shape::Shape() = default;
 
 Shape::Shape(ReadStream &stream) {
 	byte complexity = stream.readByte();
@@ -337,7 +337,7 @@ void Shape::setAsRectangle(const Rect &rect) {
 	_points[3] = { rect.left, rect.bottom };
 }
 
-PathFindingShape::PathFindingShape() {}
+PathFindingShape::PathFindingShape() = default;
 
 PathFindingShape::PathFindingShape(ReadStream &stream) {
 	auto polygonCount = stream.readUint16LE();
@@ -630,7 +630,7 @@ bool PathFindingShape::findEvadeTarget(
 	return false;
 }
 
-FloorColorShape::FloorColorShape() {}
+FloorColorShape::FloorColorShape() = default;
 
 FloorColorShape::FloorColorShape(ReadStream &stream) {
 	auto polygonCount = stream.readUint16LE();

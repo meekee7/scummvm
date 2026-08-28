@@ -36,8 +36,7 @@ Sound::Sound(ToltecsEngine *vm) : _vm(vm) {
 	}
 }
 
-Sound::~Sound() {
-}
+Sound::~Sound() = default;
 
 void Sound::clearChannel(int channel) {
 	channels[channel].type = kChannelTypeEmpty;

@@ -33,8 +33,7 @@ BbdouFoodCtl::BbdouFoodCtl(IllusionsEngine_BBDOU *vm)
 	: _vm(vm) {
 }
 
-BbdouFoodCtl::~BbdouFoodCtl() {
-}
+BbdouFoodCtl::~BbdouFoodCtl() = default;
 
 void BbdouFoodCtl::placeFood(uint totalRoundsCount, uint maxRequestedFoodCount) {
 	_totalRoundsCount = totalRoundsCount;

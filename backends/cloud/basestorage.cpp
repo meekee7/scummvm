@@ -29,14 +29,14 @@
 
 namespace Cloud {
 
-BaseStorage::BaseStorage() {}
+BaseStorage::BaseStorage() = default;
 
 BaseStorage::BaseStorage(const Common::String &token, const Common::String &refreshToken, bool enabled):
 	_token(token), _refreshToken(refreshToken) {
 	_isEnabled = enabled;
 }
 
-BaseStorage::~BaseStorage() {}
+BaseStorage::~BaseStorage() = default;
 
 void BaseStorage::getAccessToken(const Common::String &code, Networking::ErrorCallback callback) {
 	Networking::JsonCallback innerCallback = new Common::CallbackBridge<BaseStorage, const Networking::ErrorResponse &, const Networking::JsonResponse &>(this, &BaseStorage::codeFlowComplete, callback);

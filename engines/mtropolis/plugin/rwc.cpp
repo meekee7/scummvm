@@ -26,11 +26,9 @@ namespace MTropolis {
 
 namespace RWC {
 
-ThighBlasterModifier::ThighBlasterModifier() {
-}
+ThighBlasterModifier::ThighBlasterModifier() = default;
 
-ThighBlasterModifier::~ThighBlasterModifier() {
-}
+ThighBlasterModifier::~ThighBlasterModifier() = default;
 
 bool ThighBlasterModifier::load(const PlugInModifierLoaderContext &context, const Data::RWC::ThighBlasterModifier &data) {
 	return true;
@@ -65,8 +63,7 @@ RWCPlugIn::RWCPlugIn()
 	: _thighBlasterModifierFactory(this) {
 }
 
-RWCPlugIn::~RWCPlugIn() {
-}
+RWCPlugIn::~RWCPlugIn() = default;
 
 void RWCPlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	registrar->registerPlugInModifier("ThighBlaster", &_thighBlasterModifierFactory);

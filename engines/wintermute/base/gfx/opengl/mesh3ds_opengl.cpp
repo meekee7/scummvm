@@ -34,8 +34,7 @@ Mesh3DSOpenGL::Mesh3DSOpenGL(BaseGame *inGame) : Mesh3DS(inGame) {
 	_vertexData = nullptr;
 }
 
-Mesh3DSOpenGL::~Mesh3DSOpenGL() {
-}
+Mesh3DSOpenGL::~Mesh3DSOpenGL() = default;
 
 void Mesh3DSOpenGL::fillVertexBuffer() {
 	_vertexCount = _numFaces * 3;

@@ -35,8 +35,7 @@ Palette::Palette(ToltecsEngine *vm) : _vm(vm) {
 	memset(_colorTransTable, 0, sizeof(_colorTransTable));
 }
 
-Palette::~Palette() {
-}
+Palette::~Palette() = default;
 
 void Palette::setFullPalette(byte *palette) {
 	byte colors[768];

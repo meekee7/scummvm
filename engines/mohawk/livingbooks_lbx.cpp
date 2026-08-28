@@ -42,8 +42,7 @@ protected:
 LBXDataFile::LBXDataFile(MohawkEngine_LivingBooks *vm) : LBXObject(vm) {
 }
 
-LBXDataFile::~LBXDataFile() {
-}
+LBXDataFile::~LBXDataFile() = default;
 
 enum {
 	kLBXDataFileOpen = 1,

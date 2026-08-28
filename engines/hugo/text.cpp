@@ -39,8 +39,7 @@ TextHandler::TextHandler(HugoEngine *vm) : _vm(vm) {
 	_arrayVerbs = nullptr;
 }
 
-TextHandler::~TextHandler() {
-}
+TextHandler::~TextHandler() = default;
 
 const char *TextHandler::getNoun(int idx1, int idx2) const {
 	return _arrayNouns[idx1][idx2];

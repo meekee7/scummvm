@@ -79,8 +79,7 @@ byte CellGame::getEndY() {
 	}
 }
 
-CellGame::~CellGame() {
-}
+CellGame::~CellGame() = default;
 
 const int8 possibleMoves[][9] = {
 	{ 1, 7, 8, -1 },

@@ -51,8 +51,7 @@ PuzzleHiveMachine::PuzzleHiveMachine(AsylumEngine *engine) : Puzzle(engine) {
 	_ok = false;
 }
 
-PuzzleHiveMachine::~PuzzleHiveMachine() {
-}
+PuzzleHiveMachine::~PuzzleHiveMachine() = default;
 
 //////////////////////////////////////////////////////////////////////////
 // Event Handling

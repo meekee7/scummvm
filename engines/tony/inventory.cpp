@@ -746,8 +746,7 @@ RMInterface::RMInterface() : RMGfxSourceBuffer8RLEByte() {
 	_lastHotZone = -1;
 }
 
-RMInterface::~RMInterface() {
-}
+RMInterface::~RMInterface() = default;
 
 bool RMInterface::active() {
 	return _bActive;

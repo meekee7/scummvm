@@ -227,8 +227,7 @@ ContainerView::ContainerView(
 }
 
 //  Destructor
-ContainerView::~ContainerView() {
-}
+ContainerView::~ContainerView() = default;
 
 //  returns true if the object is visible for this type of
 //  container.
@@ -1078,7 +1077,7 @@ ContainerWindow::ContainerWindow(ContainerNode &nd,
 }
 
 //  Virtual destructor (base does nothing)
-ContainerWindow::~ContainerWindow() {}
+ContainerWindow::~ContainerWindow() = default;
 
 ContainerView &ContainerWindow::getView() {
 	return *_view;

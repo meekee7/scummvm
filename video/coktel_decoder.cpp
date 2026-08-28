@@ -65,8 +65,7 @@ CoktelDecoder::CoktelDecoder(Audio::Mixer *mixer, Audio::Mixer::SoundType soundT
 	assert(_mixer);
 }
 
-CoktelDecoder::~CoktelDecoder() {
-}
+CoktelDecoder::~CoktelDecoder() = default;
 
 bool CoktelDecoder::evaluateSeekFrame(int32 &frame, int whence) const {
 	if (!isVideoLoaded())

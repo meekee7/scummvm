@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-TeITextLayout::TeITextLayout() {
-}
+TeITextLayout::TeITextLayout() = default;
 
 // TODO: Add more functions here.
 

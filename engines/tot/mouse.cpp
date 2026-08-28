@@ -36,8 +36,7 @@ MouseManager::MouseManager() {
 	mouseMaskIndex = 1;
 }
 
-MouseManager::~MouseManager() {
-}
+MouseManager::~MouseManager() = default;
 
 void MouseManager::drawMask(int idx) {
 	CursorMan.replaceCursor(_mouseMasks[idx].mask, 15, 15, 0, 0, 0);

@@ -30,12 +30,12 @@
 namespace Cloud {
 namespace Id {
 
-IdStorage::IdStorage() {}
+IdStorage::IdStorage() = default;
 
 IdStorage::IdStorage(const Common::String &token, const Common::String &refreshToken, bool enabled):
 	BaseStorage(token, refreshToken, enabled) {}
 
-IdStorage::~IdStorage() {}
+IdStorage::~IdStorage() = default;
 
 void IdStorage::printFiles(const FileArrayResponse &response) {
 	debug(9, "IdStorage: files:");

@@ -40,7 +40,6 @@ Vertex3D::Vertex3D() {
 }
 
 //////////////////////////////////////////////////////////////////////////
-Vertex3D::~Vertex3D() {
-}
+Vertex3D::~Vertex3D() = default;
 
 } // namespace Wintermute

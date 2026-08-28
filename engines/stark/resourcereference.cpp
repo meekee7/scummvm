@@ -40,8 +40,7 @@ Common::String ResourceReference::PathElement::describe() const {
 	return  Common::String::format("(%s idx %d)", _type.getName(), _index);
 }
 
-ResourceReference::ResourceReference() {
-}
+ResourceReference::ResourceReference() = default;
 
 void ResourceReference::addPathElement(Resources::Type type, uint16 index) {
 	_path.push_back(PathElement(type, index));

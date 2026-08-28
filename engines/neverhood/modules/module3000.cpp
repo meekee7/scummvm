@@ -478,8 +478,7 @@ Scene3009::Scene3009(NeverhoodEngine *vm, Module *parentModule, int which)
 	SetUpdateHandler(&Scene3009::update);
 }
 
-Scene3009::~Scene3009() {
-}
+Scene3009::~Scene3009() = default;
 
 void Scene3009::openSmacker(uint32 fileHash, bool keepLastFrame) {
 	_cannonSmackerPlayer->open(fileHash, keepLastFrame);

@@ -26,11 +26,9 @@ namespace MTropolis {
 
 namespace Thereware {
 
-RotatorModifier::RotatorModifier() {
-}
+RotatorModifier::RotatorModifier() = default;
 
-RotatorModifier::~RotatorModifier() {
-}
+RotatorModifier::~RotatorModifier() = default;
 
 bool RotatorModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::RotatorModifier &data) {
 	return true;
@@ -61,11 +59,9 @@ const char *RotatorModifier::getDefaultName() const {
 	return "Rotator Modifier"; // ???
 }
 
-TrackerModifier::TrackerModifier() {
-}
+TrackerModifier::TrackerModifier() = default;
 
-TrackerModifier::~TrackerModifier() {
-}
+TrackerModifier::~TrackerModifier() = default;
 
 bool TrackerModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::TrackerModifier &data) {
 	return true;
@@ -96,11 +92,9 @@ const char *TrackerModifier::getDefaultName() const {
 	return "Tracker Modifier"; // ???
 }
 
-DoubleClickModifier::DoubleClickModifier() {
-}
+DoubleClickModifier::DoubleClickModifier() = default;
 
-DoubleClickModifier::~DoubleClickModifier() {
-}
+DoubleClickModifier::~DoubleClickModifier() = default;
 
 bool DoubleClickModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::DoubleClickModifier &data) {
 	return true;
@@ -131,11 +125,9 @@ const char *DoubleClickModifier::getDefaultName() const {
 	return "DoubleClick Modifier"; // ???
 }
 
-MouseTrapModifier::MouseTrapModifier() {
-}
+MouseTrapModifier::MouseTrapModifier() = default;
 
-MouseTrapModifier::~MouseTrapModifier() {
-}
+MouseTrapModifier::~MouseTrapModifier() = default;
 
 bool MouseTrapModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::MouseTrapModifier &data) {
 	return true;
@@ -166,11 +158,9 @@ const char *MouseTrapModifier::getDefaultName() const {
 	return "MouseTrap Modifier"; // ???
 }
 
-WrapAroundModifier::WrapAroundModifier() {
-}
+WrapAroundModifier::WrapAroundModifier() = default;
 
-WrapAroundModifier::~WrapAroundModifier() {
-}
+WrapAroundModifier::~WrapAroundModifier() = default;
 
 bool WrapAroundModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::WrapAroundModifier &data) {
 	return true;
@@ -201,11 +191,9 @@ const char *WrapAroundModifier::getDefaultName() const {
 	return "WrapAround Modifier"; // ???
 }
 
-EasyScrollerModifier::EasyScrollerModifier() {
-}
+EasyScrollerModifier::EasyScrollerModifier() = default;
 
-EasyScrollerModifier::~EasyScrollerModifier() {
-}
+EasyScrollerModifier::~EasyScrollerModifier() = default;
 
 bool EasyScrollerModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::EasyScrollerModifier &data) {
 	return true;
@@ -236,11 +224,9 @@ const char *EasyScrollerModifier::getDefaultName() const {
 	return "EasyScroller Modifier"; // ???
 }
 
-GoThereModifier::GoThereModifier() {
-}
+GoThereModifier::GoThereModifier() = default;
 
-GoThereModifier::~GoThereModifier() {
-}
+GoThereModifier::~GoThereModifier() = default;
 
 bool GoThereModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::GoThereModifier &data) {
 	return true;
@@ -271,11 +257,9 @@ const char *GoThereModifier::getDefaultName() const {
 	return "GoThere Modifier"; // ???
 }
 
-RandomizerModifier::RandomizerModifier() {
-}
+RandomizerModifier::RandomizerModifier() = default;
 
-RandomizerModifier::~RandomizerModifier() {
-}
+RandomizerModifier::~RandomizerModifier() = default;
 
 bool RandomizerModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::RandomizerModifier &data) {
 	return true;
@@ -306,11 +290,9 @@ const char *RandomizerModifier::getDefaultName() const {
 	return "Randomizer Modifier"; // ???
 }
 
-TimeLoopModifier::TimeLoopModifier() {
-}
+TimeLoopModifier::TimeLoopModifier() = default;
 
-TimeLoopModifier::~TimeLoopModifier() {
-}
+TimeLoopModifier::~TimeLoopModifier() = default;
 
 bool TimeLoopModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::TimeLoopModifier &data) {
 	return true;
@@ -341,11 +323,9 @@ const char *TimeLoopModifier::getDefaultName() const {
 	return "TimeLoop Modifier"; // ???
 }
 
-ConductorModifier::ConductorModifier() {
-}
+ConductorModifier::ConductorModifier() = default;
 
-ConductorModifier::~ConductorModifier() {
-}
+ConductorModifier::~ConductorModifier() = default;
 
 bool ConductorModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::ConductorModifier &data) {
 	return true;
@@ -376,11 +356,9 @@ const char *ConductorModifier::getDefaultName() const {
 	return "Conductor Modifier"; // ???
 }
 
-AlphaMaticModifier::AlphaMaticModifier() {
-}
+AlphaMaticModifier::AlphaMaticModifier() = default;
 
-AlphaMaticModifier::~AlphaMaticModifier() {
-}
+AlphaMaticModifier::~AlphaMaticModifier() = default;
 
 bool AlphaMaticModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::AlphaMaticModifier &data) {
 	return true;
@@ -411,11 +389,9 @@ const char *AlphaMaticModifier::getDefaultName() const {
 	return "AlphaMatic Modifier"; // ???
 }
 
-HotTextModifier::HotTextModifier() {
-}
+HotTextModifier::HotTextModifier() = default;
 
-HotTextModifier::~HotTextModifier() {
-}
+HotTextModifier::~HotTextModifier() = default;
 
 bool HotTextModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::HotTextModifier &data) {
 	return true;
@@ -446,11 +422,9 @@ const char *HotTextModifier::getDefaultName() const {
 	return "HotText Modifier"; // ???
 }
 
-KeyScrollModifier::KeyScrollModifier() {
-}
+KeyScrollModifier::KeyScrollModifier() = default;
 
-KeyScrollModifier::~KeyScrollModifier() {
-}
+KeyScrollModifier::~KeyScrollModifier() = default;
 
 bool KeyScrollModifier::load(const PlugInModifierLoaderContext &context, const Data::Thereware::KeyScrollModifier &data) {
 	return true;
@@ -497,8 +471,7 @@ TherewarePlugIn::TherewarePlugIn()
 	, _keyScrollModifierFactory(this) {
 }
 
-TherewarePlugIn::~TherewarePlugIn() {
-}
+TherewarePlugIn::~TherewarePlugIn() = default;
 
 void TherewarePlugIn::registerModifiers(IPlugInModifierRegistrar *registrar) const {
 	//Alpha Kit

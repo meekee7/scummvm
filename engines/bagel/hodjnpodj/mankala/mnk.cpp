@@ -274,8 +274,7 @@ CMnkWindow::CMnkWindow() {
 }
 
 //* CMnkWindow::~CMnkWindow -- Mankala window destructor function
-CMnkWindow::~CMnkWindow() {
-}
+CMnkWindow::~CMnkWindow() = default;
 
 /*****************************************************************
  *

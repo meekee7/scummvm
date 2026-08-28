@@ -45,19 +45,9 @@ qdGridZone::qdGridZone() : qdContour(CONTOUR_POLYGON),
 	_state_off.set_owner(this);
 }
 
-qdGridZone::qdGridZone(const qdGridZone &gz) : qdNamedObject(gz), qdContour(gz),
-	_state(gz._state),
-	_initial_state(gz._initial_state),
-	_height(gz._height),
-	_state_on(gz._state_on),
-	_state_off(gz._state_off),
-	_update_timer(gz._update_timer),
-	_shadow_alpha(gz._shadow_alpha),
-	_shadow_color(gz._shadow_color) {
-}
+qdGridZone::qdGridZone(const qdGridZone &gz) = default;
 
-qdGridZone::~qdGridZone() {
-}
+qdGridZone::~qdGridZone() = default;
 
 qdGridZone &qdGridZone::operator = (const qdGridZone &gz) {
 	if (this == &gz) return *this;

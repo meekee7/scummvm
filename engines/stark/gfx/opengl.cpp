@@ -45,8 +45,7 @@ OpenGLDriver::OpenGLDriver() {
 	_computeLights = true;
 }
 
-OpenGLDriver::~OpenGLDriver() {
-}
+OpenGLDriver::~OpenGLDriver() = default;
 
 void OpenGLDriver::init() {
 	computeScreenViewport();

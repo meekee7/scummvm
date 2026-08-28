@@ -31,8 +31,7 @@ MouseBoxes::MouseBoxes(uint size) {
 	_boxes.resize(size);
 }
 
-MouseBoxes::~MouseBoxes() {
-}
+MouseBoxes::~MouseBoxes() = default;
 
 void MouseBoxes::reset() {
 	uint sz = _boxes.size();

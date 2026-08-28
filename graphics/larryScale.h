@@ -49,13 +49,13 @@ typedef byte LarryScaleColor;
 class RowReader {
 public:
 	virtual const LarryScaleColor *readRow(int y) = 0;
-	virtual ~RowReader() {}
+	virtual ~RowReader() = default;
 };
 
 class RowWriter {
 public:
 	virtual void writeRow(int y, const LarryScaleColor *row) = 0;
-	virtual ~RowWriter() {}
+	virtual ~RowWriter() = default;
 };
 
 /**

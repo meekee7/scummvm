@@ -40,8 +40,7 @@ namespace Hugo {
 FileManager_v3d::FileManager_v3d(HugoEngine *vm) : FileManager_v2d(vm) {
 }
 
-FileManager_v3d::~FileManager_v3d() {
-}
+FileManager_v3d::~FileManager_v3d() = default;
 
 /**
  * Read a PCX image into dib_a

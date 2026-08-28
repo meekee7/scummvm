@@ -96,8 +96,7 @@ BaseMenuSystem::BaseMenuSystem(IllusionsEngine *vm)
 	: _vm(vm), _isTimeOutEnabled(false), _menuChoiceOffset(nullptr) {
 }
 
-BaseMenuSystem::~BaseMenuSystem() {
-}
+BaseMenuSystem::~BaseMenuSystem() = default;
 
 void BaseMenuSystem::playSoundEffect13() {
 	playSoundEffect(13);

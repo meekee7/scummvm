@@ -26,8 +26,7 @@
 namespace Stark {
 namespace Resources {
 
-Direction::~Direction() {
-}
+Direction::~Direction() = default;
 
 Direction::Direction(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

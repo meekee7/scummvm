@@ -39,8 +39,7 @@ ActorBarkNotifyProcess::ActorBarkNotifyProcess(uint16 it)
 	: GumpNotifyProcess(it) {
 }
 
-ActorBarkNotifyProcess::~ActorBarkNotifyProcess(void) {
-}
+ActorBarkNotifyProcess::~ActorBarkNotifyProcess(void) = default;
 
 
 void ActorBarkNotifyProcess::run() {

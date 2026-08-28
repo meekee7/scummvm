@@ -25,11 +25,9 @@
 
 namespace MTropolis {
 
-VThreadTaskData::VThreadTaskData() {
-}
+VThreadTaskData::VThreadTaskData() = default;
 
-VThreadTaskData::~VThreadTaskData() {
-}
+VThreadTaskData::~VThreadTaskData() = default;
 
 VThreadStackChunk::VThreadStackChunk(size_t capacity)
 	: _memory(nullptr), _size(capacity), _topFrame(nullptr) {

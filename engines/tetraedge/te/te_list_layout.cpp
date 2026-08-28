@@ -23,7 +23,6 @@
 
 namespace Tetraedge {
 
-TeListLayout::TeListLayout() {
-}
+TeListLayout::TeListLayout() = default;
 
 } // end namespace Tetraedge

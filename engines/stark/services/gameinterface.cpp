@@ -43,11 +43,9 @@
 
 namespace Stark {
 
-GameInterface::GameInterface() {
-}
+GameInterface::GameInterface() = default;
 
-GameInterface::~GameInterface() {
-}
+GameInterface::~GameInterface() = default;
 
 bool GameInterface::skipCurrentSpeeches() {
 	Current *current = StarkGlobal->getCurrent();

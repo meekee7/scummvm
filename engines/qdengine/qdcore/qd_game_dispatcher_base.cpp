@@ -30,11 +30,9 @@
 
 namespace QDEngine {
 
-qdGameDispatcherBase::qdGameDispatcherBase() {
-}
+qdGameDispatcherBase::qdGameDispatcherBase() = default;
 
-qdGameDispatcherBase::~qdGameDispatcherBase() {
-}
+qdGameDispatcherBase::~qdGameDispatcherBase() = default;
 
 void qdGameDispatcherBase::load_script_body(const xml::tag *p) {
 	qdAnimation *ap;

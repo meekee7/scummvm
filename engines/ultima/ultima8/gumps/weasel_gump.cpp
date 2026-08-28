@@ -107,8 +107,7 @@ WeaselGump::WeaselGump(uint16 level)
 	mouse->pushMouseCursor(Mouse::MOUSE_HAND);
 }
 
-WeaselGump::~WeaselGump() {
-}
+WeaselGump::~WeaselGump() = default;
 
 
 void WeaselGump::Close(bool no_del) {

@@ -45,9 +45,7 @@ AnimTypeManager::AnimTypeManager(TrecisionEngine *vm) : _vm(vm) {
 	_oneSpeakDialogCount = 0;
 }
 
-AnimTypeManager::~AnimTypeManager() {
-
-}
+AnimTypeManager::~AnimTypeManager() = default;
 
 void AnimTypeManager::executeAtFrameDoit(ATFHandle *h, int doit, uint16 objectId) {
 	SAnim *anim = &_vm->_animMgr->_animTab[_vm->_room[_vm->_curRoom]._bkgAnim];

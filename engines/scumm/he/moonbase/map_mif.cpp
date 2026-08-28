@@ -76,8 +76,7 @@ static int magic(int x, int y) {
 	return matrix[y % 8][x % 8];
 }
 
-MIF::MIF() {
-}
+MIF::MIF() = default;
 
 void MIF::generateMap(MapFile *map) {
 	map->terrainDimX = _dimension;

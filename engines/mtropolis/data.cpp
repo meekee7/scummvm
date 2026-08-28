@@ -423,8 +423,7 @@ bool UniversalTime::load(DataReader &reader) {
 InternalTypeTaggedValue::InternalTypeTaggedValue() : type(0) {
 }
 
-InternalTypeTaggedValue::~InternalTypeTaggedValue() {
-}
+InternalTypeTaggedValue::~InternalTypeTaggedValue() = default;
 
 bool InternalTypeTaggedValue::load(DataReader &reader) {
 	if (!reader.readU16(type))
@@ -616,8 +615,7 @@ void PlugInTypeTaggedValue::ValueUnion::destructField(T PlugInTypeTaggedValue::V
 DataObject::DataObject() : _type(DataObjectTypes::kUnknown), _revision(0) {
 }
 
-DataObject::~DataObject() {
-}
+DataObject::~DataObject() = default;
 
 DataReadErrorCode DataObject::load(DataObjectTypes::DataObjectType type, uint16 revision, DataReader &reader) {
 	_type = type;
@@ -1999,8 +1997,7 @@ DataReadErrorCode ObjectReferenceVariableModifierV1::load(DataReader &reader) {
 	return kDataReadErrorNone;
 }
 
-PlugInModifierData::~PlugInModifierData() {
-}
+PlugInModifierData::~PlugInModifierData() = default;
 
 PlugInModifier::PlugInModifier()
 	: modifierFlags(0), codedSize(0), modifierName{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},

@@ -29,8 +29,7 @@ namespace Tetraedge {
 static const char *AMBIENT_SND_BIKE = "sounds/Ambiances/b_automatebike.ogg";
 static const char *AMBIENT_SND_ENGR = "sounds/Ambiances/b_engrenagebg.ogg";
 
-GalleryMenu::GalleryMenu() {
-}
+GalleryMenu::GalleryMenu() = default;
 
 bool GalleryMenu::onLockVideoButtonValidated() {
 	onSkipVideoButtonValidated();

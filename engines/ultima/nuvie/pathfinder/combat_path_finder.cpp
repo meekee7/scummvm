@@ -36,9 +36,7 @@ CombatPathFinder::CombatPathFinder(Actor *a, Actor *t)
 	  target(t), max_dist(0) {
 }
 
-CombatPathFinder::~CombatPathFinder() {
-
-}
+CombatPathFinder::~CombatPathFinder() = default;
 
 bool CombatPathFinder::reached_goal() {
 	if (target_mode == PATHFINDER_CHASE)

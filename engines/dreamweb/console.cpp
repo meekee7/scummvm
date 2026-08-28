@@ -27,7 +27,6 @@ DreamWebConsole::DreamWebConsole(DreamWebEngine *vm) : GUI::Debugger(), _vm(vm) 
 	assert(_vm);
 }
 
-DreamWebConsole::~DreamWebConsole() {
-}
+DreamWebConsole::~DreamWebConsole() = default;
 
 } // End of namespace DreamWeb

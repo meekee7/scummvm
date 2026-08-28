@@ -29,11 +29,9 @@
 
 namespace Mohawk {
 
-Module::Module() {
-}
+Module::Module() = default;
 
-Module::~Module() {
-}
+Module::~Module() = default;
 
 Feature::Feature(View *view) : _view(view) {
 	_next = _prev = nullptr;
@@ -55,8 +53,7 @@ Feature::Feature(View *view) : _view(view) {
 	_done = false;
 }
 
-Feature::~Feature() {
-}
+Feature::~Feature() = default;
 
 void Feature::setNodeDefaults(Feature *prev, Feature *next) {
 	_prev = prev;
@@ -212,8 +209,7 @@ void Feature::defaultDraw() {
 OldFeature::OldFeature(View *view) : Feature(view) {
 }
 
-OldFeature::~OldFeature() {
-}
+OldFeature::~OldFeature() = default;
 
 void OldFeature::resetFrame() {
 	_data.currFrame = 0;
@@ -263,8 +259,7 @@ NewFeature::NewFeature(View *view) : Feature(view) {
 	_oldFlags = 0;
 }
 
-NewFeature::~NewFeature() {
-}
+NewFeature::~NewFeature() = default;
 
 void NewFeature::resetFrame() {
 	_data.currOffset = 26;
@@ -348,8 +343,7 @@ View::View(MohawkEngine *vm) : _vm(vm) {
 	_cursorNode = nullptr;
 }
 
-View::~View() {
-}
+View::~View() = default;
 
 void View::idleView() {
 	assert(_currentModule);

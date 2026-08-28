@@ -51,7 +51,7 @@ Character::Character(GnapEngine *vm) : _vm(vm) {
 	}
 }
 
-Character::~Character() {}
+Character::~Character() = default;
 
 void Character::walkStep() {
 	for (int i = 1; i < _vm->_gridMaxX; ++i) {

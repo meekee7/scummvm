@@ -133,8 +133,7 @@ TalkInstanceList::TalkInstanceList(IllusionsEngine *vm)
 	: _vm(vm) {
 }
 
-TalkInstanceList::~TalkInstanceList() {
-}
+TalkInstanceList::~TalkInstanceList() = default;
 
 TalkInstance *TalkInstanceList::createTalkInstance(Resource *resource) {
 	TalkInstance *talkInstance = new TalkInstance(_vm);

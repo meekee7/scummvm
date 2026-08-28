@@ -37,8 +37,7 @@ TXTFile::TXTFile(Common::SeekableReadStream &txt, Format format) {
 	load(txt, format);
 }
 
-TXTFile::~TXTFile() {
-}
+TXTFile::~TXTFile() = default;
 
 TXTFile::LineArray &TXTFile::getLines() {
 	return _lines;

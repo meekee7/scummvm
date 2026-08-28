@@ -36,8 +36,7 @@ SoundDriver::SoundDriver() : _frameCtr(0) {
 	_streams[stFX] = Stream(FX_COMMANDS);
 }
 
-SoundDriver::~SoundDriver() {
-}
+SoundDriver::~SoundDriver() = default;
 
 SoundDriver::Stream *SoundDriver::tickStream() {
 	for (size_t i = 0; i < stLAST; ++i) {

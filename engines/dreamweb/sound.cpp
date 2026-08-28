@@ -49,8 +49,7 @@ DreamWebSound::DreamWebSound(DreamWebEngine *vm) : _vm(vm) {
 	_volumeCount = 0;
 }
 
-DreamWebSound::~DreamWebSound() {
-}
+DreamWebSound::~DreamWebSound() = default;
 
 bool DreamWebSound::loadSpeech(byte type1, int idx1, byte type2, int idx2) {
 	cancelCh1();

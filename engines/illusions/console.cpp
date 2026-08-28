@@ -29,8 +29,7 @@ Console::Console(IllusionsEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("cheat", WRAP_METHOD(Console, Cmd_cheat));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_cheat(int argc, const char **argv) {
 	if (argc != 1) {

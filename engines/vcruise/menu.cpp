@@ -1151,14 +1151,12 @@ void ReahSchizmMainMenuPage::onButtonClicked(uint button, bool &outChangedState)
 	}
 }
 
-MenuInterface::~MenuInterface() {
-}
+MenuInterface::~MenuInterface() = default;
 
 MenuPage::MenuPage() : _menuInterface(nullptr) {
 }
 
-MenuPage::~MenuPage() {
-}
+MenuPage::~MenuPage() = default;
 
 void MenuPage::init(const MenuInterface *menuInterface) {
 	_menuInterface = menuInterface;

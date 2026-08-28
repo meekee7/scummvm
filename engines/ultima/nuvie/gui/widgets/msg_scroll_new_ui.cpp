@@ -87,9 +87,7 @@ MsgScrollNewUI::MsgScrollNewUI(const Configuration *cfg, Screen *s) {
 	position = 0;
 }
 
-MsgScrollNewUI::~MsgScrollNewUI() {
-
-}
+MsgScrollNewUI::~MsgScrollNewUI() = default;
 
 bool MsgScrollNewUI::can_fit_token_on_msgline(MsgLine *msg_line, MsgText *token) {
 	if (msg_line->get_display_width() + token->getDisplayWidth() > scroll_width * 7 - 8) {

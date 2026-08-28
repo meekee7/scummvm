@@ -29,8 +29,7 @@ TeWarpBloc::TeWarpBloc() : _cubeFace(FaceInvalid), _textureDataFileOffset(0) {
 	_mesh.reset(TeMesh::makeInstance());
 }
 
-TeWarpBloc::~TeWarpBloc() {
-}
+TeWarpBloc::~TeWarpBloc() = default;
 
 void TeWarpBloc::color(const TeColor &col) {
 	color(0, col);

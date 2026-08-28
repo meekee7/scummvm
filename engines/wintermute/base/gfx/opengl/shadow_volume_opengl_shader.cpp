@@ -60,8 +60,7 @@ ShadowVolumeOpenGLShader::ShadowVolumeOpenGLShader(BaseGame *inGame, OpenGL::Sha
 }
 
 //////////////////////////////////////////////////////////////////////////
-ShadowVolumeOpenGLShader::~ShadowVolumeOpenGLShader() {
-}
+ShadowVolumeOpenGLShader::~ShadowVolumeOpenGLShader() = default;
 
 //////////////////////////////////////////////////////////////////////////
 bool ShadowVolumeOpenGLShader::render() {

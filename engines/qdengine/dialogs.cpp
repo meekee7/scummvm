@@ -32,8 +32,7 @@ QdOptionsWidget::QdOptionsWidget(GuiObject* boss, const Common::String& name, co
 	_16bppModeCheckbox = new GUI::CheckboxWidget(widgetsBoss(), "QdGameOptionsDialog.16bppMode", _("Enable 16 bits per pixel mode"), _("Enable this if backend does not support 32bpp and/or to debug graphics"));
 }
 
-QdOptionsWidget::~QdOptionsWidget() {
-}
+QdOptionsWidget::~QdOptionsWidget() = default;
 
 void QdOptionsWidget::defineLayout(GUI::ThemeEval &layouts, const Common::String &layoutName, const Common::String &overlayedLayout) const {
 	layouts.addDialog(layoutName, overlayedLayout)

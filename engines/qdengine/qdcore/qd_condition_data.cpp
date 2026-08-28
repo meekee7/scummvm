@@ -35,12 +35,9 @@ qdConditionData::qdConditionData(data_t data_type, int data_size) : _type(data_t
 		alloc_data(data_size);
 }
 
-qdConditionData::qdConditionData(const qdConditionData &data) : _type(data._type),
-	_data(data._data) {
-}
+qdConditionData::qdConditionData(const qdConditionData &data) = default;
 
-qdConditionData::~qdConditionData() {
-}
+qdConditionData::~qdConditionData() = default;
 
 qdConditionData &qdConditionData::operator = (const qdConditionData &data) {
 	if (this == &data) return *this;

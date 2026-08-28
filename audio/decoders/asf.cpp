@@ -137,8 +137,7 @@ private:
 	Common::SeekableReadStream *_extraData;
 };
 
-ASFStream::Packet::Packet() {
-}
+ASFStream::Packet::Packet() = default;
 
 ASFStream::Packet::~Packet() {
 	for (uint32 i = 0; i < segments.size(); i++)

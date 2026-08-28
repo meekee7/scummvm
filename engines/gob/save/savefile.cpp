@@ -149,11 +149,9 @@ void SaveHeader::setSize(uint32 size) {
 	_size = size;
 }
 
-SavePart::SavePart() {
-}
+SavePart::SavePart() = default;
 
-SavePart::~SavePart() {
-}
+SavePart::~SavePart() = default;
 
 uint32 SavePart::getSize() const {
 	// A part's size is the content's size plus the header's size
@@ -868,8 +866,7 @@ SaveReader::SaveReader(uint32 partCount, uint32 slot, Common::SeekableReadStream
 	_loaded = false;
 }
 
-SaveReader::~SaveReader() {
-}
+SaveReader::~SaveReader() = default;
 
 // Open the save and read it
 bool SaveReader::load() {
@@ -986,8 +983,7 @@ SaveWriter::SaveWriter(uint32 partCount, uint32 slot, const Common::String &file
 	SaveContainer(partCount, slot), _fileName(fileName) {
 }
 
-SaveWriter::~SaveWriter() {
-}
+SaveWriter::~SaveWriter() = default;
 
 bool SaveWriter::writePart(uint32 partN, const SavePart *part) {
 	// Write the part

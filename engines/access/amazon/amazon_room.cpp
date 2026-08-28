@@ -36,8 +36,7 @@ AmazonRoom::AmazonRoom(AccessEngine *vm) : Room(vm) {
 	_icon = nullptr;
 }
 
-AmazonRoom::~AmazonRoom() {
-}
+AmazonRoom::~AmazonRoom() = default;
 
 void AmazonRoom::reloadRoom() {
 	loadRoom(_vm->_player->_roomNumber);

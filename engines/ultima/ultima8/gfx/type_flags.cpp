@@ -32,12 +32,10 @@
 namespace Ultima {
 namespace Ultima8 {
 
-TypeFlags::TypeFlags() {
-}
+TypeFlags::TypeFlags() = default;
 
 
-TypeFlags::~TypeFlags() {
-}
+TypeFlags::~TypeFlags() = default;
 
 ShapeInfo *TypeFlags::getShapeInfo(uint32 shapenum) {
 	if (shapenum < _shapeInfo.size())

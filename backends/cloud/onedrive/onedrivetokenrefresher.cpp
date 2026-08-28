@@ -31,7 +31,7 @@ namespace OneDrive {
 OneDriveTokenRefresher::OneDriveTokenRefresher(OneDriveStorage *parent, Networking::JsonCallback callback, Networking::ErrorCallback ecb, const char *url):
 	HttpJsonRequest(callback, ecb, url), _parentStorage(parent) {}
 
-OneDriveTokenRefresher::~OneDriveTokenRefresher() {}
+OneDriveTokenRefresher::~OneDriveTokenRefresher() = default;
 
 void OneDriveTokenRefresher::tokenRefreshed(const Storage::BoolResponse &response) {
 	if (!response.value) {

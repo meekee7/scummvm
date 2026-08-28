@@ -160,8 +160,7 @@ ArchiveReadStream::ArchiveReadStream(
 		SeekableSubReadStream(parentStream, 0, parentStream->size(), disposeParentStream) {
 }
 
-ArchiveReadStream::~ArchiveReadStream() {
-}
+ArchiveReadStream::~ArchiveReadStream() = default;
 
 Common::String ArchiveReadStream::readString() {
 	// Read the string length

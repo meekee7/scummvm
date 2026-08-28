@@ -35,8 +35,7 @@ Timer::Timer(int16 max_t, TimerBlk *t) {
 	setAllStatus(TIMER_STOP);
 }
 
-Timer::~Timer() {
-}
+Timer::~Timer() = default;
 
 float timer_freq[6] = {
 	0.0182f,

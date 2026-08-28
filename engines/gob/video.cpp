@@ -212,8 +212,7 @@ Video::Video(GobEngine *vm) : _vm(vm) {
 	_dirtyAll = false;
 }
 
-Video::~Video() {
-}
+Video::~Video() = default;
 
 void Video::initPrimary(int16 mode) {
 	if ((mode != 3) && (mode != -1))

@@ -37,8 +37,7 @@ namespace Gob {
 Init_v1::Init_v1(GobEngine *vm) : Init(vm) {
 }
 
-Init_v1::~Init_v1() {
-}
+Init_v1::~Init_v1() = default;
 
 void Init_v1::initVideo() {
 	if (_vm->_global->_videoMode)

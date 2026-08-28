@@ -36,8 +36,7 @@ namespace Gob {
 SaveLoad::SaveLoad(GobEngine *vm) : _vm(vm) {
 }
 
-SaveLoad::~SaveLoad() {
-}
+SaveLoad::~SaveLoad() = default;
 
 const char *SaveLoad::stripPath(const char *fileName, char separator) {
 	const char *backSlash;

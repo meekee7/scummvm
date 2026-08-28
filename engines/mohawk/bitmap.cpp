@@ -64,8 +64,7 @@ MohawkBitmap::MohawkBitmap() {
 	_data = nullptr;
 }
 
-MohawkBitmap::~MohawkBitmap() {
-}
+MohawkBitmap::~MohawkBitmap() = default;
 
 void MohawkBitmap::decodeImageData(Common::SeekableReadStream *stream) {
 	_data = stream;

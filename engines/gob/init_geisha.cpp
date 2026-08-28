@@ -38,8 +38,7 @@ namespace Gob {
 Init_Geisha::Init_Geisha(GobEngine *vm) : Init_v1(vm) {
 }
 
-Init_Geisha::~Init_Geisha() {
-}
+Init_Geisha::~Init_Geisha() = default;
 
 void Init_Geisha::initVideo() {
 	Init_v1::initVideo();

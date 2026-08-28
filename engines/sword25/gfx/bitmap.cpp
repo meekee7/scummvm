@@ -43,8 +43,7 @@ Bitmap::Bitmap(RenderObjectPtr<RenderObject> parentPtr, TYPES type, uint handle)
 	_flipV(false) {
 }
 
-Bitmap::~Bitmap() {
-}
+Bitmap::~Bitmap() = default;
 
 void Bitmap::setAlpha(int alpha) {
 	if (!isAlphaAllowed()) {

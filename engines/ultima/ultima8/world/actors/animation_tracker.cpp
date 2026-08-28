@@ -51,12 +51,11 @@ AnimationTracker::AnimationTracker() : _firstFrame(true), _done(false),
 	_endFrame(0), _flipped(false) {
 }
 
-AnimationTracker::~AnimationTracker() {
-}
+AnimationTracker::~AnimationTracker() = default;
 
 
 bool AnimationTracker::init(const Actor *actor, Animation::Sequence action,
-							Direction dir, const PathfindingState *state) {
+                            Direction dir, const PathfindingState *state) {
 	assert(actor);
 	_actor = actor->getObjId();
 	uint32 shape = actor->getShape();

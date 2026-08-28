@@ -37,8 +37,7 @@ SyncSoundNode::SyncSoundNode(ZVision *engine, uint32 key, Common::Path &filename
 	_syncto = syncto;
 }
 
-SyncSoundNode::~SyncSoundNode() {
-}
+SyncSoundNode::~SyncSoundNode() = default;
 
 bool SyncSoundNode::process(uint32 deltaTimeInMillis) {
 	if (_engine->getScriptManager()->getSideFX(_syncto) == NULL)

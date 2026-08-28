@@ -347,7 +347,7 @@ public:
 	Screen(int width, int height) : Graphics::Screen(width, height), BITMAP(this) {}
 	Screen(int width, int height, const Graphics::PixelFormat &pixelFormat) :
 		Graphics::Screen(width, height, pixelFormat), BITMAP(this) {}
-	~Screen() override {}
+	~Screen() override = default;
 };
 
 /*-------------------------------------------------------------------*/

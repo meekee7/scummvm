@@ -256,7 +256,7 @@ public:
  * It does nothing as everything is already handled by us. */
 class FakePipeline : public Pipeline {
 public:
-	FakePipeline() {}
+	FakePipeline() = default;
 	void setColor(GLfloat r, GLfloat g, GLfloat b, GLfloat a) override { }
 	void setProjectionMatrix(const Math::Matrix4 &projectionMatrix) override {}
 protected:

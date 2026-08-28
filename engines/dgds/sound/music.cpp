@@ -926,8 +926,7 @@ MusicEntry::MusicEntry() {
 	}
 }
 
-MusicEntry::~MusicEntry() {
-}
+MusicEntry::~MusicEntry() = default;
 
 void MusicEntry::onTimer() {
 	if (!signal) {

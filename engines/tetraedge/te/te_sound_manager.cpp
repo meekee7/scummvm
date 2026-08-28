@@ -34,8 +34,7 @@
 
 namespace Tetraedge {
 
-TeSoundManager::TeSoundManager() {
-}
+TeSoundManager::TeSoundManager() = default;
 
 void TeSoundManager::playFreeSound(const Common::Path &path) {
 	playFreeSound(path, 1.0f, "sfx");

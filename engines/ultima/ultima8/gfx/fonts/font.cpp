@@ -31,15 +31,14 @@ Font::Font() : _highRes(false) {
 }
 
 
-Font::~Font() {
-}
+Font::~Font() = default;
 
 
 void Font::getTextSize(const Common::String &text,
-					   int32 &resultwidth, int32 &resultheight,
-					   unsigned int &remaining,
-					   int32 width, int32 height, TextAlign align,
-					   bool u8specials, bool pagebreaks) {
+                       int32 &resultwidth, int32 &resultheight,
+                       unsigned int &remaining,
+                       int32 width, int32 height, TextAlign align,
+                       bool u8specials, bool pagebreaks) {
 	Common::List<PositionedText> tmp;
 	tmp = typesetText<Traits>(this, text, remaining,
 	                          width, height, align, u8specials, pagebreaks,

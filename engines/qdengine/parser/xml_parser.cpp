@@ -33,8 +33,7 @@ parser::parser() : _cur_level(0), _skip_mode(false), _binary_script(false) {
 	_root_tag.set_data(&_data_pool);
 }
 
-parser::~parser() {
-}
+parser::~parser() = default;
 
 void parser::clear() {
 	_root_tag.clear();

@@ -33,8 +33,7 @@ Console::Console() : GUI::Debugger() {
 #endif
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::cmdDumpRes(int argc, const char **argv) {
 	if (argc == 2) {

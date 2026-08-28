@@ -43,8 +43,7 @@ CruEnergyGump::CruEnergyGump(Shape *shape, int x)
 	_frameNum = 3;
 }
 
-CruEnergyGump::~CruEnergyGump() {
-}
+CruEnergyGump::~CruEnergyGump() = default;
 
 void CruEnergyGump::InitGump(Gump *newparent, bool take_focus) {
 	CruStatGump::InitGump(newparent, take_focus);

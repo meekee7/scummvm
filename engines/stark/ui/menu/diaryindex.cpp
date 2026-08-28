@@ -38,8 +38,7 @@ DiaryIndexScreen::DiaryIndexScreen(Gfx::Driver *gfx, Cursor *cursor) :
 		StaticLocationScreen(gfx, cursor, "DiaryIndexLocation", Screen::kScreenDiaryIndex) {
 }
 
-DiaryIndexScreen::~DiaryIndexScreen() {
-}
+DiaryIndexScreen::~DiaryIndexScreen() = default;
 
 void DiaryIndexScreen::open() {
 	StaticLocationScreen::open();

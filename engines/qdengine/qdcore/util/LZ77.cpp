@@ -33,10 +33,8 @@ namespace QDEngine {
 
 #define BITS_LEN    4
 
-CLZ77::CLZ77() {
-}
-CLZ77::~CLZ77() {
-}
+CLZ77::CLZ77() = default;
+CLZ77::~CLZ77() = default;
 
 int32 CLZ77::lzComp(const byte *s1, const byte *s2, int32 maxlen) {
 	int32 i;

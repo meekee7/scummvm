@@ -27,8 +27,7 @@
 
 namespace Tetraedge {
 
-TeVisualFade::TeVisualFade() {
-}
+TeVisualFade::TeVisualFade() = default;
 
 void TeVisualFade::animateBlackFade() {
 	_fadeCaptureSprite.setVisible(false);

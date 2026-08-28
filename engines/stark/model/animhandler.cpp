@@ -39,8 +39,7 @@ AnimHandler::AnimHandler() :
 
 }
 
-AnimHandler::~AnimHandler() {
-}
+AnimHandler::~AnimHandler() = default;
 
 void AnimHandler::setAnim(SkeletonAnim *anim) {
 	if (_candidateAnim == anim) {

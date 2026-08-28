@@ -56,8 +56,7 @@ BarkGump::BarkGump(uint16 owner, const Common::String &msg, uint32 speechShapeNu
 	_talkSpeed = ConfMan.getInt("talkspeed");
 }
 
-BarkGump::~BarkGump(void) {
-}
+BarkGump::~BarkGump(void) = default;
 
 int BarkGump::dialogFontForActor(uint16 actor) {
 	// OK, this is a bit of a hack, but it's how it has to be

@@ -36,8 +36,7 @@ ShapeFont::ShapeFont(const uint8 *data, uint32 size,
 	_crusaderCharMap = GAME_IS_CRUSADER && shapeNum == 1;
 }
 
-ShapeFont::~ShapeFont() {
-}
+ShapeFont::~ShapeFont() = default;
 
 
 int ShapeFont::getWidth(char c) {

@@ -23,7 +23,6 @@
 
 namespace Tetraedge {
 
-TeI3DObject2::TeI3DObject2() {
-}
+TeI3DObject2::TeI3DObject2() = default;
 
 } // end namespace Tetraedge

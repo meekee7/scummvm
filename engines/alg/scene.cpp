@@ -27,8 +27,7 @@
 
 namespace Alg {
 
-SceneInfo::SceneInfo() {
-}
+SceneInfo::SceneInfo() = default;
 
 SceneInfo::~SceneInfo() {
 	for (auto scene : _scenes) {

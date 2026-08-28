@@ -42,7 +42,6 @@ SystemInstance::SystemInstance(void *instance, int id, SystemClass *sysClass) {
 }
 
 //////////////////////////////////////////////////////////////////////////
-SystemInstance::~SystemInstance() {
-}
+SystemInstance::~SystemInstance() = default;
 
 } // End of namespace Wintermute

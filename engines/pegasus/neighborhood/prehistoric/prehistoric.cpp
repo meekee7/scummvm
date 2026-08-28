@@ -107,7 +107,7 @@ void Prehistoric::start() {
 class FinishPrehistoricAction : public AIPlayMessageAction {
 public:
 	FinishPrehistoricAction() : AIPlayMessageAction("Images/AI/Prehistoric/XP25W", false) {}
-	~FinishPrehistoricAction() override {}
+	~FinishPrehistoricAction() override = default;
 
 	void performAIAction(AIRule *) override;
 

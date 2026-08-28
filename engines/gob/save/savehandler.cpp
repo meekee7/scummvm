@@ -44,8 +44,7 @@ SlotFile::SlotFile(GobEngine *vm, uint32 slotCount, const Common::String &base) 
 	_slotCount = slotCount;
 }
 
-SlotFile::~SlotFile() {
-}
+SlotFile::~SlotFile() = default;
 
 uint32 SlotFileIndexed::getSlotMax() const {
 	Common::SaveFileManager *saveMan = g_system->getSavefileManager();
@@ -152,8 +151,7 @@ SlotFileIndexed::SlotFileIndexed(GobEngine *vm, uint32 slotCount,
 	_ext = extStub;
 }
 
-SlotFileIndexed::~SlotFileIndexed() {
-}
+SlotFileIndexed::~SlotFileIndexed() = default;
 
 Common::String SlotFileIndexed::build(int slot) const {
 	if ((slot < 0) || (((uint32) slot) >= _slotCount))
@@ -170,8 +168,7 @@ SlotFileStatic::SlotFileStatic(GobEngine *vm, const Common::String &base,
 	_ext = "." + ext;
 }
 
-SlotFileStatic::~SlotFileStatic() {
-}
+SlotFileStatic::~SlotFileStatic() = default;
 
 int SlotFileStatic::getSlot(int32 offset) const {
 	return -1;
@@ -214,8 +211,7 @@ Common::OutSaveFile *SlotFileStatic::openWrite() const {
 SaveHandler::SaveHandler(GobEngine *vm) : _vm(vm) {
 }
 
-SaveHandler::~SaveHandler() {
-}
+SaveHandler::~SaveHandler() = default;
 
 uint32 SaveHandler::getVarSize(GobEngine *vm) {
 	// Sanity checks
@@ -417,8 +413,7 @@ NotesHandler::File::File(GobEngine *vm, const Common::String &base) :
 	SlotFileStatic(vm, base, "blo") {
 }
 
-NotesHandler::File::~File() {
-}
+NotesHandler::File::~File() = default;
 
 NotesHandler::NotesHandler(uint32 notesSize, GobEngine *vm, const Common::String &target) :
 	SaveHandler(vm) {
@@ -532,8 +527,7 @@ bool NotesHandler::save(int16 dataVar, int32 size, int32 offset) {
 FakeFileHandler::FakeFileHandler(GobEngine *vm) : SaveHandler(vm) {
 }
 
-FakeFileHandler::~FakeFileHandler() {
-}
+FakeFileHandler::~FakeFileHandler() = default;
 
 int32 FakeFileHandler::getSize() {
 	if (_data.empty())

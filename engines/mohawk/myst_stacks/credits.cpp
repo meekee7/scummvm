@@ -42,8 +42,7 @@ Credits::Credits(MohawkEngine_Myst *vm) :
 	setupOpcodes();
 }
 
-Credits::~Credits() {
-}
+Credits::~Credits() = default;
 
 void Credits::setupOpcodes() {
 	// "Stack-Specific" Opcodes

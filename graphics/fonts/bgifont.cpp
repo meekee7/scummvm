@@ -23,11 +23,9 @@
 
 namespace Graphics {
 
-BgiFont::BgiFont() {
-}
+BgiFont::BgiFont() = default;
 
-BgiFont::~BgiFont() {
-}
+BgiFont::~BgiFont() = default;
 
 bool BgiFont::loadChr(const Common::Path &fileName) {
 

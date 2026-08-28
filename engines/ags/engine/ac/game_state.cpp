@@ -44,8 +44,7 @@ namespace AGS3 {
 using namespace AGS::Shared;
 using namespace AGS::Engine;
 
-GameState::GameState() {
-}
+GameState::GameState() = default;
 
 bool GameState::IsAutoRoomViewport() const {
 	return _isAutoRoomViewport;

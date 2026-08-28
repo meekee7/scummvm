@@ -59,8 +59,7 @@ Oko::Oko(const ANIFile &ani, Sound &sound, SoundDesc &breathe) :
 	setVisible(true);
 }
 
-Oko::~Oko() {
-}
+Oko::~Oko() = default;
 
 void Oko::advance() {
 	bool wasLastFrame = lastFrame();

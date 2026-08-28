@@ -28,12 +28,9 @@ namespace QDEngine {
 qdInterfaceObjectBase::qdInterfaceObjectBase() : _owner(NULL) {
 }
 
-qdInterfaceObjectBase::qdInterfaceObjectBase(const qdInterfaceObjectBase &obj) : qdNamedObjectBase(obj),
-	_owner(obj._owner) {
-}
+qdInterfaceObjectBase::qdInterfaceObjectBase(const qdInterfaceObjectBase &obj) = default;
 
-qdInterfaceObjectBase::~qdInterfaceObjectBase() {
-}
+qdInterfaceObjectBase::~qdInterfaceObjectBase() = default;
 
 qdInterfaceObjectBase &qdInterfaceObjectBase::operator = (const qdInterfaceObjectBase &obj) {
 	if (this == &obj) return *this;

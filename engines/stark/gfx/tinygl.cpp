@@ -39,8 +39,7 @@
 namespace Stark {
 namespace Gfx {
 
-TinyGLDriver::TinyGLDriver() {
-}
+TinyGLDriver::TinyGLDriver() = default;
 
 TinyGLDriver::~TinyGLDriver() {
 	TinyGL::destroyContext();

@@ -45,8 +45,7 @@ DarkMoonEngine::DarkMoonEngine(OSystem *system, const GameFlags &flags) : EoBCor
 	_amigaSoundPatchSize = 0;
 }
 
-DarkMoonEngine::~DarkMoonEngine() {
-}
+DarkMoonEngine::~DarkMoonEngine() = default;
 
 Common::Error DarkMoonEngine::init() {
 	Common::Error err = EoBCoreEngine::init();

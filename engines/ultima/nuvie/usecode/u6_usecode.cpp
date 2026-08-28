@@ -197,8 +197,7 @@ static const char *u6_potions[8] = {
 U6UseCode::U6UseCode(Game *g, const Configuration *cfg) : UseCode(g, cfg) {
 }
 
-U6UseCode::~U6UseCode() {
-}
+U6UseCode::~U6UseCode() = default;
 
 
 /* Is the object a food (or drink) item? */

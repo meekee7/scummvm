@@ -55,8 +55,7 @@ Game::Game() {
 	_soundFlag = true;
 }
 
-Game::~Game() {
-}
+Game::~Game() = default;
 
 void Game::tick() {
 	// Call the tick method for each hotspot - this is somewaht complicated

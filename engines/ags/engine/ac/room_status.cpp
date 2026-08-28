@@ -55,7 +55,7 @@ RoomStatus::RoomStatus() {
 	memset(&interactionVariableValues, 0, sizeof(interactionVariableValues));
 }
 
-RoomStatus::~RoomStatus() {}
+RoomStatus::~RoomStatus() = default;
 
 void RoomStatus::FreeScriptData() {
 	tsdata.clear();

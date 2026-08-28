@@ -32,9 +32,7 @@ AdLibSfxManager::AdLibSfxManager(const Configuration *cfg, Audio::Mixer *m) : Sf
 
 }
 
-AdLibSfxManager::~AdLibSfxManager() {
-
-}
+AdLibSfxManager::~AdLibSfxManager() = default;
 
 bool AdLibSfxManager::playSfx(SfxIdType sfx_id, uint8 volume) {
 	return playSfxLooping(sfx_id, nullptr, volume);

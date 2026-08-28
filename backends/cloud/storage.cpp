@@ -35,7 +35,7 @@ Storage::Storage():
 	_runningRequestsCount(0), _savesSyncRequest(nullptr), _syncRestartRequestsed(false),
 	_downloadFolderRequest(nullptr), _isEnabled(false) {}
 
-Storage::~Storage() {}
+Storage::~Storage() = default;
 
 bool Storage::isEnabled() const {
 	return _isEnabled;

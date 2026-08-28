@@ -58,8 +58,7 @@ ContainerGump::ContainerGump(const Shape *shape, uint32 frameNum, uint16 owner,
 	_frameNum = frameNum;
 }
 
-ContainerGump::~ContainerGump() {
-}
+ContainerGump::~ContainerGump() = default;
 
 void ContainerGump::InitGump(Gump *newparent, bool take_focus) {
 	UpdateDimsFromShape();

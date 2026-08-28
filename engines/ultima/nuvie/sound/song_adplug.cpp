@@ -38,8 +38,7 @@ SongAdPlug::SongAdPlug(Audio::Mixer *m, CEmuopl *o) {
 	stream = nullptr;
 }
 
-SongAdPlug::~SongAdPlug() {
-}
+SongAdPlug::~SongAdPlug() = default;
 
 bool SongAdPlug::Init(const Common::Path &filename, const char *fileId, uint16 song_num) {
 	if (filename == nullptr)

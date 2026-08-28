@@ -1584,16 +1584,14 @@ SaveLoad_v7::SpriteHandler::File::File(GobEngine *vm, const Common::String &base
 SlotFileStatic(vm, base, ext) {
 }
 
-SaveLoad_v7::SpriteHandler::File::~File() {
-}
+SaveLoad_v7::SpriteHandler::File::~File() = default;
 
 
 SaveLoad_v7::SpriteHandler::SpriteHandler(GobEngine *vm, const Common::String &target, const Common::String &ext)
 	: TempSpriteHandler(vm), _file(vm, target, ext) {
 }
 
-SaveLoad_v7::SpriteHandler::~SpriteHandler() {
-}
+SaveLoad_v7::SpriteHandler::~SpriteHandler() = default;
 
 int32 SaveLoad_v7::SpriteHandler::getSize() {
 	Common::String fileName = _file.build();
@@ -1684,15 +1682,14 @@ SaveLoad_v7::DrawingOnFloppyDiskHandler::File::File(GobEngine *vm, const Common:
 	SlotFileStatic(vm, base, ext) {
 }
 
-SaveLoad_v7::DrawingOnFloppyDiskHandler::File::~File() {
-}
+SaveLoad_v7::DrawingOnFloppyDiskHandler::File::~File() = default;
 
 
 SaveLoad_v7::DrawingOnFloppyDiskHandler::DrawingOnFloppyDiskHandler(GobEngine *vm,
-																	SaveReader *reader,
-																	SaveWriter *writer,
-																	bool isThumbnail,
-																	uint32 chunkSize)
+                                                                    SaveReader *reader,
+                                                                    SaveWriter *writer,
+                                                                    bool isThumbnail,
+                                                                    uint32 chunkSize)
 	: TempSpriteHandler(vm), _reader(reader), _writer(writer), _isThumbnail(isThumbnail), _chunkSize(chunkSize) {
 }
 
@@ -1768,16 +1765,14 @@ SaveLoad_v7::GameFileHandler::File::File(GobEngine *vm, const Common::String &ba
 SlotFileStatic(vm, base, ext) {
 }
 
-SaveLoad_v7::GameFileHandler::File::~File() {
-}
+SaveLoad_v7::GameFileHandler::File::~File() = default;
 
 
 SaveLoad_v7::GameFileHandler::GameFileHandler(GobEngine *vm, const Common::String &target, const Common::String &ext) :
 SaveHandler(vm), _file(vm, target, ext) {
 }
 
-SaveLoad_v7::GameFileHandler::~GameFileHandler() {
-}
+SaveLoad_v7::GameFileHandler::~GameFileHandler() = default;
 
 int32 SaveLoad_v7::GameFileHandler::getSize() {
 	Common::String fileName = _file.build();

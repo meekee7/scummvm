@@ -138,8 +138,7 @@ void MonsterStruct::synchronize(Common::SeekableReadStream &s) {
 	_attackVoc = Common::String(attackVoc);
 }
 
-MonsterData::MonsterData() {
-}
+MonsterData::MonsterData() = default;
 
 void MonsterData::load(const Common::Path &name) {
 	File f(name);

@@ -43,8 +43,7 @@ FatalMsgManager::FatalMsgManager() {
 	reset();
 }
 
-FatalMsgManager::~FatalMsgManager() {
-}
+FatalMsgManager::~FatalMsgManager() = default;
 
 void FatalMsgManager::reset() {
 	_fatalMessage = "";

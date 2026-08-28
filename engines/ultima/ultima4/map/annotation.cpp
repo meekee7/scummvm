@@ -51,7 +51,7 @@ bool Annotation::operator==(const Annotation &a) const {
 
 /*-------------------------------------------------------------------*/
 
-AnnotationMgr::AnnotationMgr() {}
+AnnotationMgr::AnnotationMgr() = default;
 
 Annotation *AnnotationMgr::add(Coords coords, MapTile tile, bool visual, bool isCoverUp) {
 	// New annotations go to the front so they're handled "on top"

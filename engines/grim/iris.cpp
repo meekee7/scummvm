@@ -30,8 +30,7 @@ Iris::Iris() : _playing(false), _direction(Open), _x1(0), _y1(0), _x2(0), _y2(0)
 		_targetX(0), _targetY(0), _length(0), _currTime(0) {
 }
 
-Iris::~Iris() {
-}
+Iris::~Iris() = default;
 
 void Iris::play(Iris::Direction dir, int x, int y, int length) {
 	_playing = true;

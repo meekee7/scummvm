@@ -28,9 +28,9 @@ namespace Networking {
 
 #define FILES_PAGE_NAME ".filesAJAX.html"
 
-FilesAjaxPageHandler::FilesAjaxPageHandler() {}
+FilesAjaxPageHandler::FilesAjaxPageHandler() = default;
 
-FilesAjaxPageHandler::~FilesAjaxPageHandler() {}
+FilesAjaxPageHandler::~FilesAjaxPageHandler() = default;
 
 namespace {
 

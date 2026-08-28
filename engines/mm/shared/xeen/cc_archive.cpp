@@ -176,8 +176,7 @@ CCArchive::CCArchive(const Common::Path &filename, const Common::String &prefix,
 	loadIndex(f);
 }
 
-CCArchive::~CCArchive() {
-}
+CCArchive::~CCArchive() = default;
 
 bool CCArchive::getHeaderEntry(const Common::Path &resourceName, Shared::Xeen::CCEntry &ccEntry) const {
 	Common::String resName = resourceName.baseName();

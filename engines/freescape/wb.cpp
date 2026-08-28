@@ -292,8 +292,7 @@ WallyBebenStream::WallyBebenStream(const byte *data, uint32 dataSize,
 	startSong(songNum);
 }
 
-WallyBebenStream::~WallyBebenStream() {
-}
+WallyBebenStream::~WallyBebenStream() = default;
 
 void WallyBebenStream::loadTables() {
 	// Period table: 48 x uint16 BE

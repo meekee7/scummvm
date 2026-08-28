@@ -30,8 +30,7 @@
 namespace Stark {
 namespace Resources {
 
-Camera::~Camera() {
-}
+Camera::~Camera() = default;
 
 Camera::Camera(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

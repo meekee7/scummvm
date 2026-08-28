@@ -54,8 +54,7 @@ MiniStatsGump::MiniStatsGump(int x, int y, uint32 flags, int32 layer)
 	: Gump(x, y, 5, 5, 0, flags, layer) {
 }
 
-MiniStatsGump::~MiniStatsGump() {
-}
+MiniStatsGump::~MiniStatsGump() = default;
 
 void MiniStatsGump::InitGump(Gump *newparent, bool take_focus) {
 	Gump::InitGump(newparent, take_focus);

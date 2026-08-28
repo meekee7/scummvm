@@ -369,11 +369,10 @@ void KeyBinder::AddIosBindings()
     }
 }
 
-KeyBinder::~KeyBinder() {
-}
+KeyBinder::~KeyBinder() = default;
 
 void KeyBinder::AddKeyBinding(Common::KeyCode key, byte mod, const Action *action,
-							  int nparams, int param) {
+                              int nparams, int param) {
 	Common::KeyState k;
 	ActionType a;
 	a.action = action;

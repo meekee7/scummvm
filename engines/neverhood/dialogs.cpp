@@ -96,8 +96,7 @@ NeverhoodOptionsWidget::NeverhoodOptionsWidget(GuiObject *boss, const Common::St
 	}
 }
 
-NeverhoodOptionsWidget::~NeverhoodOptionsWidget() {
-}
+NeverhoodOptionsWidget::~NeverhoodOptionsWidget() = default;
 
 void NeverhoodOptionsWidget::defineLayout(GUI::ThemeEval &layouts, const Common::String &layoutName, const Common::String &overlayedLayout) const {
 	layouts.addDialog(layoutName, overlayedLayout)

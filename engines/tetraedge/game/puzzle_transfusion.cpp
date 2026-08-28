@@ -23,8 +23,7 @@
 
 namespace Tetraedge {
 
-PuzzleTransfusion::PuzzleTransfusion() {
-}
+PuzzleTransfusion::PuzzleTransfusion() = default;
 
 // TODO: Add more functions here.
 

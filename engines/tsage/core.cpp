@@ -3339,8 +3339,7 @@ SceneText::SceneText() : SceneObject() {
 	_color3 = 0;
 }
 
-SceneText::~SceneText() {
-}
+SceneText::~SceneText() = default;
 
 void SceneText::setup(const Common::String &msg) {
 	GfxManager gfxMan(_textSurface);

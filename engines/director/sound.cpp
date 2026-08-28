@@ -980,8 +980,7 @@ AudioFileDecoder::AudioFileDecoder(Common::String &path)
 	_path = path;
 }
 
-AudioFileDecoder::~AudioFileDecoder() {
-}
+AudioFileDecoder::~AudioFileDecoder() = default;
 
 Audio::AudioStream *AudioFileDecoder::getAudioStream(bool looping, bool forPuppet, DisposeAfterUse::Flag disposeAfterUse) {
 	if (_path.empty())
@@ -1059,8 +1058,7 @@ Audio::AudioStream *MoaStreamDecoder::getAudioStream(bool looping, bool forPuppe
 	return nullptr;
 }
 
-MoaSoundFormatDecoder::MoaSoundFormatDecoder() {
-}
+MoaSoundFormatDecoder::MoaSoundFormatDecoder() = default;
 
 MoaSoundFormatDecoder::~MoaSoundFormatDecoder() {
 	if (_data) {

@@ -43,8 +43,7 @@ DebugConsole::DebugConsole(TosText *tosText) : _tosText(tosText) {
 	registerCmd("playSpeech", WRAP_METHOD(DebugConsole, Cmd_playSpeech));
 }
 
-DebugConsole::~DebugConsole() {
-}
+DebugConsole::~DebugConsole() = default;
 
 bool DebugConsole::Cmd_tostext(int argc, const char **argv) {
 	if (argc != 2) {

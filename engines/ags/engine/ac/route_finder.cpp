@@ -31,7 +31,7 @@ using AGS::Shared::Bitmap;
 
 class AGSRouteFinder : public IRouteFinder {
 public:
-	virtual ~AGSRouteFinder() {}
+	virtual ~AGSRouteFinder() = default;
 
 	void init_pathfinder() override {
 		AGS::Engine::RouteFinder::init_pathfinder();
@@ -61,7 +61,7 @@ public:
 
 class AGSLegacyRouteFinder : public IRouteFinder {
 public:
-	virtual ~AGSLegacyRouteFinder() {}
+	virtual ~AGSLegacyRouteFinder() = default;
 
 	void init_pathfinder() override {
 		AGS::Engine::RouteFinderLegacy::init_pathfinder();

@@ -28,8 +28,7 @@ namespace Gnap {
 SoundMan::SoundMan(GnapEngine *vm) : _vm(vm) {
 }
 
-SoundMan::~SoundMan() {
-}
+SoundMan::~SoundMan() = default;
 
 void SoundMan::playSound(int resourceId, bool looping) {
 	SoundItem soundItem;

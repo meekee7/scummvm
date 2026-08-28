@@ -38,8 +38,7 @@ CineConsole::CineConsole(CineEngine *vm) : GUI::Debugger(), _vm(vm) {
 	hacksEnabled = true;
 }
 
-CineConsole::~CineConsole() {
-}
+CineConsole::~CineConsole() = default;
 
 // Activate Cheat during Scene 6 Labyrinth chased by Guards in Otto's Mansion
 // This puzzle is hard, especially without save/load so this will aid playtesting.

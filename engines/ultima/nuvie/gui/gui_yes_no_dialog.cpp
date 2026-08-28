@@ -52,8 +52,7 @@ GUI_YesNoDialog::GUI_YesNoDialog(GUI *gui, int x, int y, int w, int h, const cha
 }
 
 
-GUI_YesNoDialog::~GUI_YesNoDialog() {
-}
+GUI_YesNoDialog::~GUI_YesNoDialog() = default;
 
 GUI_status GUI_YesNoDialog::KeyDown(const Common::KeyState &key) {
 	if (key.keycode == Common::KEYCODE_y)

@@ -38,8 +38,7 @@ CBagWield::CBagWield(CBofWindow *pParent, const CBofRect &xRect) :
 }
 
 
-CBagWield::~CBagWield() {
-}
+CBagWield::~CBagWield() = default;
 
 ErrorCode CBagWield::loadFile(const CBofString &sFile) {
 	ErrorCode errorCode = CBagStorageDev::loadFile(sFile);

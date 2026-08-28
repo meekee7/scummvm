@@ -163,7 +163,7 @@ class TownsPC98_SfxChannel : public TownsPC98_MusicChannelSSG {
 public:
 	TownsPC98_SfxChannel(TownsPC98_AudioDriver *driver, uint8 regOffs, uint8 flgs, uint8 num, uint8 key, uint8 prt, uint8 id) :
 		TownsPC98_MusicChannelSSG(driver, regOffs, flgs, num, key, prt, id) {}
-	virtual ~TownsPC98_SfxChannel() {}
+	virtual ~TownsPC98_SfxChannel() = default;
 
 	void reset() override;
 	void loadData(uint8 *data) override;

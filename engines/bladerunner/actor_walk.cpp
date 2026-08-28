@@ -40,7 +40,7 @@ ActorWalk::ActorWalk(BladeRunnerEngine *vm) {
 	reset();
 }
 
-ActorWalk::~ActorWalk() {}
+ActorWalk::~ActorWalk() = default;
 
 // added method for bug fix (bad new game state for player actor) and better management of object
 void ActorWalk::reset() {

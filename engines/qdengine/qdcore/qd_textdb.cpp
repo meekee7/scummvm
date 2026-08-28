@@ -28,8 +28,7 @@ namespace QDEngine {
 
 qdTextDB *g_textDB = nullptr;
 
-qdTextDB::qdTextDB() {
-}
+qdTextDB::qdTextDB() = default;
 
 qdTextDB::~qdTextDB() {
 	clear();

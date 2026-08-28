@@ -108,8 +108,7 @@ const OnceUpon::StorkParam Abracadabra::kStorkParam = {
 Abracadabra::Abracadabra(GobEngine *vm) : OnceUpon(vm) {
 }
 
-Abracadabra::~Abracadabra() {
-}
+Abracadabra::~Abracadabra() = default;
 
 void Abracadabra::run() {
 	init();

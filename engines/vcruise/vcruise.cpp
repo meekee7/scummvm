@@ -46,8 +46,7 @@ VCruiseEngine::VCruiseEngine(OSystem *syst, const VCruiseGameDescription *gameDe
 	const Common::FSNode gameDataDir(ConfMan.getPath("path"));
 }
 
-VCruiseEngine::~VCruiseEngine() {
-}
+VCruiseEngine::~VCruiseEngine() = default;
 
 void VCruiseEngine::handleEvents() {
 	Common::Event evt;

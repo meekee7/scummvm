@@ -79,8 +79,7 @@ Debugger::Debugger(AccessEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("hotspot", WRAP_METHOD(Debugger, Cmd_Hotspot));
 }
 
-Debugger::~Debugger() {
-}
+Debugger::~Debugger() = default;
 
 bool Debugger::Cmd_LoadScene(int argc, const char **argv) {
 	switch (argc) {

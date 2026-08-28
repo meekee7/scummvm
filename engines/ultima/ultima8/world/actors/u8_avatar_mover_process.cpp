@@ -42,8 +42,7 @@ U8AvatarMoverProcess::U8AvatarMoverProcess() : AvatarMoverProcess(),
 }
 
 
-U8AvatarMoverProcess::~U8AvatarMoverProcess() {
-}
+U8AvatarMoverProcess::~U8AvatarMoverProcess() = default;
 
 void U8AvatarMoverProcess::handleHangingMode() {
 	bool stasis = Ultima8Engine::get_instance()->isAvatarInStasis();

@@ -56,8 +56,7 @@ SaveLoad_Fascination::GameHandler::File::File(GobEngine *vm, const char *base) :
 	SlotFileIndexed(vm, SaveLoad_Fascination::kSlotCount, base, "s") {
 }
 
-SaveLoad_Fascination::GameHandler::File::~File() {
-}
+SaveLoad_Fascination::GameHandler::File::~File() = default;
 
 int SaveLoad_Fascination::GameHandler::File::getSlot(int32 offset) const {
 	return ((offset - kIndexSize) / 320);

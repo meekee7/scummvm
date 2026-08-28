@@ -29,7 +29,7 @@ IMuseDigiFadesHandler::IMuseDigiFadesHandler(IMuseDigital *engine, Common::Mutex
 	_mutex = mutex;
 }
 
-IMuseDigiFadesHandler::~IMuseDigiFadesHandler() {}
+IMuseDigiFadesHandler::~IMuseDigiFadesHandler() = default;
 
 int IMuseDigiFadesHandler::init() {
 	clearAllFades();

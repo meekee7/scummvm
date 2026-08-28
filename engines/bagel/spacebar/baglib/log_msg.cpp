@@ -778,8 +778,7 @@ CBagEnergyDetectorObject::CBagEnergyDetectorObject() {
 	_textInitializedFl = false;     // Not initialized yet
 }
 
-CBagEnergyDetectorObject::~CBagEnergyDetectorObject() {
-}
+CBagEnergyDetectorObject::~CBagEnergyDetectorObject() = default;
 
 ParseCodes CBagEnergyDetectorObject::setInfo(CBagIfstream &istr) {
 	bool objectUpdatedFl = false;

@@ -37,9 +37,7 @@ GameClock::GameClock(nuvie_game_t type) : game_type(type), day_of_week(0) {
 	init();
 }
 
-GameClock::~GameClock() {
-
-}
+GameClock::~GameClock() = default;
 
 void GameClock::init() {
 	move_counter = 0;

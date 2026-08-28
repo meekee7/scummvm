@@ -37,9 +37,7 @@ PCSpeakerFreqStream::PCSpeakerFreqStream(uint freq, uint16 d) {
 }
 
 
-PCSpeakerFreqStream::~PCSpeakerFreqStream() {
-
-}
+PCSpeakerFreqStream::~PCSpeakerFreqStream() = default;
 
 uint32 PCSpeakerFreqStream::getLengthInMsec() {
 	return (uint32)(duration / (getRate() / 1000.0f));
@@ -92,9 +90,7 @@ PCSpeakerSweepFreqStream::PCSpeakerSweepFreqStream(uint start, uint end, uint16 
 }
 
 
-PCSpeakerSweepFreqStream::~PCSpeakerSweepFreqStream() {
-
-}
+PCSpeakerSweepFreqStream::~PCSpeakerSweepFreqStream() = default;
 
 uint32 PCSpeakerSweepFreqStream::getLengthInMsec() {
 	return (uint32)((num_steps * samples_per_step) / (getRate() / 1000.0f));
@@ -178,9 +174,7 @@ PCSpeakerRandomStream::PCSpeakerRandomStream(uint freq, uint16 d, uint16 s)
 }
 
 
-PCSpeakerRandomStream::~PCSpeakerRandomStream() {
-
-}
+PCSpeakerRandomStream::~PCSpeakerRandomStream() = default;
 
 uint32 PCSpeakerRandomStream::getLengthInMsec() {
 	return (uint32)((num_steps * samples_per_step) / (getRate() / 1000.0f));
@@ -268,9 +262,7 @@ PCSpeakerStutterStream::PCSpeakerStutterStream(sint16 a0, uint16 a2, uint16 a4, 
 }
 
 
-PCSpeakerStutterStream::~PCSpeakerStutterStream() {
-
-}
+PCSpeakerStutterStream::~PCSpeakerStutterStream() = default;
 
 uint32 PCSpeakerStutterStream::getLengthInMsec() {
 	return (uint32)((arg_4 * delay) / (getRate() / 1000.0f));

@@ -36,8 +36,7 @@ PodImage::PodImage() {
 	_ncolors = 0;
 }
 
-PodImage::~PodImage() {
-}
+PodImage::~PodImage() = default;
 
 bool PodImage::loadImage(const PodFile &col, int index) {
 	char bufname[256];

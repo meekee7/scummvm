@@ -39,8 +39,7 @@ MainMenuScreen::MainMenuScreen(Gfx::Driver *gfx, Cursor *cursor) :
 		StaticLocationScreen(gfx, cursor, "MainMenuLocation", Screen::kScreenMainMenu) {
 }
 
-MainMenuScreen::~MainMenuScreen() {
-}
+MainMenuScreen::~MainMenuScreen() = default;
 
 void MainMenuScreen::open() {
 	StaticLocationScreen::open();

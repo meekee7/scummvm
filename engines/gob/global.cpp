@@ -131,7 +131,6 @@ Global::Global(GobEngine *vm) : _vm(vm) {
 	_curWinId = 0;
 }
 
-Global::~Global() {
-}
+Global::~Global() = default;
 
 } // End of namespace Gob

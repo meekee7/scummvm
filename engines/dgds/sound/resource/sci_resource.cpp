@@ -34,8 +34,7 @@ SciResource::SciResource(const byte *data, int dataSz, int16 id)
 : SciSpan<const byte>(data, dataSz, Common::String::format("%d", id)) {
 }
 
-SciResource::~SciResource() {
-}
+SciResource::~SciResource() = default;
 
 void SciResource::unalloc() {
 }

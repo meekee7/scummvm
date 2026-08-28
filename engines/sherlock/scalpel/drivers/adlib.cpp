@@ -220,7 +220,7 @@ public:
 		  _adlibTimerProc(nullptr), _adlibTimerParam(nullptr), _isOpen(false) {
 		memset(_voiceChannelMapping, 0, sizeof(_voiceChannelMapping));
 	}
-	~MidiDriver_SH_AdLib() override { }
+	~MidiDriver_SH_AdLib() override = default;
 
 	// MidiDriver
 	int open() override;

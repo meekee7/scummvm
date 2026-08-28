@@ -35,8 +35,7 @@ PelrockConsole::PelrockConsole(PelrockEngine *engine) : GUI::Debugger(), _engine
 	registerCmd("removeSticker", WRAP_METHOD(PelrockConsole, cmdRemoveSticker));
 }
 
-PelrockConsole::~PelrockConsole() {
-}
+PelrockConsole::~PelrockConsole() = default;
 
 bool PelrockConsole::cmdRemoveSticker(int argc, const char **argv) {
 	if (argc < 2) {

@@ -142,8 +142,7 @@ Symbol::~Symbol() {
 	reset();
 }
 
-PCell::PCell() {
-}
+PCell::PCell() = default;
 
 PCell::PCell(const Datum &prop, const Datum &val) {
 	p = prop;

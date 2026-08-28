@@ -25,8 +25,7 @@
 
 namespace Tetraedge {
 
-TeInputMgr::TeInputMgr() {
-}
+TeInputMgr::TeInputMgr() = default;
 
 void TeInputMgr::handleEvent(const Common::Event &e) {
 	switch (e.type) {

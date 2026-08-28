@@ -47,8 +47,7 @@ ContainerViewGump::ContainerViewGump(const Configuration *cfg) : DraggableView(c
 		actor(nullptr), container_obj(nullptr), container_widget_y_offset(0) {
 }
 
-ContainerViewGump::~ContainerViewGump() {
-}
+ContainerViewGump::~ContainerViewGump() = default;
 
 bool ContainerViewGump::init(Screen *tmp_screen, void *view_manager, uint16 x, uint16 y, Font *f, Party *p, TileManager *tm, ObjManager *om, Obj *container_obj_type) {
 	View::init(x, y, f, p, tm, om);

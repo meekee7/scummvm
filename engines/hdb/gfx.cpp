@@ -1311,8 +1311,7 @@ Picture::Picture() : _width(0), _height(0) {
 	_surface.create(_width, _height, g_hdb->_screenFormat);
 }
 
-Picture::~Picture() {
-}
+Picture::~Picture() = default;
 
 Graphics::Surface Picture::load(Common::SeekableReadStream *stream) {
 	_width = stream->readUint32LE();
@@ -1384,8 +1383,7 @@ Tile::Tile() : _flags(0) {
 	_surface.create(32, 32, g_hdb->_screenFormat);
 }
 
-Tile::~Tile() {
-}
+Tile::~Tile() = default;
 
 Graphics::Surface Tile::load(Common::SeekableReadStream *stream) {
 	_flags = stream->readUint32LE();

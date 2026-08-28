@@ -33,8 +33,7 @@ StateReadStream::StateReadStream(Common::SeekableReadStream *parentStream, Dispo
 		SeekableSubReadStream(parentStream, 0, parentStream->size(), disposeParentStream) {
 }
 
-StateReadStream::~StateReadStream() {
-}
+StateReadStream::~StateReadStream() = default;
 
 Common::String StateReadStream::readString() {
 	// Read the string length

@@ -60,7 +60,7 @@ Console::Console() : GUI::Debugger() {
 	registerCmd("pa", WRAP_METHOD(Console, cmdProcedureAt));
 }
 
-Console::~Console() {}
+Console::~Console() = default;
 
 bool Console::isAnyDebugDrawingOn() const {
 	return

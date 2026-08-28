@@ -38,8 +38,7 @@ Turn::Turn(Resources::FloorPositionedItem *item) :
 		_turnSpeed(_defaultTurnAngleSpeed) {
 }
 
-Turn::~Turn() {
-}
+Turn::~Turn() = default;
 
 void Turn::onGameLoop() {
 	// Compute the direction to turn towards

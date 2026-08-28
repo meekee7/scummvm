@@ -128,8 +128,7 @@ ShanghaiModifier::ShanghaiModifier() {
 	}
 }
 
-ShanghaiModifier::~ShanghaiModifier() {
-}
+ShanghaiModifier::~ShanghaiModifier() = default;
 
 bool ShanghaiModifier::respondsToEvent(const Event &evt) const {
 	if (_resetTileSetWhen.respondsTo(evt))

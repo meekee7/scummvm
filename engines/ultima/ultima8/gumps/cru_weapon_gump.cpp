@@ -54,8 +54,7 @@ CruWeaponGump::CruWeaponGump(Shape *shape, int x)
 	}
 }
 
-CruWeaponGump::~CruWeaponGump() {
-}
+CruWeaponGump::~CruWeaponGump() = default;
 
 void CruWeaponGump::InitGump(Gump *newparent, bool take_focus) {
 	CruStatGump::InitGump(newparent, take_focus);

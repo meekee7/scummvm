@@ -49,8 +49,7 @@ GfxAnimate::GfxAnimate(EngineState *state, ScriptPatcher *scriptPatcher, GfxCach
 	init();
 }
 
-GfxAnimate::~GfxAnimate() {
-}
+GfxAnimate::~GfxAnimate() = default;
 
 void GfxAnimate::init() {
 	_lastCastData.clear();

@@ -41,8 +41,7 @@ Console::Console() : GUI::Debugger() {
 	registerCmd("timefreeze", WRAP_METHOD(Console, cmdTimefreeze));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::cmdVar(int argc, const char **argv) {
 	if (argc < 2) {

@@ -41,8 +41,7 @@ MapEditorView::MapEditorView(const Configuration *cfg) : View(cfg), roof_tiles(n
 		selectedTile(0), tile_offset(0) {
 }
 
-MapEditorView::~MapEditorView() {
-}
+MapEditorView::~MapEditorView() = default;
 
 bool MapEditorView::init(Screen *tmp_screen, void *view_manager, uint16 x, uint16 y, Font *f, Party *p, TileManager *tm, ObjManager *om) {
 	View::init(x, y, f, p, tm, om);

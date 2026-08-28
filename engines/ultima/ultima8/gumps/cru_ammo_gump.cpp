@@ -48,8 +48,7 @@ CruAmmoGump::CruAmmoGump(Shape *shape, int x) : CruStatGump(shape, x),
 	_frameNum = 1;
 }
 
-CruAmmoGump::~CruAmmoGump() {
-}
+CruAmmoGump::~CruAmmoGump() = default;
 
 void CruAmmoGump::InitGump(Gump *newparent, bool take_focus) {
 	CruStatGump::InitGump(newparent, take_focus);

@@ -46,8 +46,7 @@ CBagExpression::CBagExpression(CBagExpression *prevExpr, bool prevNegFl) {
 	_prevNegativeFl = prevNegFl;
 }
 
-CBagExpression::~CBagExpression() {
-}
+CBagExpression::~CBagExpression() = default;
 
 bool CBagExpression::evaluate(CBagVar *leftHandOper, CBagVar *rightHandOper, OPERATION oper, CBagVar &result) {
 	bool retVal = false;

@@ -46,8 +46,7 @@ U8SaveGump::U8SaveGump(bool saveMode, int page)
 	: Gump(0, 0, 5, 5), _save(saveMode), _page(page) {
 }
 
-U8SaveGump::~U8SaveGump() {
-}
+U8SaveGump::~U8SaveGump() = default;
 
 
 // gumps: 36/0-11: number 1-12

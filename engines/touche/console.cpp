@@ -29,8 +29,7 @@ ToucheConsole::ToucheConsole(ToucheEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("stopMusic", WRAP_METHOD(ToucheConsole, Cmd_StopMusic));
 }
 
-ToucheConsole::~ToucheConsole() {
-}
+ToucheConsole::~ToucheConsole() = default;
 
 bool ToucheConsole::Cmd_StartMusic(int argc, const char **argv) {
 	if (argc != 2) {

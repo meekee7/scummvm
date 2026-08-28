@@ -45,8 +45,7 @@ namespace Hugo {
 ObjectHandler_v3d::ObjectHandler_v3d(HugoEngine *vm) : ObjectHandler_v2d(vm) {
 }
 
-ObjectHandler_v3d::~ObjectHandler_v3d() {
-}
+ObjectHandler_v3d::~ObjectHandler_v3d() = default;
 
 /**
  * Update all object positions.  Process object 'local' events

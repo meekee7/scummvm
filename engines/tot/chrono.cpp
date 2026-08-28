@@ -29,8 +29,7 @@ namespace Tot {
 ChronoManager::ChronoManager(/* args */) : _lastTick(0) {
 }
 
-ChronoManager::~ChronoManager() {
-}
+ChronoManager::~ChronoManager() = default;
 
 void ChronoManager::updateChrono() {
 	uint32 currentTime = g_system->getMillis();

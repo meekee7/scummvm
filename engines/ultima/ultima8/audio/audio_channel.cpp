@@ -33,8 +33,7 @@ AudioChannel::AudioChannel(Audio::Mixer *mixer, uint32 sampleRate, bool stereo) 
 		_mixer(mixer), _priority(0) {
 }
 
-AudioChannel::~AudioChannel(void) {
-}
+AudioChannel::~AudioChannel(void) = default;
 
 void AudioChannel::playSample(AudioSample *sample, int loop, int priority, bool isSpeech, uint32 pitchShift, byte volume, int8 balance) {
 	if (!sample)

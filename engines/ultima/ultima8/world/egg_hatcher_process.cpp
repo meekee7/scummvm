@@ -31,12 +31,10 @@ namespace Ultima8 {
 
 DEFINE_RUNTIME_CLASSTYPE_CODE(EggHatcherProcess)
 
-EggHatcherProcess::EggHatcherProcess() {
-}
+EggHatcherProcess::EggHatcherProcess() = default;
 
 
-EggHatcherProcess::~EggHatcherProcess() {
-}
+EggHatcherProcess::~EggHatcherProcess() = default;
 
 void EggHatcherProcess::addEgg(uint16 egg) {
 	_eggs.push_back(egg);

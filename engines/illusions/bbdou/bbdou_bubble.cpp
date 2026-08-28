@@ -32,8 +32,7 @@ BbdouBubble::BbdouBubble(IllusionsEngine_BBDOU *vm, BbdouSpecialCode *bbdou)
 	: _vm(vm), _bbdou(bbdou) {
 }
 
-BbdouBubble::~BbdouBubble() {
-}
+BbdouBubble::~BbdouBubble() = default;
 
 void BbdouBubble::init() {
 

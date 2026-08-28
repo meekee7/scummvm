@@ -61,8 +61,7 @@ ButtonWidget::ButtonWidget(int x, int y, FrameID frame_up, FrameID frame_down,
 }
 
 
-ButtonWidget::~ButtonWidget(void) {
-}
+ButtonWidget::~ButtonWidget(void) = default;
 
 void ButtonWidget::InitGump(Gump *newparent, bool take_focus) {
 	Gump::InitGump(newparent, take_focus);

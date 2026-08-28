@@ -28,8 +28,7 @@ Console::Console() : GUI::Debugger() {
 	registerCmd("test",   WRAP_METHOD(Console, Cmd_test));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_test(int argc, const char **argv) {
 	debugPrintf("Test\n");

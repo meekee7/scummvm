@@ -31,10 +31,7 @@ qdAnimationFrame::qdAnimationFrame() : _start_time(0.0f),
 	_length(0.0f) {
 }
 
-qdAnimationFrame::qdAnimationFrame(const qdAnimationFrame &frm) : qdSprite(frm),
-	_start_time(frm._start_time),
-	_length(frm._length) {
-}
+qdAnimationFrame::qdAnimationFrame(const qdAnimationFrame &frm) = default;
 
 qdAnimationFrame::~qdAnimationFrame() {
 	free();

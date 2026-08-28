@@ -71,8 +71,7 @@ FileEntryArchive::FileEntryArchive(Common::SeekableReadStream *rs) : _file(rs) {
 	}
 }
 
-FileEntryArchive::~FileEntryArchive() {
-}
+FileEntryArchive::~FileEntryArchive() = default;
 
 bool FileEntryArchive::hasFile(const Common::Path &path) const {
 	return _index.contains(path);
@@ -181,8 +180,7 @@ SavegameWriter::SavegameWriter(Common::WriteStream *ws) : _file(ws) {
 	assert(_file);
 }
 
-SavegameWriter::~SavegameWriter() {
-}
+SavegameWriter::~SavegameWriter() = default;
 
 bool SavegameWriter::finish() {
 	 // Write ident and savegame version

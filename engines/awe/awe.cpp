@@ -116,8 +116,7 @@ AweEngine::AweEngine(OSystem *syst, const Awe::AweGameDescription *gameDesc)
 	Script::_useRemasteredAudio = true;
 }
 
-AweEngine::~AweEngine() {
-}
+AweEngine::~AweEngine() = default;
 
 Common::Error AweEngine::run() {
 	// Setup mixer

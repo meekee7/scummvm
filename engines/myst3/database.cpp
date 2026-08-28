@@ -35,7 +35,7 @@ namespace Myst3 {
  */
 class NodeTransform {
 public :
-	virtual ~NodeTransform() {};
+	virtual ~NodeTransform() = default;
 
 	virtual void read(Common::SeekableReadStream *file) = 0;
 	virtual void apply(NodePtr &node) = 0;

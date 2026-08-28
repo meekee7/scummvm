@@ -75,8 +75,7 @@ TuckerEngine::TuckerEngine(OSystem *system, Common::Language language, uint32 fl
 	_csDataBuf = nullptr;
 }
 
-TuckerEngine::~TuckerEngine() {
-}
+TuckerEngine::~TuckerEngine() = default;
 
 bool TuckerEngine::hasFeature(EngineFeature f) const {
 	switch (f) {

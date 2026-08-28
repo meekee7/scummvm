@@ -40,8 +40,7 @@ ShadowVolumeTinyGL::ShadowVolumeTinyGL(BaseGame *inGame) : ShadowVolume(inGame) 
 }
 
 //////////////////////////////////////////////////////////////////////////
-ShadowVolumeTinyGL::~ShadowVolumeTinyGL() {
-}
+ShadowVolumeTinyGL::~ShadowVolumeTinyGL() = default;
 
 //////////////////////////////////////////////////////////////////////////
 bool ShadowVolumeTinyGL::render() {

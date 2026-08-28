@@ -28,8 +28,7 @@
 namespace Stark {
 namespace Resources {
 
-Scroll::~Scroll() {
-}
+Scroll::~Scroll() = default;
 
 Scroll::Scroll(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

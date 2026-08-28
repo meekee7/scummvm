@@ -30,8 +30,7 @@
 namespace Stark {
 namespace Resources {
 
-FMV::~FMV() {
-}
+FMV::~FMV() = default;
 
 FMV::FMV(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

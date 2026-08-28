@@ -154,8 +154,7 @@ qdScreenText::qdScreenText(const char *p, const qdScreenTextFormat &fmt, const V
 	set_data(p);
 }
 
-qdScreenText::~qdScreenText() {
-}
+qdScreenText::~qdScreenText() = default;
 
 void qdScreenText::redraw(const Vect2i &owner_pos) const {
 	int x = owner_pos.x + _pos.x;

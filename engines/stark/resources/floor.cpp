@@ -37,8 +37,7 @@ Floor::Floor(Object *parent, byte subType, uint16 index, const Common::String &n
 	_type = TYPE;
 }
 
-Floor::~Floor() {
-}
+Floor::~Floor() = default;
 
 Math::Vector3d Floor::getVertex(uint32 index) const {
 	return _vertices[index];

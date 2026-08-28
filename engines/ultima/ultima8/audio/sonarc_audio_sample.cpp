@@ -56,8 +56,7 @@ SonarcAudioSample::SonarcAudioSample(uint8 const *buffer, uint32 size) :
 	_frameSize |= (*(_buffer + _srcOffset + 3)) << 8;
 }
 
-SonarcAudioSample::~SonarcAudioSample(void) {
-}
+SonarcAudioSample::~SonarcAudioSample(void) = default;
 
 //
 // Sonarc Audio Decompressor

@@ -38,8 +38,7 @@ ComicViewer::ComicViewer(NoctropolisEngine *vm) : _vm(vm), _comic(nullptr),
 	_bubbleSprites(nullptr), _currPage(0) {
 }
 
-ComicViewer::~ComicViewer() {
-}
+ComicViewer::~ComicViewer() = default;
 
 void ComicViewer::run(const ComicResource *comic) {
 	PageResult result = kPageResultNone;

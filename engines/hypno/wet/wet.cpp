@@ -96,8 +96,7 @@ WetEngine::WetEngine(OSystem *syst, const ADGameDescription *gd) : HypnoEngine(s
 	_enterNameString = getLocalizedString("name");
 }
 
-WetEngine::~WetEngine() {
-}
+WetEngine::~WetEngine() = default;
 
 void WetEngine::loadAssets() {
 	if (!isDemo()) {

@@ -115,11 +115,10 @@ void SynthRgn::SetWaveLinkInfo(uint16 options, uint16 phaseGroup, uint32 theChan
 //  SynthArt
 //  ********
 
-SynthArt::~SynthArt() {
-}
+SynthArt::~SynthArt() = default;
 
 void SynthArt::AddADSR(double attack, Transform atk_transform, double decay, double sustain_level,
-					   double sustain, double release, Transform rls_transform) {
+                       double sustain, double release, Transform rls_transform) {
 	this->_attack_time = attack;
 	this->_attack_transform = atk_transform;
 	this->_decay_time = decay;

@@ -32,8 +32,7 @@ mouseDispatcher::mouseDispatcher() : _events(0), _active_events(0), _mouse_x(0),
 		_event_handlers[i] = 0;
 }
 
-mouseDispatcher::~mouseDispatcher() {
-}
+mouseDispatcher::~mouseDispatcher() = default;
 
 mouseDispatcher *mouseDispatcher::instance() {
 	static mouseDispatcher dsp;

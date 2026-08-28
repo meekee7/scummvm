@@ -40,8 +40,7 @@ AchievementsManager::AchievementsManager() {
 }
 
 
-AchievementsManager::~AchievementsManager() {
-}
+AchievementsManager::~AchievementsManager() = default;
 
 bool AchievementsManager::setActiveDomain(const AchievementsInfo &info) {
 	if (info.appId.empty()) {

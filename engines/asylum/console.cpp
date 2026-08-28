@@ -303,8 +303,7 @@ Console::Console(AsylumEngine *engine) : _vm(engine), _insertDisc(engine), _resV
 	registerVar("use_scrolling",   &g_debugScrolling);
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 //////////////////////////////////////////////////////////////////////////
 // Help

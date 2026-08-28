@@ -364,8 +364,7 @@ MusicManagerMIDI::MusicManagerMIDI(AccessEngine *vm) : MusicManager(vm), Audio::
 	}
 }
 
-MusicManagerMIDI::~MusicManagerMIDI() {
-}
+MusicManagerMIDI::~MusicManagerMIDI() = default;
 
 void MusicManagerMIDI::send(uint32 b) {
 	// Pass data directly to driver

@@ -34,8 +34,7 @@
 
 namespace Tetraedge {
 
-TeRendererOpenGL::TeRendererOpenGL() {
-}
+TeRendererOpenGL::TeRendererOpenGL() = default;
 
 void TeRendererOpenGL::clearBuffer(TeRenderer::Buffer buf) {
 	GLenum glBuf = 0;

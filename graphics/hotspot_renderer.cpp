@@ -33,16 +33,15 @@ HotspotRenderer::HotspotRenderer() :
 		_pointRadius(kBasePointRadius), _lineThickness(kBaseLineThickness) {
 }
 
-HotspotRenderer::~HotspotRenderer() {
-}
+HotspotRenderer::~HotspotRenderer() = default;
 
 void HotspotRenderer::render(Surface *surface,
-		const Common::Array<HotspotInfo> &hotspots,
-		int gameWidth, int gameHeight,
-		int overlayWidth, int overlayHeight,
-		const PixelFormat &format,
-		MarkerShape markerShape,
-		bool showText) {
+                             const Common::Array<HotspotInfo> &hotspots,
+                             int gameWidth, int gameHeight,
+                             int overlayWidth, int overlayHeight,
+                             const PixelFormat &format,
+                             MarkerShape markerShape,
+                             bool showText) {
 	if (!surface || hotspots.empty())
 		return;
 

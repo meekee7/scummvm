@@ -29,8 +29,7 @@ Animation::Animation()
 		: _startTime(0), _duration(0), _finished(false), _finishOnEnd(true) {
 }
 
-Animation::~Animation() {
-}
+Animation::~Animation() = default;
 
 void Animation::start(long currentTime) {
 	_finished = false;

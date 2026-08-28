@@ -37,8 +37,7 @@ namespace Gob {
 Init_v4::Init_v4(GobEngine *vm) : Init_v3(vm) {
 }
 
-Init_v4::~Init_v4() {
-}
+Init_v4::~Init_v4() = default;
 
 void Init_v4::updateConfig() {
 	_vm->_global->_doSubtitles = ConfMan.getBool("subtitles");

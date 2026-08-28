@@ -82,8 +82,7 @@ TextMgr::TextMgr(AgiEngine *vm, Words *words, GfxMgr *gfx) {
 	}
 }
 
-TextMgr::~TextMgr() {
-}
+TextMgr::~TextMgr() = default;
 
 void TextMgr::init(SystemUI *systemUI) {
 	_systemUI = systemUI;

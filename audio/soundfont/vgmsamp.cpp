@@ -52,7 +52,7 @@ VGMSamp::VGMSamp(VGMSampColl *sampColl, uint32 offset, uint32 length, uint32 dat
 	// so data() ends up returning a bad pointer
 }
 
-VGMSamp::~VGMSamp() {}
+VGMSamp::~VGMSamp() = default;
 
 double VGMSamp::GetCompressionRatio() {
 	return 1.0;

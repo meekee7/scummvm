@@ -32,8 +32,7 @@ Console::Console() : GUI::Debugger() {
 	registerCmd("what", WRAP_METHOD(Console, cmdWhat));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::cmdDraw(int argc, const char **argv) {
 	if (argc > 1) {

@@ -974,8 +974,7 @@ void EuphonyDriver::pitchWheel() {
 Type0Driver::Type0Driver(EuphonyPlayer *pl) : EuphonyBaseDriver() {
 }
 
-Type0Driver::~Type0Driver() {
-}
+Type0Driver::~Type0Driver() = default;
 
 bool Type0Driver::init() {
 	return true;

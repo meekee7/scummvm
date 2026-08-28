@@ -31,11 +31,9 @@ namespace QDEngine {
 
 qdNamedObjectIndexer *g_idx = nullptr;
 
-qdNamedObjectIndexer::qdNamedObjectIndexer() {
-}
+qdNamedObjectIndexer::qdNamedObjectIndexer() = default;
 
-qdNamedObjectIndexer::~qdNamedObjectIndexer() {
-}
+qdNamedObjectIndexer::~qdNamedObjectIndexer() = default;
 
 qdNamedObjectIndexer &qdNamedObjectIndexer::instance() {
 	if (!g_idx)

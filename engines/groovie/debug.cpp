@@ -50,8 +50,7 @@ Debugger::Debugger(GroovieEngine *vm) :
 	registerCmd("dumpfile", WRAP_METHOD(Debugger, cmd_dumpfile));
 }
 
-Debugger::~Debugger() {
-}
+Debugger::~Debugger() = default;
 
 int Debugger::getNumber(const char *arg) {
 	return strtol(arg, (char **)nullptr, 0);

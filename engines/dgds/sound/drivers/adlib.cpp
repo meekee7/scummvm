@@ -48,7 +48,7 @@ public:
 
 	MidiDriver_AdLib() : _isSCI0(false), _playSwitch(true), _masterVolume(15),
 		_numVoiceMax(kVoices), _rhythmKeyMap(), _opl(nullptr), _adlibTimerParam(nullptr), _adlibTimerProc(nullptr), _stereo(false), _isOpen(false) { }
-	~MidiDriver_AdLib() override { }
+	~MidiDriver_AdLib() override = default;
 
 	// MidiDriver
 	int open() override { return -1; } // Dummy implementation (use openAdLib)

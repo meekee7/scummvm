@@ -91,8 +91,7 @@ bool GameMenuDialog::init() {
 	return true;
 }
 
-GameMenuDialog::~GameMenuDialog() {
-}
+GameMenuDialog::~GameMenuDialog() = default;
 
 GUI_status GameMenuDialog::close_dialog() {
 	Delete(); // mark dialog as deleted. it will be freed by the GUI object

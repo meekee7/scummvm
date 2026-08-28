@@ -38,8 +38,7 @@ namespace QDEngine {
 qdSound::qdSound() : _volume(255) {
 }
 
-qdSound::~qdSound() {
-}
+qdSound::~qdSound() = default;
 
 bool qdSound::free_resource() {
 	toggle_resource_status(false);

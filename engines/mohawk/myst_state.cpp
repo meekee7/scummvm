@@ -116,8 +116,7 @@ void MystGameState::reset() {
 	_stoneship.chestWaterState = 1;
 }
 
-MystGameState::~MystGameState() {
-}
+MystGameState::~MystGameState() = default;
 
 bool MystGameState::load(int slot) {
 	if (!loadState(slot)) {

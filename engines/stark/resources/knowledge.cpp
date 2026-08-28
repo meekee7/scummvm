@@ -28,8 +28,7 @@
 namespace Stark {
 namespace Resources {
 
-Knowledge::~Knowledge() {
-}
+Knowledge::~Knowledge() = default;
 
 Knowledge::Knowledge(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name),

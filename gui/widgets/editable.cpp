@@ -66,8 +66,7 @@ void EditableWidget::init() {
 	_inversion = ThemeEngine::kTextInversionNone;
 }
 
-EditableWidget::~EditableWidget() {
-}
+EditableWidget::~EditableWidget() = default;
 
 void EditableWidget::drawWidget() {
 	if (_caretVisible) {

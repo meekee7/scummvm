@@ -210,7 +210,7 @@ public:
 		SLAVE
 	};
 
-	virtual ~LA32PartialPair() {}
+	virtual ~LA32PartialPair() = default;
 
 	// ringModulated should be set to false for the structures with mixing or stereo output
 	// ringModulated should be set to true for the structures with ring modulation

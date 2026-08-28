@@ -42,8 +42,7 @@ SaveLoad_Geisha::GameHandler::File::File(GobEngine *vm, const Common::String &ba
 
 }
 
-SaveLoad_Geisha::GameHandler::File::~File() {
-}
+SaveLoad_Geisha::GameHandler::File::~File() = default;
 
 int SaveLoad_Geisha::GameHandler::File::getSlot(int32 offset) const {
 	return 0;
@@ -59,8 +58,7 @@ SaveLoad_Geisha::GameHandler::GameHandler(GobEngine *vm, const Common::String &t
 
 }
 
-SaveLoad_Geisha::GameHandler::~GameHandler() {
-}
+SaveLoad_Geisha::GameHandler::~GameHandler() = default;
 
 int32 SaveLoad_Geisha::GameHandler::getSize() {
 	if (_file.getSlotMax() == 0)

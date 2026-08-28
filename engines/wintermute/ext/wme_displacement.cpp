@@ -69,8 +69,7 @@ SXDisplacement::SXDisplacement(BaseGame *inGame, ScStack *stack) : BaseScriptabl
 }
 
 //////////////////////////////////////////////////////////////////////////
-SXDisplacement::~SXDisplacement() {
-}
+SXDisplacement::~SXDisplacement() = default;
 
 //////////////////////////////////////////////////////////////////////////
 const char *SXDisplacement::scToString() {

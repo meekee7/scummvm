@@ -55,7 +55,7 @@ protected:
 
 public:
 	WrappedLineFormatter(Font *font) : _font(font), _lines(0), _lineWidth(0) { }
-	virtual ~WrappedLineFormatter() { }
+	virtual ~WrappedLineFormatter() = default;
 
 	virtual void calc(const Common::String &text, uint16 maxwidth) {
 		setup();
@@ -281,9 +281,7 @@ BalloonManager_ns::BalloonManager_ns(Parallaction_ns *vm, Font *font) : _vm(vm),
 	_textColors[kNormalColor] = 0;
 }
 
-BalloonManager_ns::~BalloonManager_ns() {
-
-}
+BalloonManager_ns::~BalloonManager_ns() = default;
 
 
 BalloonManager_ns::Balloon* BalloonManager_ns::getBalloon(uint id) {

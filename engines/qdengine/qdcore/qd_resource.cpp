@@ -32,8 +32,7 @@ namespace QDEngine {
 qdResource::qdResource() : _is_loaded(false) {
 }
 
-qdResource::qdResource(const qdResource &res) : _is_loaded(res._is_loaded) {
-}
+qdResource::qdResource(const qdResource &res) = default;
 
 qdResource &qdResource::operator = (const qdResource &res) {
 	if (this == &res) return *this;
@@ -43,8 +42,7 @@ qdResource &qdResource::operator = (const qdResource &res) {
 	return *this;
 }
 
-qdResource::~qdResource() {
-}
+qdResource::~qdResource() = default;
 
 qdResource::file_format_t qdResource::file_format(const Common::Path &path) {
 	Common::String file_name(path.baseName());

@@ -32,9 +32,7 @@ SunMoonStripWidget::SunMoonStripWidget(Player *p, TileManager *tm)
 	: GUI_Widget(nullptr, 0, 0, 0, 0), player(p), tile_manager(tm) {
 }
 
-SunMoonStripWidget::~SunMoonStripWidget() {
-
-}
+SunMoonStripWidget::~SunMoonStripWidget() = default;
 
 
 void SunMoonStripWidget::init(sint16 x, sint16 y) {

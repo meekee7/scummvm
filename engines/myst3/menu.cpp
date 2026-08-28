@@ -102,8 +102,7 @@ ButtonsDialog::ButtonsDialog(Myst3Engine *vm, uint id):
 	loadButtons();
 }
 
-ButtonsDialog::~ButtonsDialog() {
-}
+ButtonsDialog::~ButtonsDialog() = default;
 
 void ButtonsDialog::loadButtons() {
 	ResourceDescription buttonsDesc = _vm->getFileDescription("DLGB", 1000, 0, Archive::kNumMetadata);
@@ -197,8 +196,7 @@ GamepadDialog::GamepadDialog(Myst3Engine *vm, uint id):
 	Dialog(vm, id) {
 }
 
-GamepadDialog::~GamepadDialog() {
-}
+GamepadDialog::~GamepadDialog() = default;
 
 int16 GamepadDialog::update() {
 	// Process events
@@ -235,8 +233,7 @@ Menu::Menu(Myst3Engine *vm) :
 		_saveLoadSpotItem(nullptr) {
 }
 
-Menu::~Menu() {
-}
+Menu::~Menu() = default;
 
 void Menu::updateMainMenu(uint16 action) {
 	switch (action) {
@@ -481,8 +478,7 @@ PagingMenu::PagingMenu(Myst3Engine *vm) :
 		_saveCaretCounter(0) {
 }
 
-PagingMenu::~PagingMenu() {
-}
+PagingMenu::~PagingMenu() = default;
 
 void PagingMenu::saveLoadAction(uint16 action, uint16 item) {
 	switch (action) {
@@ -810,8 +806,7 @@ AlbumMenu::AlbumMenu(Myst3Engine *vm) :
 		Menu(vm) {
 }
 
-AlbumMenu::~AlbumMenu() {
-}
+AlbumMenu::~AlbumMenu() = default;
 
 void AlbumMenu::draw() {
 	uint16 node = _vm->_state->getLocationNode();

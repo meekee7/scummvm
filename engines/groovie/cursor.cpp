@@ -480,8 +480,7 @@ GrvCursorMan_v2::GrvCursorMan_v2(OSystem *system) :
 	iconsFile.close();
 }
 
-GrvCursorMan_v2::~GrvCursorMan_v2() {
-}
+GrvCursorMan_v2::~GrvCursorMan_v2() = default;
 
 
 void GrvCursorMan_v2::animate() {

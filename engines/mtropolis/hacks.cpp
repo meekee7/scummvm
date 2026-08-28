@@ -48,8 +48,7 @@ Hacks::Hacks() {
 	ignoreSceneUnloads = false;
 }
 
-Hacks::~Hacks() {
-}
+Hacks::~Hacks() = default;
 
 void Hacks::addStructuralHooks(uint32 guid, const Common::SharedPtr<StructuralHooks> &hooks) {
 	structuralHooks[guid] = hooks;

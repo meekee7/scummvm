@@ -142,8 +142,7 @@ Hotspot::Hotspot(const HotSpotID id) : IDObject(id) {
 	_spotActive = false;
 }
 
-Hotspot::~Hotspot() {
-}
+Hotspot::~Hotspot() = default;
 
 void Hotspot::setArea(const Common::Rect &area) {
 	_spotArea = Region(area);
@@ -209,8 +208,7 @@ HotSpotFlags Hotspot::getHotspotFlags() const {
 	return _spotFlags;
 }
 
-HotspotList::HotspotList() {
-}
+HotspotList::HotspotList() = default;
 
 HotspotList::~HotspotList() {
 	// TODO: Should this call deleteHotspots()?

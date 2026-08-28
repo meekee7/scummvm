@@ -38,8 +38,7 @@ Sound::Sound(SagaEngine *vm, Audio::Mixer *mixer) :
 	setVolume();
 }
 
-Sound::~Sound() {
-}
+Sound::~Sound() = default;
 
 SndHandle *Sound::getHandle() {
 	for (int i = 0; i < SOUND_HANDLES; i++) {

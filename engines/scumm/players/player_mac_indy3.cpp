@@ -112,7 +112,7 @@ private:
 class SquareWaveSynthDriver final : public LegacyMusicDriver {
 public:
 	SquareWaveSynthDriver(Audio::Mixer::SoundType sndType, Common::Mutex &mutex, bool internal16Bit);
-	~SquareWaveSynthDriver() override {};
+	~SquareWaveSynthDriver() override = default;
 
 	void feed(int8 *dst, uint32 byteSize, Audio::Mixer::SoundType type, bool expectStereo) override;
 	void start() override;

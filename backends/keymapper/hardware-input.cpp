@@ -283,8 +283,7 @@ const AxisTableEntry defaultJoystickAxes[] = {
 	{ nullptr,             0,                           kAxisTypeFull, nullptr             }
 };
 
-HardwareInputSet::~HardwareInputSet() {
-}
+HardwareInputSet::~HardwareInputSet() = default;
 
 KeyboardHardwareInputSet::KeyboardHardwareInputSet(const KeyTableEntry *keys, const ModifierTableEntry *modifiers) :
 		_keys(keys),

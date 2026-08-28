@@ -42,9 +42,7 @@ SunMoonRibbon::SunMoonRibbon(Player *p, Weather *w, TileManager *tm)
 	  current_time(0) {
 }
 
-SunMoonRibbon::~SunMoonRibbon() {
-
-}
+SunMoonRibbon::~SunMoonRibbon() = default;
 
 
 void SunMoonRibbon::init(Screen *) {

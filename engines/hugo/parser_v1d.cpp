@@ -46,8 +46,7 @@ namespace Hugo {
 Parser_v1d::Parser_v1d(HugoEngine *vm) : Parser(vm) {
 }
 
-Parser_v1d::~Parser_v1d() {
-}
+Parser_v1d::~Parser_v1d() = default;
 
 /**
  * Locate word in list of nouns and return ptr to string in noun list

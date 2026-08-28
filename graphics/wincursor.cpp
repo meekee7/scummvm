@@ -276,8 +276,7 @@ void WinCursor::clear() {
 	delete[] _mask; _mask = nullptr;
 }
 
-WinCursorGroup::WinCursorGroup() {
-}
+WinCursorGroup::WinCursorGroup() = default;
 
 WinCursorGroup::~WinCursorGroup() {
 	for (uint32 i = 0; i < cursors.size(); i++)
@@ -336,8 +335,8 @@ WinCursorGroup *WinCursorGroup::createCursorGroup(Common::WinResources *exe, con
  */
 class DefaultWinCursor : public Cursor {
 public:
-	DefaultWinCursor() {}
-	~DefaultWinCursor() {}
+	DefaultWinCursor() = default;
+	~DefaultWinCursor() = default;
 
 	uint16 getWidth() const override { return 12; }
 	uint16 getHeight() const override { return 20; }
@@ -393,8 +392,8 @@ Cursor *makeDefaultWinCursor() {
  */
 class BusyWinCursor : public Cursor {
 public:
-	BusyWinCursor() {}
-	~BusyWinCursor() {}
+	BusyWinCursor() = default;
+	~BusyWinCursor() = default;
 
 	uint16 getWidth() const override { return 15; }
 	uint16 getHeight() const override { return 27; }

@@ -977,8 +977,7 @@ ResourceManager::ResTypeData::ResTypeData() {
 	_tag = 0;
 }
 
-ResourceManager::ResTypeData::~ResTypeData() {
-}
+ResourceManager::ResTypeData::~ResTypeData() = default;
 
 ResourceManager::ResourceManager(ScummEngine *vm) : _vm(vm) {
 	_mutex = &vm->_resourceAccessMutex;

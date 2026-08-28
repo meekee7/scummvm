@@ -110,8 +110,7 @@ void RadarMicrophoneThread::initZones() {
 
 // ObjectInteractModeMap
 
-ObjectInteractModeMap::ObjectInteractModeMap() {
-}
+ObjectInteractModeMap::ObjectInteractModeMap() = default;
 
 void ObjectInteractModeMap::setObjectInteractMode(uint32 objectId, int value) {
 	ObjectInteractMode *objectInteractMode = nullptr;

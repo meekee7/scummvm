@@ -88,8 +88,7 @@ bool FPSound::init() {
  * Destroy the object and free the memory
  *
  */
-FPSound::~FPSound() {
-}
+FPSound::~FPSound() = default;
 
 /**
  * Allocates an object of type FPStream, and return its pointer

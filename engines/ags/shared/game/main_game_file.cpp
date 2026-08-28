@@ -102,7 +102,7 @@ LoadedGameEntities::LoadedGameEntities(GameSetupStruct &game)
 	, SpriteCount(0) {
 }
 
-LoadedGameEntities::~LoadedGameEntities() {}
+LoadedGameEntities::~LoadedGameEntities() = default;
 
 bool IsMainGameLibrary(const String &filename) {
 	// We must not only detect if the given file is a correct AGS data library,

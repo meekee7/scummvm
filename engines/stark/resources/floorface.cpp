@@ -39,8 +39,7 @@ FloorFace::FloorFace(Object *parent, byte subType, uint16 index, const Common::S
 	}
 }
 
-FloorFace::~FloorFace() {
-}
+FloorFace::~FloorFace() = default;
 
 bool FloorFace::isPointInside(const Math::Vector3d &point) const {
 	// Compute the barycentric coordinates of the point in the triangle

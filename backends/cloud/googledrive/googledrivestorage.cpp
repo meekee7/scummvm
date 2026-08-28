@@ -50,7 +50,7 @@ GoogleDriveStorage::GoogleDriveStorage(const Networking::JsonResponse &codeFlowJ
 	codeFlowComplete(cb, codeFlowJson);
 }
 
-GoogleDriveStorage::~GoogleDriveStorage() {}
+GoogleDriveStorage::~GoogleDriveStorage() = default;
 
 Common::String GoogleDriveStorage::cloudProvider() { return "gdrive"; }
 

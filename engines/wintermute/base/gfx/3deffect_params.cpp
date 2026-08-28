@@ -115,8 +115,7 @@ bool Effect3DParams::Effect3DParam::persist(BasePersistenceManager *persistMgr) 
 
 
 //////////////////////////////////////////////////////////////////////////
-Effect3DParams::Effect3DParams() {
-}
+Effect3DParams::Effect3DParams() = default;
 
 //////////////////////////////////////////////////////////////////////////
 Effect3DParams::~Effect3DParams() {

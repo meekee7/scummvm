@@ -926,7 +926,7 @@ public:
 		g_vm->getHeroBelt()->setColour(HeroBelt::kWarm);
 	}
 
-	~WallOfFameHandler() override {}
+	~WallOfFameHandler() override = default;
 
 private:
 	void clearNameInApplication() {

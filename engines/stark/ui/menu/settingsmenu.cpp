@@ -34,8 +34,7 @@ SettingsMenuScreen::SettingsMenuScreen(Gfx::Driver *gfx, Cursor *cursor) :
 		_soundManager() {
 }
 
-SettingsMenuScreen::~SettingsMenuScreen() {
-}
+SettingsMenuScreen::~SettingsMenuScreen() = default;
 
 void SettingsMenuScreen::open() {
 	StaticLocationScreen::open();

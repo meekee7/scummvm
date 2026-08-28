@@ -61,11 +61,10 @@ SpeechFlex::SpeechFlex(Common::SeekableReadStream *rs) : SoundFlex(rs) {
 
 }
 
-SpeechFlex::~SpeechFlex(void) {
-}
+SpeechFlex::~SpeechFlex(void) = default;
 
 int SpeechFlex::getIndexForPhrase(const Common::String &phrase,
-								  uint32 start, uint32 &end) const {
+                                  uint32 start, uint32 &end) const {
 	int i = 1;
 
 	Common::String text = phrase.substr(start);

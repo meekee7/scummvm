@@ -64,8 +64,7 @@ PuzzleHiveControl::PuzzleHiveControl(AsylumEngine *engine) : Puzzle(engine) {
 	reset();
 }
 
-PuzzleHiveControl::~PuzzleHiveControl() {
-}
+PuzzleHiveControl::~PuzzleHiveControl() = default;
 
 void PuzzleHiveControl::saveLoadWithSerializer(Common::Serializer &s) {
 	// TODO

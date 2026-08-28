@@ -36,9 +36,7 @@ PartyPathFinder::PartyPathFinder(Party *p) : party(p) {
 	assert(p);
 }
 
-PartyPathFinder::~PartyPathFinder() {
-
-}
+PartyPathFinder::~PartyPathFinder() = default;
 
 /* True if a member's target and leader are in roughly the same direction. */
 bool PartyPathFinder::is_behind_target(uint32 member_num) {

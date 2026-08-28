@@ -26,13 +26,9 @@
 namespace Ultima {
 namespace Nuvie {
 
-SeekPath::SeekPath() {
+SeekPath::SeekPath() = default;
 
-}
-
-SeekPath::~SeekPath() {
-
-}
+SeekPath::~SeekPath() = default;
 
 /* Get two relative directions that a line can travel to trace around an
    obstacle towards `xdir',`ydir'. */

@@ -27,15 +27,11 @@
 
 namespace QDEngine {
 
-qdGameEnd::qdGameEnd() {
-}
+qdGameEnd::qdGameEnd() = default;
 
-qdGameEnd::qdGameEnd(const qdGameEnd &end) : qdConditionalObject(end),
-	_interface_screen(end._interface_screen) {
-}
+qdGameEnd::qdGameEnd(const qdGameEnd &end) = default;
 
-qdGameEnd::~qdGameEnd() {
-}
+qdGameEnd::~qdGameEnd() = default;
 
 qdGameEnd &qdGameEnd::operator = (const qdGameEnd &end) {
 	if (this == &end) return *this;

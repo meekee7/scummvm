@@ -49,7 +49,7 @@ public:
 
 	MidiDriver_AdLib(SciVersion version) : _version(version), _isSCI0(version < SCI_VERSION_1_EARLY), _playSwitch(true), _masterVolume(15),
 		_numVoiceMax(version == SCI_VERSION_0_EARLY ? 8 : kVoices), _rhythmKeyMap(), _opl(nullptr), _adlibTimerParam(nullptr), _adlibTimerProc(nullptr), _stereo(false), _isOpen(false) { }
-	~MidiDriver_AdLib() override { }
+	~MidiDriver_AdLib() override = default;
 
 	// MidiDriver
 	int open() override { return -1; } // Dummy implementation (use openAdLib)

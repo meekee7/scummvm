@@ -31,8 +31,7 @@
 namespace Ultima {
 namespace Ultima8 {
 
-AnimDat::AnimDat() {
-}
+AnimDat::AnimDat() = default;
 
 AnimDat::~AnimDat() {
 	for (unsigned int i = 0; i < _anims.size(); i++)

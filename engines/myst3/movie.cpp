@@ -467,8 +467,7 @@ void ScriptedMovie::updateVolume() {
 	_bink.setBalance(balance);
 }
 
-ScriptedMovie::~ScriptedMovie() {
-}
+ScriptedMovie::~ScriptedMovie() = default;
 
 SimpleMovie::SimpleMovie(Myst3Engine *vm, uint16 id) :
 		Movie(vm, id),
@@ -565,8 +564,7 @@ void SimpleMovie::refreshAmbientSounds() {
 	_vm->_ambient->playCurrentNode(100, engineFrames);
 }
 
-SimpleMovie::~SimpleMovie() {
-}
+SimpleMovie::~SimpleMovie() = default;
 
 ProjectorMovie::ProjectorMovie(Myst3Engine *vm, uint16 id, Graphics::Surface *background) :
 		ScriptedMovie(vm, id),

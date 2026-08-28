@@ -54,9 +54,7 @@ TTFont::TTFont(Graphics::Font *font, uint32 rgb, int borderSize,
 	}
 }
 
-TTFont::~TTFont() {
-
-}
+TTFont::~TTFont() = default;
 
 int TTFont::getHeight() {
 	return _ttfFont->getFontHeight() + 2 * _borderSize; // constant (border)

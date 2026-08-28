@@ -50,8 +50,7 @@ Menu::Menu(MohawkEngine_Myst *vm) :
 	setupOpcodes();
 }
 
-Menu::~Menu() {
-}
+Menu::~Menu() = default;
 
 void Menu::setupOpcodes() {
 	// "Stack-Specific" Opcodes

@@ -43,8 +43,7 @@ Slides::Slides(MohawkEngine_Myst *vm) :
 	_nextCardTime = 0;
 }
 
-Slides::~Slides() {
-}
+Slides::~Slides() = default;
 
 void Slides::setupOpcodes() {
 	// "Stack-Specific" Opcodes

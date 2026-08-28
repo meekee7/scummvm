@@ -40,7 +40,7 @@ class MacSndLoader {
 protected:
 	MacSndLoader(bool useInstrTag);
 public:
-	virtual ~MacSndLoader() {}
+	virtual ~MacSndLoader() = default;
 
 	virtual bool init() = 0;
 	virtual bool checkResource(const byte *data, uint32 dataSize) const = 0;
@@ -85,7 +85,7 @@ protected:
 class LoomMacSndLoader final : public MacSndLoader {
 public:
 	LoomMacSndLoader() : MacSndLoader(false) {}
-	~LoomMacSndLoader() override {}
+	~LoomMacSndLoader() override = default;
 
 	bool init() override;
 	bool checkResource(const byte *data, uint32 dataSize) const override;
@@ -106,7 +106,7 @@ private:
 class MonkeyMacSndLoader final : public MacSndLoader {
 public:
 	MonkeyMacSndLoader() : MacSndLoader(true), _numInstrumentsMax(17), _blockSfx(false), _transpose(0) {}
-	~MonkeyMacSndLoader() override {}
+	~MonkeyMacSndLoader() override = default;
 
 	bool init() override;
 	bool checkResource(const byte *data, uint32 dataSize) const override;

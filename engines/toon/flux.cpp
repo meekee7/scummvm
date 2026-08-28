@@ -39,8 +39,7 @@ CharacterFlux::CharacterFlux(ToonEngine *vm) : Character(vm) {
 	vm->getAnimationManager()->addInstance(_animationInstance);
 }
 
-CharacterFlux::~CharacterFlux() {
-}
+CharacterFlux::~CharacterFlux() = default;
 
 void CharacterFlux::playStandingAnim() {
 	debugC(4, kDebugCharacter, "playStandingAnim()");

@@ -68,8 +68,7 @@ DgdsFont *DgdsFont::load(const Common::String &filename, ResourceManager *resour
 
 DgdsFont::DgdsFont(byte w, byte h, byte start, byte count, const byte *glyphs) : _w(w), _h(h), _start(start), _count(count), _glyphs(glyphs) { }
 
-DgdsFont::~DgdsFont() {
-}
+DgdsFont::~DgdsFont() = default;
 
 bool DgdsFont::hasChar(byte chr) const {
 	return (chr >= _start && chr <= (_start + _count));

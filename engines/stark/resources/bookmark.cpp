@@ -31,8 +31,7 @@
 namespace Stark {
 namespace Resources {
 
-Bookmark::~Bookmark() {
-}
+Bookmark::~Bookmark() = default;
 
 Bookmark::Bookmark(Object *parent, byte subType, uint16 index, const Common::String &name) :
 		Object(parent, subType, index, name) {

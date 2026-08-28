@@ -34,8 +34,7 @@ _topBorder(0), _leftBorder(0), _rightBorder(0), _btmBorder(0),
 _flipY(false), _alphaOnly(false) {
 }
 
-Te3DTexture::~Te3DTexture() {
-}
+Te3DTexture::~Te3DTexture() = default;
 
 /*static*/
 TeIntrusivePtr<Te3DTexture> Te3DTexture::load2(const TetraedgeFSNode &node, bool alphaOnly) {

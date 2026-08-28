@@ -31,7 +31,7 @@ namespace GoogleDrive {
 GoogleDriveTokenRefresher::GoogleDriveTokenRefresher(GoogleDriveStorage *parent, Networking::JsonCallback callback, Networking::ErrorCallback ecb, const char *url):
 	HttpJsonRequest(callback, ecb, url), _parentStorage(parent) {}
 
-GoogleDriveTokenRefresher::~GoogleDriveTokenRefresher() {}
+GoogleDriveTokenRefresher::~GoogleDriveTokenRefresher() = default;
 
 void GoogleDriveTokenRefresher::tokenRefreshed(const Storage::BoolResponse &response) {
 	if (!response.value) {

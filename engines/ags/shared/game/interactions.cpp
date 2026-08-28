@@ -207,8 +207,7 @@ InteractionEvent &InteractionEvent::operator = (const InteractionEvent &ie) {
 
 //-----------------------------------------------------------------------------
 
-Interaction::Interaction() {
-}
+Interaction::Interaction() = default;
 
 Interaction::Interaction(const Interaction &ni) {
 	*this = ni;

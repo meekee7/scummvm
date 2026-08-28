@@ -288,8 +288,7 @@ EntryDialog::EntryDialog(const Common::String &title, const Common::String &butt
 
 }
 
-EntryDialog::~EntryDialog() {
-}
+EntryDialog::~EntryDialog() = default;
 
 void EntryDialog::handleCommand(GUI::CommandSender *sender, uint32 command, uint32 data) {
 	switch (command) {

@@ -33,7 +33,7 @@ namespace Nancy {
 class VideoCacheLoader : public DeferredLoader {
 public:
 	VideoCacheLoader(AVFDecoder::AVFVideoTrack &owner) : _owner(owner) {}
-	virtual ~VideoCacheLoader() {}
+	virtual ~VideoCacheLoader() = default;
 
 private:
 	bool loadInner() override;

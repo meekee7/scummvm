@@ -30,9 +30,7 @@ Angle::Angle(float degrees) :
 		_degrees(degrees) {
 }
 
-Angle::Angle(const Angle &a) :
-		_degrees(a._degrees) {
-}
+Angle::Angle(const Angle &a) = default;
 
 Angle &Angle::normalize(float low) {
 	_degrees = getDegrees(low);
@@ -105,11 +103,7 @@ float Angle::getTangent() const {
 	return tanf(getRadians());
 }
 
-Angle &Angle::operator=(const Angle &a) {
-	_degrees = a._degrees;
-
-	return *this;
-}
+Angle &Angle::operator=(const Angle &a) = default;
 
 Angle &Angle::operator=(float degrees) {
 	setDegrees(degrees);

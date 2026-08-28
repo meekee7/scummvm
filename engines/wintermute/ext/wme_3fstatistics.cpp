@@ -60,8 +60,7 @@ SX3fStatistics::SX3fStatistics(BaseGame *inGame, ScStack *stack) : BaseScriptabl
 }
 
 //////////////////////////////////////////////////////////////////////////
-SX3fStatistics::~SX3fStatistics() {
-}
+SX3fStatistics::~SX3fStatistics() = default;
 
 //////////////////////////////////////////////////////////////////////////
 const char *SX3fStatistics::scToString() {

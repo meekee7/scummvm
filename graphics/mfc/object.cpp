@@ -30,11 +30,9 @@ const CRuntimeClass CObject::classCObject = {
 	nullptr								// pointer to base class's CRuntimeClass
 };
 
-CObject::CObject() {
-}
+CObject::CObject() = default;
 
-CObject::~CObject() {
-}
+CObject::~CObject() = default;
 
 const CRuntimeClass *CObject::GetRuntimeClass() const {
 	return &CObject::classCObject;

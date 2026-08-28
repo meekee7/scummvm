@@ -40,8 +40,7 @@ namespace Gob {
 SCNPlayer::SCNPlayer(GobEngine *vm) : DemoPlayer(vm) {
 }
 
-SCNPlayer::~SCNPlayer() {
-}
+SCNPlayer::~SCNPlayer() = default;
 
 bool SCNPlayer::playStream(Common::SeekableReadStream &scn) {
 	// Read labels

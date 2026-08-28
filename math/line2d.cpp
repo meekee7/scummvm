@@ -95,8 +95,7 @@ Common::StreamDebug &operator<<(Common::StreamDebug &dbg, const Math::Line2d &li
 }
 
 
-Segment2d::Segment2d() {
-}
+Segment2d::Segment2d() = default;
 
 Segment2d::Segment2d(const Vector2d &b, const Vector2d &e) :
 	_begin(b), _end(e) {
@@ -181,11 +180,6 @@ bool Segment2d::containsPoint(const Vector2d &point) const {
 	return false;
 }
 
-Segment2d &Segment2d::operator=(const Segment2d &other) {
-	_begin = other._begin;
-	_end = other._end;
-
-	return *this;
-}
+Segment2d &Segment2d::operator=(const Segment2d &other) = default;
 
 }

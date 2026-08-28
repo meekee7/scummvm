@@ -37,8 +37,7 @@ ItemRelativeGump::ItemRelativeGump(int32 x, int32 y, int32 width, int32 height,
 	: Gump(x, y, width, height, owner, flags, layer), _ix(0), _iy(0) {
 }
 
-ItemRelativeGump::~ItemRelativeGump(void) {
-}
+ItemRelativeGump::~ItemRelativeGump(void) = default;
 
 void ItemRelativeGump::InitGump(Gump *newparent, bool take_focus) {
 	Gump::InitGump(newparent, take_focus);

@@ -175,8 +175,7 @@ bool VideoDialog::init() {
 	return true;
 }
 
-VideoDialog::~VideoDialog() {
-}
+VideoDialog::~VideoDialog() = default;
 
 GUI_status VideoDialog::close_dialog() {
 	Delete(); // mark dialog as deleted. it will be freed by the GUI object

@@ -42,8 +42,7 @@ Console::Console(TrecisionEngine *vm) : GUI::Debugger(), _vm(vm) {
 	registerCmd("toggle_object", WRAP_METHOD(Console, Cmd_ToggleObject));
 }
 
-Console::~Console() {
-}
+Console::~Console() = default;
 
 bool Console::Cmd_Room(int argc, const char **argv) {
 	if (argc < 2) {

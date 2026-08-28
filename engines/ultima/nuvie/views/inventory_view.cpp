@@ -53,8 +53,7 @@ InventoryView::InventoryView(const Configuration *cfg)
 	cursor_pos.px = cursor_pos.py = 0;
 }
 
-InventoryView::~InventoryView() {
-}
+InventoryView::~InventoryView() = default;
 
 bool InventoryView::set_party_member(uint8 party_member) {
 	if (lock_actor || party_member >= party->get_party_size()) {

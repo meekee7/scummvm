@@ -410,7 +410,7 @@ void Caldoria::flushGameState() {
 
 class AIBombActiveCondition : public AICondition {
 public:
-	AIBombActiveCondition() {}
+	AIBombActiveCondition() = default;
 
 	bool fireCondition() override;
 };

@@ -62,8 +62,7 @@ bool DynamicBitmap::createRenderedImage(uint width, uint height) {
 	return result;
 }
 
-DynamicBitmap::~DynamicBitmap() {
-}
+DynamicBitmap::~DynamicBitmap() = default;
 
 uint DynamicBitmap::getPixel(int x, int y) const {
 	assert(x >= 0 && x < _width);

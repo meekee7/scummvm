@@ -28,7 +28,6 @@ KIASectionBase::KIASectionBase(BladeRunnerEngine *vm) {
 	_scheduledSwitch = false;
 }
 
-KIASectionBase::~KIASectionBase() {
-}
+KIASectionBase::~KIASectionBase() = default;
 
 } // End of namespace BladeRunner

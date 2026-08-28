@@ -32,8 +32,7 @@ Window::Window(Gfx::Driver *gfx, Cursor *cursor) :
 		_visible(false) {
 }
 
-Window::~Window() {
-}
+Window::~Window() = default;
 
 void Window::handleGameLoop() {
 	if (!_visible) {
